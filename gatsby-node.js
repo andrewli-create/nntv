@@ -29,21 +29,27 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
-
+    var pageSkipped = 0;
     posts.forEach((edge) => {
       const id = edge.node.id
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      })
+      if (edge.node.frontmatter.templateKey != null && edge.node.frontmatter.templateKey != "" && edge.node.frontmatter.templateKey != " ") {
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        })
+      } else {
+        pageSkipped++;
+      }
     })
+
+    console.log(pageSkipped + " pages were omitted.");
 
     // Tag pages:
     let tags = []

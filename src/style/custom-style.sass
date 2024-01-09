@@ -1,4 +1,26 @@
 @import ./variables.sass
+@import "~bulma"
+
+.placeholder-block
+  background-color: #D9D9D9
+  height: 100%
+  width: 100%
+
+.d-flex-c
+  justify-content: center
+
+.d-flex-sb
+  justify-content: space-between
+
+.d-flex-row
+  flex-direction: row
+
+.d-flex-col
+  flex-direction: column
+
+.vertical-white-space
+  padding-top: 20px
+  padding-bottom: 20px 
 
 .navbar .navbar-menu
   box-shadow: none !important
@@ -61,6 +83,8 @@
 .margin-top-0
   margin-top: 0 !important
 
+.navbar-item
+  text-decoration: none
 .navbar-item .icon
   color: $primary
 // Override for use of svg's from https://simpleicons.org/
@@ -102,3 +126,56 @@ footer.footer
 .blog-list-item .featured-thumbnail
   flex-basis: 35%
   margin: 0 1.5em 0 0
+
+
+.dl, ol, ul
+  margin-top: 0
+  margin-bottom: 0rem !important
+
+.nav-main-container
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 800%
+  padding: 10px 10% 10px 10%
+  border-bottom: 1px black solid
+
+.nav-bar-link-wrapper
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: auto
+
++mobile
+  .nav-bar-link-wrapper
+    display: none
+
+.nav-sign-up-button-wrapper
+  width: auto
+  justify-content: center
+  flex-direction: column
+  display: flex
+
+.button-generic
+  background: none
+  border-radius: 5px
+  border: 1px black solid
+  padding: 7px 28px
+  cursor: pointer
+  transition-duration: 250ms
+  width: fit-content
+
+.nav-sign-up-button
+  background: none
+  border-radius: 5px
+  border: 1px black solid
+  padding: 0 25px
+  height: 70%
+  cursor: pointer
+  transition-duration: 250ms
+
+.nav-sign-up-button:hover, .button-generic:hover
+  background-color: rgba(0, 0, 0, 0.1)
+
+.text-css
+  color: red

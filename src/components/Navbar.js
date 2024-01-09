@@ -1,23 +1,51 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
+import nntvLogo from "../img/nntv-logo.svg";
+
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-
+  const data = useStaticQuery(graphql`
+    query navBarQuery {
+      allMarkdownRemark(
+        filter: {
+          frontmatter: {
+            title: { eq:"NavBar" }
+          }
+        }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              navItem {
+                pageName
+                pageURL
+              }
+            }
+          }
+        }
+      }
+    }`
+  )
+  console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
+  const navItem = data.allMarkdownRemark.edges[0].node.frontmatter.navItem;
+  // console.log(navItem);
   return (
     <nav
       className="navbar is-transparent"
       role="navigation"
       aria-label="main-navigation"
     >
-      <div className="container">
+      <div className="nav-main-container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+            <img src={nntvLogo} alt="Kaldi" style={{ width: "88px" }} />
           </Link>
           {/* Hamburger menu */}
+          <h1></h1>
           <button
             className={`navbar-burger burger ${isActive && "is-active"}`}
             aria-expanded={isActive}
@@ -30,52 +58,24 @@ const Navbar = () => {
         </div>
         <ul
           id="navMenu"
-          className={` navbar-start has-text-centered navbar-menu ${
-            isActive && "is-active"
-          }`}
+          // className={` navbar-start has-text-centered navbar-menu ${isActive && "is-active"}`}
+          className={`nav-bar-link-wrapper ${isActive && "is-active"}`}
         >
-          {/* TODO: inline override of padding is a result of refactoring
-                to a ul for accessibilty purposes, would like to see a css
-                re-write that makes this unneccesary.
-             */}
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/blog">
-              Blog
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
-            </Link>
-          </li>
-          <li className="navbar-end has-text-centered">
-            <a
-              className="navbar-item"
-              href="https://github.com/decaporg/gatsby-plugin-decap-cms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={github} alt="Github" />
-              </span>
-            </a>
-          </li>
+          {/* TODO: inline override of padding is a result of refactoring to a ul for accessibilty purposes, would like to see a css re-write that makes this unneccesary.*/}
+          {navItem.map((item, index) => (
+            <li key={index} className="navbar-item" style={{ padding: "0px" }}>
+              <Link className="navbar-item" to={item.pageURL}>
+                {item.pageName}
+              </Link>
+            </li>
+          ))}
+          
         </ul>
+        <div className={'nav-sign-up-button-wrapper'}>
+          <button className={'nav-sign-up-button'}>
+            <span>Sign Up</span>
+          </button>
+        </div>
       </div>
     </nav>
   );

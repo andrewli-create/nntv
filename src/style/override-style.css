@@ -1,0 +1,9 @@
+@media screen and (min-width: 1408px) {
+    .container:not(.is-max-desktop):not(.is-max-widescreen) {
+        max-width: 1200px;
+    }
+}
+
+.footer {
+    min-height: 100px;
+}

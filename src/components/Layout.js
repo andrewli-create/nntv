@@ -6,6 +6,7 @@ import "../style/bulma-style.sass";
 import "../style/custom-style.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import "../style/override-style.css";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();

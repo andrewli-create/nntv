@@ -11,8 +11,32 @@ backend:
 local_backend: true
 media_folder: static/img
 public_folder: /img
+logo_url: /img/nntv-logo.svg
 
 collections:
+  - name: "siteComponents"
+    label: "Site Components"
+    editor:
+      preview: false
+    files:
+      - file: "src/pages/siteComponents/nav-bar/index.md"
+        label: "Navigation Bar"
+        name: "nav-bar"
+        fields:
+          [
+            {
+              label: "Navigation Item",
+              name: "navItem",
+              widget: list,
+              fields:
+                [
+                  { label: "Page Name", name: "pageName", widget: string },
+                  { label: "Page URL", name: "pageURL", widget: string },
+                ],
+            },
+          ]
+      
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
@@ -244,3 +268,15 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/under-construction/index.md"
+        label: "Under Construction"
+        name: "underConstruction"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "under-construction",
+            }
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Subtext", name: "subtext", widget: "string" } 

@@ -3,30 +3,28 @@ import PropTypes from 'prop-types'
 import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
+  
   const data = entry.getIn(['data']).toJS()
-
-  if (data) {
+  const frontmatter = structuredClone(data);
+  const dataReform = {
+    markdownRemark:{
+      frontmatter
+  }};
+  // console.log("STH", dataReform);
+  if (dataReform) {
     return (
-      <IndexPageTemplate
-        image={getAsset(data.image)}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-        description={data.description}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
-      />
+      <IndexPageTemplate data={dataReform}/>
     )
   } else {
     return <div>Loading...</div>
   }
 }
 
-IndexPagePreview.propTypes = {
-  entry: PropTypes.shape({
-    getIn: PropTypes.func,
-  }),
-  getAsset: PropTypes.func,
-}
+// IndexPagePreview.propTypes = {
+//   entry: PropTypes.shape({
+//     getIn: PropTypes.func,
+//   }),
+//   getAsset: PropTypes.func,
+// }
 
 export default IndexPagePreview
