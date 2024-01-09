@@ -64,7 +64,7 @@ const Navbar = () => {
           {/* TODO: inline override of padding is a result of refactoring to a ul for accessibilty purposes, would like to see a css re-write that makes this unneccesary.*/}
           {navItem.map((item, index) => (
             <li key={index} className="navbar-item" style={{ padding: "0px" }}>
-              <Link className="navbar-item" to={item.pageURL}>
+              <Link className="navbar-item d-flex d-flex-c d-flex-col" to={item.pageURL}>
                 {item.pageName}
               </Link>
             </li>

@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
+  
   return (
     // <div className="text-css">
     //   {data.markdownRemark.frontmatter.title}
