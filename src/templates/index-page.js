@@ -8,7 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useEffect } from 'react';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
@@ -38,6 +38,15 @@ export const IndexPageTemplate = ({data}) => {
 };
 
 const IndexPage = ({ data }) => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
   // const { frontmatter } = data.markdownRemark;
   // console.log(data.markdownRemark.frontmatter.title);
   console.log(data);
