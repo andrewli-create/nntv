@@ -7,6 +7,12 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     {
+      resolve: `gatsby-plugin-netlify-identity`,
+      options: {
+        url: `https://noneedtovanish.netlify.app/` // required!
+      }
+    },
+    {
       resolve: "gatsby-plugin-sass",
       options: {
         sassOptions: {
