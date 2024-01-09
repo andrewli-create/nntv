@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: `https://noneedtovanish.netlify.app/` // required!
+        url: `https://noneedtovanish.netlify.app/admin` // required!
       }
     },
     {
