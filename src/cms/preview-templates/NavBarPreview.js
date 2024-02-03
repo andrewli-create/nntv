@@ -20,8 +20,8 @@ const NavBarPreview = ({ entry, getAsset }) => {
   //   return <div>Loading...</div>
   // }
   return (
-    // <h2>Hi</h2>
-    <NavBarMirror insertData={dataReform}/>
+    <h2>Hi</h2>
+    // <NavBarMirror insertData={dataReform}/>
     // <NavBar/>
   )
 }
