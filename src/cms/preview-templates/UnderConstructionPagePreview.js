@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import NavBar from '../../components/NavBar'
+import UnderConstructionPageMain from '../../templates/under-construction-main'
 import PreviewPane from '../../components/PreviewPane'
 import NavBarMain from "../../components/NavBarMain"
 import { useState } from "react";
@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage} from "gatsby-plugin-image"
 
 
-const NavBarPreview = ({ entry, getAsset, fieldsMetaData }) => {
+const UnderConstructionPagePreview = ({ entry, getAsset, fieldsMetaData }) => {
   const [isActive, setIsActive] = useState(false);
   const data = entry.getIn(['data']).toJS();
   const fields = fieldsMetaData.toJS();
@@ -27,16 +27,11 @@ const NavBarPreview = ({ entry, getAsset, fieldsMetaData }) => {
     }
   };
   console.log("STH", dataReform);
-  // console.log("nav-data", data);
-  const navItem = data.navItem;
-  const brandLogo = data.brandImage;
-  // console.log("data", data);
-  
   return (
     <PreviewPane>
-      <NavBarMain data={dataReform}/>
+      <UnderConstructionPageMain data={dataReform}/>
     </PreviewPane>
   );
 }
 
-export default NavBarPreview
+export default UnderConstructionPagePreview

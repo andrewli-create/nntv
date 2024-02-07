@@ -8,6 +8,16 @@ html {
     }
 }
 
+.container {
+    min-height: 85vh;
+}
+
 .footer {
     min-height: 100px;
+}
+
+.navbar {
+    padding: 0 !important;
+    width: 100%;
+    position: relative;
 }

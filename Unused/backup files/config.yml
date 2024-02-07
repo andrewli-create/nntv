@@ -23,6 +23,22 @@ collections:
         name: "nav-bar"
         fields:
           [
+            {
+              label: "Arrangement",
+              name: "arrangement",
+              widget: list,
+              fields:
+                [
+                  {
+                    label: "Arrangement Inner", 
+                    name: "ArrangementInner",
+                    widget: relation,
+                    collection: siteComponents,
+                    searchFields: [nav-bar.*],
+                    valueField: nav-bar.*,
+                    }
+                ]
+            },
             { label: "Brand Image", name: "brandImage", widget: image },
             { label: "Alt Text", name: "brandImageAlt", widget: string },
             { label: "Navigation Bar Color", name: "navBarColor", widget: color, picker: sketch, enableAlpha: true },
@@ -30,7 +46,6 @@ collections:
               name: "nav-bar-alignment",
               label: "Navigation Bar Alignment",
               widget: inline-select,
-              required: false,
               options:
                 [
                   { label: Left, value: left},
@@ -42,23 +57,10 @@ collections:
               label: "Navigation Item",
               name: "navItem",
               widget: list,
-              required: false,
               fields:
                 [
-                  { label: "Page Name", name: "pageName", widget: string, required: false },
-                  { label: "Page URL", name: "pageURL", widget: string, required: false },
-                  {
-                    label: "Sub-Navigation Item",
-                    name: "subNavItem",
-                    widget: list,
-                    required: false,
-                    fields:
-                      [
-                        { label: "Page Name", name: "subPageName", widget: string, required: false },
-                        { label: "Page URL", name: "subPageURL", widget: string, required: false },
-                      ],
-                  },
-                  { label: "Enable", name: "navItemToggle", widget: "boolean", default: true, required: false },
+                  { label: "Page Name", name: "pageName", widget: string },
+                  { label: "Page URL", name: "pageURL", widget: string },
                 ],
             },
             
@@ -304,7 +306,7 @@ collections:
             }
       - file: "src/pages/under-construction/index.md"
         label: "Under Construction"
-        name: "under-construction"
+        name: "underConstruction"
         fields:
           - {
               label: "Template Key",

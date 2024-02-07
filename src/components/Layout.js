@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavBar from "./NavBar";
 import "../style/bulma-style.sass";
 import "../style/custom-style.sass";
 import useSiteMetadata from "./SiteMetadata";
@@ -11,7 +11,7 @@ import "../style/override-style.css";
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
+    <div className="page-wrapper">
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -51,7 +51,7 @@ const TemplateWrapper = ({ children }) => {
         />
         <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
-      <Navbar />
+      <NavBar />
       <div>{children}</div>
       <Footer />
     </div>

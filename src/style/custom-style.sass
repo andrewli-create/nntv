@@ -1,10 +1,19 @@
 @import ./variables.sass
 @import "~bulma"
 
+.page-wrapper
+  height: 100vh
+  max-height: 2000px
+
 .placeholder-block
   background-color: #D9D9D9
   height: 100%
   width: 100%
+
+.display-none
+  display: none
+.display-flex
+  display: flex
 
 .d-flex-c
   justify-content: center
@@ -86,6 +95,18 @@
 .navbar-item
   text-decoration: none
   height: 100%
+  display: flex
+  flex-direction: column
+  min-width: 100px
+  overflow: visible
+  padding: 0 10px 0 10px
+
+.navbar-item-link
+  color: #000
+  text-decoration: none
+  height: 100%
+  display: flex
+  flex-direction: column
 
 .navbar-item .icon
   color: $primary
@@ -99,6 +120,32 @@
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
+
+.navbar-item a
+  transition-duration: 150ms
+
+.navbar-item a:hover
+  color: rgb(200, 200, 200)
+
+.sub-navbar
+  padding: 0
+  padding-left: 0
+  padding-top: 0px
+  top: 70px
+  position: absolute
+  background-color: rgba(250, 250, 250, 1)
+  -webkit-box-shadow: 0px 5px 19px -9px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px 5px 19px -9px rgba(0, 0, 0, 0.2)
+
+.sub-navbar-item
+  text-align: center
+  padding: 5px 5px 5px 5px
+  border-bottom: dashed 0.2px black
+  width: 100px
+
+.sub-navbar-item a
+  color: black
+  text-decoration: none
 
 
 .menu-label
@@ -138,9 +185,11 @@ footer.footer
   display: flex
   flex-direction: row
   justify-content: space-between
-  width: 800%
-  padding: 10px 10% 10px 10%
+  width: 100%
+  // padding: 10px 10% 10px 10%
+  padding: 0px 10% 0px 10%
   border-bottom: 1px black solid
+  height: 70px
 
 .nav-bar-link-wrapper
   display: flex
@@ -172,7 +221,7 @@ footer.footer
   border-radius: 5px
   border: 1px black solid
   padding: 0 25px
-  height: 70%
+  height: 60%
   cursor: pointer
   transition-duration: 250ms
 
@@ -184,3 +233,9 @@ footer.footer
 
 html
   min-height: 100vh
+
+.obj-fit-contain
+  object-fit: contain
+
+.no-padding
+  padding: 0

@@ -1,0 +1,205 @@
+/* --cms-primary-color: #1a3047; */
+
+:root {
+    --cms-primary-color: rgb(35, 35, 35);
+    --cms-secondary-color: #3c5d80;
+    --cms-glossy-color-dark: rgba(30, 30, 30, 0.2);
+    --cms-glossy-color-darker: rgba(30, 30, 30, 0.6);
+    --cms-glossy-color-light: rgba(255, 255, 255, 0.8);
+}
+  
+html {
+    background-image: url("../img/mountains_blur.jpg");
+}
+
+header {
+    background-color: var(--cms-glossy-color-dark) !important;
+}
+
+header * {
+    color: white !important;
+}
+html::after {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    content: "No Need to Vanish | noneedtovanish.com © 2024 All rights reserved | Deisnged and Developed by Andrew Li";
+    position: absolute;
+    bottom: 0;
+    padding: 10px 60px;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: var(--cms-glossy-color-dark);
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    /* z-index: 20; */
+}
+#nc-root div:nth-of-type(1) section:nth-of-type(1) button:nth-of-type(1) {
+    background-color: var(--cms-glossy-color-dark) !important;
+    transition-duration: 100ms;
+}
+
+#nc-root {
+    top: 0;
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    z-index: 100;
+    height: 100vh;
+    width: 100vw;
+}
+
+main ul li {
+    background-color: transparent !important;
+    transition-duration: 100ms;
+}
+
+main ul li:hover, #nc-root div:nth-of-type(1) section:nth-of-type(1) button:nth-of-type(1):hover {
+    border-top: white 0 0 1px 0 solid;
+    background-color: transparent !important;
+    transform: translateY(-1px);
+    -webkit-box-shadow: 0px 2px 15px 2px rgba(0,0,0,0.1); 
+    box-shadow: 0px 2px 15px 2px rgba(0,0,0,0.1);
+}
+
+main > div:nth-of-type(1) h1, aside h2, aside a {
+    background-color: transparent;
+    color: white !important;
+    transition-duration: 100ms;
+}
+
+aside a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+aside a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    border-left: rgb(66, 211, 255) 2px solid;
+}
+main > div:nth-of-type(1), aside {
+    background-color: var(--cms-glossy-color-darker) !important;
+}
+
+main > div:nth-of-type(2) > div:nth-of-type(1) {
+    background-color: var(--cms-glossy-color-light);
+    border-radius: 5px;
+    padding: 2px;
+    backdrop-filter: blur(70px);
+} 
+
+main ul li a{
+    background-color: var(--cms-glossy-color-dark) !important;
+    backdrop-filter: blur(70px);
+    color: white;
+    transition-duration: 100ms;
+}
+
+
+main ul li a div {
+    background-color: transparent;
+
+}
+
+main ul li a div::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 1;
+    bottom: 0px;
+    left: -20%;
+    height: 140%;
+    width: 140%;
+    box-shadow: none !important;
+}
+
+main ul li a:hover {
+    background-color: var(--cms-glossy-color-dark) !important;
+    filter: brightness(1.05);
+}
+
+main ul li a h2 {
+    color: white;
+}
+
+.ReactModalPortal div:nth-child(1) div:nth-child(1) {
+    background-color: rgba(30, 30, 30) !important;
+}
+
+.ReactModalPortal div:nth-child(1) div:nth-child(1) div {
+    background-color: transparent !important;
+}
+
+.ReactModalPortal div:nth-child(1) div:nth-child(1) h1, .ReactModalPortal div:nth-child(1) div:nth-child(1) p {
+    color: white;
+}
+
+.ReactModalPortal > div > div > div:nth-child(2) div[tabindex="0"] > div > div{
+    /* background-image: linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)), linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)); */
+    background-color: red;
+}
+
+
+/* 
+.ReactModalPortal div div:nth-child(1) * {
+    background-color: transparent;
+} */
+
+[role="menu"] ul {
+    background-color: transparent !important;
+}
+
+ul div[role="menuitem"] {
+    background-color: rgba(30, 30, 30, 0.8) !important;
+    color: white;
+}
+
+div[role="menuitem"] span {
+    color: white;
+}
+
+.welcome-back-box {
+    width: 100%;
+    min-width: 800px;
+    max-width: 1440px;
+    margin: 30px auto;
+}
+
+.welcome-back-box h2 {
+    margin: 28px 18px;
+    font-size: 30px;
+    color: white;
+    /* background-color: var(--cms-glossy-color-darker) */
+    width: auto;
+    /* display: inline; */
+    text-align: center;
+    padding: 20px 60px;
+    border-radius: 5px;
+
+}
+
+.widget-wrapper {
+    width: 100%;
+    min-width: 800px;
+    max-width: 1440px;
+    margin: 30px auto;
+}
+
+.clock-panel {
+    margin: 28px 18px;
+    box-shadow: rgba(68, 74, 87, 0.05) 0px 2px 6px 0px, rgba(68, 74, 87, 0.1) 0px 1px 3px 0px;
+    border-radius: 5px;
+    background-color: var(--cms-glossy-color-darker);
+    width: 250px;
+    padding: 12px 0px 12px;
+    max-height: calc(-112px + 100vh);
+    display: flex;
+    flex-direction: column;
+}
+
+.clock-panel h2 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 300;
+}
+
