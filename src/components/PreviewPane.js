@@ -7,7 +7,7 @@ import mobileIcon from "../../static/img/mobile_icon.svg";
 import tabletIcon from "../../static/img/tablet_icon.svg";
 import monitorIcon from "../../static/img/monitor_icon.svg";
 import tvIcon from "../../static/img/tv_icon.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import $ from 'jquery';
 
 const PreviewPane = ({ children }) => {

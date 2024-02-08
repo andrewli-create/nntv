@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import NavBar from '../../components/NavBar'
+// import NavBar from '../../components/NavBar'
 import PreviewPane from '../../components/PreviewPane'
 import NavBarMain from "../../components/NavBarMain"
 import { useState } from "react";
