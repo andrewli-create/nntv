@@ -5,6 +5,7 @@ setTimeout(() => {
     // });
 
     $( "<div class='widget-wrapper'><div class='clock-panel'><h2><div id='txt'></div></h2></div></div>" ).insertAfter( "header" );
+    $('button:contains("Login with Netlify Identity")').text('Login to NNTV');
     startTime();
 }, "100");
 
