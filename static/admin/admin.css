@@ -203,3 +203,8 @@ div[role="menuitem"] span {
     font-weight: 300;
 }
 
+
+#nc-root div div section span:last-of-type {
+    display: none;
+}
+  
