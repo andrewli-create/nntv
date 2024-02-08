@@ -20,10 +20,10 @@ const NavBarMain = ({data}) => {
   // console.log("data", data);
   useEffect(() => {
     $( "html" ).on( "mouseenter", ".navbar-item", function() {
-      $(this).find("ul").fadeIn();
+      $(this).find("ul").css("display", "block").removeClass("sub-navbar-hidden");
     });
     $( "html" ).on( "mouseleave", ".navbar-item", function() {
-      $(".navbar-item").find("ul").fadeOut();
+      $(".navbar-item").find("ul").css("display", "").addClass("sub-navbar-hidden");;
     });
   }, [])
 
@@ -70,7 +70,7 @@ const NavBarMain = ({data}) => {
                   </Link>
                   {item.subNavItem ? 
                     (
-                      <ul className="sub-navbar display-none preview-hover">
+                      <ul className="sub-navbar sub-navbar-hidden preview-hover">
                         {item.subNavItem
                           ? (item.subNavItem.map((itemInner, index) => (
                             <li className="sub-navbar-item">
