@@ -204,7 +204,7 @@ div[role="menuitem"] span {
 }
 
 
-#nc-root div div section span:last-of-type {
+#nc-root div section span:last-of-type {
     display: none;
 }
   
