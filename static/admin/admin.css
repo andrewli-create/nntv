@@ -207,4 +207,7 @@ div[role="menuitem"] span {
 #nc-root div section span:last-of-type {
     display: none;
 }
-  
+
+#netlify-identity-widget {
+    z-index: 200 !important;
+}
