@@ -6,6 +6,16 @@ setTimeout(() => {
 
     $( "<div class='widget-wrapper'><div class='clock-panel'><h2><div id='txt'></div></h2></div></div>" ).insertAfter( "header" );
     $('button:contains("Login with Netlify Identity")').text('Login to NNTV');
+    
+    // console.log($('*[class*="ToolbarContainer"]'));
+    
+    // $( "html" ).on( "click", "*[class*='ListCardLink']", function() {
+    //   console.log("Hi");
+    //   setTimeout(() => {
+    //     $('*[class*="ToolbarContainer"]').css("background-color", "var(--cms-glossy-color-darker)");
+    //   }, "1000");
+    // });
+
     startTime();
 }, "100");
 

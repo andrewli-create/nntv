@@ -8,6 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import pianoTopView from '../../public/img/grand-piano-top-view.png'
 // import { useEffect } from 'react';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data}) => {
@@ -19,20 +20,30 @@ export const IndexPageTemplate = ({data}) => {
     // </div>
     <>
       <div className="container vertical-white-space">
-        <div className="row">
-          <div className="col-md-6 d-flex-col d-flex d-flex-c">
-            <h1>No Need to Vanish</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <button className="button-generic">
-              Course
-            </button>
+        <section className="section-center">
+          <div className="row">
+            <div className="col-md-6 d-flex-col d-flex d-flex-c">
+              <h1>No Need to Vanish</h1>
+              <p>
+                Beyond Boundaries<br/>Inspiring the Next Wave of Musical Visionaries
+              </p>
+              <button className="button-generic">
+                Course
+              </button>
+            </div>
+            <div className="col-md-6">
+              <div className="display-flex d-flex-sb">
+                <div className="placeholder-block" style={{height: "500px", width: "70%"}}>
+                  <img className="deco-image" src={pianoTopView}/>
+                </div>
+                {/* backgroundImage: `url(${pianoTopView})`} */}
+                <div className="placeholder-block" style={{height: "500px", width: "25%"}}>
+                  <img className="deco-image" style={{transform: "scale(1.2)"}} src={pianoTopView}/>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="col-md-6">
-            <div className="placeholder-block" style={{height: "650px"}}></div>
-          </div>
-        </div>
+        </section>
       </div>
     </>
   );
