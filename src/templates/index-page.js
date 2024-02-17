@@ -8,7 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import pianoTopView from '../../public/img/grand-piano-top-view.png'
+import pianoTopView from '../../static/img/grand-piano-top-view.png'
 // import { useEffect } from 'react';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data}) => {
