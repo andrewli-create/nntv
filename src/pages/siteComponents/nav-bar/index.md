@@ -2,20 +2,20 @@
 title: NavBar
 brandImage: /img/nntv_logo_black.png
 brandImageAlt: No Need To Vanish Logo
-navBarColor: "#ffffff"
+navBarColor: rgba(255, 255, 255, 0.95)
 navItem:
   - pageName: Home
     pageURL: /
     subNavItem: []
     navItemToggle: true
   - pageName: About
-    pageURL: /under-construction
+    pageURL: /about
     navItemToggle: true
     subNavItem:
       - subPageName: Our Vision
-        subPageURL: /
+        subPageURL: /our-vision
       - subPageName: Our Values
-        subPageURL: /
+        subPageURL: /our-vision#our-values
   - pageName: Course
     pageURL: /under-construction
     navItemToggle: true

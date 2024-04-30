@@ -33,6 +33,10 @@
   padding-top: 40px
   padding-bottom: 40px 
 
+.navbar
+  position: sticky !important
+  top: 0
+
 .navbar .navbar-menu
   box-shadow: none !important
 
@@ -119,6 +123,11 @@
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
+
++mobile
+  .navbar-brand
+    width: 100%
+    margin-right: 0 !important
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
@@ -197,6 +206,8 @@ footer.footer
   padding: 0px 10% 0px 10%
   border-bottom: 1px black solid
   height: 70px
+  max-width: 1000px
+  margin: auto
 
 .nav-bar-link-wrapper
   display: flex
@@ -213,6 +224,10 @@ footer.footer
   justify-content: center
   flex-direction: column
   display: flex
+
++mobile
+  .nav-sign-up-button-wrapper
+    display: none
 
 .button-generic
   background: none

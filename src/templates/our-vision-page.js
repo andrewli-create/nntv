@@ -38,7 +38,7 @@ export const OurVisionPageTemplate = ({data}) => {
           </div>
         </section>
         <hr/>
-        <section className="al-mt-40">
+        <section id="our-values" className="al-mt-40">
           <h1 className="al-text-align-c">{data.markdownRemark.frontmatter.secondarytitle}</h1>
           <p className="al-text-align-c">{data.markdownRemark.frontmatter.secondarytagline}</p>
           <div className="section-center">

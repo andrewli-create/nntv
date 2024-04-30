@@ -34,7 +34,7 @@ const NavBarPreview = ({ entry, getAsset, fieldsMetaData }) => {
   
   return (
     <PreviewPane>
-      <NavBarMain data={dataReform}/>
+      <NavBarMain data={dataReform} mode={1}/>
     </PreviewPane>
   );
 }

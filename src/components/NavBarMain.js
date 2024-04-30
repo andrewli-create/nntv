@@ -7,7 +7,7 @@ import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 import $ from 'jquery';
 // title: { eq:"NavBar, Branding" }
 
-const NavBarMain = ({data}) => {
+const NavBarMain = ({data, mode}) => {
   const [isActive, setIsActive] = useState(false);
   console.log("nav-data-full", data);
   console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
@@ -16,8 +16,16 @@ const NavBarMain = ({data}) => {
   const navBarColor = data.allMarkdownRemark.edges[0].node.frontmatter.navBarColor;
   // const brandLogo = data.allMarkdownRemark.edges[1].node.frontmatter.logoImage.childImageSharp.gatsbyImageData.images.fallback.src;
   // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
-  const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
-  console.log("brandLogo", data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src);
+  // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
+  // console.log("brandLogo", data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src);
+  var brandLogo;
+  if (mode == 0) {
+    brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
+  } else {
+    brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
+  }
+  
+  
   // console.log("data", data);
   useEffect(() => {
     $( "html" ).on( "mouseenter", ".navbar-item", function() {
@@ -44,8 +52,9 @@ const NavBarMain = ({data}) => {
               : 
               <GatsbyImage image={getImage(brandLogo)} alt={brandLogoAlt}/>
             } */}
+            <img className="obj-fit-contain" src={brandLogo} alt={brandLogoAlt} style={{ width: "88px" }} /> 
           </Link>
-          <img className="obj-fit-contain" src={brandLogo} alt={brandLogoAlt} style={{ width: "88px" }} /> 
+          
           {/* Hamburger menu */}
           <h1></h1>
           <button
@@ -76,7 +85,7 @@ const NavBarMain = ({data}) => {
                         {item.subNavItem
                           ? (item.subNavItem.map((itemInner, index) => (
                             <li className="sub-navbar-item">
-                              <Link className="d-flex d-flex-c d-flex-col" to={item.subPageURL}>
+                              <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
                                 {itemInner.subPageName}
                               </Link>
                             </li>

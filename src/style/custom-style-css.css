@@ -6,6 +6,26 @@
 body {
     background-image: radial-gradient(circle at 77% 66%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 9%,transparent 9%, transparent 43%,transparent 43%, transparent 100%),radial-gradient(circle at 6% 56%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 20%,transparent 20%, transparent 56%,transparent 56%, transparent 100%),radial-gradient(circle at 48% 45%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 15%,transparent 15%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 89% 6%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 5%,transparent 5%, transparent 32%,transparent 32%, transparent 100%),radial-gradient(circle at 71% 38%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 14%,transparent 14%, transparent 21%,transparent 21%, transparent 100%),radial-gradient(circle at 84% 78%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 11%,transparent 11%, transparent 85%,transparent 85%, transparent 100%),radial-gradient(circle at 92% 72%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 42%,transparent 42%, transparent 51%,transparent 51%, transparent 100%),radial-gradient(circle at 73% 95%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 48%,transparent 48%, transparent 63%,transparent 63%, transparent 100%),radial-gradient(circle at 29% 29%, hsla(39,0%,85%,0.05) 0%, hsla(39,0%,85%,0.05) 24%,transparent 24%, transparent 73%,transparent 73%, transparent 100%),linear-gradient(90deg, hsl(147,0%,99%),hsl(147,0%,99%));
 }
+@media only screen and (max-width: 878px) {
+    .nav-sign-up-button {
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (max-width: 1022px) {
+    .nav-bar-link-wrapper {
+        display: none;
+    }
+    .nav-sign-up-button-wrapper {
+        display: none;
+    }
+    .navbar-brand {
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+
+    
 
 .placeholder-block {
   background-color: #D9D9D9;
