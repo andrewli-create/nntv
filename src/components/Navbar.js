@@ -56,7 +56,7 @@ const NavBar = () => {
   //     - subPageName: Home Sub
   //       subPageURL: /Home Sub
   //   navItemToggle: true
-  console.log("nav-data-full", data);
+  // !!console.log("nav-data-full", data);
   // console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
   // const navItem = data.allMarkdownRemark.edges[0].node.frontmatter.navItem;
   // // const brandLogo = data.allMarkdownRemark.edges[1].node.frontmatter.logoImage.childImageSharp.gatsbyImageData.images.fallback.src;

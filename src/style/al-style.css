@@ -1,0 +1,51 @@
+.al-gray-bg {
+    background-color: gray;
+}
+
+.al-title-text {
+    font-weight: bold;
+    font-size: 70px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.al-italic {
+    font-style: italic;
+}
+
+.al-round-border {
+    border-radius: 17px;
+}
+
+.al-mt-10 {
+    margin-top: 10px !important;
+}
+
+.al-mt-40 {
+    margin-top: 40px !important;
+}
+
+.al-mb-40 {
+    margin-bottom: 40px !important;
+}
+
+.al-full-screen-height {
+    min-height: 100vh;
+}
+
+.al-no-pad-horizonal {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.al-no-margin-b {
+    margin-bottom: 0px;
+}
+
+.al-pos-r {
+    position: relative;
+}
+
+.al-text-align-c {
+    text-align: center !important;
+}

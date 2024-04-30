@@ -11,11 +11,10 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -67,4 +66,12 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+keywords:
+  - word: Learn
+  - word: Inspire
+  - word: Embrace
+  - word: Create
+yellowtitle: Welcome to NNTV
+yellowparagraph: your gateway to a transformative journey where music,
+  technology, and creative intersect
 ---

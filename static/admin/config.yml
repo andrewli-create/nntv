@@ -56,6 +56,17 @@ collections:
                       [
                         { label: "Page Name", name: "subPageName", widget: string, required: false },
                         { label: "Page URL", name: "subPageURL", widget: string, required: false },
+                        {
+                          label: "Sub-Navigation Inner Item",
+                          name: "subSubNavItem",
+                          widget: list,
+                          required: false,
+                          fields:
+                            [
+                              { label: "Page Name", name: "subSubPageName", widget: string, required: false },
+                              { label: "Page URL", name: "subSubPageURL", widget: string, required: false },
+                            ],
+                        }
                       ],
                   },
                   { label: "Enable", name: "navItemToggle", widget: "boolean", default: true, required: false },
@@ -179,6 +190,17 @@ collections:
                   },
                 ],
             }
+          - {
+              label: Keywords,
+              name: keywords,
+              widget: list,
+              fields:
+                [
+                  { label: Word, name: word, widget: string },
+                ],
+            }
+          - { label: "Yellow Title", name: yellowtitle, widget: string }
+          - { label: "Yellow Paragraph", name: yellowparagraph, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -191,6 +213,34 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/our-vision/index.md"
+        label: "Our Vision"
+        name: "our-vision"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Featured Image", name: "featuredimage", widget: image }
+          - { label: "Opening Paragraph", name: "openingparagraph", widget: "string" }
+          - { label: "Opening Tagline", name: "openingtagline", widget: "string" }
+          - { label: "Secondary Title", name: "secondarytitle", widget: "string" }
+          - { label: "Secondary Tagline", name: "secondarytagline", widget: "string" }
+          - { label: "See More Button Text", name: "seemoretext", widget: "string" }
+          - {
+              label: Values,
+              name: values,
+              widget: list,
+              fields:
+                [
+                  { label: "Value Image", name: "valueimage", widget: image },
+                  { label: "Value Title", name: "valuetitle", widget: string },
+                  { label: "Value Paragraph", name: "valueparagraph", widget: string },
+                ]
+            }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

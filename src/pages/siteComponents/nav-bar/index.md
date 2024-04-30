@@ -26,7 +26,9 @@ navItem:
         subPageURL: /
       - subPageName: EQ
         subPageURL: /
-  - pageName: Content
+      - subPageName: Compression
+        subPageURL: /
+  - pageName: Contact
     pageURL: /under-construction
     navItemToggle: true
     subNavItem:

@@ -15,8 +15,9 @@ const NavBarMain = ({data}) => {
   const brandLogoAlt = data.allMarkdownRemark.edges[0].node.frontmatter.brandImageAlt;
   const navBarColor = data.allMarkdownRemark.edges[0].node.frontmatter.navBarColor;
   // const brandLogo = data.allMarkdownRemark.edges[1].node.frontmatter.logoImage.childImageSharp.gatsbyImageData.images.fallback.src;
-  const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
-  console.log(brandLogo);
+  // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
+  const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
+  console.log("brandLogo", data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src);
   // console.log("data", data);
   useEffect(() => {
     $( "html" ).on( "mouseenter", ".navbar-item", function() {
@@ -38,12 +39,13 @@ const NavBarMain = ({data}) => {
         <div className="navbar-brand">
           <Link to="/" className="navbar-item no-padding display-flex d-flex-c d-flex-col" title="Logo">
             {/* {check of image is a link or object} */}
-            {typeof brandLogo == "string" ? 
+            {/* {typeof brandLogo == "string" ? 
               <img className="obj-fit-contain" src={brandLogo} alt={brandLogoAlt} style={{ width: "88px" }} /> 
               : 
               <GatsbyImage image={getImage(brandLogo)} alt={brandLogoAlt}/>
-            }
+            } */}
           </Link>
+          <img className="obj-fit-contain" src={brandLogo} alt={brandLogoAlt} style={{ width: "88px" }} /> 
           {/* Hamburger menu */}
           <h1></h1>
           <button

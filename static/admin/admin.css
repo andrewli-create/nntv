@@ -132,7 +132,7 @@ main ul li a h2 {
 }
 
 .ReactModalPortal > div > div > div:nth-child(2) div[tabindex="0"] > div > div{
-    /* background-image: linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)), linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)); */
+    background-image: linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230)), linear-gradient(45deg, rgb(230, 230, 230) 25%, rgba(230, 230, 230,0.6) 25%, rgba(230, 230, 230,0.6) 75%, rgb(230, 230, 230) 75%, rgb(230, 230, 230));
     background-color: red;
 }
 

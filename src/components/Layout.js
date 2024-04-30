@@ -8,6 +8,7 @@ import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import "../style/override-style.css";
 import "../style/custom-style-css.css";
+import "../style/al-style.css";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
