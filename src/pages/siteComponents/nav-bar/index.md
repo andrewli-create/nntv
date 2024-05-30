@@ -9,25 +9,21 @@ navItem:
     subNavItem: []
     navItemToggle: true
   - pageName: About
-    pageURL: /about
+    pageURL: /our-vision
     navItemToggle: true
     subNavItem:
       - subPageName: Our Vision
         subPageURL: /our-vision
       - subPageName: Our Values
         subPageURL: /our-vision#our-values
+      - subPageURL: /our-vision#our-team
+        subPageName: Our Team
   - pageName: Course
     pageURL: /under-construction
     navItemToggle: true
     subNavItem:
-      - subPageName: Mixing
-        subPageURL: /
-      - subPageName: Mastering
-        subPageURL: /
-      - subPageName: EQ
-        subPageURL: /
-      - subPageName: Compression
-        subPageURL: /
+      - subPageName: Introduction to Music Technology 101
+        subPageURL: /course/introduction-to-music-technology-101
   - pageName: Contact
     pageURL: /under-construction
     navItemToggle: true

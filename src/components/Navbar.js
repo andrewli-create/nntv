@@ -65,7 +65,7 @@ const NavBar = () => {
   // console.log(brandLogo);
   // console.log("data", data);
   return (
-    <NavBarMain data={data} mode={0}/>
+    <NavBarMain data={data} preview={0}/>
   );
 };
 

@@ -2,7 +2,7 @@
 @import "~bulma"
 
 .page-wrapper
-  height: 100vh
+  min-height: 100vh
   max-height: 2000px
 
 .display-none
@@ -157,7 +157,13 @@ footer.footer
   border-bottom: dashed 0.2px black
   width: 100px
 
-.sub-navbar-item a
+.sub-navbar-item-wide
+  text-align: center
+  padding: 5px 5px 5px 5px
+  border-bottom: dashed 0.2px black
+  width: 200px
+
+.sub-navbar-item a, .sub-navbar-item-wide a
   color: black
   text-decoration: none
 

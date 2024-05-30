@@ -38,6 +38,9 @@ export const IndexPageTemplate = ({data}) => {
               <div className="display-flex d-flex-sb">
                 <div className="placeholder-block al-round-border" style={{height: "500px", width: "70%"}}>
                   <img className="deco-image" src={pianoTopView}/>
+                  {/* <video width="100%" height="100%" controls >
+                    <source src={data.markdownRemark.frontmatter.movie.publicURL} type="video/mp4"/>
+                  </video> */}
                 </div>
                 {/* backgroundImage: `url(${pianoTopView})`} */}
                 <div className="placeholder-block al-round-border" style={{height: "500px", width: "25%"}}>
@@ -108,6 +111,11 @@ export const pageQuery = graphql`
         }
         heading
         subheading
+        movie {
+          id
+          relativePath
+          publicURL
+        }
         mainpitch {
           title
           description

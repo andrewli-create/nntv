@@ -18,6 +18,13 @@ collections:
     label: "Site Components"
     preview: true
     files:
+      - file: "src/pages/siteComponents/seo/index.md"
+        label: "SEO"
+        name: "seo"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: string }
+          - { label: "Site Description", name: "siteDescription", widget: string }
+          - { label: "Favicon Color", name: "faviconColor", widget: color, picker: sketch, enableAlpha: false }
       - file: "src/pages/siteComponents/nav-bar/index.md"
         label: "Navigation Bar"
         name: "nav-bar"
@@ -80,7 +87,6 @@ collections:
         name: "branding"
         fields:
           - { label: "Logo Image", name: "logoImage", widget: image }
-      
 
   - name: "blog"
     label: "Blog"
@@ -101,6 +107,51 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+  
+  - name: "course"
+    label: "Course"
+    folder: "src/pages/course"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "course",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Introduction", name: "introduction", widget: "text" }
+      - { label: "Duration (Min)", name: "duration", widget: "number" }
+      - { 
+          name: "level",
+          label: "Level",
+          widget: inline-select,
+          required: false,
+          options:
+            [
+              { label: Beginner, value: beginner},
+              { label: Intermediate, value: intermediate},
+              { label: Advanced, value: advanced},
+            ]
+        }
+      - { label: "Number of Modules", name: "numberofmodules", widget: "number", required: false }
+      - { label: "Resources", name: "resources", widget: "string", required: false }
+      - { label: "Require Access To", name: "Requireaccessto", widget: "string", required: false }
+      - { label: "About", name: "about", widget: "text", required: false }
+      - { label: "Outcomes", name: "outcomes", widget: "text", required: false }
+      - {
+          label: Modules,
+          name: modules,
+          widget: list,
+          fields:
+            [
+              { label: "Modules Title", name: "modulestitle", widget: string },
+              { label: "Video Link", name: "videolink", widget: string },
+              { label: "Script", name: "script", widget: text },
+              { label: "Credit & Info", name: "creditandinfo", widget: text },
+            ]
+        }
 
   - name: "pages"
     label: "Pages"
@@ -116,91 +167,11 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
+          - { label: Movie, name: movie, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Keywords,
-              name: keywords,
-              widget: list,
-              fields:
-                [
-                  { label: Word, name: word, widget: string },
-                ],
-            }
           - { label: "Yellow Title", name: yellowtitle, widget: string }
-          - { label: "Yellow Paragraph", name: yellowparagraph, widget: string }
+          - { label: "Yellow Paragraph", name: yellowparagraph, widget: text }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -225,7 +196,7 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Featured Image", name: "featuredimage", widget: image }
-          - { label: "Opening Paragraph", name: "openingparagraph", widget: "string" }
+          - { label: "Opening Paragraph", name: "openingparagraph", widget: "text" }
           - { label: "Opening Tagline", name: "openingtagline", widget: "string" }
           - { label: "Secondary Title", name: "secondarytitle", widget: "string" }
           - { label: "Secondary Tagline", name: "secondarytagline", widget: "string" }
@@ -236,11 +207,37 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: "Value Image", name: "valueimage", widget: image },
                   { label: "Value Title", name: "valuetitle", widget: string },
                   { label: "Value Paragraph", name: "valueparagraph", widget: string },
+                  { label: "Value Image", name: "valueimage", widget: image },
                 ]
             }
+          - { label: "Tertiary Title", name: "tertiarytitle", widget: "string" }
+          - { label: "Tertiary Paragraph", name: "tertiaryparagraph", widget: "text" }
+          - {
+              label: Members,
+              name: members,
+              widget: list,
+              fields:
+                [
+                  { label: "Member Name", name: "membername", widget: string },
+                  { label: "Member Bio", name: "memberbio", widget: text, required: false },
+                  { 
+                    name: "memberimagealign",
+                    label: "Member Image Alignment",
+                    widget: inline-select,
+                    required: false,
+                    options:
+                      [
+                        { label: Left, value: left},
+                        { label: Center, value: center},
+                        { label: Right, value: right},
+                      ]
+                  },
+                  { label: "Member Image", name: "memberimage", widget: image, required: false },
+                ]
+            }
+            
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"

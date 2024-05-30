@@ -5,19 +5,46 @@ import NavBar from "./Navbar";
 import "../style/bulma-style.sass";
 import "../style/custom-style.sass";
 import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
+import { withPrefix, graphql, useStaticQuery } from "gatsby";
 import "../style/override-style.css";
 import "../style/custom-style-css.css";
 import "../style/al-style.css";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
+  const data = useStaticQuery(graphql`
+    query brandingQuery {
+      allMarkdownRemark(
+        filter: {
+          frontmatter: {
+            title: { in: ["SEO"] }
+          }
+        }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              faviconColor
+              siteTitle
+              siteDescription
+            }
+          }
+        }
+      }
+    }`
+  )
+
+  console.log("branding", data.allMarkdownRemark.edges[0]);
+  const faviconColor = data.allMarkdownRemark.edges[0].node.frontmatter.faviconColor;
+  const siteTitle = data.allMarkdownRemark.edges[0].node.frontmatter.siteTitle;
+  const siteDescription = data.allMarkdownRemark.edges[0].node.frontmatter.siteDescription;
   return (
     <div className="page-wrapper">
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
 
         <link
           rel="apple-touch-icon"
@@ -40,12 +67,13 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="mask-icon"
           href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
-          color="#ff4400"
+          // color="#ff4400"
+          color={faviconColor}
         />
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={siteTitle} />
         <meta property="og:url" content="/" />
         <meta
           property="og:image"

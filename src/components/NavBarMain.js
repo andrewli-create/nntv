@@ -7,7 +7,7 @@ import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 import $ from 'jquery';
 // title: { eq:"NavBar, Branding" }
 
-const NavBarMain = ({data, mode}) => {
+const NavBarMain = ({data, preview}) => {
   const [isActive, setIsActive] = useState(false);
   console.log("nav-data-full", data);
   console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
@@ -19,12 +19,11 @@ const NavBarMain = ({data, mode}) => {
   // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
   // console.log("brandLogo", data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src);
   var brandLogo;
-  if (mode == 0) {
+  if (preview == 0) {
     brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
   } else {
     brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
   }
-  
   
   // console.log("data", data);
   useEffect(() => {
@@ -84,7 +83,7 @@ const NavBarMain = ({data, mode}) => {
                       <ul className="sub-navbar sub-navbar-hidden preview-hover">
                         {item.subNavItem
                           ? (item.subNavItem.map((itemInner, index) => (
-                            <li className="sub-navbar-item">
+                            <li className={itemInner.subPageName.length < 20 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
                               <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
                                 {itemInner.subPageName}
                               </Link>
