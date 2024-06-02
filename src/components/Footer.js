@@ -24,7 +24,7 @@ const Footer = () => {
                 <img className="footer-logo" style={{width: "80px", marginBottom: "40px"}} src={footerLogoLarge}/>
                 <h5 className="footer-left-title">No Need to Vanish</h5>
                 <p>
-                  Hi! We are team NNTV, a diverse collective of composers, musicians, and creators who provides an online learning source that is practical, accessible, and innovative
+                  Hi! We are team NNTV, a diverse collective of composers, musicians, and creators who provides an online learning source that is practical, accessible, and innovative.
                 </p>
               </div>
             </div>
