@@ -9,5 +9,5 @@ script: "*Voiceover: \"Welcome to our Home Music Production Guide! In this
   computer, the core of your music production setup for recording, composing,
   arranging, and mixing music. Make sure it meets your DAW’s requirements.\"
   [Quick shot of a computer]"
-creditandinfo: Jeff
+creditandinfo: Josh
 ---
