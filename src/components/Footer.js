@@ -31,7 +31,14 @@ const Footer = () => {
             <div className="col-md-4 col-sm-12 sub-email-wrapper">
               <div className="sub-email-box display-flex d-flex-c d-flex-col footer-block">
                 <h5 className="footer-center-title">Let's get in touch!</h5>
-                <form className="sub-email-form display-flex d-flex-c" method="post" data-netlify="true">
+                <form 
+                  name="subscribe"
+                  method="post"
+                  action="/thanks/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  className="sub-email-form display-flex d-flex-c"
+                >
                   <input type="hidden" name="form-name" value="subscribe" />
                   <input className="sub-email-text-input" type="text" id="sub-email" name="sub-email" placeholder="Enter your email Address"/>
                   <input className="button-generic sub-email-button" type="submit" value="Submit"/>
