@@ -19,7 +19,8 @@ setTimeout(() => {
     startTime();
 }, "100");
 
-$( "html" ).on( "click", "*[role*='menuitem']", function() {
+$( "html" ).on( "click", "*[role='menuitem']", function() {
+  alert("Logged out.");
   setTimeout(() => {
     window.location.reload();
   }, "500");
@@ -39,10 +40,12 @@ function startTime() {
   let s = "0" + today.getSeconds();
   m = checkTime(m);
   s = checkTime(s);
-  if (s % 2 == 0) {
-    document.getElementById('txt').innerHTML =  h.slice(-2) + ":" + m.slice(-2);
-  } else {
-    document.getElementById('txt').innerHTML =  h.slice(-2) + " " + m.slice(-2);
+  if (document.getElementById('txt')) {
+    if (s % 2 == 0) {
+      document.getElementById('txt').innerHTML =  h.slice(-2) + ":" + m.slice(-2);
+    } else {
+      document.getElementById('txt').innerHTML =  h.slice(-2) + " " + m.slice(-2);
+    }
   }
   
   setTimeout(startTime, 1000);
