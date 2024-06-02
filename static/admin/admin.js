@@ -19,6 +19,11 @@ setTimeout(() => {
     startTime();
 }, "100");
 
+$( "html" ).on( "click", "*[role*='menuitem']", function() {
+  setTimeout(() => {
+    window.location.reload();
+  }, "500");
+});
 
 // (function() {
 //     alert("Hello world");
