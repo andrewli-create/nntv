@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { Link } from "gatsby";
 
 import logo from "../img/logo.svg";
@@ -22,27 +23,48 @@ function encode(data) {
 const Footer = () => {
 
   const [state, setState] = React.useState({})
+  const [validEmail, setValidEmail] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
 
   const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
+    // setState({ ...state, [e.target.name]: e.target.value })
+    if (validateEmail(e.target.value)) {
+      setValidEmail(true);
+    } else {
+      setValidEmail(false);
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
-      }),
-    })
-      .then(() => {
-        // navigate(form.getAttribute('action'))
-        alert("Thank you for signing up for our newsletter!");
+    if (validEmail) {
+      const form = e.target
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...state,
+        }),
       })
-      .catch((error) => alert(error))
+        .then(() => {
+          // navigate(form.getAttribute('action'))
+          alert("Thank you for signing up for our newsletter!");
+          setFormSubmitted(true);
+        })
+        .catch((error) => alert(error))
+    } else {
+      alert("Please enter a valid email address.");
+    }
+    
   }
   
   return (
@@ -61,18 +83,27 @@ const Footer = () => {
           <div className="col-md-4 col-sm-12 sub-email-wrapper">
             <div className="sub-email-box display-flex d-flex-c d-flex-col footer-block">
               <h5 className="footer-center-title">Let's get in touch!</h5>
-              <form 
-                name="subscribe"
-                method="post"
-                action="/thanks/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className="sub-email-form display-flex d-flex-c"
-              >
-                <input type="hidden" name="form-name" value="subscribe" />
-                <input className="sub-email-text-input" type="text" id="sub-email" name="sub-email" placeholder="Enter your email Address"/>
-                <input className="button-generic sub-email-button" type="submit" value="Submit"/>
-              </form> 
+              {formSubmitted ? 
+                <></>
+              :
+                <form 
+                  name="subscribe"
+                  method="post"
+                  action="/thanks/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="sub-email-form display-flex d-flex-c"
+                >
+                  <input type="hidden" name="form-name" value="subscribe" />
+                  <input className="sub-email-text-input" type="text" id="sub-email" name="sub-email" placeholder="Enter your email Address" onChange={handleChange}/>
+                  {
+                    formSubmitted ? <></> 
+                    :
+                    <input className={validEmail ? "button-generic sub-email-button" : "button-generic sub-email-button sub-email-button-disabled"} type="submit" value="Submit" disabled={!validEmail}/>
+                  }
+                </form>
+              }
             </div>
           </div>
           <div className="col-md-4 col-sm-12">

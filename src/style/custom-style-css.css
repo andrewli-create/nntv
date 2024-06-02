@@ -451,6 +451,11 @@ h1 {
     filter: brightness(1.2);
 }
 
+.sub-email-button-disabled {
+    filter: grayscale();
+    pointer-events: none;
+}
+
 .social-icon-wrapper {
     display: flex;
     justify-content: flex-end;
