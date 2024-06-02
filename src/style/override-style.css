@@ -9,11 +9,16 @@ html {
 }
 
 .container {
-    min-height: 85vh;
+    /* min-height: 85vh; */
 }
 
 .footer {
     min-height: 100px;
+    padding-bottom: 20px;
+}
+
+footer.footer {
+    padding-bottom: 80px;
 }
 
 .navbar {

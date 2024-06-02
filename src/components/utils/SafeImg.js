@@ -5,6 +5,7 @@ import $ from 'jquery';
 import Img from "gatsby-image"
 
 const SafeImg = ({inputObj, inputAlt}) => {
+  console.log("SafeImg Received: ", inputObj);
   return (
     <>
         {inputObj ? 

@@ -118,10 +118,11 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "course",
+          default: "course-page",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Introduction", name: "introduction", widget: "text" }
+      - { label: "Course Thumbnail", name: "coursethumbnail", widget: image }
       - { label: "Duration (Min)", name: "duration", widget: "number" }
       - { 
           name: "level",
@@ -146,12 +147,39 @@ collections:
           widget: list,
           fields:
             [
-              { label: "Modules Title", name: "modulestitle", widget: string },
-              { label: "Video Link", name: "videolink", widget: string },
-              { label: "Script", name: "script", widget: text },
-              { label: "Credit & Info", name: "creditandinfo", widget: text },
+              { label: "Lessons",
+                name: "lessons",
+                widget: relation,
+                collection: "module",
+                displayFields: ["title"],
+                searchFields: ["title"],
+                valueField: "title"
+              }
             ]
         }
+      
+    
+  - name: "module"
+    label: "Module"
+    folder: "src/pages/module"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      [
+        {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "module-page",
+        },
+        { label: "Title", name: "title", widget: string },
+        { label: "Video Thumbnail", name: "videothumbnail", widget: image },
+        { label: "Video Link", name: "videolink", widget: string },
+        { label: "Script", name: "script", widget: text },
+        { label: "Credit & Info", name: "creditandinfo", widget: text },
+      ]
+      
+
 
   - name: "pages"
     label: "Pages"

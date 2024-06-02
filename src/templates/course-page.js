@@ -23,8 +23,17 @@ import modules from "../img/modules.svg"
 // eslint-disable-next-line
 export const CoursePageTemplate = ({data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
+  console.log("all data", data);
   console.log("front-matter-Course", data.markdownRemark.frontmatter);
   var dataPack = data.markdownRemark.frontmatter;
+  var lessonsPack;
+  if (data.lessons) {
+    console.log("front-matter-Course-lessons", data.lessons.nodes);
+    lessonsPack = data.lessons.nodes;
+  } else {
+    // lessonsPack = dataPack.modules;
+  }
+  
   return (
     // <div className="text-css">
     //   {data.markdownRemark.frontmatter.title}
@@ -33,23 +42,23 @@ export const CoursePageTemplate = ({data}) => {
       <div className="container">
         <div className="row al-mt-20">
           <div className="col-md-7">
-            <div className="course-block display-flex d-flex-c d-flex-col">
-                <div>
+            <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
+                <div className="intro-course-block-content">
                   <h2 style={{fontSize: "20px", fontWeight: "bold"}}>
                     {dataPack.title}
                   </h2>
                   <p>
                     {dataPack.introduction}
                   </p>
-                  <a href="/">
+                  <a href="#modules">
                     <button className="button-generic">Start Now →</button>
                   </a>
                 </div>
             </div>
           </div>
           <div className="col-md-5">
-            <div className="course-block mobile-top-spacing">
-              
+            <div className="course-block mobile-top-spacing" style={{padding: 0, overflow: "hidden"}}>
+              <SafeImg inputObj={dataPack.coursethumbnail}/>
             </div>
           </div>
         </div>
@@ -82,7 +91,7 @@ export const CoursePageTemplate = ({data}) => {
             </div>
           </div>
         </div>
-        <div className="row al-mt-20">
+        <div id="modules" className="row al-mt-20">
           <div className="col-md-12">
             <div className="course-block">
               <img src={modules}/>
@@ -90,14 +99,21 @@ export const CoursePageTemplate = ({data}) => {
               <hr/>
               <section>
                 <div className="row">
-                  {dataPack.modules
-                    ? (dataPack.modules.map((module, index) => (
+                  {lessonsPack
+                    ? (lessonsPack.map((lesson, index) => (
                       <div className="col-md-4 col-sm-6">
-                        <div className="video-block">
-                          <div className="video-overlay"></div>
-                          <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{module.modulestitle}</h6>
-                          <iframe style={{width: "100%"}} src={module.videolink + '?frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen'}></iframe>
-                        </div>
+                        <a href={"/module/" + lesson.frontmatter.title.replace(/ /g,"-").toLowerCase()}>
+                          <div className="video-block">
+                            <SafeImg inputObj={lesson.frontmatter.videothumbnail}/>
+                            <div className="video-overlay"></div>
+                            <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.frontmatter.title}</h6>
+                            {/* <iframe style={{width: "100%"}} src={module.videolink + '?frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen'}></iframe> */}
+                            {/* <iframe style={{width: "100%"}} src={module.videolink + '?modestbranding=1&autohide=1&showinfo=0&controls=0'}></iframe> */}
+                            
+                            {/* {console.log("LOG", module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src)} */}
+                            {/* <img src={module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src}/> */}
+                          </div>
+                        </a>
                       </div>
                     )))
                     : <h5>No modules are currently available.</h5>
@@ -138,7 +154,7 @@ const CoursePage = ({ data }) => {
   // }, []);
   // const { frontmatter } = data.markdownRemark;
   // console.log(data.markdownRemark.frontmatter.title);
-  console.log("index data", data);
+  // console.log("index data", data);
   return (
     <Layout>
       <CoursePageTemplate data={data}/>
@@ -163,11 +179,37 @@ export const pageQuery = graphql`
         Requireaccessto
         about
         outcomes
-        modules {
-          modulestitle
+        coursethumbnail {
+          childImageSharp {
+            gatsbyImageData(
+              quality: 100
+              placeholder: NONE
+              width: 200
+            )
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    lessons: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "module-page"}}}) {
+      nodes {
+        frontmatter {
+          title
           videolink
-          script
-          creditandinfo
+          videothumbnail  {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: NONE
+                width: 200
+              )
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

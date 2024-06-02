@@ -3,6 +3,7 @@ templateKey: course-page
 title: Introduction to Music Technology 101
 introduction: Start at the beginning by learning Intro to Gears - an important
   foundation for creating music.
+coursethumbnail: /img/thumbnail.png
 duration: 25
 level: beginner
 numberofmodules: 10
@@ -16,34 +17,6 @@ outcomes: • Understand basic concepts of music production, including MIDI, E
   and Reverb • Learn about music production equipment • Start your music
   production journey
 modules:
-  - modulestitle: Intro to home studio gears
-    videolink: https://www.youtube.com/embed/rgKA93A6_j0?si=L0PZLdLNgp9f4t1Y
-    script: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-      venenatis, ipsum suscipit ornare sodales, sem magna ullamcorper lacus,
-      pretium porttitor dui mauris id ligula. Nulla ac volutpat mauris.
-      Suspendisse fermentum arcu in lectus blandit, in molestie diam tincidunt.
-      Fusce ut nisl sagittis, dapibus lectus eget, fermentum est. Cras neque ex,
-      ultrices vitae lacus a, ultrices finibus neque. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Fusce rhoncus tortor nec lorem
-      vestibulum facilisis. Sed scelerisque pellentesque ligula, sit amet
-      egestas lorem dignissim vel. Integer dapibus ligula quis urna rhoncus
-      porta. In hac habitasse platea dictumst. Fusce ut eros malesuada augue
-      dignissim suscipit. Pellentesque vitae venenatis massa. Interdum et
-      malesuada fames ac ante ipsum primis in faucibus. Sed ac tempus urna.
-    creditandinfo: Josh Weinfeld
-  - modulestitle: Intro to Signal Flow
-    videolink: https://www.youtube.com/embed/rgKA93A6_j0?si=L0PZLdLNgp9f4t1Y
-    script: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-      venenatis, ipsum suscipit ornare sodales, sem magna ullamcorper lacus,
-      pretium porttitor dui mauris id ligula. Nulla ac volutpat mauris.
-      Suspendisse fermentum arcu in lectus blandit, in molestie diam tincidunt.
-      Fusce ut nisl sagittis, dapibus lectus eget, fermentum est. Cras neque ex,
-      ultrices vitae lacus a, ultrices finibus neque. Lorem ipsum dolor sit
-      amet, consectetur adipiscing elit. Fusce rhoncus tortor nec lorem
-      vestibulum facilisis. Sed scelerisque pellentesque ligula, sit amet
-      egestas lorem dignissim vel. Integer dapibus ligula quis urna rhoncus
-      porta. In hac habitasse platea dictumst. Fusce ut eros malesuada augue
-      dignissim suscipit. Pellentesque vitae venenatis massa. Interdum et
-      malesuada fames ac ante ipsum primis in faucibus. Sed ac tempus urna.
-    creditandinfo: Chris Wein
+  - lessons: Intro to home studio gears
+  - lessons: Intro to Signal Flow
 ---

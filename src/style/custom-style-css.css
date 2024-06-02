@@ -25,7 +25,27 @@ body {
     }
 }
 
-    
+@media only screen and (max-width: 768px) {
+    .index-intro-block {
+        margin-bottom: 20px;
+    }
+    .value-wrapper {
+        margin-bottom: 50px;
+    }
+}
+
+.welcome-to-nntv {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+
+
+h1 {
+    font-size: 30px !important;
+}
 
 .placeholder-block {
   background-color: #D9D9D9;
@@ -245,10 +265,8 @@ body {
     background-color: #D9D9D9;
 }
 
-@media only screen and (max-width: 768px) {
-    .mobile-top-spacing {
-        margin-top: 20px;
-    }
+.intro-course-block-content * {
+    margin-top: 15px;
 }
 
 .course-block {
@@ -282,6 +300,23 @@ body {
     margin-bottom: 15px;
 }
 
+@media only screen and (max-width: 768px) {
+    .mobile-top-spacing {
+        margin-top: 20px;
+    }
+    .course-block {
+        padding: 10px 2px;
+    }
+    .element-block > div {
+        width: 100% !important;
+    }
+    .course-element-info-wrapper h6, .course-element-info-wrapper span {
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+
 .block-min-300 {
     padding-top: 30px;
     min-height: 300px;
@@ -306,7 +341,7 @@ body {
 }
 
 .video-overlay {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.55);
     position: absolute;
     top: 0;
     left: 0;
@@ -322,6 +357,125 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    width: 70%;
+    width: 80%;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.notepad-textarea {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.interactive-block > div, .credit-block > div {
+    height: 100%;
+}
+
+@media only screen and (max-width: 575px) {
+    .interactive-block{
+        margin-top: 20px;
+    }
+}
+
+.module-title-display {
+    text-align: center;
+    font-size: 40px !important;
+}
+
+@media only screen and (max-width: 766px) {
+    .credit-block {
+        margin-top: 20px;
+    }
+}
+
+.footer-logo {
+    /* -webkit-box-shadow: 0px 0px 15px 6px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 15px 6px rgba(255,255,255,1);
+    box-shadow: 0px 0px 15px 6px rgba(255,255,255,1); */
+    -webkit-filter: drop-shadow(0px 0px 8px, rgba(255, 255, 255, 1));
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 1));
+}
+
+.footer-left-title, .footer-center-title, .footer-right-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.sub-email-box {
+    height: 100%;
+}
+
+@media only screen and (max-width: 766px) {
+    .sub-email-wrapper {
+        margin-top: 30px;
+    }
+}
+
+.footer-center-title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.footer-right-title {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.sub-email-text-input {
+    border-radius: 5px 0 0 5px !important;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+
+.sub-email-button {
+    background-color: #FFBD12 !important;
+    border-radius: 0 5px 5px 0 !important;
+    border: none !important;
+}
+
+.sub-email-button:hover {
+    filter: brightness(1.2);
+}
+
+.social-icon-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icon {
+    margin-left: 20px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-block, .footer-block p, .footer-block h5, .footer-block span {
+        text-align: center;
+    }
+
+    .footer-block .contact-item, .footer-block .social-icon-wrapper {
+        justify-content: center;
+    }
+
+    .footer-block .social-icon {
+        margin: 0;
+        padding: 0px 10px;
+    }
+
+    .footer-right-title {
+        margin-top: 20px;
+    }
 }

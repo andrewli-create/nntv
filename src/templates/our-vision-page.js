@@ -38,7 +38,7 @@ export const OurVisionPageTemplate = ({data}) => {
             </div>
           </div>
         </section>
-        <hr/>
+        <hr style={{background: "black"}}/>
         <section id="our-values" className="al-mt-40">
           <h1 className="al-text-align-c">{data.markdownRemark.frontmatter.secondarytitle}</h1>
           <p className="al-text-align-c">{data.markdownRemark.frontmatter.secondarytagline}</p>
@@ -73,6 +73,7 @@ export const OurVisionPageTemplate = ({data}) => {
             </div>
           </div>
         </section>
+        <hr style={{background: "black"}}/>
         <section id="our-team" className="al-mt-40">
           <h1 className="al-text-align-c">{data.markdownRemark.frontmatter.tertiarytitle}</h1>
           <p className="al-text-align-c">{data.markdownRemark.frontmatter.tertiaryparagraph}</p>

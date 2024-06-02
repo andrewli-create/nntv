@@ -19,17 +19,13 @@ navItem:
       - subPageURL: /our-vision#our-team
         subPageName: Our Team
   - pageName: Course
-    pageURL: /under-construction
+    pageURL: /course/introduction-to-music-technology-101
     navItemToggle: true
     subNavItem:
       - subPageName: Introduction to Music Technology 101
         subPageURL: /course/introduction-to-music-technology-101
   - pageName: Contact
-    pageURL: /under-construction
+    pageURL: "#footer"
     navItemToggle: true
-    subNavItem:
-      - subPageName: Email
-        subPageURL: /
-      - subPageName: Tel
-        subPageURL: /
+    subNavItem: []
 ---

@@ -8,6 +8,8 @@ import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import NavBarPreview from './preview-templates/NavBarPreview'
 import OurVisionPagePreview from './preview-templates/OurVisionPagePreview'
+import CoursePagePreview from './preview-templates/CoursePagePreview'
+
 import UnderConstructionPagePreview from './preview-templates/UnderConstructionPagePreview'
 import { ColorControl, ColorPreview } from "netlify-cms-widget-colorpicker";
 import $ from 'jquery';
@@ -26,6 +28,7 @@ CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('our-vision', OurVisionPagePreview)
+CMS.registerPreviewTemplate('course', CoursePagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('nav-bar', NavBarPreview)
 CMS.registerPreviewTemplate('under-construction', UnderConstructionPagePreview)

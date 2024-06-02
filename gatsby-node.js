@@ -29,9 +29,13 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
+    // const modules = result.data.allMarkdownRemark.edges.node[0].frontmatter.modules
+    console.log("Unique Test", result.data.allMarkdownRemark.edges);
     var pageSkipped = 0;
     posts.forEach((edge) => {
       const id = edge.node.id
+      // console.log("Unique Module", edge.node.frontmatter.modules);
+      
       if (edge.node.frontmatter.templateKey != null && edge.node.frontmatter.templateKey != "" && edge.node.frontmatter.templateKey != " ") {
         createPage({
           path: edge.node.fields.slug,
@@ -47,6 +51,24 @@ exports.createPages = ({ actions, graphql }) => {
       } else {
         pageSkipped++;
       }
+      // if (edge.node.frontmatter.modules != null) {
+      //   edge.node.frontmatter.modules.forEach((module) => {
+      //     var modulePath = module.modulestitle.replace(/ /g,"-");
+      //     createPage({
+      //       path: modulePath,
+      //       component: path.resolve(
+      //         `src/templates/module-page.js`
+      //       ),
+      //       // additional data can be passed via context
+      //       context: {
+      //         id,
+      //         house: `Gryffindor`,
+      //         modulestitle: module.modulestitle,
+      //       },
+      //     })
+      //   })
+      // }
+      
     })
 
     console.log(pageSkipped + " pages were omitted.");

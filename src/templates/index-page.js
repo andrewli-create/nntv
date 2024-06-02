@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({data}) => {
       <div className="container-fluid vertical-white-space-top al-no-pad-horizonal">
         <section className="section-center al-mt-40">
           <div className="row">
-            <div className="col-md-6 d-flex-col d-flex d-flex-c">
+            <div className="col-md-6 d-flex-col d-flex d-flex-c index-intro-block">
               <h1 className="al-title-text">No Need to Vanish</h1>
               <p>
                 Beyond Boundaries<br/>
@@ -30,9 +30,12 @@ export const IndexPageTemplate = ({data}) => {
                   Inspiring the Next Wave of Musical Visionaries
                 </span>
               </p>
-              <button className="button-generic">
-                Course
-              </button>
+                <button className="button-generic" style={{marginTop: "20px"}}>
+                  <a href="/course/introduction-to-music-technology-101" style={{color: "black"}}>
+                    Course
+                  </a>
+                </button>
+              
             </div>
             <div className="col-md-6">
               <div className="display-flex d-flex-sb">
@@ -53,7 +56,7 @@ export const IndexPageTemplate = ({data}) => {
         <section className="yellow-bar al-mt-40">
           <div className="section-center">
             <div className="row vertical-white-space-large">
-              <div className="col-md-6 d-flex-row d-flex d-flex-sb">
+              <div className="col-md-6 d-flex-row d-flex d-flex-sb value-wrapper">
               {data.markdownRemark.frontmatter.keywords
                 ? (data.markdownRemark.frontmatter.keywords.map((keyword, index) => (
                   <div className="keyword-box">
@@ -65,7 +68,7 @@ export const IndexPageTemplate = ({data}) => {
               </div>
               <div className="col-md-1"></div>
               <div className="col-md-5">
-                <h2>{data.markdownRemark.frontmatter.yellowtitle}</h2>
+                <h2 className="welcome-to-nntv">{data.markdownRemark.frontmatter.yellowtitle}</h2>
                 <p>{data.markdownRemark.frontmatter.yellowparagraph}</p>
               </div>
             </div>

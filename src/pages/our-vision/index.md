@@ -88,5 +88,6 @@ members:
       compositions that span an array of genres. 
     memberimage: /img/yun.jpeg
   - membername: Andrew Li
-  - membername: People
+  - membername: EMMA DELLA ROSSA
+  - membername: Lifia Teguh
 ---

@@ -4,7 +4,7 @@
 
 .al-title-text {
     font-weight: bold;
-    font-size: 70px;
+    font-size: 70px !important;
     text-transform: uppercase;
     margin-bottom: 25px;
 }
