@@ -95,7 +95,7 @@ const FooterMain = ({data}) => {
                   onSubmit={handleSubmit}
                   className="sub-email-form display-flex d-flex-c"
                 >
-                  <input type="hidden" name="form-name" value="subscribe" />
+                  <input type="hidden" name="form-name" value="subscribe-newsletter" />
                   <input className="sub-email-text-input" type="text" id="sub-email" name="sub-email" placeholder={midBlock.placholdertext} onChange={handleChange}/>
                   {
                     formSubmitted ? <></> 
