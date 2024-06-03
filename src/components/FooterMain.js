@@ -35,7 +35,7 @@ const FooterMain = ({data}) => {
   };
 
   const handleChange = (e) => {
-    // setState({ ...state, [e.target.name]: e.target.value })
+    setState({ ...state, [e.target.name]: e.target.value })
     if (validateEmail(e.target.value)) {
       setValidEmail(true);
     } else {
@@ -87,7 +87,7 @@ const FooterMain = ({data}) => {
                 <></>
               :
                 <form 
-                  name="subscribe-newsletter"
+                  name="subscribe"
                   method="post"
                   action="/thanks/"
                   data-netlify="true"
@@ -95,7 +95,7 @@ const FooterMain = ({data}) => {
                   onSubmit={handleSubmit}
                   className="sub-email-form display-flex d-flex-c"
                 >
-                  <input type="hidden" name="form-name" value="subscribe-newsletter" />
+                  <input type="hidden" name="form-name" value="subscribe" />
                   <input className="sub-email-text-input" type="text" id="sub-email" name="sub-email" placeholder={midBlock.placholdertext} onChange={handleChange}/>
                   {
                     formSubmitted ? <></> 
