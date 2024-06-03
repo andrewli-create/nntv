@@ -17,6 +17,6 @@ outcomes: • Understand basic concepts of music production, including MIDI, E
   and Reverb • Learn about music production equipment • Start your music
   production journey
 modules:
-  - lessons: Intro to home studio gears
+  - lessons: Intro to Home Studio Gears
   - lessons: Intro to Signal Flow
 ---

@@ -101,20 +101,33 @@ export const CoursePageTemplate = ({data}) => {
                 <div className="row">
                   {lessonsPack
                     ? (lessonsPack.map((lesson, index) => (
-                      <div className="col-md-4 col-sm-6">
-                        <a href={"/module/" + lesson.frontmatter.title.replace(/ /g,"-").toLowerCase()}>
-                          <div className="video-block">
-                            <SafeImg inputObj={lesson.frontmatter.videothumbnail}/>
-                            <div className="video-overlay"></div>
-                            <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.frontmatter.title}</h6>
-                            {/* <iframe style={{width: "100%"}} src={module.videolink + '?frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen'}></iframe> */}
-                            {/* <iframe style={{width: "100%"}} src={module.videolink + '?modestbranding=1&autohide=1&showinfo=0&controls=0'}></iframe> */}
-                            
-                            {/* {console.log("LOG", module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src)} */}
-                            {/* <img src={module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src}/> */}
-                          </div>
-                        </a>
-                      </div>
+                      <>
+                        {console.log("Valid A", dataPack.modules)}
+                        {console.log("Valid B", lesson.frontmatter.title)}
+                        {console.log("Valid C", dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))}
+                        {
+                          ((dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))) ?
+                          <>
+                            <div className="col-md-4 col-sm-6">
+                              <a href={"/module/" + lesson.frontmatter.title.replace(/ /g,"-").toLowerCase()}>
+                                <div className="video-block">
+                                  <SafeImg inputObj={lesson.frontmatter.videothumbnail}/>
+                                  <div className="video-overlay"></div>
+                                  <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.frontmatter.title}</h6>
+                                  {/* <iframe style={{width: "100%"}} src={module.videolink + '?frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen'}></iframe> */}
+                                  {/* <iframe style={{width: "100%"}} src={module.videolink + '?modestbranding=1&autohide=1&showinfo=0&controls=0'}></iframe> */}
+                                  
+                                  {/* {console.log("LOG", module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src)} */}
+                                  {/* <img src={module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src}/> */}
+                                </div>
+                              </a>
+                            </div>
+                          </>
+                          :
+                          <></>
+                        }
+                      </>
+                      
                     )))
                     : <h5>No modules are currently available.</h5>
                   }
@@ -179,6 +192,9 @@ export const pageQuery = graphql`
         Requireaccessto
         about
         outcomes
+        modules {
+          lessons
+        }
         coursethumbnail {
           childImageSharp {
             gatsbyImageData(

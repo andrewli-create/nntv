@@ -48,7 +48,7 @@ export const IndexPageTemplate = ({data, preview}) => {
             </div>
             <div className="col-md-6">
               <div className="display-flex d-flex-sb">
-                <div className="placeholder-block al-round-border" style={{height: "500px", width: "100%"}}>
+                <div className="placeholder-block al-round-border" style={{height: "300px", width: "100%"}}>
                   {/* <img className="deco-image" src={pianoTopView}/> */}
                   {preview == true ?
                     <div style={{height: "100%"}} className="display-flex d-flex-c d-flex-col">
