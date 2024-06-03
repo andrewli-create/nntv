@@ -7,6 +7,7 @@ import BlogPostPreview from './preview-templates/BlogPostPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import NavBarPreview from './preview-templates/NavBarPreview'
+import FooterPreview from './preview-templates/FooterPreview'
 import OurVisionPagePreview from './preview-templates/OurVisionPagePreview'
 import CoursePagePreview from './preview-templates/CoursePagePreview'
 
@@ -31,4 +32,5 @@ CMS.registerPreviewTemplate('our-vision', OurVisionPagePreview)
 CMS.registerPreviewTemplate('course', CoursePagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('nav-bar', NavBarPreview)
+CMS.registerPreviewTemplate('footer', FooterPreview)
 CMS.registerPreviewTemplate('under-construction', UnderConstructionPagePreview)

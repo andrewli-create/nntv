@@ -27,7 +27,7 @@ tertiarytitle: Our Team
 tertiaryparagraph: We are a diverse collective of musicians and composers
   blending traditional training with contemporary sensibilities.
 members:
-  - membername: Parisa
+  - membername: Parisa Sabet
   - membername: Joshua Weinfeld
     memberbio: Joshua Weinfeld is currently pursuing his master of music degree in
       music technology and digital media at the University of Toronto. Joshua is

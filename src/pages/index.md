@@ -1,10 +1,14 @@
 ---
 templateKey: index-page
 title: No Need to Vanish
-image: /img/home-jumbotron.jpg
-movie: /img/Promo_Draft.mp4
-heading: ---
+heading: Beyond Boundaries
+tagline: Inspiring the Next Wave of Musical Visionaries
+homeslider:
+  - slideimage: /img/grand-piano-top-view.png
+  - slideimage: /img/compressor.jpeg
+  - slideimage: /img/piano.jpeg
 subheading: ---
+yellowtitle: Welcome to NNTV
 mainpitch:
   title: Why Kaldi
   description: >
@@ -12,10 +16,11 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+keywords:
+  - word: Learn
+  - word: Inspire
+  - word: Embrace
+  - word: Create
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -51,6 +56,7 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+movie: /img/Promo_Draft.mp4
 main:
   heading: Great coffee with no compromises
   description: >
@@ -67,12 +73,11 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
-keywords:
-  - word: Learn
-  - word: Inspire
-  - word: Embrace
-  - word: Create
-yellowtitle: Welcome to NNTV
 yellowparagraph: your gateway to a transformative journey where music,
-  technology, and creative intersect
+  technology, and creative intersect.
+image: /img/home-jumbotron.jpg
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 ---

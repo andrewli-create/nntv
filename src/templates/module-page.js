@@ -53,8 +53,8 @@ export const ModulePageTemplate = ({pageContext, data}) => {
           </div>
         </div>
         <div className="row al-mt-20 al-mb-40 ">
-            <div className="col-md-3 col-sm-6">
-              <div className="course-block display-flex d-flex-c d-flex-col">
+            <div className="col-md-3 col-sm-6 notepad-block">
+              <div className="course-block display-flex d-flex-fs d-flex-col">
                 <LessonBlockHeader logo={penPaper} header={"Notepad"}/>
                 <textarea className="notepad-textarea" name="notepad" rows="5"></textarea>
               </div>

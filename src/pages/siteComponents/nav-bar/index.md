@@ -12,12 +12,10 @@ navItem:
     pageURL: /our-vision
     navItemToggle: true
     subNavItem:
-      - subPageName: Our Vision
+      - subPageName: Vision and Values
         subPageURL: /our-vision
-      - subPageName: Our Values
-        subPageURL: /our-vision#our-values
       - subPageURL: /our-vision#our-team
-        subPageName: Our Team
+        subPageName: Team
   - pageName: Course
     pageURL: /course/introduction-to-music-technology-101
     navItemToggle: true

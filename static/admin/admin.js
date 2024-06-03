@@ -16,15 +16,23 @@ setTimeout(() => {
     //   }, "1000");
     // });
 
+    $( "html" ).on( "mouseenter", "*[role='menuitem']", function() {
+      // alert("Logged out.");
+      setTimeout(() => {
+        // window.location.reload();
+      }, "500");
+    });
     startTime();
 }, "100");
 
-$( "html" ).on( "click", "*[role='menuitem']", function() {
-  alert("Logged out.");
-  setTimeout(() => {
-    window.location.reload();
-  }, "500");
-});
+
+
+// $( "html" ).on( "click", "svg", function() {
+//   alert("Logged out.");
+//   setTimeout(() => {
+//     window.location.reload();
+//   }, "500");
+// });
 
 // (function() {
 //     alert("Hello world");

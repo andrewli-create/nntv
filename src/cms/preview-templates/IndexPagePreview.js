@@ -13,7 +13,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   // console.log("STH", dataReform);
   if (dataReform) {
     return (
-      <IndexPageTemplate data={dataReform}/>
+      <IndexPageTemplate data={dataReform} preview={true}/>
     )
   } else {
     return <div>Loading...</div>

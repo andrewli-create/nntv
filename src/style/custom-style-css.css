@@ -377,7 +377,7 @@ h1 {
     box-shadow: none;
 }
 
-.interactive-block > div, .credit-block > div {
+.interactive-block > div, .credit-block > div, .notepad-block > div {
     height: 100%;
 }
 

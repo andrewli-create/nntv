@@ -39,6 +39,7 @@
     "react-helmet": "^6.0.0",
     "react-netlify-identity-widget": "^0.2.7",
     "sass": "^1.43.2",
+    "swiper": "^11.1.4",
     "uuid": "^8.0.0"
   },
   "keywords": [

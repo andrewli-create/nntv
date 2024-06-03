@@ -4,16 +4,31 @@ import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 import $ from 'jquery';
 import Img from "gatsby-image"
 
-const SafeImg = ({inputObj, inputAlt}) => {
+const SafeImg = ({inputObj, inputAlt, imageHeight}) => {
   console.log("SafeImg Received: ", inputObj);
   return (
     <>
         {inputObj ? 
             <>
                 {typeof inputObj === 'object' ? 
-                    <Img className="safe-img-obj" fluid={inputObj.childImageSharp.fluid}/>
+                    <>
+                      {
+                        imageHeight ?
+                          <Img className="safe-img-obj" fluid={inputObj.childImageSharp.fluid} style={{height: imageHeight}}/>
+                        :
+                          <Img className="safe-img-obj" fluid={inputObj.childImageSharp.fluid}/>
+                      }
+                    </>
                     : 
-                    <img className="safe-img" src={inputObj}/>
+                    <>
+                      {
+                        imageHeight ?
+                          <img className="safe-img" src={inputObj} style={{height: imageHeight}}/>
+                        :
+                          <img className="safe-img" src={inputObj} style={{height: imageHeight}}/>
+                      }
+                    </>
+                    
                 }
             </>
             :

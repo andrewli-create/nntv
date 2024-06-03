@@ -82,6 +82,44 @@ collections:
             
             
           ]
+      - file: "src/pages/siteComponents/footer/index.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          [
+            { label: "Footer Color", name: "footercolor", widget: color, picker: sketch, enableAlpha: true },
+            { label: "Introduction Block",
+              name: "introductionblock",
+              widget: "object",
+              collapsed: true,
+              fields: 
+                [
+                  {label: "Introduction Title", name: "introductiontitle", widget: "string"},
+                  {label: "Introduction Paragraph", name: "introductionparagraph", widget: "text"},
+                ]
+            },
+            { label: "Subscribe Block",
+              name: "subscribeblock",
+              widget: "object",
+              collapsed: true,
+              fields: 
+                [
+                  {label: "Subscribe Title", name: "subscribetitle", widget: "string"},
+                  {label: "Placholder Text", name: "placholdertext", widget: "string"},
+                  {label: "Button Text", name: "buttontext", widget: "string"},
+                ]
+            },
+            { label: "Contact Block",
+              name: "contactblock",
+              widget: "object",
+              collapsed: true,
+              fields: 
+                [
+                  {label: "Phone Number", name: "phonenumber", widget: "string"},
+                  {label: "Email Address", name: "emailaddress", widget: "string"},
+                ]
+            },
+          ]
       - file: "src/pages/siteComponents/branding/index.md"
         label: "Branding"
         name: "branding"
@@ -177,9 +215,26 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Movie, name: movie, widget: image }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - {
+              label: Home Slider,
+              name: homeslider,
+              widget: list,
+              fields:
+                [
+                  { label: "Slide Image", name: "slideimage", widget: image }
+                ]
+            }
+          - {
+              label: Keywords,
+              name: keywords,
+              widget: list,
+              fields:
+                [
+                  { label: "Word", name: "word", widget: string }
+                ]
+            }
           - { label: "Yellow Title", name: yellowtitle, widget: string }
           - { label: "Yellow Paragraph", name: yellowparagraph, widget: text }
       - file: "src/pages/our-vision/index.md"

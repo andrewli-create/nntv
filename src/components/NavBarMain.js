@@ -83,7 +83,7 @@ const NavBarMain = ({data, preview}) => {
                       <ul className="sub-navbar sub-navbar-hidden preview-hover">
                         {item.subNavItem
                           ? (item.subNavItem.map((itemInner, index) => (
-                            <li className={itemInner.subPageName.length < 20 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
+                            <li className={itemInner.subPageName.length < 15 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
                               <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
                                 {itemInner.subPageName}
                               </Link>
@@ -102,7 +102,7 @@ const NavBarMain = ({data, preview}) => {
           ))}
           
         </ul>
-        <div className={'nav-sign-up-button-wrapper'}>
+        <div className={'nav-sign-up-button-wrapper button-disable-appearance'}>
           <button className={'nav-sign-up-button'}>
             <span>Sign Up</span>
           </button>
