@@ -87,7 +87,7 @@ const FooterMain = ({data}) => {
                 <></>
               :
                 <form 
-                  name="subscribe"
+                  name="subscribe-newsletter"
                   method="post"
                   action="/thanks/"
                   data-netlify="true"
