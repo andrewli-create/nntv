@@ -134,7 +134,7 @@ const FooterMain = ({data}) => {
                 <a href="https://www.youtube.com/@NoNeedtoVanish" target="_blank">
                   <img className="social-icon" src={youtube}/>
                 </a>
-                <a href="https://www.instagram.com/noneedtovanish/" target="_blank">
+                <a href="https://www.patreon.com/NoNeedtoVanish" target="_blank">
                   <img className="social-icon" src={patreon}/>
                 </a>
               </div>

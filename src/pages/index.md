@@ -4,9 +4,10 @@ title: No Need to Vanish
 heading: Beyond Boundaries
 tagline: Inspiring the Next Wave of Musical Visionaries
 homeslider:
-  - slideimage: /img/grand-piano-top-view.png
+  - slideimage: /img/dsc00874.jpeg
+  - slideimage: /img/nntv-teamimages-dec4-0008.jpg
   - slideimage: /img/compressor.jpeg
-  - slideimage: /img/piano.jpeg
+  - slideimage: /img/nntv-teamimages-dec4-0012.jpg
 subheading: ---
 yellowtitle: Welcome to NNTV
 mainpitch:

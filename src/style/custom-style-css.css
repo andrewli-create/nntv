@@ -516,7 +516,7 @@ h1 {
     outline: none;
     border: none;
     padding: 0 10px;
-    color: black;
+    color: black !important;
 }
 
 .sub-email-button {
@@ -613,9 +613,42 @@ h1 {
     transform: translateY(-2px) scale(1.02);
 }
 
+.bio-display-image {
+    margin: auto;
+    margin-top: 20px;
+}
 
 .bio-display-image .safe-img-obj {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
+.bio-modal-frame {
+    width: 35%;
+    transition-duration: 250ms;
+}
+
+.bio-content-display {
+    max-height: 400px;
+    overflow: scroll;
+}
+
+@media only screen and (max-width: 1300px) {
+    .bio-modal-frame {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 878px) {
+    .bio-modal-frame {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .bio-modal-frame {
+        width: 90%;
+    }
+}
+

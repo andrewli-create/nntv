@@ -79,16 +79,18 @@ export const OurVisionPageTemplate = ({data}) => {
     //   {data.markdownRemark.frontmatter.title}
     // </div>
     <>
-      <AlModal show={bioModalShow} backgroundColor={"white"} width={"450px"} height={"auto"} padding={"20px"}>
+      <AlModal className={"bio-modal-frame"} show={bioModalShow} backgroundColor={"white"} height={"auto"} padding={"20px"}>
         <div className="al-pos-r">
-          <span style={{position: "absolute", top: "0px", right: "0px", cursor: "pointer"}} onClick={() => {setBioModalShow(false);}}>Close</span>
+          <span style={{position: "absolute", top: "0px", right: "50px", cursor: "pointer"}} onClick={() => {setBioModalShow(false);}}>Close</span>
           <div style={{width: "100%"}}>
-            <div className="bio-display-image" style={{ height: "150px", width: "150px", borderRadius: "2000px", overflow: "hidden", margin: "auto"}}>
+            <div className="bio-display-image" style={{ height: "150px", width: "150px", borderRadius: "2000px", overflow: "hidden"}}>
               <SafeImg inputObj={bioImage}/>
             </div>
           </div>
           <h2 style={{fontWeight: "bold", textAlign: "center", fontSize: "20px", marginTop: "30px", marginBottom: "30px", textTransform: "uppercase"}}>{bioName}</h2>
-          <p style={{width: "90%", margin: "auto"}}>{bio}</p>
+          <div className="bio-content-display">
+            <p className="bio-display" style={{width: "90%", margin: "auto"}}>{bio}</p>
+          </div>
           <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0}}></div>
           <div className="video-frame-element" style={{width: "10px", height: "100px", right: 0, bottom: 0}}></div>
         </div>
