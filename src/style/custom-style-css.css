@@ -10,6 +10,14 @@ body {
     .nav-sign-up-button {
         padding: 0 5px;
     }
+    .navbar-brand {
+        display: flex !important;
+        justify-content: space-between !important;
+        flex-direction: row !important;
+    }
+    .navbar-burger {
+        margin-left: 0 !important;
+    }
 }
 
 @media only screen and (max-width: 1022px) {
@@ -25,6 +33,18 @@ body {
     }
 }
 
+.nav-bar-link-wrapper-mobile {
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 1);
+    width: 100vw;
+    display: none;
+    border-bottom: 2px dotted black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
 @media only screen and (max-width: 768px) {
     .index-intro-block {
         margin-bottom: 20px;
@@ -32,6 +52,30 @@ body {
     .value-wrapper {
         margin-bottom: 50px;
     }
+    .is-active {
+        display: block;
+    }
+}
+
+
+
+#navMenu-mobile .navbar-item {
+    padding: 20px 0;
+}
+
+#navMenu-mobile .sub-navbar {
+    position: static;
+    padding: auto;
+    width: 100vw;
+    text-align: center;
+    background-color: rgba(230, 230, 230, 1);
+    /* padding-top: 5px; */
+}
+
+#navMenu-mobile .sub-navbar li {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0px;
 }
 
 .welcome-to-nntv {
