@@ -4,9 +4,12 @@ import call from "../img/call.svg";
 import email from "../img/email.svg";
 import facebook from "../img/facebook.svg";
 import instagram from "../img/instagram.svg";
+import patreon from "../img/patreon.svg";
+import youtube from "../img/youtube.svg";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style/custom-style-css.css";
 import "../style/al-style.css";
+import CCALogo from "../img/CCA_RGB_colour_e.svg";
 
 function encode(data) {
   return Object.keys(data)
@@ -68,7 +71,7 @@ const FooterMain = ({data}) => {
   }
   
   return (
-    <footer id="footer" className="footer" style={{backgroundColor: footerColor}}>
+    <footer id="footer" className="footer al-white-text" style={{backgroundColor: footerColor, paddingBottom: "0 !important"}}>
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-sm-12">
@@ -128,9 +131,37 @@ const FooterMain = ({data}) => {
                 <a href="https://www.instagram.com/noneedtovanish/" target="_blank">
                   <img className="social-icon" src={instagram}/>
                 </a>
+                <a href="https://www.youtube.com/@NoNeedtoVanish" target="_blank">
+                  <img className="social-icon" src={youtube}/>
+                </a>
+                <a href="https://www.instagram.com/noneedtovanish/" target="_blank">
+                  <img className="social-icon" src={patreon}/>
+                </a>
               </div>
             </div>
           </div>
+        </div>
+        {/* <div className="row">
+          <div className="col-md-12" style={{textAlign: "center"}}>
+            <div className="acknowledgement-block">
+              <a href="https://canadacouncil.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={CCALogo}/>
+              </a>
+              <div style={{clear: "both"}}></div>
+              <p className="al-text-align-c acknowledgement-text">We acknowledge the support of the Canada Council for the Arts.</p>
+              <p className="al-text-align-c acknowledgement-text">Visit <a href="canadacouncil.ca">canadacouncil.ca</a> to learn more.</p>
+            </div>
+          </div>
+        </div> */}
+      </div>
+      <div>
+        <div className="acknowledgement-block">
+          {/* <div className="acknowledgement-block" style={{background: "linear-gradient(180deg, " + footerColor + " 0%, rgb(235, 235, 235 , 1) 10%)"}}> */}
+          <a href="https://canadacouncil.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+            <img className="cca-icon" src={CCALogo}/>
+          </a>
+          <div style={{clear: "both"}}></div>
+          <p className="al-text-align-c acknowledgement-text">We acknowledge the support of the Canada Council for the Arts. Visit <a href="canadacouncil.ca">canadacouncil.ca</a> to learn more.</p>
         </div>
       </div>
     </footer>

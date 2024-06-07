@@ -158,7 +158,7 @@ collections:
       - { label: "Resources", name: "resources", widget: "string", required: false }
       - { label: "Require Access To", name: "Requireaccessto", widget: "string", required: false }
       - { label: "About", name: "about", widget: "text", required: false }
-      - { label: "Outcomes", name: "outcomes", widget: "text", required: false }
+      - { label: "Outcomes", name: "outcomes", widget: "markdown", required: false }
       - {
           label: Modules,
           name: modules,
@@ -179,7 +179,7 @@ collections:
     
   - name: "module"
     editor:
-      preview: false
+      preview: true
     label: "Module"
     folder: "src/pages/module"
     create: true
@@ -195,8 +195,8 @@ collections:
         { label: "Title", name: "title", widget: string },
         { label: "Video Thumbnail", name: "videothumbnail", widget: image },
         { label: "Video Link", name: "videolink", widget: string },
-        { label: "Script", name: "script", widget: text },
-        { label: "Credit & Info", name: "creditandinfo", widget: text },
+        { label: "Script", name: "script", widget: markdown },
+        { label: "Credit & Info", name: "creditandinfo", widget: markdown },
       ]
       
 

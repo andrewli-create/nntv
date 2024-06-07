@@ -161,6 +161,7 @@ h1 {
 
 .member-name {
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 .member-bio  {
@@ -194,8 +195,17 @@ h1 {
     height: 265px;
     /* height: 365px; */
     width: 100%;
-    transition-duration: 100ms;
+    /* transition-duration: 100ms; */
     overflow: hidden;
+    transition-duration: 350ms;
+    cursor: pointer;
+    border-radius: 0px 0 20px 0;
+}
+
+.member-image-wrapper:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .member-image-wrapper > img {
@@ -294,10 +304,14 @@ h1 {
     font-weight: bold;
 }
 
-.course-block h5 {
+.course-block-title {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
     font-weight: bold;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -322,7 +336,21 @@ h1 {
     min-height: 300px;
 }
 
-.video-block {
+.video-block-wrapper {
+    position: relative;
+    padding: 25px;
+}
+
+.video-frame-element {
+    position: absolute;
+    background-color: #FFBD12;
+}
+
+.video-block-select-wrapper {
+    margin-bottom: 20px;
+}
+
+.video-block-select {
     cursor: pointer;
     position: relative;
     border-radius: 10px;
@@ -331,17 +359,18 @@ h1 {
 }
 
 @media only screen and (max-width: 575px) {
-    .video-block {
+    .video-block-select {
         margin-top: 20px;
     }
 }
 
-.video-block:hover {
+.video-block-select:hover {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .video-overlay {
-    background-color: rgba(0, 0, 0, 0.55);
+    /* background-color: rgba(0, 0, 0, 0.55); */
+    background-color: rgba(255, 188, 18, 0.55);
     position: absolute;
     top: 0;
     left: 0;
@@ -356,11 +385,14 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
     width: 80%;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .notepad-textarea {
@@ -389,7 +421,7 @@ h1 {
 
 .module-title-display {
     text-align: center;
-    font-size: 40px !important;
+    font-size: 35px !important;
 }
 
 @media only screen and (max-width: 766px) {
@@ -439,6 +471,7 @@ h1 {
     outline: none;
     border: none;
     padding: 0 10px;
+    color: black;
 }
 
 .sub-email-button {
@@ -466,6 +499,35 @@ h1 {
     height: 40px;
 }
 
+.acknowledgement-block {
+    width: 100%;
+    margin: auto;
+    padding: 30px 50px;
+    background-color: rgb(235, 235, 235 , 1);
+    display: inline-block;
+    /* border-radius: 20px; */
+    margin-top: 50px;
+}
+
+.acknowledgement-text {
+    /* display: inline-block; */
+    color: #009ADD !important;
+    margin: auto;
+    font-style: italic;
+}
+
+.acknowledgement-text a {
+    color: #009ADD !important;
+    text-decoration: underline;
+}
+
+.cca-icon {
+    text-align: center;
+    margin: auto;
+    width: 300px;
+    display: block;
+}
+
 @media only screen and (max-width: 768px) {
     .footer-block, .footer-block p, .footer-block h5, .footer-block span {
         text-align: center;
@@ -483,4 +545,32 @@ h1 {
     .footer-right-title {
         margin-top: 20px;
     }
+}
+
+.accent-underline {
+    position: absolute;
+    width: 80%;
+    height: 3px;
+    left: 20%;
+    bottom: -7%;
+    background-color: #FFBD12;
+    z-index: 1;
+}
+
+.button-accent {
+    background-color: #FFBD12 !important;
+    border: none !important;
+    box-shadow: rgba(255, 188, 18, 0.3) 0px 20px 25px -5px, rgba(255, 188, 18, 0.1) 0px 10px 10px -5px;
+}
+
+.button-accent:hover {
+    filter: brightness(1.05);
+    transform: translateY(-2px) scale(1.02);
+}
+
+
+.bio-display-image .safe-img-obj {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

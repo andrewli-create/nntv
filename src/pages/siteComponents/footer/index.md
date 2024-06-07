@@ -1,6 +1,6 @@
 ---
 title: Footer
-footercolor: rgba(51, 97, 172, 0.2)
+footercolor: "#3361ac"
 introductionblock:
   introductiontitle: No Need to Vanish
   introductionparagraph: Hi! We are team NNTV, a diverse collective of composers,

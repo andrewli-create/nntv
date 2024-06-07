@@ -1,4 +1,5 @@
 import React from "react";
+import Markdown from 'react-markdown'
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
@@ -25,6 +26,7 @@ export const CoursePageTemplate = ({data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("all data", data);
   console.log("front-matter-Course", data.markdownRemark.frontmatter);
+  console.log("front-matter-Course-html", data.markdownRemark.html);
   var dataPack = data.markdownRemark.frontmatter;
   var lessonsPack;
   if (data.lessons) {
@@ -44,14 +46,17 @@ export const CoursePageTemplate = ({data}) => {
           <div className="col-md-7">
             <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
                 <div className="intro-course-block-content">
-                  <h2 style={{fontSize: "20px", fontWeight: "bold"}}>
-                    {dataPack.title}
+                  <h2 className="al-pos-r" style={{fontSize: "20px", fontWeight: "bold", display: "inline-block"}}>
+                    <div className="accent-underline"></div>
+                    <span className="al-pos-r" style={{zIndex: 1}}>
+                      {dataPack.title}
+                    </span>
                   </h2>
                   <p>
                     {dataPack.introduction}
                   </p>
                   <a href="#modules">
-                    <button className="button-generic">Start Now →</button>
+                    <button className="button-generic button-accent">Start Now →</button>
                   </a>
                 </div>
             </div>
@@ -79,15 +84,27 @@ export const CoursePageTemplate = ({data}) => {
           <div className="col-md-6">
             <div className="course-block block-min-300">
               <img src={lightbulb}/>
-              <h5>About</h5>
+              <h5 className="course-block-title">
+                <div className="accent-underline"></div>
+                <span className="al-pos-r" style={{zIndex: 1}}>
+                  About
+                </span>
+              </h5>
               <p>{dataPack.about}</p>
             </div>
           </div>
           <div className="col-md-6">
             <div className="course-block mobile-top-spacing block-min-300">
               <img src={checkmarks}/>
-              <h5>Outcomes</h5>
-              <p>{dataPack.outcomes}</p>
+              <h5 className="course-block-title">
+                <div className="accent-underline"></div>
+                <span className="al-pos-r" style={{zIndex: 1}}>
+                  Outcomes
+                </span>
+              </h5>
+              {/* <p>{dataPack.outcomes}</p> */}
+              {/* <div dangerouslySetInnerHTML={{ __html: dataPack.outcomes}} /> */}
+              <Markdown>{dataPack.outcomes}</Markdown>
             </div>
           </div>
         </div>
@@ -95,22 +112,27 @@ export const CoursePageTemplate = ({data}) => {
           <div className="col-md-12">
             <div className="course-block">
               <img src={modules}/>
-              <h5>Modules</h5>
+              <h5 className="course-block-title">
+                <div className="accent-underline"></div>
+                <span className="al-pos-r" style={{zIndex: 1}}>
+                  Modules
+                </span>
+              </h5>
               <hr/>
               <section>
                 <div className="row">
                   {lessonsPack
                     ? (lessonsPack.map((lesson, index) => (
                       <>
-                        {console.log("Valid A", dataPack.modules)}
+                        {/* {console.log("Valid A", dataPack.modules)}
                         {console.log("Valid B", lesson.frontmatter.title)}
-                        {console.log("Valid C", dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))}
+                        {console.log("Valid C", dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))} */}
                         {
                           ((dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))) ?
                           <>
-                            <div className="col-md-4 col-sm-6">
+                            <div className="col-md-4 col-sm-6 video-block-select-wrapper">
                               <a href={"/module/" + lesson.frontmatter.title.replace(/ /g,"-").toLowerCase()}>
-                                <div className="video-block">
+                                <div className="video-block-select">
                                   <SafeImg inputObj={lesson.frontmatter.videothumbnail}/>
                                   <div className="video-overlay"></div>
                                   <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.frontmatter.title}</h6>
@@ -182,6 +204,7 @@ export const pageQuery = graphql`
   query CourseByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         title
         introduction

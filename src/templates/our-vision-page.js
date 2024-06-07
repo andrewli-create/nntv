@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-
+import { useState, useEffect, useCallback } from "react";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
@@ -11,9 +11,67 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import pianoTopView from '../../static/img/grand-piano-top-view.png'
 import Img from "gatsby-image"
 import SafeImg from "../components/utils/SafeImg"
+import AlModal from "../components/utils/AlModal"
 // import { useEffect } from 'react';
 // eslint-disable-next-line
 export const OurVisionPageTemplate = ({data}) => {
+  // const [bioName, setBioName] = useState([]);
+  const [bioName, setBioName] = useState("");
+  const [bio, setBio] = useState("");
+  const [bioModalShow, setBioModalShow] = useState(false);
+  const [bioImage, setBioImage] = useState("");
+
+  // const showBio = (name, bio) => {
+  //   setBioName(name);
+  //   setBio(bio);
+  //   setBioModalShow(true);
+  // }
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+       if (event.key === 'Escape') {
+        console.log('Close')
+        setBioModalShow(false);
+        console.log(bioModalShow);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
+  // useEffect(() => {
+    // setBioModalShow(false);
+    // setBioImage(" ");
+    // setBio(" ");
+    // setBioName(" ");
+  // }, [bioName, bio, bioModalShow]);
+
+  const showBio = (name, bio, image) => {
+
+    if (name) {
+      setBioName(name);
+    } else {
+      setBioName("N/A");
+    }
+    if (bio) {
+      setBio(bio);
+    } else {
+      setBio("N/A");
+    }
+    if (image) {
+      setBioImage(image);
+    } else {
+      setBioImage("");
+    }
+    setBioModalShow(true);
+    // setBio(bio);
+    // console.log("bioModalShow", bioModalShow);
+    // console.log("bioName", bioName);
+    // console.log("bioImage", bioImage);
+  }
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("front-matter", data.markdownRemark.frontmatter);
   return (
@@ -21,6 +79,20 @@ export const OurVisionPageTemplate = ({data}) => {
     //   {data.markdownRemark.frontmatter.title}
     // </div>
     <>
+      <AlModal show={bioModalShow} backgroundColor={"white"} width={"450px"} height={"auto"} padding={"20px"}>
+        <div className="al-pos-r">
+          <span style={{position: "absolute", top: "0px", right: "0px", cursor: "pointer"}} onClick={() => {setBioModalShow(false);}}>Close</span>
+          <div style={{width: "100%"}}>
+            <div className="bio-display-image" style={{ height: "150px", width: "150px", borderRadius: "2000px", overflow: "hidden", margin: "auto"}}>
+              <SafeImg inputObj={bioImage}/>
+            </div>
+          </div>
+          <h2 style={{fontWeight: "bold", textAlign: "center", fontSize: "20px", marginTop: "30px", marginBottom: "30px", textTransform: "uppercase"}}>{bioName}</h2>
+          <p style={{width: "90%", margin: "auto"}}>{bio}</p>
+          <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0}}></div>
+          <div className="video-frame-element" style={{width: "10px", height: "100px", right: 0, bottom: 0}}></div>
+        </div>
+      </AlModal>
       <div className="container-fluid vertical-white-space-top al-no-pad-horizonal">
         <section className="section-center al-mt-40 al-mb-40">
           <div className="row al-pos-r">
@@ -85,15 +157,19 @@ export const OurVisionPageTemplate = ({data}) => {
                     <div className="value-card d-flex d-flex-col d-flex-sb">
                       <div>
                         <h6 className="al-mt-10 member-name">{member.membername}</h6>
-                        <div className="member-image-wrapper">
+                        <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(member.membername,  member.memberbio, member.memberimage)}}>
                           {member.memberbio ? 
-                            <div className="member-bio">
-                              <p>{member.memberbio}</p>  
-                            </div>
+                            // <div className="member-bio">
+                            //   <p>{member.memberbio}</p>
+                            // </div>
+                            <></>
                             : 
                             <></>
                           }
-                          <SafeImg inputObj={member.memberimage}/>
+                          <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
+                          {/* <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0, zIndex: 2}}></div> */}
+                          {/* <div className="video-frame-element" style={{width: "auto", height: "auto", left: 0, bottom: "10%", zIndex: 2, padding: "5px 10px"}}> */}
+                          <SafeImg inputObj={member.memberimage} imagePosition={member.memberimagealign}/>
                           {/* {preview == 0 ? 
                               member.memberimage ? <Img fluid={member.memberimage.childImageSharp.fluid}/>  : <></>
                             :
@@ -194,6 +270,7 @@ export const pageQuery = graphql`
           }
           membername
           memberbio
+          memberimagealign
         }
         featuredimage {
           childImageSharp {

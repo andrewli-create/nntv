@@ -10,6 +10,7 @@ import NavBarPreview from './preview-templates/NavBarPreview'
 import FooterPreview from './preview-templates/FooterPreview'
 import OurVisionPagePreview from './preview-templates/OurVisionPagePreview'
 import CoursePagePreview from './preview-templates/CoursePagePreview'
+import ModulePageTemplate from './preview-templates/ModulePagePreview'
 
 import UnderConstructionPagePreview from './preview-templates/UnderConstructionPagePreview'
 import { ColorControl, ColorPreview } from "netlify-cms-widget-colorpicker";
@@ -30,6 +31,7 @@ CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('our-vision', OurVisionPagePreview)
 CMS.registerPreviewTemplate('course', CoursePagePreview)
+CMS.registerPreviewTemplate('module', ModulePageTemplate)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 CMS.registerPreviewTemplate('nav-bar', NavBarPreview)
 CMS.registerPreviewTemplate('footer', FooterPreview)
