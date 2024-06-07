@@ -3,9 +3,9 @@ title: Footer
 footercolor: "#3361ac"
 introductionblock:
   introductiontitle: No Need to Vanish
-  introductionparagraph: Hi! We are team NNTV, a diverse collective of composers,
-    musicians, and creators who provides an online learning source that is
-    practical, accessible, and innovative.
+  introductionparagraph: Hi! We are Team NNTV, a diverse collective of composers,
+    musicians, technologists, and producers providing a practical, accessible,
+    and innovative educational resource in music technology.
 subscribeblock:
   subscribetitle: Let's get in touch!
   placholdertext: Enter your email address

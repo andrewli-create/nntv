@@ -143,12 +143,14 @@ h1 {
     text-align: center;
     width: 100px;
     height: 100px;
-    background-color: rgba(255, 255, 255, 0.25);
+    /* background-color: rgba(255, 255, 255, 0.25); */
+    background-color: rgb(235, 235, 235 , 1);
     border-radius: 7px;
 }
 
 .vision-background-block {
-    background-color: #EFEAE3;
+    /* background-color: #EFEAE3; */
+    background-color: rgb(235, 235, 235 , 1);
     width: 95% !important;
     height: 100%;
     position: absolute;
@@ -159,7 +161,6 @@ h1 {
 
 @media only screen and (max-width: 767px) {
     .vision-background-block {
-        background-color: #EFEAE3;
         width: 100% !important;
         height: 100%;
         position: absolute;
@@ -413,8 +414,8 @@ h1 {
 }
 
 .video-overlay {
-    /* background-color: rgba(0, 0, 0, 0.55); */
-    background-color: rgba(255, 188, 18, 0.55);
+    background-color: rgba(0, 0, 0, 0.55);
+    /* background-color: rgba(255, 188, 18, 0.55); */
     position: absolute;
     top: 0;
     left: 0;
@@ -429,12 +430,12 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: black;
+    color: white;
     width: 80%;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.8); */
     padding: 10px;
     border-radius: 5px;
 }

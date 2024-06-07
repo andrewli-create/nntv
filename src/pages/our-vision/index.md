@@ -24,12 +24,27 @@ values:
 path: /our-vision
 templateKey: our-vision-page
 tertiarytitle: Our Team
-tertiaryparagraph: We are a diverse collective of musicians and composers
-  blending traditional training with contemporary sensibilities.
+tertiaryparagraph: Our team aims to cultivate a community where every creative
+  voice resonates uniquely, and equally.
 members:
-  - membername: Parisa Sabet
+  - membername: Parisa Sabet, Director
     memberimage: /img/r14a6973-2_7.jpg
     memberimagealign: center
+    memberbio: >-
+      Imagination, innovation, and storytelling are at the center of Dr. Sabet’s
+      creative practice. With a musical language that is both modern and
+      accessible, inspired by her Iranian roots, Western education, and passion
+      for socially engaged arts, she aims to engage in cultural dialogue with
+      diverse communities.
+
+
+      Dr. Sabet is a composer of electroacoustic, acoustic, and film music. Her sonic landscapes evoke emotions, conjure images, and tell stories, often addressing pressing social issues. As an educator, 
+
+
+      Her current research-creation project, No Need to Vanish, focuses on developing, designing, and producing contemporary learning resources that are practical, accessible, and innovative for musicians from diverse personal and educational backgrounds. Her goal is to support emerging composers as they develop their artistic identities, tell their stories, and share their unique perspectives.
+
+
+      Dr. Sabet earned a Doctor of Musical Arts, a Master of Music in composition, and a Master of Music Technology and Digital Media from the University of Toronto, with distinctions including the Mirkopoulos and Miller/Khoshkish fellowships, and the Tecumesh Sherman Rogers Graduating Award given to a musician on the cusp of making important contributions to the field.
   - membername: Joshua Weinfeld
     memberbio: Joshua Weinfeld is currently pursuing his master of music degree in
       music technology and digital media at the University of Toronto. Joshua is
@@ -100,20 +115,6 @@ members:
       television projects, such as the Saw movie sequel, Spiral.  "
     membername: XERXES SZ YANG
     memberimage: /img/xerses-01.png
-    memberimagealign: center
-  - membername: Stef Haynes
-    memberimage: /img/p1510332_1.jpg
-    memberbio: Stef Haynes is a performer, composer, and producer living in Toronto,
-      Canada. A specialist in woodwinds and electronic wind instruments, Stef
-      collaborates regularly with artists of diverse genres and musical
-      backgrounds. As a music technologist, Stef is best known for customizing
-      his instruments by using a Nintendo Wii controller to incorporate gestural
-      MIDI control. His innovative and imaginative use of MIDI can be heard on
-      his debut EP, Gradualism, as well as in the music that he writes for his
-      modern jazz fusion quartet, SHQ. He holds a Bachelor’s of Music  in
-      Contemporary Music Performance from Humber College,  and a Masters of
-      Music in Music Technology and Digital Media from the University of
-      Toronto.
     memberimagealign: center
   - membername: Ricci Ebron
     memberbio: >-

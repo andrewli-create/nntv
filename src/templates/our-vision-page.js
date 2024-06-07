@@ -126,7 +126,7 @@ export const OurVisionPageTemplate = ({data}) => {
                         </div>
                         <h6 className="al-mt-10">{value.valuetitle}</h6>
                       </div>
-                      <span>{data.markdownRemark.frontmatter.seemoretext}</span>
+                      {/* <span>{data.markdownRemark.frontmatter.seemoretext}</span> */}
                     </div>
                   </div>
                 )))

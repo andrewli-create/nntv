@@ -73,8 +73,8 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
-yellowparagraph: your gateway to a transformative journey where music,
-  technology, and creative intersect.
+yellowparagraph: Your gateway to a transformative journey where music,
+  technology, and creativity intersect.
 image: /img/home-jumbotron.jpg
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
