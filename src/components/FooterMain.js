@@ -116,11 +116,11 @@ const FooterMain = ({data}) => {
                 <div className="contact-item display-flex d-flex-fe">
                   <img src={call} style={{marginRight: "15px"}}/>
                   {/* <span>+1 &#40;647&#41; 525-5175</span> */}
-                  <span>{rightBlock.phonenumber}</span>
+                  <span><a href={"tel:" + rightBlock.phonenumber} style={{color: "white"}}>{rightBlock.phonenumber}</a></span>
                 </div>
                 <div className="contact-item display-flex d-flex-fe al-mt-10">
                   <img src={email} style={{marginRight: "15px"}}/>
-                  <span>{rightBlock.emailaddress}</span>
+                  <span><a href={"mailto:" + rightBlock.emailaddress} style={{color: "white"}}>{rightBlock.emailaddress}</a></span>
                 </div>
               </div>
               <h5 className="footer-right-title" style={{marginTop: "15px"}}>Follow Us</h5>
@@ -161,7 +161,7 @@ const FooterMain = ({data}) => {
             <img className="cca-icon" src={CCALogo}/>
           </a>
           <div style={{clear: "both"}}></div>
-          <p className="al-text-align-c acknowledgement-text">We acknowledge the support of the Canada Council for the Arts. Visit <a href="canadacouncil.ca">canadacouncil.ca</a> to learn more.</p>
+          <p className="al-text-align-c acknowledgement-text">We acknowledge the support of the Canada Council for the Arts. Visit <a href="https://www.canadacouncil.ca" target="_blank">canadacouncil.ca</a> to learn more.</p>
         </div>
       </div>
     </footer>
