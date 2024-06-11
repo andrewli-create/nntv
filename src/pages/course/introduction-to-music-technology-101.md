@@ -25,4 +25,5 @@ modules:
   - lessons: Intro to Signal Flow
   - lessons: Master Your Music Essential Guide to Digital Audio Workstations DAW
   - lessons: An Introduction to MIDI Magic
+  - lessons: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
 ---

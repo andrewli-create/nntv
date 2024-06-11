@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: Intro to Signal Flow
-videothumbnail: /img/thumbnail.png
+videothumbnail: /img/screenshot-2024-06-11-at-3.46.45-am.png
 videolink: https://www.youtube.com/embed/H5f1Nlni7Mo?si=xGlvIBqUfHcCdssZ
 script: >-
   Welcome to our quick guide to signal flow. In this video, we’ll delve into the

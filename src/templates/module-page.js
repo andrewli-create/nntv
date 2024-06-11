@@ -32,7 +32,7 @@ export const ModulePageTemplate = ({pageContext, data}) => {
     <div className="container">
       <div className="row al-mt-40">
         <div className="col-md-12">
-          <h1 className="module-title-display">{dataPack.title}</h1>
+          <h1 className="module-title-display font-report-regular">{dataPack.title}</h1>
         </div>
       </div>
       <div className="row al-mt-40">

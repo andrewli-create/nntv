@@ -32,9 +32,9 @@ export const IndexPageTemplate = ({data, preview}) => {
         <section className="section-center al-mt-40">
           <div className="row">
             <div className="col-md-6 d-flex-col d-flex d-flex-c index-intro-block">
-              <h1 className="al-title-text">{data.markdownRemark.frontmatter.title}</h1>
+              <h1 className="al-title-text font-report-regular">{data.markdownRemark.frontmatter.title}</h1>
               <p>
-                {data.markdownRemark.frontmatter.heading}<br/>
+                {data.markdownRemark.frontmatter.heading == " " ? <></> : <>{data.markdownRemark.frontmatter.heading}<br/></>}
                 <span className="al-italic">
                   {data.markdownRemark.frontmatter.tagline}
                 </span>
@@ -97,7 +97,7 @@ export const IndexPageTemplate = ({data, preview}) => {
               </div>
               <div className="col-md-1"></div>
               <div className="col-md-5">
-                <h2 className="welcome-to-nntv">{data.markdownRemark.frontmatter.yellowtitle}</h2>
+                <h2 className="welcome-to-nntv font-report-regular">{data.markdownRemark.frontmatter.yellowtitle}</h2>
                 <p>{data.markdownRemark.frontmatter.yellowparagraph}</p>
               </div>
             </div>

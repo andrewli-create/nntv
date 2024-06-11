@@ -12,7 +12,7 @@ values:
   - valueimage: /img/parisa-smile.jpg
     valuetitle: Inclusivity and Diversity
     valueparagraph: Text Here
-  - valueimage: /img/compressor.jpeg
+  - valueimage: /img/dsc00890.jpg
     valuetitle: Technology Empowerment
     valueparagraph: Text Here
   - valueimage: /img/stef-ableton.jpg
@@ -128,7 +128,7 @@ members:
       Her dream is to work with soundtrack music, whether through the recording
       studio or performing in a soundtrack orchestra.
 
-      https://ricci.ebron.com/ 
+      <https://ricci.ebron.com/ >
     memberimage: /img/ricci-headshot-4.jpg
     memberimagealign: center
   - membername: Andrew Li
@@ -144,13 +144,19 @@ members:
     memberimagealign: center
   - membername: Lifia Teguh
     memberimage: /img/dsc06298.jpg
-    memberbio: Lifia is an Indonesian-born pianist-composer, and producer whose
-      passion is to make music that touches hearts and changes lives. She is
-      pursuing a Master in Music Technology and Digital Media at University of
-      Toronto. She holds a Bachelors of Music in Piano Performance and Master in
-      Piano Performance & Collaborative Piano from Portland State University,
-      USA. She enjoys making music with others, hiking, traveling, and watching
-      movies.
+    memberbio: >-
+      
+
+      Lifia Teguh is an Indonesian-born pianist, composer, and arranger whose passion is to make music that touches hearts and changes lives.
+
+
+      ​As a classically trained pianist, she has performed in the USA, Europe, and Asia both as a soloist and as part of the renowned summer festival Music Fest Perugia, G. Lettimi Conservatory International Master Classes, and Warsaw Piano Workshop. Lifia is also a recipient of the Monday Musical Club Scholarship in Portland, a grand-finalist of Petri Scholarship Competition, and has received awards in regional and national piano competitions in her country, Indonesia. Her piano quartet score, Liber Dangdut, was performed in College Music Society & American Musicological Society Pacific NW Conference. Ms. Teguh won PSU Concerto Competition with the Ravel’s Piano Concerto in G Major and will perform her own piano concerto with the PSU Orchestra in 2023. Her composition is to be performed at College Music Society National Conference in New York. She earned a Bachelor of Music in Piano Performance, and two Master: A master of Music in Piano Performance and a Master of Music in Collaborative Piano. She is currently pursuing a Master of Music in Music Technology and Digital Media at the University of Toronto.
+
+
+      Ms. Teguh’s concert venues range from traditional concert halls to yacht clubs. Her creative and distinct approach to traditional music breathes fresh air to traditional Indonesian music, combining Indonesian folk tunes and songs with other genres like blues, classical, and pop. Her arrangement for prepared piano Rek Ayo Rek, which transformed the sound of the piano into sasando and kendhang (both Indonesian instruments), “successfully swayed the audience on their seats according to the rhythm of the music” (goodnewsfromindonesia.org).
+
+
+      In the summer of 2016, she created INDspire – Inspiration for Indonesia, a campaign for equal rights in performing arts education, especially for impoverished classes. Her dream is to found arts and entertainment companies as well as schools of performing arts that provide full scholarships for underprivileged children and teenagers all over the world. She also teaches at Play It Forward, a non-profit organization that gives free piano lessons to underserved communities.
     memberimagealign: center
   - membername: MICKI-LEE SMITH
     memberbio: >-

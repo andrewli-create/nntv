@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: No Need to Vanish
-heading: Beyond Boundaries
+heading: " "
 tagline: Inspiring the Next Wave of Musical Visionaries
 homeslider:
   - slideimage: /img/dsc00874.jpeg

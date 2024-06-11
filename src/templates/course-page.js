@@ -32,8 +32,36 @@ export const CoursePageTemplate = ({data}) => {
   if (data.lessons) {
     console.log("front-matter-Course-lessons", data.lessons.nodes);
     lessonsPack = data.lessons.nodes;
+    // lessonsPack = data.markdownRemark.frontmatter.modules;
   } else {
     // lessonsPack = dataPack.modules;
+  }
+
+  var displayModules = [];
+  var hasModules = false;
+  for (var i = 0; i < dataPack.modules.length; i++) {
+    // displayModules.push(<span className='indent' key={i}>{dataPack.modules[i].lessons}</span>);
+    for (var x = 0; x < data.lessons.nodes.length; x++) {
+      console.log("check against", dataPack.modules[i].lessons + " | " + data.lessons.nodes[x].frontmatter.title)
+      if (data.lessons.nodes[x].frontmatter.title == dataPack.modules[i].lessons) {
+        hasModules = true;
+        displayModules.push(
+          <div className="col-md-4 col-sm-6 video-block-select-wrapper">
+            <a href={"/module/" + data.lessons.nodes[x].frontmatter.title.replace(/ /g,"-").toLowerCase()}>
+              <div className="video-block-select">
+                <SafeImg inputObj={data.lessons.nodes[x].frontmatter.videothumbnail}/>
+                <div className="video-overlay"></div>
+                <h6 className="module-title">{("0" + (i + 1)).slice(-2) + " - "}{data.lessons.nodes[x].frontmatter.title}</h6>
+              </div>
+            </a>
+          </div>
+        );
+      }
+    }
+  }
+
+  if (!hasModules) {
+    displayModules.push(<h5>No modules are currently available.</h5>);
   }
   
   return (
@@ -45,10 +73,12 @@ export const CoursePageTemplate = ({data}) => {
         <div className="row al-mt-20">
           <div className="col-md-7">
             <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
-                <div className="intro-course-block-content">
+                <div className="intro-course-block-content al-pos-r">
+                  <div className="video-frame-element" style={{width: "25px", height: "10px", right: 0, bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
+                  <div className="video-frame-element" style={{width: "10px", height: "25px", right: 0, bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
                   <h2 className="al-pos-r" style={{fontSize: "20px", fontWeight: "bold", display: "inline-block"}}>
                     <div className="accent-underline"></div>
-                    <span className="al-pos-r" style={{zIndex: 1}}>
+                    <span className="al-pos-r font-report-regular" style={{zIndex: 1}}>
                       {dataPack.title}
                     </span>
                   </h2>
@@ -70,7 +100,7 @@ export const CoursePageTemplate = ({data}) => {
         <div className="row al-mt-20">
           <div className="col-md-12">
             <div className="course-block element-block display-flex d-flex-c">
-              <div className="display-flex d-flex-sb" style={{width: "90%"}}>
+              <div className="display-flex d-flex-sb al-pos-r lesson-element-wrapper" style={{width: "90%"}}>
                 <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"}/>
                 <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""}/>
                 <LessonElement logo={videoPlayerMovie} header={"Lessons"} input={dataPack.numberofmodules} additionalText={" Modules"}/>
@@ -121,12 +151,10 @@ export const CoursePageTemplate = ({data}) => {
               <hr/>
               <section>
                 <div className="row">
-                  {lessonsPack
+                  {displayModules}
+                  {/* {lessonsPack
                     ? (lessonsPack.map((lesson, index) => (
                       <>
-                        {/* {console.log("Valid A", dataPack.modules)}
-                        {console.log("Valid B", lesson.frontmatter.title)}
-                        {console.log("Valid C", dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))} */}
                         {
                           ((dataPack.modules.find(e => e.lessons === lesson.frontmatter.title))) ?
                           <>
@@ -136,11 +164,6 @@ export const CoursePageTemplate = ({data}) => {
                                   <SafeImg inputObj={lesson.frontmatter.videothumbnail}/>
                                   <div className="video-overlay"></div>
                                   <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.frontmatter.title}</h6>
-                                  {/* <iframe style={{width: "100%"}} src={module.videolink + '?frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen'}></iframe> */}
-                                  {/* <iframe style={{width: "100%"}} src={module.videolink + '?modestbranding=1&autohide=1&showinfo=0&controls=0'}></iframe> */}
-                                  
-                                  {/* {console.log("LOG", module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src)} */}
-                                  {/* <img src={module.videothumbnail.childImageSharp.gatsbyImageData.images.fallback.src}/> */}
                                 </div>
                               </a>
                             </div>
@@ -152,7 +175,7 @@ export const CoursePageTemplate = ({data}) => {
                       
                     )))
                     : <h5>No modules are currently available.</h5>
-                  }
+                  } */}
                 </div>
               </section>
             </div>
@@ -165,7 +188,7 @@ export const CoursePageTemplate = ({data}) => {
 
 export const LessonElement = ({logo, header, input, additionalText}) => {
   return (
-    <div className="course-element display-flex d-flex-sb d-flex-row">
+    <div className="course-element display-flex d-flex-c d-flex-row">
       <div className="course-element-icon display-flex d-flex-row d-flex-c ">
         <img src={logo}/>
       </div>

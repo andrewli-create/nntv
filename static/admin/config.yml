@@ -274,7 +274,7 @@ collections:
               fields:
                 [
                   { label: "Member Name", name: "membername", widget: string },
-                  { label: "Member Bio", name: "memberbio", widget: text, required: false },
+                  { label: "Member Bio", name: "memberbio", widget: markdown, required: false },
                   { 
                     name: "memberimagealign",
                     label: "Member Image Alignment",

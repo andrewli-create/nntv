@@ -7,6 +7,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["Report-Regular"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
         url: `https://noneedtovanish.netlify.app/` // required!

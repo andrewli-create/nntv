@@ -2,6 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { CoursePageTemplate } from '../../templates/index-page'
 import SafeImg from "../../components/utils/SafeImg"
+import alarmClock from "../../img/alarm_clock.svg";
+import createChart from "../../img/create_chart.svg";
+import videoPlayerMovie from "../../img/video_player_movie.svg";
+import bookOpen from "../../img/book_open.svg";
+import wifi from "../../img/wifi.svg"
 
 const CoursePagePreview = ({ entry, getAsset }) => {
   
@@ -46,11 +51,11 @@ const CoursePagePreview = ({ entry, getAsset }) => {
           <div className="col-md-12">
             <div className="course-block element-block display-flex d-flex-c">
               <div className="display-flex d-flex-sb" style={{width: "90%"}}>
-                {/* <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"}/>
+                <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"}/>
                 <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""}/>
                 <LessonElement logo={videoPlayerMovie} header={"Lessons"} input={dataPack.numberofmodules} additionalText={" Modules"}/>
                 <LessonElement logo={bookOpen} header={"Resources"} input={dataPack.resources} additionalText={""}/>
-                <LessonElement logo={wifi} header={"Access"} input={dataPack.Requireaccessto} additionalText={""}/> */}
+                <LessonElement logo={wifi} header={"Access"} input={dataPack.Requireaccessto} additionalText={""}/>
               </div>
             </div>
           </div>
@@ -81,10 +86,10 @@ const CoursePagePreview = ({ entry, getAsset }) => {
                 <div className="row">
                   {lessonsPack
                     ? (lessonsPack.map((lesson, index) => (
-                      <div className="col-md-4 col-sm-6">
+                      <div className="col-md-4 col-sm-6 video-block-select-wrapper">
                         {/* <a href={"/module/" + lesson.lessons.replace(/ /g,"-").toLowerCase()}> */}
                         <a href="javascript: void(0)">
-                          <div className="video-block" style={{height: "150px"}}>
+                          <div className="video-block-select" style={{height: "150px"}}>
                             {/* <SafeImg inputObj={lesson.frontmatter.videothumbnail}/> */}
                             <div className="video-overlay"></div>
                             <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.lessons}</h6>
@@ -105,6 +110,21 @@ const CoursePagePreview = ({ entry, getAsset }) => {
     return <div>Loading...</div>
   }
 }
+
+export const LessonElement = ({logo, header, input, additionalText}) => {
+  return (
+    <div className="course-element display-flex d-flex-c d-flex-row">
+      <div className="course-element-icon display-flex d-flex-row d-flex-c ">
+        <img src={logo}/>
+      </div>
+      <div className="course-element-info-wrapper">
+        <h6>{header}</h6>
+        <span>{input}{additionalText}</span>
+      </div>
+    </div>
+  );
+};
+
 
 // IndexPagePreview.propTypes = {
 //   entry: PropTypes.shape({
