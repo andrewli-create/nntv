@@ -4,9 +4,9 @@ featuredimage: /img/sketching.jpeg
 openingparagraph: "We envision a future where every creator embraces the
   creative potential of technology, and utilizing essential tools to facilitate
   and amplify their unique artistic voices to unprecedented heights. "
-openingtagline: “Where musicians embrace technology, and creativity knows no bounds”
+openingtagline: Where musicians embrace technology, and creativity knows no bounds
 secondarytitle: Our Values
-secondarytagline: “NNTV - Inspiring the Next Wave of Musical Visionaries”
+secondarytagline: NNTV - Inspiring the Next Wave of Musical Visionaries
 seemoretext: See More >
 values:
   - valueimage: /img/parisa-smile.jpg
@@ -19,7 +19,7 @@ values:
     valuetitle: Sharing Knowledge
     valueparagraph: Text Here
   - valuetitle: Quality and Innovation
-    valueimage: /img/piano.jpeg
+    valueimage: /img/dsc00893.jpg
     valueparagraph: Text Here
 path: /our-vision
 templateKey: our-vision-page
@@ -210,4 +210,65 @@ members:
       the University of Toronto in 2023. He now pursues work in audio
       engineering and multimedia with his production company, Half Mile Music.
     memberimagealign: right
+quaternarytitle: Advisors
+advisors:
+  - advisorname: GREGORY LEE NEWSOME
+    advisorbio: >-
+      Gregory Lee Newsome is a composer and an Assistant Professor in the Music
+      Technology & Digital Media program of the Faculty of Music at the
+      University of Toronto.
+
+
+      His music has been described as “beautifully wrought” and “an incredibly intricate and hypnotic web of sound, texture, and rhythm.” Drawing from spectralism, his work is rooted in structure but tempered by intuition.
+
+
+      Computation is a core aspect of his artistic practice, from computer-assisted composition to interactive performance to reactive video.
+
+
+      After receiving his Master of Music in Composition from the University of British Columbia, he continued his studies with the late Russian-Canadian master Nikolai Korndorf before travelling to Paris to hone his artistic voice with the iconic Finnish composer Kaija Saariaho.
+
+
+      He has written music at the request of Arraymusic, Aventa, Daniel Cooper, Ian Hampton, Rachel Kiyo Iwaasa, Mark Takeshi McGregor, Olivia Steimel, Phoenix Chamber Choir, Redshift Music Society, Standing Wave, Thin Edge New Music Collective, Tiresias Duo, Vancouver New Music Society, and Vancouver Pro Musica, and his music has been performed and broadcast in North America and Europe.
+
+
+      He has been a resident of the Leighton Artists’ Colony at The Banff Centre (2012, 2014, 2015) and the Media and Graphics Interdisciplinary Centre (MAGIC) at the University of British Columbia (2010).
+
+
+      His work Avarice appears on flutist Mark Takeshi McGregor’s CD Sins & Fantasies, which was nominated for ‘Classical Recording of the Year’ by the 2015 Western Canadian Music Awards.
+
+
+      Gregory Lee Newsome has been a committed advocate for contemporary music, serving as a director of Aventa, The Music Gallery, and Vancouver New Music, as host of the radio programme Are You Serious? Music, and as Artistic Advisor for ensemble1534.
+    advisorimagealign: right
+    advisorimage: /img/member_313.jpg
+  - advisorname: CATHERINE MOORE
+    advisorbio: >-
+      A graduate of Bishop’s University, Canada (Honours BA, English Literature)
+      and the Conservatoire de musique in Montreal (Organ Performance),
+      Catherine Moore completed her PhD in music at The University of Liverpool,
+      England where her doctoral research explored the life and music of the
+      17th-century Italian composer and violinist Michelangelo Rossi. Her
+      dissertation, which includes computer analysis of keyboard temperaments
+      and transcriptions of some of Rossi's most startling chromatic madrigals,
+      was published as a book by Garland. She is a music critic for American
+      Record Guide magazine.  
+
+
+      Dr. Moore emphasizes creating -- and pitching -- value in business courses, workshop coaching, and consulting work. She teaches about music startups, new technologies for digital media creation & distribution, and the sustainability of communities through multi-national music initiatives -- always with a focus on the ways that cultural and aesthetic expertise is required in business decisions. 
+
+
+      Catherine Moore's other UofT role is setting up partnerships: with industry, computer scientists, UX (user-experience) designers, etc. Catherine continuously seeks parallels and inspirations from other industries (currently looking at food production and maritime shipping) -- and tells anyone who’ll listen that it’s a vital way to protect against sector insularity.  
+
+
+      Professor Moore has been quoted in the media about the future of music streaming, the secondary ticketing market, podcasts as business strategy, definitions of Canadian Content (CanCon), how creators can compete in the digital marketplace, and other topics. 
+
+
+      Catherine taught at New York University from 1995 to 2016, directing the Music Business Program for many years. Her focus at NYU was on forecasting, price strategy, strategic marketing, A&R music evaluation, and international expansion. 
+
+
+      As a consultant in 1997, Catherine Moore created and implemented a forward-looking methodology to evaluate recorded music masters. The method takes into account current accounting practices and provides a framework for estimating the future earning potential of recorded music masters as intangible assets. In 2001, two years before the launch of the Apple iTunes store, the method was updated to begin to include digital value. In 2010 and again in 2015 it was further modified, and the method has proved valid for continued assessment of future value when applied to varied, international, and multi-media exploitation of recorded masters. 
+
+
+      Catherine Moore started in the music business managing a retail store in Liverpool, England. Since then, she has been sales manager for Harmonia Mundi Records in London, international marketing manager for Nimbus Records at their Welsh headquarters, and a marketing director (jazz and classical music) for A&M Records in New York. While in New York in the late 1980s, she served on the local N.A.R.A.S. Board of Governors and on the Classical Screening Committee for the Grammy® Awards. She was an expert witness in a precedent-setting legal case brought by US federal regulators about joint ventures and price/advertising manipulation in the recorded music business.
+    advisorimagealign: center
+    advisorimage: /img/catherine-moore-photo-may-2016.png
 ---

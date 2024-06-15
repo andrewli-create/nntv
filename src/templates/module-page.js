@@ -14,10 +14,16 @@ import Img from "gatsby-image"
 import SafeImg from "../components/utils/SafeImg"
 import noteBook from "../img/note_book.svg";
 import penPaper from "../img/pen_paper.svg";
-import openBookmark from "../img/open_bookmark.svg";
+import openBookmark from "../img/open_bookmark_2.svg";
+import playgroundIcon from "../img/playground.svg";
+import bioIcon from "../img/bio.svg";
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
+function LinkRenderer(props) {
+  return <a href={props.href} target="_blank">{props.children}</a>
+}
+
 export const ModulePageTemplate = ({pageContext, data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("front-matter-Module", data.markdownRemark.frontmatter);
@@ -47,39 +53,77 @@ export const ModulePageTemplate = ({pageContext, data}) => {
           </div>
         </div>
         <div className="col-md-1"></div>
-        <div className="row al-mt-40">
-          <div className="col-md-12">
-            <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
-              <div className="intro-course-block-content">
-                <LessonBlockHeader logo={noteBook} header={"Script"}/>
-                <p style={{maxHeight: "250px", overflow: "scroll"}}>
-                  <Markdown>{dataPack.script}</Markdown>
-                </p>
+        <div className="container">
+          <div className="row al-mt-40">
+            { dataPack.biography ? 
+              <div className={dataPack.script ? "col-md-4" : "col-md-12"}>
+                <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
+                  <div className="intro-course-block-content">
+                    <LessonBlockHeader logo={bioIcon} header={"Biography"}/>
+                    <p style={{maxHeight: "250px", overflow: "scroll"}}>
+                      <Markdown>{dataPack.biography}</Markdown>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+              :
+              <></>
+            }
+            { dataPack.script ? 
+              <div className={dataPack.biography ? "col-md-8 al-mt-20-mobile" : "col-md-12"}>
+                <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
+                  <div className="intro-course-block-content" style={dataPack.biography ? {height: "100%"} : {}}>
+                    <LessonBlockHeader logo={noteBook} header={"Script"}/>
+                    <p style={{maxHeight: "250px", overflow: "scroll"}}>
+                      <Markdown>{dataPack.script}</Markdown>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              :
+              <></>
+            }
           </div>
         </div>
-        <div className="row al-mt-20 al-mb-40 ">
-            <div className="col-md-4 col-sm-6 notepad-block">
+        <div className="container">
+          <div className="row al-mt-20 al-mb-40 ">
+            <div className={dataPack.interactiveToggle ? "col-md-4 col-sm-6 notepad-block" : "col-md-6 col-sm-6 notepad-block"}>
               <div className="course-block display-flex d-flex-fs d-flex-col">
                 <LessonBlockHeader logo={penPaper} header={"Notepad"}/>
                 <textarea className="notepad-textarea" name="notepad" rows="5"></textarea>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 interactive-block">
-              <div className="course-block display-flex d-flex-fs d-flex-col">
-                <LessonBlockHeader logo={noteBook} header={"Playground"}/>
-                <span className="al-mt-20">No interactive element is available for this module.</span>
+            { dataPack.interactiveToggle ? 
+              <div className="col-md-4 col-sm-6 interactive-block">
+                <div className="course-block display-flex d-flex-fs d-flex-col">
+                  <LessonBlockHeader logo={playgroundIcon} header={"Playground"}/>
+                  <span className="al-mt-20">The interactive element is coming soon.</span>
+                </div>
               </div>
-            </div>
-            <div className="col-md-4 col-sm-12 credit-block">
+              :
+              <></>
+            }
+            <div className={dataPack.interactiveToggle ? "col-md-4 col-sm-12 credit-block" : "col-md-6 col-sm-12 credit-block"}>
               <div className="course-block display-flex d-flex-fs d-flex-col">
                 <LessonBlockHeader logo={openBookmark} header={"Credits & Info"}/>
                 <Markdown>{dataPack.creditandinfo}</Markdown>
                 {/* <span className="al-mt-20">{dataPack.creditandinfo}</span> */}
               </div>
             </div>
+            { dataPack.resources ? 
+              <div className="col-md-12 col-sm-12 credit-block al-mt-20">
+                <div className="course-block display-flex d-flex-fs d-flex-col">
+                  <LessonBlockHeader logo={openBookmark} header={"Resources"}/>
+                  <Markdown renderers={{link: LinkRenderer}}>{dataPack.resources}</Markdown>
+                  {/* <span className="al-mt-20">{dataPack.creditandinfo}</span> */}
+                </div>
+              </div>
+              :
+              <></>  
+            }
+            
           </div>
+        </div>
       </div>
     </div>
   );
@@ -129,8 +173,11 @@ export const pageQuery = graphql`
       frontmatter {
         title
         videolink
+        biography
         script
         creditandinfo
+        interactiveToggle
+        resources
         videothumbnail {
           childImageSharp {
             gatsbyImageData(

@@ -111,7 +111,7 @@ export const OurVisionPageTemplate = ({data}) => {
             <div className="col-md-5 al-pos-r" style={{zIndex: 1}}>
               <h1 className="al-pos-r display-inline-block font-report-regular" style={{marginBottom: "15px"}}>{data.markdownRemark.frontmatter.title}<span className="yellow-accent"></span></h1>
               <p>{data.markdownRemark.frontmatter.openingparagraph}</p>
-              <p className="al-no-margin-b opening-tagline">{data.markdownRemark.frontmatter.openingtagline}</p>
+              <p className="al-no-margin-b opening-tagline" style={{marginTop: "20px"}}>{data.markdownRemark.frontmatter.openingtagline}</p>
               <div className="video-frame-element" style={{width: "10px", height: "25px", right: "-10px", bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
               <div className="video-frame-element" style={{width: "25px", height: "10px", right: "-10px", bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
             </div>
@@ -133,7 +133,7 @@ export const OurVisionPageTemplate = ({data}) => {
                         <div className="value-img-wrapper">
                           <SafeImg inputObj={value.valueimage}/>
                         </div>
-                        <h6 className="al-mt-10">{value.valuetitle}</h6>
+                        <h6 className="al-mt-10" style={{textAlign: "center"}}>{value.valuetitle}</h6>
                       </div>
                       {/* <span>{data.markdownRemark.frontmatter.seemoretext}</span> */}
                     </div>
@@ -210,6 +210,60 @@ export const OurVisionPageTemplate = ({data}) => {
             </div>
           </div>
         </section>
+        <section id="advisors" className="al-mt-40">
+          <div className="display-flex d-flex-c" style={{marginBottom: "15px"}}>
+            <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">{data.markdownRemark.frontmatter.quaternarytitle}<span className="yellow-accent"></span></h1>
+          </div>
+          <div className="section-center">
+            <div className="row al-mb-40">
+              {data.markdownRemark.frontmatter.advisors
+                ? (data.markdownRemark.frontmatter.advisors.map((advisor, index) => (
+                  <div className="col-md-3 col-sm-6 al-mt-10">
+                    {/* {markdownRender[index] = <Markdown>{member.memberbio}</Markdown>} */}
+                    <div className="value-card d-flex d-flex-col d-flex-sb">
+                      <div>
+                        <h6 className="al-mt-10 member-name">{advisor.advisorname}</h6>
+                        <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(advisor.advisorname,  advisor.advisorbio, advisor.advisorimage)}}>
+                          {advisor.advisorbio ? 
+                            // <div className="member-bio">
+                            //   <p>{member.memberbio}</p>
+                            // </div>
+                            <></>
+                            : 
+                            <></>
+                          }
+                          <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
+                          <span className="click-prompt" style={{}}> Click to see bio.</span>
+                          {/* <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0, zIndex: 2}}></div> */}
+                          {/* <div className="video-frame-element" style={{width: "auto", height: "auto", left: 0, bottom: "10%", zIndex: 2, padding: "5px 10px"}}> */}
+                          <SafeImg inputObj={advisor.advisorimage} imagePosition={advisor.advisorimagealign}/>
+                          {/* {preview == 0 ? 
+                              member.memberimage ? <Img fluid={member.memberimage.childImageSharp.fluid}/>  : <></>
+                            :
+                              member.memberimage ? <img src={member.memberimage}/> : <></>
+                          }
+                           */}
+                          {/* <Img fluid={member.memberimage.childImageSharp.fluid}/> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )))
+                : null
+              }
+              {/* <div className="col-md-6 d-flex-row d-flex d-flex-sb"> */}
+              {/* {data.markdownRemark.frontmatter.keywords
+                ? (data.markdownRemark.frontmatter.keywords.map((keyword, index) => (
+                  <div className="keyword-box">
+                    {keyword.word}
+                  </div>
+                )))
+                : null
+              } */}
+              {/* </div> */}
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
@@ -252,6 +306,7 @@ export const pageQuery = graphql`
         seemoretext
         tertiarytitle
         tertiaryparagraph
+        quaternarytitle
         values {
           valueimage {
 						childImageSharp {
@@ -284,6 +339,23 @@ export const pageQuery = graphql`
           membername
           memberbio
           memberimagealign
+        }
+        advisors {
+          advisorimage {
+						childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: NONE
+                width: 200
+              )
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          advisorname
+          advisorbio
+          advisorimagealign
         }
         featuredimage {
           childImageSharp {

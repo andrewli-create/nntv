@@ -37,6 +37,10 @@
     margin-bottom: 40px !important;
 }
 
+.al-mb-20 {
+    margin-bottom: 20px !important;
+}
+
 .al-full-screen-height {
     min-height: 100vh;
 }
@@ -78,4 +82,10 @@
 
 .al-modal-frame {
     margin: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .al-mt-20-mobile {
+        margin-top: 20px !important;
+    }
 }

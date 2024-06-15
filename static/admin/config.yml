@@ -195,8 +195,11 @@ collections:
         { label: "Title", name: "title", widget: string },
         { label: "Video Thumbnail", name: "videothumbnail", widget: image },
         { label: "Video Link", name: "videolink", widget: string },
-        { label: "Script", name: "script", widget: markdown },
+        { label: "Biography", name: "biography", widget: markdown, required: false },
+        { label: "Script", name: "script", widget: markdown, required: false },
+        { label: "Enable Interactive", name: "interactiveToggle", widget: "boolean", default: false, required: false },
         { label: "Credit & Info", name: "creditandinfo", widget: markdown },
+        { label: "Resources", name: "resources", widget: markdown, required: false },
       ]
       
 
@@ -288,6 +291,30 @@ collections:
                       ]
                   },
                   { label: "Member Image", name: "memberimage", widget: image, required: false },
+                ]
+            }
+          - { label: "Quaternary Title", name: "quaternarytitle", widget: "string" }
+          - {
+              label: Advisors,
+              name: advisors,
+              widget: list,
+              fields:
+                [
+                  { label: "Advisor Name", name: "advisorname", widget: string },
+                  { label: "Advisor Bio", name: "advisorbio", widget: markdown, required: false },
+                  { 
+                    name: "advisorimagealign",
+                    label: "Advisor Image Alignment",
+                    widget: inline-select,
+                    required: false,
+                    options:
+                      [
+                        { label: Left, value: left},
+                        { label: Center, value: center},
+                        { label: Right, value: right},
+                      ]
+                  },
+                  { label: "Advisor Image", name: "advisorimage", widget: image, required: false },
                 ]
             }
       - file: "src/pages/under-construction/index.md"

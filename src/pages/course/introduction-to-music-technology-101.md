@@ -3,12 +3,12 @@ templateKey: course-page
 title: Introduction to Music Technology 101
 introduction: Start at the beginning by learning Intro to Gears - an important
   foundation for creating music.
-coursethumbnail: /img/thumbnail.png
+coursethumbnail: /img/imt_webcover_nntv_v4-01.jpg
 duration: 30
 level: beginner
-numberofmodules: 10
+numberofmodules: 7
 resources: 3 Interviews
-Requireaccessto: Computer and mobile
+Requireaccessto: Links
 about: This series is your first step into the world of music technology. We
   have created 10 short videos to help you start understanding sound, electronic
   music, and how music is produced today. This series is perfect for beginners
@@ -26,4 +26,5 @@ modules:
   - lessons: Master Your Music Essential Guide to Digital Audio Workstations DAW
   - lessons: An Introduction to MIDI Magic
   - lessons: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
+  - lessons: EQ Basics Enhance Your Audio with Equalization Techniques
 ---

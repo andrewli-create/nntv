@@ -17,6 +17,7 @@ import createChart from "../img/create_chart.svg";
 import videoPlayerMovie from "../img/video_player_movie.svg";
 import bookOpen from "../img/book_open.svg";
 import wifi from "../img/wifi.svg"
+import linksIcon from "../img/links.svg"
 import lightbulb from "../img/lightbulb.svg"
 import checkmarks from "../img/checkmarks.svg"
 import modules from "../img/modules.svg"
@@ -104,8 +105,9 @@ export const CoursePageTemplate = ({data}) => {
                 <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"}/>
                 <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""}/>
                 <LessonElement logo={videoPlayerMovie} header={"Lessons"} input={dataPack.numberofmodules} additionalText={" Modules"}/>
-                <LessonElement logo={bookOpen} header={"Resources"} input={dataPack.resources} additionalText={""}/>
-                <LessonElement logo={wifi} header={"Access"} input={dataPack.Requireaccessto} additionalText={""}/>
+                <LessonElement logo={bookOpen} header={"Interviews"} input={dataPack.resources} additionalText={""}/>
+                {/* <LessonElement logo={wifi} header={"Access"} input={dataPack.Requireaccessto} additionalText={""}/> */}
+                <LessonElement logo={linksIcon} header={"Resources"} input={dataPack.Requireaccessto} additionalText={""}/>
               </div>
             </div>
           </div>

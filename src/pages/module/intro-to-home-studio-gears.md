@@ -14,10 +14,12 @@ script: >-
     If you plan to record audio, you will need a microphone. XLR microphones will require a separate audio interface, while USB microphones will act as their own. You may want a MIDI controller if you want to play musical notes directly into your DAW. The most common controller is the keyboard. A 49-key MIDI keyboard is a good option for most basic tasks. Lastly, you’ll need cables to connect all your equipment, and any other necessary accessories.
 
     Be sure to check out our video on signal flow to learn about how all this gear gets wired up! Thanks for watching, and happy composing!
+interactiveToggle: false
 creditandinfo: |-
   * Research and Script: Adam Fainman
   * Voiceover:  Zakriya Bashir-Hill 
-  * Animation: Zakriya Bashir-Hill and Camille Shiu
+  * Animation: Zakriya Bashir-Hill
+  * Animation:  Camille Shiu
   * Background music: Micki-Lee Smith
   * Mixing and mastering: Joshua Weinfeld
   * Video editor: Joshua Weinfeld

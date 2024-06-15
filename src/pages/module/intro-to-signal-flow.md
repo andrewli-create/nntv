@@ -28,7 +28,9 @@ creditandinfo: >-
 
   * Voiceover: Chris Wiens
 
-  * Animation: Zakriya Bashir-Hill and Camille Shiu
+  * Animation: Zakriya Bashir-Hill
+
+  * Animation: Camille Shiu
 
   * Background music: Micki-Lee Smith
 

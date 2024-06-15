@@ -33,13 +33,16 @@ script: >-
 
 
   Thanks for watching and happy composing!
+interactiveToggle: true
 creditandinfo: |-
   * Research and script: Stef Haynes 
   * Edit by Zakriya Bashir-Hill
-  * Animation: Zakriya Bashir-Hill and camille Shiu
+  * Animation: Zakriya Bashir-Hill
+  * Animation: Camille Shiu
   * Voice over: Micki-Lee Smith
   * Background music: Christopher Wiens
   * Mixing/mastering: Joshua Weinfeld
   * Video editor: Joshua Weinfeld
   * Director: Dr. Parisa Sabet
+resources: <https://www.google.com>
 ---
