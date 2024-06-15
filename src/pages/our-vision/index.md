@@ -117,8 +117,7 @@ members:
     memberimage: /img/xerses-01.png
     memberimagealign: center
   - membername: Ricci Ebron
-    memberbio: >-
-      As a freelance musician, audio/video engineer, and arts administrator
+    memberbio: As a freelance musician, audio/video engineer, and arts administrator
       based in Toronto, Ricci has gathered multi-faceted experience in the music
       field. From the University of Toronto, she graduated with her Bachelor of
       Music studying flute and piccolo with a minor in psychology, as well as
@@ -127,21 +126,20 @@ members:
       music, Ricci holds glider and power pilot’s licenses and loves to travel.
       Her dream is to work with soundtrack music, whether through the recording
       studio or performing in a soundtrack orchestra.
-
-      <https://ricci.ebron.com/ >
     memberimage: /img/ricci-headshot-4.jpg
     memberimagealign: center
+    memberlink: "https://ricci.ebron.com/ "
   - membername: Andrew Li
     memberimage: /img/andrew_headshot_bright_square.jpg
-    memberbio: Andrew Li is a singer-songwriter, media artist, programmer and
-      developer. He holds a Bachelor of Arts in Creative Media at City
-      University of Hong Kong, and a Masters of Music in Music Technology and
-      Digital Media from the University of Toronto. Specialised in creating
-      visual media for music video and performances and developing and building
-      custom instruments using microcontrollers and electronics. He is also
-      experienced with audio and video recording, studio productions and
-      photography.
+    memberbio: >-
+      Andrew Li is a singer-songwriter, media artist, programmer and developer.
+      His clients in his developing career includes ToysRUs, Prudential, TK
+      Elevator, BrandedLifeStyle Asia etc.
+
+
+      He holds a Bachelor of Arts in Creative Media at City University of Hong Kong, and a Master of Music in Music Technology and Digital Media from the University of Toronto. He was also a member of the Surround Sound Acapella. Specialised in creating visual media for music video and performances and developing and building custom instruments using microcontrollers and electronics. He is also experienced with audio and video recording, studio productions and photography and was involved in multiple music video productions and live concert recordings.
     memberimagealign: center
+    memberlink: https://andrewli.me
   - membername: Lifia Teguh
     memberimage: /img/dsc06298.jpg
     memberbio: >-
@@ -158,9 +156,9 @@ members:
 
       In the summer of 2016, she created INDspire – Inspiration for Indonesia, a campaign for equal rights in performing arts education, especially for impoverished classes. Her dream is to found arts and entertainment companies as well as schools of performing arts that provide full scholarships for underprivileged children and teenagers all over the world. She also teaches at Play It Forward, a non-profit organization that gives free piano lessons to underserved communities.
     memberimagealign: center
+    memberlink: http://lifiateguh.com
   - membername: MICKI-LEE SMITH
-    memberbio: >-
-      Micki-Lee Smith is a Canadian musician and multimedia creator. Her
+    memberbio: Micki-Lee Smith is a Canadian musician and multimedia creator. Her
       training as a classical violinist and experiences with fiddle and jazz
       music have inspired an eclectic taste in music, which is reflected in her
       compositions. Since completing her Bachelors in Violin Performance with a
@@ -169,10 +167,9 @@ members:
       Toronto, she has worked as a freelance music producer, engineer, and
       performer. Smith’s work is driven by a passion for communication. She aims
       to approach intense subject matter with creative honesty.
-
-      https://www.mickileesmith.com/
     memberimage: /img/micki-leesmith.jpeg
     memberimagealign: right
+    memberlink: https://www.mickileesmith.com/
   - membername: YUN YOUNG LEE
     memberbio: Yun is a versatile musician based in Toronto, Canada. With a
       background in jazz, she has focused her skills as a  keyboard player, and

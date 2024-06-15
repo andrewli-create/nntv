@@ -22,6 +22,7 @@ export const OurVisionPageTemplate = ({data}) => {
   const [bio, setBio] = useState("");
   const [bioModalShow, setBioModalShow] = useState(false);
   const [bioImage, setBioImage] = useState("");
+  const [bioLink, setBioLink] = useState("");
 
   // const showBio = (name, bio) => {
   //   setBioName(name);
@@ -51,7 +52,7 @@ export const OurVisionPageTemplate = ({data}) => {
     // setBioName(" ");
   // }, [bioName, bio, bioModalShow]);
 
-  const showBio = (name, bio, image) => {
+  const showBio = (name, bio, image, link) => {
 
     if (name) {
       setBioName(name);
@@ -68,6 +69,12 @@ export const OurVisionPageTemplate = ({data}) => {
     } else {
       setBioImage("");
     }
+    if (link) {
+      setBioLink(link);
+    } else {
+      setBioLink("");
+    }
+
     setBioModalShow(true);
     // setBio(bio);
     // console.log("bioModalShow", bioModalShow);
@@ -93,6 +100,7 @@ export const OurVisionPageTemplate = ({data}) => {
           <h2 style={{fontWeight: "bold", textAlign: "center", fontSize: "20px", marginTop: "30px", marginBottom: "30px", textTransform: "uppercase"}}>{bioName}</h2>
           <div className="bio-content-display">
             <p className="bio-display" style={{width: "90%", margin: "auto"}}><Markdown>{bio}</Markdown></p>
+            <a className="bio-display" style={{width: "90%", margin: "auto", display: "block", marginBottom: "20px"}} href={bioLink} target="_blank">{bioLink}</a>
           </div>
           <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0}}></div>
           <div className="video-frame-element" style={{width: "10px", height: "100px", right: 0, bottom: 0}}></div>
@@ -169,7 +177,7 @@ export const OurVisionPageTemplate = ({data}) => {
                     <div className="value-card d-flex d-flex-col d-flex-sb">
                       <div>
                         <h6 className="al-mt-10 member-name">{member.membername}</h6>
-                        <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(member.membername,  member.memberbio, member.memberimage)}}>
+                        <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(member.membername,  member.memberbio, member.memberimage, member.memberlink)}}>
                           {member.memberbio ? 
                             // <div className="member-bio">
                             //   <p>{member.memberbio}</p>
@@ -338,6 +346,7 @@ export const pageQuery = graphql`
           }
           membername
           memberbio
+          memberlink
           memberimagealign
         }
         advisors {

@@ -278,6 +278,7 @@ collections:
                 [
                   { label: "Member Name", name: "membername", widget: string },
                   { label: "Member Bio", name: "memberbio", widget: markdown, required: false },
+                  { label: "Member Link", name: "memberlink", widget: string, required: false },
                   { 
                     name: "memberimagealign",
                     label: "Member Image Alignment",
