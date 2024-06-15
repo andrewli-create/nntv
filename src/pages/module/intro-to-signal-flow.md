@@ -30,7 +30,7 @@ creditandinfo: >-
 
   * Animation: Zakriya Bashir-Hill
 
-  * Animation: Camille Shiu
+  * Illustrator: Camille Shiu
 
   * Background music: Micki-Lee Smith
 

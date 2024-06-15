@@ -55,7 +55,8 @@ interactiveToggle: false
 creditandinfo: |-
   * Research and script: Christopher Wiens, Edit: Zakriya Bashir-Hill 
   * Edited by: Zakriya Bashir-Hill 
-  * Animation: Zakriya Bashir-Hill and Camille Shiu
+  * Animation: Zakriya Bashir-Hill
+  * Illustrator: Camille Shiu
   * Voice over: Ricci Ebron
   * Background music: Justin Poon
   * Mixing/mastering: Joshua Weinfeld

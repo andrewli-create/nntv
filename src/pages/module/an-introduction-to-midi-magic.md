@@ -38,11 +38,23 @@ creditandinfo: |-
   * Research and script: Stef Haynes 
   * Edit by Zakriya Bashir-Hill
   * Animation: Zakriya Bashir-Hill
-  * Animation: Camille Shiu
+  * Illustrator: Camille Shiu
   * Voice over: Micki-Lee Smith
   * Background music: Christopher Wiens
   * Mixing/mastering: Joshua Weinfeld
   * Video editor: Joshua Weinfeld
   * Director: Dr. Parisa Sabet
-resources: <https://www.google.com>
+resources: >-
+  * MIDI In-depth Overview
+
+
+  <https://www.avid.com/resource-center/what-is-midi-musical-instrument-digital-interface>
+
+
+
+
+  * What can MIDI Do
+
+
+  <https://midi.org/%e2%80%8btutorial-benefits-of-midi>
 ---

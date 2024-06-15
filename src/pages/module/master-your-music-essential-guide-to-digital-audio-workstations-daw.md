@@ -35,7 +35,7 @@ creditandinfo: |-
   * Research and Script: Adam Fainman
   * Voiceover:  Zakriya Bashir-Hill 
   * Animation: Zakriya Bashir-Hill
-  * Animation: Camille Shiu
+  * Illustrator: Camille Shiu
   * Background music: Micki-Lee Smith
   * Mixing and mastering: Joshua Weinfeld
   * Video editor: Joshua Weinfeld
