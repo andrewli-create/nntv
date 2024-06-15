@@ -702,6 +702,12 @@ h1 {
     margin-top: 20px;
 }
 
+.bio-display-image .safe-img{
+    height: 100% !important;
+    object-fit: cover;
+    width: 100% !important;
+}
+
 .bio-display-image .safe-img-obj {
     height: 100%;
     width: 100%;
