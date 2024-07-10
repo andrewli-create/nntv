@@ -27,4 +27,5 @@ modules:
   - lessons: An Introduction to MIDI Magic
   - lessons: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
   - lessons: EQ Basics Enhance Your Audio with Equalization Techniques
+  - lessons: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
 ---

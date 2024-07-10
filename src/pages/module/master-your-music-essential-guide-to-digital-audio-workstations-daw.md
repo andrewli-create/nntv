@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: Master Your Music Essential Guide to Digital Audio Workstations DAW
-videothumbnail: /img/screenshot-2024-06-11-at-3.49.18-am.png
+videothumbnail: /img/daw_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/SYvLr67uUmE?si=wU-_M6UJMmopZZnQ
 script: >-
   Introduction to DAW Welcome to our quick guide on Digital Audio Workstations,

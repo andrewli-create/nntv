@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: Intro to Home Studio Gears
-videothumbnail: /img/screenshot-2024-06-11-at-3.47.15-am.png
+videothumbnail: /img/hsg_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/UwHQbjBHeos?si=r4Gn8tGNhLzCjhju
 script: >-
   * Welcome to our Home Music Production Guide! In this video, we'll explore the

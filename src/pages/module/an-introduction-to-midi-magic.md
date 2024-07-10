@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: An Introduction to MIDI Magic
-videothumbnail: /img/thumbnail.png
+videothumbnail: /img/amd_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/rgKA93A6_j0?si=3Ll-beqsAux0j6TE
 script: >-
   Welcome to our brief introduction to MIDI, an essential tool for composers.

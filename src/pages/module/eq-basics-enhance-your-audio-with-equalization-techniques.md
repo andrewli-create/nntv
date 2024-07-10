@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: EQ Basics Enhance Your Audio with Equalization Techniques
-videothumbnail: /img/screenshot-2024-06-15-at-3.22.39-am.png
+videothumbnail: /img/aeq_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/FAHMNV4J1fc?si=u_GKhtWisV07ok2q
 script: >-
   Welcome to our quick guide to equalization, 	or E.Q. Let’s dive in! 
