@@ -21,9 +21,15 @@ import linksIcon from "../img/links.svg"
 import lightbulb from "../img/lightbulb.svg"
 import checkmarks from "../img/checkmarks.svg"
 import modules from "../img/modules.svg"
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // eslint-disable-next-line
 export const CoursePageTemplate = ({data}) => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("all data", data);
   console.log("front-matter-Course", data.markdownRemark.frontmatter);
@@ -49,10 +55,12 @@ export const CoursePageTemplate = ({data}) => {
         displayModules.push(
           <div className="col-md-4 col-sm-6 video-block-select-wrapper">
             <a href={"/module/" + data.lessons.nodes[x].frontmatter.title.replace(/ /g,"-").toLowerCase()}>
-              <div className="video-block-select">
+              <div className="video-block-select" data-aos="zoom-in">
+                {dataPack.modules[i].displaynew == true ? <div className="new-icon"><span>NEW</span></div> : <></>}
                 <SafeImg inputObj={data.lessons.nodes[x].frontmatter.videothumbnail}/>
-                <div className="video-overlay"></div>
-                <h6 className="module-title">{("0" + (i + 1)).slice(-2) + " - "}{data.lessons.nodes[x].frontmatter.title}</h6>
+                <div className="video-overlay">
+                  <h6 className="module-title">{("0" + (i + 1)).slice(-2) + " - "}{data.lessons.nodes[x].frontmatter.title}</h6>
+                </div>
               </div>
             </a>
           </div>
@@ -73,7 +81,7 @@ export const CoursePageTemplate = ({data}) => {
       <div className="container">
         <div className="row al-mt-20">
           <div className="col-md-7">
-            <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
+            <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}} data-aos="fade-right">
                 <div className="intro-course-block-content al-pos-r">
                   <div className="video-frame-element" style={{width: "25px", height: "10px", right: 0, bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
                   <div className="video-frame-element" style={{width: "10px", height: "25px", right: 0, bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
@@ -93,7 +101,7 @@ export const CoursePageTemplate = ({data}) => {
             </div>
           </div>
           <div className="col-md-5">
-            <div className="course-block mobile-top-spacing" style={{padding: 0, overflow: "hidden"}}>
+            <div className="course-block mobile-top-spacing" data-aos="fade-left" style={{padding: 0, overflow: "hidden"}}>
               <SafeImg inputObj={dataPack.coursethumbnail}/>
             </div>
           </div>
@@ -102,12 +110,12 @@ export const CoursePageTemplate = ({data}) => {
           <div className="col-md-12">
             <div className="course-block element-block display-flex d-flex-c">
               <div className="display-flex d-flex-sb al-pos-r lesson-element-wrapper" style={{width: "90%"}}>
-                <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"}/>
-                <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""}/>
-                <LessonElement logo={videoPlayerMovie} header={"Lessons"} input={dataPack.numberofmodules} additionalText={" Modules"}/>
-                <LessonElement logo={bookOpen} header={"Interviews"} input={dataPack.resources} additionalText={""}/>
+                <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"} aosData="fade-right" aosDuration={150}/>
+                <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""} aosData="zoom-in" aosDuration={300}/>
+                <LessonElement logo={videoPlayerMovie} header={"Lessons"} input={dataPack.numberofmodules} additionalText={" Modules"} aosData="zoom-in" aosDuration={450}/>
+                <LessonElement logo={bookOpen} header={"Interviews"} input={dataPack.resources} additionalText={""} aosData="zoom-in" aosDuration={600}/>
                 {/* <LessonElement logo={wifi} header={"Access"} input={dataPack.Requireaccessto} additionalText={""}/> */}
-                <LessonElement logo={linksIcon} header={"Resources"} input={dataPack.Requireaccessto} additionalText={""}/>
+                <LessonElement logo={linksIcon} header={"Resources"} input={dataPack.Requireaccessto} additionalText={""} aosData="fade-left" aosDuration={750}/>
               </div>
             </div>
           </div>
@@ -122,16 +130,16 @@ export const CoursePageTemplate = ({data}) => {
                   About
                 </span>
               </h5>
-              <p>{dataPack.about}</p>
+              <Markdown>{dataPack.about}</Markdown>
             </div>
           </div>
           <div className="col-md-6">
-            <div className="course-block mobile-top-spacing block-min-300">
+            <div className="course-block mobile-top-spacing block-min-300" style={{height: "100%"}}>
               <img src={checkmarks}/>
               <h5 className="course-block-title">
                 <div className="accent-underline"></div>
                 <span className="al-pos-r" style={{zIndex: 1}}>
-                  Outcomes
+                  Outcome
                 </span>
               </h5>
               {/* <p>{dataPack.outcomes}</p> */}
@@ -188,9 +196,9 @@ export const CoursePageTemplate = ({data}) => {
   );
 };
 
-export const LessonElement = ({logo, header, input, additionalText}) => {
+export const LessonElement = ({logo, header, input, additionalText, aosData, aosDuration}) => {
   return (
-    <div className="course-element display-flex d-flex-c d-flex-row">
+    <div className="course-element display-flex d-flex-c d-flex-row" data-aos={aosData} data-aos-duration={aosDuration}>
       <div className="course-element-icon display-flex d-flex-row d-flex-c ">
         <img src={logo}/>
       </div>
@@ -242,6 +250,7 @@ export const pageQuery = graphql`
         outcomes
         modules {
           lessons
+          displaynew
         }
         coursethumbnail {
           childImageSharp {

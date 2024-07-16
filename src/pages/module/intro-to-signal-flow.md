@@ -3,6 +3,15 @@ templateKey: module-page
 title: Intro to Signal Flow
 videothumbnail: /img/asf_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/H5f1Nlni7Mo?si=xGlvIBqUfHcCdssZ
+biooutcome: outcomes
+biography: >-
+  * • Develop an understanding of how a “real world” sound can be recorded and
+  outputted, and the “path” it follows through its journey
+
+  * • Using your understanding of how signal flows, connect your gear (as discussed in Intro to Home Studio Gear) together
+
+
+  Connect the parts of your home studio together. We can test how it works once we learn a bit more about DAWs!
 script: >-
   Welcome to our quick guide to signal flow. In this video, we’ll delve into the
   way that the gear in your home studio works together to record and reproduce
@@ -22,21 +31,63 @@ script: >-
 
 
   From a simple real-world sound, through cables and devices, to the sound in our ears, the journey from the acoustic to the digital domain and back is fascinating. And this, dear viewers, is  just the start. Stay tuned for the next segment where we will learn more about DAWs. Thanks for watching and happy composing!
-creditandinfo: >-
-  * Research and Script: Mehrdad Ranjbar, Edited by Chris Wiens and Zakriya
-  Bashir-Hill
-
-  * Voiceover: Chris Wiens
-
-  * Animation: Zakriya Bashir-Hill
-
+creditandinfo: |-
+  * Researcher and scriptwriter: Mehrdad Ranjbar
+  * Script editor: Chris Wiens and Zakriya Bashir-Hill
+  * Narrator: Chris Wiens
   * Illustrator: Camille Shiu
-
-  * Background music: Micki-Lee Smith
-
-  * Mixing and mastering: Joshua Weinfeld
-
-  * Video editor: Joshua Weinfeld
-
+  * Motion designer: Zakriya Bashir-Hill 
+  * Composer:  Micki-Lee Smith
+  * Video and audio editor: Joshua Weinfeld
   * Director: Dr. Parisa Sabet
+resources: >-
+  **Sound Vibrations**
+
+
+  <https://www.scienceworld.ca/resource/sound/>
+
+
+  **Audio Waveforms** 
+
+
+  <https://mim.org/the-connection-between-music-and-science/>
+
+
+  **Audio to Digital**
+
+
+  <https://www.newworldencyclopedia.org/entry/Digital_audio>
+
+
+  and / or
+
+
+  <https://ca.kef.com/blogs/news/a-basic-explanation-of-how-music-is-converted-to-digital>
+
+
+  **Sample Rate**
+
+
+  <https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html>
+
+
+  **Additional Helpful links for next steps**
+
+
+  **Audio Waveforms** 
+
+
+  <https://www.earmaster.com/music-theory-online/ch03/chapter-3-1.html>
+
+
+  [https://www.sweetwater.com/insync/digital-audio/](<https://www.sweetwater.com/insync/digital-audio/ >)
+
+
+  <https://www.sweetwater.com/insync/d-converter-adc/>
+
+
+  <https://www.sweetwater.com/insync/d-converter-dac/>
+
+
+  <https://www.newworldencyclopedia.org/entry/Digital_audio>
 ---

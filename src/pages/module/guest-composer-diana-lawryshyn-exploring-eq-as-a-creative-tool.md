@@ -3,6 +3,7 @@ templateKey: module-page
 title: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
 videothumbnail: /img/screenshot-2024-07-10-at-11.46.38-am.png
 videolink: https://www.youtube.com/embed/PvyI7DzEcPs?si=kmHhLbezMjn3M_SP
+biooutcome: biography
 biography: Diana Nadia Lawryshyn is a visual and sound artist from Oshawa
   Ontario known for painting on wood surfaces and composing music from field
   recordings. Central to her practice is a willingness to let the environment
@@ -61,9 +62,7 @@ interactiveToggle: false
 creditandinfo: |-
   Guest composer: Diana Lawryshyn 
 
-  Mixing and mastering: Joshua Weinfeld 
-
-  Video editor: Joshua Weinfeld 
+  Video and audio editor: Joshua Weinfeld 
 
   Director: Dr. Parisa Sabet
 ---

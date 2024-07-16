@@ -74,7 +74,7 @@ const FooterMain = ({data}) => {
     <footer id="footer" className="footer al-white-text" style={{backgroundColor: footerColor, paddingBottom: "0 !important"}}>
       <div className="container">
         <div className="row">
-          <div className="col-md-4 col-sm-12">
+          <div className="col-md-4 col-sm-12 mobile-side-padding">
             <div className="footer-block">
               {/* <img className="footer-logo" style={{width: "80px", marginBottom: "40px"}} src={footerLogoLarge}/> */}
               <h5 className="footer-left-title">{leftBlock.introductiontitle}</h5>

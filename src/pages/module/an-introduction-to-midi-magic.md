@@ -3,6 +3,11 @@ templateKey: module-page
 title: An Introduction to MIDI Magic
 videothumbnail: /img/amd_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/rgKA93A6_j0?si=3Ll-beqsAux0j6TE
+biooutcome: outcomes
+biography: Further develop an understanding of how MIDI can be used as a
+  creative tool in addition to a functional one, through practical examples
+  given by the guest composer, and learn some examples of different ways MIDI
+  data can be manipulated.
 script: >-
   Welcome to our brief introduction to MIDI, an essential tool for composers.
   Let’s dive in!
@@ -35,26 +40,52 @@ script: >-
   Thanks for watching and happy composing!
 interactiveToggle: true
 creditandinfo: |-
-  * Research and script: Stef Haynes 
-  * Edit by Zakriya Bashir-Hill
-  * Animation: Zakriya Bashir-Hill
+  * Researcher and scriptwriter: Stef Haynes
+  * Script editor: Zakriya Bashir-Hill 
+  * Narrator: Micki-Lee Smith
   * Illustrator: Camille Shiu
-  * Voice over: Micki-Lee Smith
-  * Background music: Christopher Wiens
-  * Mixing/mastering: Joshua Weinfeld
-  * Video editor: Joshua Weinfeld
+  * Motion designer: Zakriya Bashir-Hill 
+  * Composer: Christopher Wiens
+  * Video and audio editor: Joshua Weinfeld
   * Director: Dr. Parisa Sabet
 resources: >-
-  * MIDI In-depth Overview
+  * **MIDI In-depth Overview**
 
 
   <https://www.avid.com/resource-center/what-is-midi-musical-instrument-digital-interface>
 
 
-
-
-  * What can MIDI Do
+  * **What can MIDI Do**
 
 
   <https://midi.org/%e2%80%8btutorial-benefits-of-midi>
+
+
+
+
+  **Piano Roll**
+
+
+  <https://flypaper.soundfly.com/produce/tips-for-using-the-midi-piano-roll-in-your-daw/>
+
+
+  **Compositional Tools** 
+
+
+  <https://www.sace.sa.edu.au/documents/652891/3997350/Compositional+devices.pdf/34286d6a-ba85-5b49-0829-31e5a512bd01>
+
+
+  And /or
+
+
+  <https://musictheory.pugetsound.edu/mt21c/MelodicAlteration.html>
+
+
+  **Additional Helpful links for next steps**
+
+
+  **Piano Roll additional history**
+
+
+  <https://www.composinggloves.com/courses/music-theory/lesson-2-piano-roll>
 ---

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
@@ -13,12 +14,18 @@ import pianoTopView from '../../static/img/grand-piano-top-view.png'
 import { register } from 'swiper/element/bundle';
 import 'swiper/element/css/autoplay';
 import SafeImg from "../components/utils/SafeImg"
+import ReactPlayer from "react-player";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 register();
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data, preview}) => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   console.log("index preview", preview);
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("front-matter", data.markdownRemark.frontmatter.keywords[0].word);
@@ -29,9 +36,9 @@ export const IndexPageTemplate = ({data, preview}) => {
     // </div>
     <>
       <div className="container-fluid vertical-white-space-top al-no-pad-horizonal">
-        <section className="section-center al-mt-40">
+        <section className="section-center al-mt-40" >
           <div className="row">
-            <div className="col-md-6 d-flex-col d-flex d-flex-c index-intro-block">
+            <div className="col-md-6 d-flex-col d-flex d-flex-c index-intro-block"  data-aos="fade-right">
               <h1 className="al-title-text font-report-regular">{data.markdownRemark.frontmatter.title}</h1>
               <p>
                 {data.markdownRemark.frontmatter.heading == " " ? <></> : <>{data.markdownRemark.frontmatter.heading}<br/></>}
@@ -46,7 +53,7 @@ export const IndexPageTemplate = ({data, preview}) => {
                 </button>
               
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" data-aos="fade-left">
               <div className="display-flex d-flex-sb">
                 <div className="placeholder-block al-round-border" style={{height: "300px", width: "100%"}}>
                   {/* <img className="deco-image" src={pianoTopView}/> */}
@@ -55,14 +62,39 @@ export const IndexPageTemplate = ({data, preview}) => {
                       <h2 style={{textAlign: "center", height: "20px"}}>Slider is not visible in preview</h2>
                     </div>
                     :
-                    <swiper-container class="al-round-border" style={{overflow: "hidden", height: "100%"}} autoplay="true" loop="true" autoplay-delay="2000">
+                    <swiper-container class="al-round-border" style={{overflow: "hidden", height: "100%"}} autoplay="true" loop="true" autoplay-delay="5000">
                       {data.markdownRemark.frontmatter.homeslider
                         ? (data.markdownRemark.frontmatter.homeslider.map((slide, index) => (
                           <swiper-slide>
                             {/* <img className="deco-image" src={pianoTopView}/> */}
                             {/* <img className="deco-image" src={slide.slideimage.childImageSharp.gatsbyImageData.images.fallback.src}/> */}
                             {/* {console.log("slide.slideimage", slide.slideimage)} */}
-                            <SafeImg inputObj={slide.slideimage} imageHeight={"100%"}/>
+                            {slide.slideimage ? 
+                              <SafeImg inputObj={slide.slideimage} imageHeight={"100%"}/>
+                              : 
+                              slide.slidevideolink ?
+                              <>
+                                <div style={{position: "relative", height: "100%", width: " 100%", overflow: "hidden"}}>
+                                  <div style={{height: "150%", transform: "translateY(-16.75%) scale(1.25)", pointerEvents: "none"}}>
+                                    <ReactPlayer
+                                      url={slide.slidevideolink}
+                                      playing={true}
+                                      width={"100%"}
+                                      height={"100%"}
+                                      muted={true}
+                                      controls={false}
+                                      config={{
+                                        youtube: {
+                                          playerVars: { modestbranding: 1, disablekb: 0, loop: 1, showinfo: 0 }
+                                        }
+                                      }}
+                                    /> 
+                                  </div>
+                                </div>
+                              </>
+                                : 
+                              <></>
+                            }
                             {/* <span>{slide}</span> */}
                           </swiper-slide>
                         )))
@@ -83,13 +115,17 @@ export const IndexPageTemplate = ({data, preview}) => {
           </div>
         </section>
         <section className="yellow-bar al-mt-40">
-          <div className="section-center">
-            <div className="row vertical-white-space-large">
+          <div className="section-center" style={{paddingLeft: "0px", paddingRight: "0px"}}>
+            <div className="row vertical-white-space-large mobile-side-padding" data-aos="fade-up">
+              {/* <div className="col-md-6 d-flex-row d-flex d-flex-sb value-wrapper"> */}
               <div className="col-md-6 d-flex-row d-flex d-flex-sb value-wrapper">
               {data.markdownRemark.frontmatter.keywords
                 ? (data.markdownRemark.frontmatter.keywords.map((keyword, index) => (
-                  <div className="keyword-box">
-                    {keyword.word}
+                  <div className="keyword-box" style={{position: "relative", overflow: "hidden"}}>
+                    <div style={{position: "absolute", height: "100%", width: "100%", opacity: 0.15, filter: "blur(0px)"}}>
+                      <SafeImg inputObj={keyword.wordimage} imageHeight={"100%"}/>
+                    </div>
+                    <h6 style={{zIndex: 1, fontWeight: "bold"}}>{keyword.word}</h6>
                   </div>
                 )))
                 : null
@@ -154,11 +190,28 @@ export const pageQuery = graphql`
               }
             }
           }
+          slidevideolink
         }
         heading
         tagline
         keywords {
           word
+          wordimage {
+            childImageSharp {
+              gatsbyImageData(
+                quality: 100
+                placeholder: NONE
+                height: 200
+              )
+              fluid (maxWidth:500, quality:50){
+                src
+                srcSet
+                aspectRatio
+                sizes
+                base64
+              }
+            }
+          }
         }
         yellowtitle
         yellowparagraph

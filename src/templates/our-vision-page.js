@@ -13,6 +13,8 @@ import Img from "gatsby-image"
 import SafeImg from "../components/utils/SafeImg"
 import AlModal from "../components/utils/AlModal"
 import Markdown from 'react-markdown'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
@@ -39,7 +41,7 @@ export const OurVisionPageTemplate = ({data}) => {
       }
     };
     window.addEventListener('keydown', handleEsc);
-
+    AOS.init();
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
@@ -111,7 +113,7 @@ export const OurVisionPageTemplate = ({data}) => {
           <div className="row al-pos-r our-vision-row">
             <div className="vision-background-block"></div>
             <div className="col-md-5">
-              <div className="featured-img-wrapper">
+              <div className="featured-img-wrapper" data-aos="fade-right" data-aos-duration="1000">
                 <SafeImg inputObj={data.markdownRemark.frontmatter.featuredimage}/>
               </div>
             </div>
@@ -136,7 +138,7 @@ export const OurVisionPageTemplate = ({data}) => {
               {data.markdownRemark.frontmatter.values
                 ? (data.markdownRemark.frontmatter.values.map((value, index) => (
                   <div className="col-md-3 col-sm-6">
-                    <div className="value-card d-flex d-flex-col d-flex-sb">
+                    <div className="value-card d-flex d-flex-col d-flex-sb" data-aos="fade-up" data-aos-duration={index*500+500}>
                       <div>
                         <div className="value-img-wrapper">
                           <SafeImg inputObj={value.valueimage}/>

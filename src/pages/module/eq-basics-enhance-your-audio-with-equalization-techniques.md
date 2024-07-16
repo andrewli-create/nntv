@@ -3,6 +3,11 @@ templateKey: module-page
 title: EQ Basics Enhance Your Audio with Equalization Techniques
 videothumbnail: /img/aeq_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/FAHMNV4J1fc?si=u_GKhtWisV07ok2q
+biooutcome: outcomes
+biography: Further develop an understanding of how EQ can be used as a creative
+  tool in addition to a functional one, through practical examples given by the
+  guest composer, and learn some examples of different ways EQ can fix unwanted
+  audio artifacts, or completely creatively transform a recorded sound.
 script: >-
   Welcome to our quick guide to equalization, 	or E.Q. Let’s dive in! 
 
@@ -53,14 +58,50 @@ script: >-
   Thanks for watching and happy composing!
 interactiveToggle: false
 creditandinfo: |-
-  * Research and script: Christopher Wiens, Edit: Zakriya Bashir-Hill 
+  * Research and script: Christopher Wiens
   * Edited by: Zakriya Bashir-Hill 
-  * Animation: Zakriya Bashir-Hill
+  * Motion Graphics: Zakriya Bashir-Hill
   * Illustrator: Camille Shiu
   * Voice over: Ricci Ebron
   * Background music: Justin Poon
   * Mixing/mastering: Joshua Weinfeld
   * Video editor: Joshua Weinfeld
   * Director: Dr. Parisa Sabet
-resources: ""
+resources: >-
+  **What is Frequency and Hertz and Amplitude**
+
+
+  [https://www.nps.gov/subjects/sound/understandingsound.htm](<https://www.nps.gov/subjects/sound/understandingsound.htm >)
+
+
+  **EQ types and controls** 
+
+
+  <https://www.abletonlessons.com/music-production-tips-and-tricks/sculpting-sound-a-music-producers-guide-to-using-eq-effectively>
+
+
+
+
+  **Common EQ Filters / Approaches** 
+
+
+  <https://www.fabfilter.com/learn/equalization/introduction-to-eq>
+
+
+  And 
+
+
+  <https://www.toughtones.com/the-easy-approach-to-eq/>
+
+
+  And 
+
+
+  <https://www.sonarworks.com/blog/learn/types-of-equalizers-and-their-applications>
+
+
+  **Visual EQ charts**
+
+
+  <https://unison.audio/eq-frequency-chart/>
 ---

@@ -157,7 +157,7 @@ collections:
       - { label: "Number of Modules", name: "numberofmodules", widget: "number", required: false }
       - { label: "Resources", name: "resources", widget: "string", required: false }
       - { label: "Require Access To", name: "Requireaccessto", widget: "string", required: false }
-      - { label: "About", name: "about", widget: "text", required: false }
+      - { label: "About", name: "about", widget: "markdown", required: false }
       - { label: "Outcomes", name: "outcomes", widget: "markdown", required: false }
       - {
           label: Modules,
@@ -172,7 +172,8 @@ collections:
                 displayFields: ["title"],
                 searchFields: ["title"],
                 valueField: "title"
-              }
+              },
+              { label: "New", name: "displaynew", widget: "boolean", default: false, required: false },
             ]
         }
       
@@ -195,7 +196,18 @@ collections:
         { label: "Title", name: "title", widget: string },
         { label: "Video Thumbnail", name: "videothumbnail", widget: image },
         { label: "Video Link", name: "videolink", widget: string },
-        { label: "Biography", name: "biography", widget: markdown, required: false },
+        { 
+          name: "biooutcome",
+          label: "Display Bio or Outcome",
+          widget: inline-select,
+          required: false,
+          options:
+            [
+              { label: Biography, value: biography},
+              { label: Learning Outcomes, value: outcomes}
+            ]
+        },
+        { label: "Biography or Learning Outcomes", name: "biography", widget: markdown, required: false },
         { label: "Script", name: "script", widget: markdown, required: false },
         { label: "Enable Interactive", name: "interactiveToggle", widget: "boolean", default: false, required: false },
         { label: "Credit & Info", name: "creditandinfo", widget: markdown },
@@ -226,7 +238,8 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: "Slide Image", name: "slideimage", widget: image }
+                  { label: "Slide Image", name: "slideimage", widget: image, required: false },
+                  { label: "Video Link", name: "slidevideolink", widget: string, required: false }
                 ]
             }
           - {
@@ -235,7 +248,8 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: "Word", name: "word", widget: string }
+                  { label: "Word", name: "word", widget: string },
+                  { label: "Word Image", name: "wordimage", widget: image, required: false }
                 ]
             }
           - { label: "Yellow Title", name: yellowtitle, widget: string }

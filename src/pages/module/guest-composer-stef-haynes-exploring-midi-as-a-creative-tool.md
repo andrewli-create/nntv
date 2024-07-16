@@ -3,6 +3,7 @@ templateKey: module-page
 title: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
 videothumbnail: /img/screenshot-2024-06-11-at-3.47.48-am.png
 videolink: https://www.youtube.com/embed/hnBTnYvrg7c?si=0aNH06Xpt1xioxnD
+biooutcome: biography
 biography: Stef Haynes is a performer, composer, and producer living in Toronto,
   Canada. A specialist in woodwinds and electronic wind instruments, Stef
   collaborates regularly with artists of diverse genres and musical backgrounds.
@@ -37,11 +38,16 @@ creditandinfo: >-
   Performers: Stef Haynes, YunYoung Lee, Carlo Santo Domingo, Jon Catanus, Kristine Buerano
 
 
-  Mixing and mastering: Joshua Weinfeld
-
-
-  Video editor: Joshua Weinfeld
+  Video and audio editor: Joshua Weinfeld
 
 
   Director: Dr. Parisa Sabet
+resources: |-
+  **Website**
+
+  <https://www.stefhaynes.com/>
+
+  **YouTube Channel**
+
+  <https://www.youtube.com/@StefHaynes>
 ---

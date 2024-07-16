@@ -4,6 +4,7 @@ title: No Need to Vanish
 heading: " "
 tagline: Inspiring the Next Wave of Musical Visionaries
 homeslider:
+  - slidevideolink: https://youtu.be/2kQgCti3AlA?si=VAoKzJHVx9q4LicA
   - slideimage: /img/dsc00874.jpeg
   - slideimage: /img/nntv-teamimages-dec4-0008.jpg
   - slideimage: /img/compressor.jpeg
@@ -19,9 +20,13 @@ mainpitch:
     profits are reinvested in their communities.
 keywords:
   - word: Learn
+    wordimage: /img/create.jpg
   - word: Inspire
+    wordimage: /img/nntv-teamimages-dec4-0012b.jpg
   - word: Embrace
+    wordimage: /img/embrace.jpg
   - word: Create
+    wordimage: /img/learn.jpg
 intro:
   blurbs:
     - image: /img/coffee.png

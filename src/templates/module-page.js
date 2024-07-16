@@ -17,6 +17,8 @@ import penPaper from "../img/pen_paper.svg";
 import openBookmark from "../img/open_bookmark_2.svg";
 import playgroundIcon from "../img/playground.svg";
 import bioIcon from "../img/bio.svg";
+import outcomeIcon from "../img/outcome.svg";
+import { useState, useEffect, useCallback } from "react";
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
@@ -26,6 +28,16 @@ function LinkRenderer(props) {
 
 export const ModulePageTemplate = ({pageContext, data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
+  const [loadAnimation, setLoadAnimation] = useState(0);
+  const [loadAnimationB, setLoadAnimationB] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadAnimation(1);
+      setTimeout(() => {
+        setLoadAnimationB(1);
+      }, 250);
+    }, 50);
+  }, [])
   console.log("front-matter-Module", data.markdownRemark.frontmatter);
   var dataPack = data.markdownRemark.frontmatter;
   var modulePack = dataPack.modules;
@@ -43,13 +55,13 @@ export const ModulePageTemplate = ({pageContext, data}) => {
       </div>
       <div className="row al-mt-40">
         <div className="col-md-1"></div>
-        <div className="col-md-10">
-          <div className="video-block-wrapper">
+        <div className="col-md-10" style={{minHeight: "450px"}}>
+          <div className={loadAnimation == 1 ? "video-block-wrapper frame-end" : "video-block-wrapper frame-start"}>
             <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0}}></div>
             <div className="video-frame-element" style={{width: "100px", height: "10px", left: 0, top: 0}}></div>
             <div className="video-frame-element" style={{width: "10px", height: "100px", right: 0, bottom: 0}}></div>
             <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0}}></div>
-            <iframe style={{width: "100%", height: "450px"}} src={dataPack.videolink}></iframe>
+            <iframe className={loadAnimationB == 1 ? "module-iframe show-video" : "module-iframe hide-video"} style={{width: "100%", height: "450px"}} src={dataPack.videolink}></iframe>
           </div>
         </div>
         <div className="col-md-1"></div>
@@ -59,7 +71,12 @@ export const ModulePageTemplate = ({pageContext, data}) => {
               <div className={dataPack.script ? "col-md-4" : "col-md-12"}>
                 <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
                   <div className="intro-course-block-content">
-                    <LessonBlockHeader logo={bioIcon} header={"Biography"}/>
+                    {dataPack.biooutcome == "biography" ?
+                      <LessonBlockHeader logo={bioIcon} header={"Biography"}/>
+                      :
+                      <LessonBlockHeader logo={outcomeIcon} header={"Outcome"}/>
+                    }
+                    
                     <p style={{maxHeight: "250px", overflow: "scroll"}}>
                       <Markdown>{dataPack.biography}</Markdown>
                     </p>
@@ -173,6 +190,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         videolink
+        biooutcome
         biography
         script
         creditandinfo

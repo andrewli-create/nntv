@@ -91,8 +91,9 @@ const CoursePagePreview = ({ entry, getAsset }) => {
                         <a href="javascript: void(0)">
                           <div className="video-block-select" style={{height: "150px"}}>
                             {/* <SafeImg inputObj={lesson.frontmatter.videothumbnail}/> */}
-                            <div className="video-overlay"></div>
-                            <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.lessons}</h6>
+                            <div className="video-overlay" style={{opacity: 1}}>
+                              <h6 className="module-title">{("0" + (index + 1)).slice(-2) + " - "}{lesson.lessons}</h6>
+                            </div>
                           </div>
                         </a>
                       </div>

@@ -9,17 +9,27 @@ level: beginner
 numberofmodules: 7
 resources: 3 Interviews
 Requireaccessto: Links
-about: This series is your first step into the world of music technology. We
-  have created 10 short videos to help you start understanding sound, electronic
-  music, and how music is produced today. This series is perfect for beginners
-  with no prior knowledge.
+about: >-
+  * Whether you’re someone who’s just starting out your musical journey or a
+  composer, performer, or educator looking to familiarise yourself with the
+  world of modern music production technology, this series will help develop
+  your understanding of various terms, tools, and techniques to get started
+  through bite-size videos. The introductory course will build your foundational
+  knowledge of home studio production, including equipment, DAWs, MIDI, EQ,
+  reverb, compression, and more!
+
+
+
+
+  * As you solidify your understanding of how to navigate these tools practically, you will also begin to learn about how they can unlock a multitude of creative possibilities that will further and enrich your creative vision in today’s musical world.
 outcomes: >-
-  * • Understand basic concepts of music production, including MIDI, EQ and
-  Reverb
+  * • Configure a simple home studio setup
 
-  * • Learn about music production equipment 
+  * • Create a simple multi-track recording in your DAW, using both recorded audio and MIDI
 
-  * • Start your music production journey
+  * • Apply effects to your audio, including EQ, reverb, compression, and more, and begin to use these effects to solve practical problems as well as experiment creatively
+
+  * • Start and continue your music production journey
 modules:
   - lessons: Intro to Home Studio Gears
   - lessons: Intro to Signal Flow
@@ -28,4 +38,5 @@ modules:
   - lessons: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
   - lessons: EQ Basics Enhance Your Audio with Equalization Techniques
   - lessons: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
+    displaynew: true
 ---
