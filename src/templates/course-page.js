@@ -55,7 +55,8 @@ export const CoursePageTemplate = ({data}) => {
         displayModules.push(
           <div className="col-md-4 col-sm-6 video-block-select-wrapper">
             <a href={"/module/" + data.lessons.nodes[x].frontmatter.title.replace(/ /g,"-").toLowerCase()}>
-              <div className="video-block-select" data-aos="zoom-in">
+              {/* <div className="video-block-select" data-aos="zoom-in"> */}
+              <div className="video-block-select">
                 {dataPack.modules[i].displaynew == true ? <div className="new-icon"><span>NEW</span></div> : <></>}
                 <SafeImg inputObj={data.lessons.nodes[x].frontmatter.videothumbnail}/>
                 <div className="video-overlay">
@@ -108,7 +109,7 @@ export const CoursePageTemplate = ({data}) => {
         </div>
         <div className="row al-mt-20">
           <div className="col-md-12">
-            <div className="course-block element-block display-flex d-flex-c">
+            <div className="course-block course-block-tight element-block display-flex d-flex-c">
               <div className="display-flex d-flex-sb al-pos-r lesson-element-wrapper" style={{width: "90%"}}>
                 <LessonElement logo={alarmClock} header={"Duration"} input={dataPack.duration} additionalText={" min"} aosData="fade-right" aosDuration={150}/>
                 <LessonElement logo={createChart} header={"Level"} input={dataPack.level} additionalText={""} aosData="zoom-in" aosDuration={300}/>
@@ -148,7 +149,7 @@ export const CoursePageTemplate = ({data}) => {
             </div>
           </div>
         </div>
-        <div id="modules" className="row al-mt-20">
+        <div id="modules" className="row al-mt-20 row al-mt-20-mobile">
           <div className="col-md-12">
             <div className="course-block">
               <img src={modules}/>

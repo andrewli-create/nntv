@@ -170,7 +170,7 @@ h1 {
 @media only screen and (max-width: 767px) {
     .keyword-box {
         font-size: 13px;
-        width: 90px;
+        width: 75px;
         height: 100px;
     }
 }
@@ -439,6 +439,9 @@ h1 {
     }
     .course-block {
         padding: 15px 35px;
+    }
+    .course-block-tight {
+        padding: 10px 0px;
     }
     .element-block > div {
         width: 100% !important;
