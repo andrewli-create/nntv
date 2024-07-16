@@ -129,7 +129,7 @@ export const ModulePageTemplate = ({pageContext, data}) => {
             </div>
             { dataPack.resources ? 
               <div className="col-md-12 col-sm-12 credit-block al-mt-20">
-                <div className="course-block display-flex d-flex-fs d-flex-col">
+                <div className="course-block display-flex d-flex-fs d-flex-col resource-block">
                   <LessonBlockHeader logo={openBookmark} header={"Resources"}/>
                   <Markdown renderers={{link: LinkRenderer}}>{dataPack.resources}</Markdown>
                   {/* <span className="al-mt-20">{dataPack.creditandinfo}</span> */}

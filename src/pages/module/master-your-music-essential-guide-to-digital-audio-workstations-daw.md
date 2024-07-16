@@ -5,11 +5,11 @@ videothumbnail: /img/daw_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/SYvLr67uUmE?si=wU-_M6UJMmopZZnQ
 biooutcome: outcomes
 biography: >-
-  * • Develop an understanding of how and why to use multiple tracks in a DAW
+  * Develop an understanding of how and why to use multiple tracks in a DAW
 
-  * • Create a multi-track recording in the DAW of your choice
+  * Create a multi-track recording in the DAW of your choice
 
-  * • Optional: add a virtual instrument track (see MIDI video for additional information!)
+  * Optional: add a virtual instrument track (see MIDI video for additional information!)
 
 
   Create a short multi-track composition, and bounce an MP3 file.
@@ -42,21 +42,27 @@ script: >-
   7. Signal Flow: Think of a DAW like a digital signal path. Audio and MIDI signals flow through a series of tracks, effects, and mixers, allowing you to shape your composition. Whether you’re new to your DAW, or you’ve been using it for years, it can be helpful to picture the path that your signals are taking. An audio or MIDI clip will flow through its track—including any effects that might be on it—before making its way to your headphones or speakers. Once you’re comfortable with this, you can begin sending groups of tracks to a folder or bus, allowing you to further shape the interaction of the elements in your composition. 8. Export and Share: Once you're satisfied with your composition, you can export it in various formats, such as MP3, WAV, or others, making it easy to share your music with the world. Once you're satisfied with your composition, you can export it in various formats including MP3 (for personal use) or WAV(for professional use), making it easy to share your music with the world. In many DAWs, this export feature will be called “bounce." Now that you've got a taste of what a DAW can do, it's time to dive deeper. Thanks for watching, and happy composing!
 interactiveToggle: false
 creditandinfo: |-
-  * Researcher and scriptwriter: Adam Fainman
-  * Narrator: Zakriya Bashir-Hill 
-  * Illustrator: Camille Shiu
-  * Motion designer: Zakriya Bashir-Hill 
-  * Composer:  Micki-Lee Smith
-  * Video and audio editor:  Joshua Weinfeld
-  * Director: Dr. Parisa Sabet
+  Researcher and scriptwriter: Adam Fainman
+
+  Narrator: Zakriya Bashir-Hill 
+
+  Illustrator: Camille Shiu
+
+  Motion designer: Zakriya Bashir-Hill 
+
+  Composer:  Micki-Lee Smith
+
+  Video and audio editor:  Joshua Weinfeld
+
+  Director: Dr. Parisa Sabet
 resources: >-
-  * **DAW**
+  **DAW**
 
 
   <https://blog.native-instruments.com/what-is-a-daw-in-music-digital-audio-workstations-explained/>
 
 
-  * **Singal Flow**
+  **Singal Flow**
 
 
   <https://mastering.com/signal-flow/>

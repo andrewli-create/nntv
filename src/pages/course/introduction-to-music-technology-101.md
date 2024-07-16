@@ -10,7 +10,7 @@ numberofmodules: 7
 resources: 3 Interviews
 Requireaccessto: Links
 about: >-
-  * Whether you’re someone who’s just starting out your musical journey or a
+  Whether you’re someone who’s just starting out your musical journey or a
   composer, performer, or educator looking to familiarise yourself with the
   world of modern music production technology, this series will help develop
   your understanding of various terms, tools, and techniques to get started
@@ -19,17 +19,15 @@ about: >-
   reverb, compression, and more!
 
 
-
-
-  * As you solidify your understanding of how to navigate these tools practically, you will also begin to learn about how they can unlock a multitude of creative possibilities that will further and enrich your creative vision in today’s musical world.
+  As you solidify your understanding of how to navigate these tools practically, you will also begin to learn about how they can unlock a multitude of creative possibilities that will further and enrich your creative vision in today’s musical world.
 outcomes: >-
-  * • Configure a simple home studio setup
+  * Configure a simple home studio setup
 
-  * • Create a simple multi-track recording in your DAW, using both recorded audio and MIDI
+  * Create a simple multi-track recording in your DAW, using both recorded audio and MIDI
 
-  * • Apply effects to your audio, including EQ, reverb, compression, and more, and begin to use these effects to solve practical problems as well as experiment creatively
+  * Apply effects to your audio, including EQ, reverb, compression, and more, and begin to use these effects to solve practical problems as well as experiment creatively
 
-  * • Start and continue your music production journey
+  * Start and continue your music production journey
 modules:
   - lessons: Intro to Home Studio Gears
   - lessons: Intro to Signal Flow

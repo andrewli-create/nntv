@@ -174,8 +174,8 @@ h1 {
 
 @media only screen and (max-width: 767px) {
     .keyword-box {
-        font-size: 13px;
-        width: 75px;
+        font-size: 12px;
+        width: 70px;
         height: 100px;
     }
 }
@@ -391,6 +391,11 @@ h1 {
     padding: 20px 30px;
 }
 
+.course-block ul {
+    list-style: unset;
+    padding-left: 25px;
+}
+
 .course-block h6 {
     margin-block-end: 2px;
 }
@@ -401,6 +406,10 @@ h1 {
 
 .course-element {
     width: 20%;
+}
+
+.resource-block {
+    overflow-wrap: break-word;
 }
 
 @media only screen and (max-width: 768px) {

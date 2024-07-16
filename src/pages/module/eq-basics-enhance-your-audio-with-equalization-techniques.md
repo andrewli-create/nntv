@@ -58,15 +58,23 @@ script: >-
   Thanks for watching and happy composing!
 interactiveToggle: false
 creditandinfo: |-
-  * Research and script: Christopher Wiens
-  * Edited by: Zakriya Bashir-Hill 
-  * Motion Graphics: Zakriya Bashir-Hill
-  * Illustrator: Camille Shiu
-  * Voice over: Ricci Ebron
-  * Background music: Justin Poon
-  * Mixing/mastering: Joshua Weinfeld
-  * Video editor: Joshua Weinfeld
-  * Director: Dr. Parisa Sabet
+  Research and script: Christopher Wiens
+
+  Edited by: Zakriya Bashir-Hill 
+
+  Motion Graphics: Zakriya Bashir-Hill
+
+  Illustrator: Camille Shiu
+
+  Voice over: Ricci Ebron
+
+  Background music: Justin Poon
+
+  Mixing/mastering: Joshua Weinfeld
+
+  Video editor: Joshua Weinfeld
+
+  Director: Dr. Parisa Sabet
 resources: >-
   **What is Frequency and Hertz and Amplitude**
 

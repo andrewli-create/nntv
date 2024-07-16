@@ -40,14 +40,21 @@ script: >-
   Thanks for watching and happy composing!
 interactiveToggle: true
 creditandinfo: |-
-  * Researcher and scriptwriter: Stef Haynes
-  * Script editor: Zakriya Bashir-Hill 
-  * Narrator: Micki-Lee Smith
-  * Illustrator: Camille Shiu
-  * Motion designer: Zakriya Bashir-Hill 
-  * Composer: Christopher Wiens
-  * Video and audio editor: Joshua Weinfeld
-  * Director: Dr. Parisa Sabet
+  Researcher and scriptwriter: Stef Haynes
+
+  Script editor: Zakriya Bashir-Hill 
+
+  Narrator: Micki-Lee Smith
+
+  Illustrator: Camille Shiu
+
+  Motion designer: Zakriya Bashir-Hill 
+
+  Composer: Christopher Wiens
+
+  Video and audio editor: Joshua Weinfeld
+
+  Director: Dr. Parisa Sabet
 resources: >-
   * **MIDI In-depth Overview**
 

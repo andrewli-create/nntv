@@ -5,10 +5,10 @@ videothumbnail: /img/asf_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/H5f1Nlni7Mo?si=xGlvIBqUfHcCdssZ
 biooutcome: outcomes
 biography: >-
-  * • Develop an understanding of how a “real world” sound can be recorded and
+  * Develop an understanding of how a “real world” sound can be recorded and
   outputted, and the “path” it follows through its journey
 
-  * • Using your understanding of how signal flows, connect your gear (as discussed in Intro to Home Studio Gear) together
+  * Using your understanding of how signal flows, connect your gear (as discussed in Intro to Home Studio Gear) together
 
 
   Connect the parts of your home studio together. We can test how it works once we learn a bit more about DAWs!
@@ -32,14 +32,21 @@ script: >-
 
   From a simple real-world sound, through cables and devices, to the sound in our ears, the journey from the acoustic to the digital domain and back is fascinating. And this, dear viewers, is  just the start. Stay tuned for the next segment where we will learn more about DAWs. Thanks for watching and happy composing!
 creditandinfo: |-
-  * Researcher and scriptwriter: Mehrdad Ranjbar
-  * Script editor: Chris Wiens and Zakriya Bashir-Hill
-  * Narrator: Chris Wiens
-  * Illustrator: Camille Shiu
-  * Motion designer: Zakriya Bashir-Hill 
-  * Composer:  Micki-Lee Smith
-  * Video and audio editor: Joshua Weinfeld
-  * Director: Dr. Parisa Sabet
+  Researcher and scriptwriter: Mehrdad Ranjbar
+
+  Script editor: Chris Wiens and Zakriya Bashir-Hill
+
+  Narrator: Chris Wiens
+
+  Illustrator: Camille Shiu
+
+  Motion designer: Zakriya Bashir-Hill 
+
+  Composer:  Micki-Lee Smith
+
+  Video and audio editor: Joshua Weinfeld
+
+  Director: Dr. Parisa Sabet
 resources: >-
   **Sound Vibrations**
 
