@@ -76,8 +76,13 @@ body {
     }
 }
 
-
-
+.swiper-video-wrapper {
+    transition-duration: 250ms;
+    cursor: zoom-in;
+}
+.swiper-video-wrapper:hover {
+    filter: brightness(1.2);
+}
 #navMenu-mobile .navbar-item {
     padding: 20px 0;
 }

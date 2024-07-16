@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
@@ -23,6 +23,9 @@ register();
 // import { useEffect } from 'react';
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data, preview}) => {
+  const [stopSwiper, setStopSwiper] = useState(0);
+  const swiperRef = useRef(null)
+
   useEffect(() => {
     AOS.init();
   }, [])
@@ -62,7 +65,7 @@ export const IndexPageTemplate = ({data, preview}) => {
                       <h2 style={{textAlign: "center", height: "20px"}}>Slider is not visible in preview</h2>
                     </div>
                     :
-                    <swiper-container class="al-round-border" style={{overflow: "hidden", height: "100%"}} autoplay="true" loop="true" autoplay-delay="5000">
+                    <swiper-container ref={swiperRef} class="al-round-border" style={{overflow: "hidden", height: "100%"}} autoplay={stopSwiper == 1 ? "false" : "true"} loop="true" autoplay-delay="5000">
                       {data.markdownRemark.frontmatter.homeslider
                         ? (data.markdownRemark.frontmatter.homeslider.map((slide, index) => (
                           <swiper-slide>
@@ -74,7 +77,8 @@ export const IndexPageTemplate = ({data, preview}) => {
                               : 
                               slide.slidevideolink ?
                               <>
-                                <div style={{position: "relative", height: "100%", width: " 100%", overflow: "hidden"}}>
+                                <div className="swiper-video-wrapper" style={{position: "relative", height: "100%", width: " 100%", overflow: "hidden"}} onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()} onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}>
+                                  <span style={{position: "absolute", bottom: 0, left: "10px", zIndex: 1, color: "white", fontSize: "10px"}}>Stay hovering to continue watching</span>
                                   <div style={{height: "150%", transform: "translateY(-16.75%) scale(1.25)", pointerEvents: "none"}}>
                                     <ReactPlayer
                                       url={slide.slidevideolink}
