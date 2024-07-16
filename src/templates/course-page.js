@@ -28,7 +28,7 @@ import 'aos/dist/aos.css';
 // eslint-disable-next-line
 export const CoursePageTemplate = ({data}) => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({disable: 'mobile'});
   }, [])
   // console.log(data.markdownRemark.frontmatter.title);
   console.log("all data", data);
@@ -198,7 +198,8 @@ export const CoursePageTemplate = ({data}) => {
 
 export const LessonElement = ({logo, header, input, additionalText, aosData, aosDuration}) => {
   return (
-    <div className="course-element display-flex d-flex-c d-flex-row" data-aos={aosData} data-aos-duration={aosDuration}>
+    // <div className="course-element display-flex d-flex-c d-flex-row" data-aos={aosData} data-aos-duration={aosDuration}>
+    <div className="course-element display-flex d-flex-c d-flex-row">
       <div className="course-element-icon display-flex d-flex-row d-flex-c ">
         <img src={logo}/>
       </div>

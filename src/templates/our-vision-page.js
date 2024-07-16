@@ -138,7 +138,8 @@ export const OurVisionPageTemplate = ({data}) => {
               {data.markdownRemark.frontmatter.values
                 ? (data.markdownRemark.frontmatter.values.map((value, index) => (
                   <div className="col-md-3 col-sm-6">
-                    <div className="value-card d-flex d-flex-col d-flex-sb" data-aos="fade-up" data-aos-duration={index*500+500}>
+                    {/* <div className="value-card d-flex d-flex-col d-flex-sb" data-aos="fade-up" data-aos-duration={index*500+500}> */}
+                    <div className="value-card d-flex d-flex-col d-flex-sb">
                       <div>
                         <div className="value-img-wrapper">
                           <SafeImg inputObj={value.valueimage}/>

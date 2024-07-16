@@ -116,7 +116,7 @@ export const IndexPageTemplate = ({data, preview}) => {
         </section>
         <section className="yellow-bar al-mt-40">
           <div className="section-center" style={{paddingLeft: "0px", paddingRight: "0px"}}>
-            <div className="row vertical-white-space-large mobile-side-padding" data-aos="fade-up">
+            <div className="row vertical-white-space-large mobile-side-padding">
               {/* <div className="col-md-6 d-flex-row d-flex d-flex-sb value-wrapper"> */}
               <div className="col-md-6 d-flex-row d-flex d-flex-sb value-wrapper">
               {data.markdownRemark.frontmatter.keywords
