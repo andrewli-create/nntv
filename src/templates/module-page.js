@@ -13,6 +13,7 @@ import pianoTopView from '../../static/img/grand-piano-top-view.png'
 import Img from "gatsby-image"
 import SafeImg from "../components/utils/SafeImg"
 import noteBook from "../img/note_book.svg";
+import notePad from "../img/notepad1.svg";
 import penPaper from "../img/pen_paper.svg";
 import openBookmark from "../img/open_bookmark_2.svg";
 import playgroundIcon from "../img/playground.svg";
@@ -105,8 +106,13 @@ export const ModulePageTemplate = ({pageContext, data}) => {
         <div className="container">
           <div className="row al-mt-20 al-mb-40 ">
             <div className={dataPack.interactiveToggle ? "col-md-4 col-sm-6 notepad-block" : "col-md-6 col-sm-6 notepad-block"}>
-              <div className="course-block display-flex d-flex-fs d-flex-col">
-                <LessonBlockHeader logo={penPaper} header={"Notepad"}/>
+              <div className="course-block display-flex d-flex-fs d-flex-col al-c-t al-b-n" style={{position: "relative"}}>
+                <LessonBlockHeader logo={penPaper} header={"Notepad"} className={"notepad-title"}/>
+                <div className="notepad-background-wrapper">
+                  <div className="notepad-ring-area"></div>
+                  <div className="notepad-paper"></div>
+                  <div className="notepad-paper notepad-paper-offset"></div>
+                </div>
                 <textarea className="notepad-textarea" name="notepad" rows="5"></textarea>
               </div>
             </div>
@@ -166,9 +172,9 @@ const ModulePage = ({ data }) => {
   );
 };
 
-export const LessonBlockHeader = ({logo, header}) => {
+export const LessonBlockHeader = ({logo, header, className}) => {
   return (
-    <div className="display-flex d-flex-fs d-flex-row">
+    <div className={"display-flex d-flex-fs d-flex-row " + className}>
       <img src={logo} style={{marginTop: 0}}/>
       <div className="display-flex d-flex-c d-flex-row" style={{marginTop: 0, marginLeft: "7px"}}>
         <h2 className="course-block-title">
