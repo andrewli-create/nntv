@@ -37,4 +37,6 @@ modules:
   - lessons: EQ Basics Enhance Your Audio with Equalization Techniques
   - lessons: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
     displaynew: true
+  - displaynew: true
+    lessons: Reverb Basics Essential Tips for Audio and Music Production
 ---

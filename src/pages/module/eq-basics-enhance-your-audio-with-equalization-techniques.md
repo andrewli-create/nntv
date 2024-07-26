@@ -79,15 +79,13 @@ resources: >-
   **What is Frequency and Hertz and Amplitude**
 
 
-  [https://www.nps.gov/subjects/sound/understandingsound.htm](<https://www.nps.gov/subjects/sound/understandingsound.htm >)
+  <https://www.nps.gov/subjects/sound/understandingsound.htm>
 
 
   **EQ types and controls** 
 
 
   <https://www.abletonlessons.com/music-production-tips-and-tricks/sculpting-sound-a-music-producers-guide-to-using-eq-effectively>
-
-
 
 
   **Common EQ Filters / Approaches** 
