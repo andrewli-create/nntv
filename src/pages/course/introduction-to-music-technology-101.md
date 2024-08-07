@@ -36,7 +36,9 @@ modules:
   - lessons: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
   - lessons: EQ Basics Enhance Your Audio with Equalization Techniques
   - lessons: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
-    displaynew: true
+    displaynew: false
   - displaynew: true
     lessons: Reverb Basics Essential Tips for Audio and Music Production
+  - displaynew: true
+    lessons: Guest composer Sergei Kofman Exploring Reverb as a Creative Tool
 ---
