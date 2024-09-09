@@ -24,6 +24,7 @@ import modules from "../img/modules.svg"
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ReactPlayer from "react-player";
 
 // eslint-disable-next-line
 export const CoursePageTemplate = ({data}) => {
@@ -103,7 +104,20 @@ export const CoursePageTemplate = ({data}) => {
           </div>
           <div className="col-md-5">
             <div className="course-block mobile-top-spacing" data-aos="fade-left" style={{padding: 0, overflow: "hidden"}}>
-              <SafeImg inputObj={dataPack.coursethumbnail}/>
+              {
+                dataPack.coursevideo ?
+                  <ReactPlayer
+                      url={dataPack.coursevideo}
+                      playing={true}
+                      width={"100%"}
+                      height={"300px"}
+                      muted={false}
+                      controls={true}
+                    /> 
+                :
+                  <SafeImg inputObj={dataPack.coursethumbnail}/>
+                  
+              }
             </div>
           </div>
         </div>
@@ -254,6 +268,7 @@ export const pageQuery = graphql`
           lessons
           displaynew
         }
+        coursevideo
         coursethumbnail {
           childImageSharp {
             gatsbyImageData(

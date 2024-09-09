@@ -141,6 +141,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Introduction", name: "introduction", widget: "text" }
       - { label: "Course Thumbnail", name: "coursethumbnail", widget: image }
+      - { label: "Course Video", name: "coursevideo", widget: string }
       - { label: "Duration (Min)", name: "duration", widget: "number" }
       - { 
           name: "level",

@@ -4,6 +4,7 @@ title: Introduction to Music Technology 101
 introduction: Start at the beginning by learning Intro to Gears - an important
   foundation for creating music.
 coursethumbnail: /img/imt_webcover_nntv_v4-01.jpg
+coursevideo: https://youtu.be/pJqKj0SDeYw?si=gs4ZS2aBjP7rX76D
 duration: 30
 level: beginner
 numberofmodules: 7

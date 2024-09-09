@@ -17,6 +17,8 @@ import SafeImg from "../components/utils/SafeImg"
 import ReactPlayer from "react-player";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import speakerOn from "../img/speaker_on.svg"
+import speakerOff from "../img/speaker_off.svg"
 
 register();
 
@@ -24,6 +26,7 @@ register();
 // eslint-disable-next-line
 export const IndexPageTemplate = ({data, preview}) => {
   const [stopSwiper, setStopSwiper] = useState(0);
+  const [muteVideo, setMuteVideo] = useState(true);
   const swiperRef = useRef(null)
 
   useEffect(() => {
@@ -79,13 +82,18 @@ export const IndexPageTemplate = ({data, preview}) => {
                               <>
                                 <div className="swiper-video-wrapper" style={{position: "relative", height: "100%", width: " 100%", overflow: "hidden"}} onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()} onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}>
                                   <span style={{position: "absolute", bottom: 0, left: "10px", zIndex: 1, color: "white", fontSize: "10px"}}>Stay hovering to continue watching</span>
+                                  {muteVideo ?
+                                    <img onClick={() => setMuteVideo(!muteVideo)} style={{opacity: "0.5", cursor: "pointer", borderRadius: "10px", background: "rgba(0, 0, 0, 0.5)", position: "absolute", bottom: "15px", right: "10px", zIndex: 1, width: "35px", height: "35px"}} className="deco-image" src={speakerOff}/>
+                                    : 
+                                    <img onClick={() => setMuteVideo(!muteVideo)} style={{opacity: "0.5", cursor: "pointer", borderRadius: "10px", background: "rgba(0, 0, 0, 0.5)", position: "absolute", bottom: "15px", right: "10px", zIndex: 1, width: "35px", height: "35px"}} className="deco-image" src={speakerOn}/>
+                                  }
                                   <div style={{height: "150%", transform: "translateY(-16.75%) scale(1.25)", pointerEvents: "none"}}>
                                     <ReactPlayer
                                       url={slide.slidevideolink}
                                       playing={true}
                                       width={"100%"}
                                       height={"100%"}
-                                      muted={true}
+                                      muted={muteVideo}
                                       controls={false}
                                       config={{
                                         youtube: {
