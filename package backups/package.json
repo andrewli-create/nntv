@@ -35,7 +35,6 @@
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms-widget-colorpicker": "^1.0.3",
     "netlify-cms-widget-inline-select": "^1.5.0",
-    "node-stream": "^1.7.0",
     "prop-types": "^15.6.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
