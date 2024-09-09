@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: Guest Composer Stef Haynes Exploring MIDI as a Creative Tool
-videothumbnail: /img/screenshot-2024-06-11-at-3.47.48-am.png
+videothumbnail: /img/maxresdefault-3.jpg
 videolink: https://www.youtube.com/embed/hnBTnYvrg7c?si=0aNH06Xpt1xioxnD
 biooutcome: biography
 biography: Stef Haynes is a performer, composer, and producer living in Toronto,
