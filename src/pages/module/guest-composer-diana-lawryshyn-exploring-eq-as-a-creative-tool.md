@@ -1,7 +1,7 @@
 ---
 templateKey: module-page
 title: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
-videothumbnail: /img/maxresdefault-4.jpg
+videothumbnail: /img/screenshot-2024-07-10-at-11.46.38-am.png
 videolink: https://www.youtube.com/embed/PvyI7DzEcPs?si=kmHhLbezMjn3M_SP
 biooutcome: biography
 biography: Diana Nadia Lawryshyn is a visual and sound artist from Oshawa
