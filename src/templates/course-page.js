@@ -108,7 +108,7 @@ export const CoursePageTemplate = ({data}) => {
                 dataPack.coursevideo ?
                   <ReactPlayer
                       url={dataPack.coursevideo}
-                      playing={true}
+                      playing={false}
                       width={"100%"}
                       height={"300px"}
                       muted={false}

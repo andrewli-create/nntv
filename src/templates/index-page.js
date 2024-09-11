@@ -13,6 +13,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import pianoTopView from '../../static/img/grand-piano-top-view.png'
 import { register } from 'swiper/element/bundle';
 import 'swiper/element/css/autoplay';
+import "swiper/css";
+import "swiper/css/navigation";
 import SafeImg from "../components/utils/SafeImg"
 import ReactPlayer from "react-player";
 import AOS from 'aos';
@@ -68,7 +70,7 @@ export const IndexPageTemplate = ({data, preview}) => {
                       <h2 style={{textAlign: "center", height: "20px"}}>Slider is not visible in preview</h2>
                     </div>
                     :
-                    <swiper-container ref={swiperRef} class="al-round-border" style={{overflow: "hidden", height: "100%"}} autoplay={stopSwiper == 1 ? "false" : "true"} loop="true" autoplay-delay="5000">
+                    <swiper-container ref={swiperRef} class="al-round-border swiper-main" style={{overflow: "hidden", height: "100%"}} autoplay={stopSwiper == 1 ? "false" : "true"} loop="true" autoplay-delay="5000" navigation={{nextEl: ".image-swiper-button-next", prevEl: ".image-swiper-button-prev", disabledClass: "swiper-button-disabled"}}>
                       {data.markdownRemark.frontmatter.homeslider
                         ? (data.markdownRemark.frontmatter.homeslider.map((slide, index) => (
                           <swiper-slide>

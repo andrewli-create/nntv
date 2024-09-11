@@ -887,3 +887,29 @@ h1 {
     }
 }
 
+
+.swiper-main .swiper-button-next svg, .swiper-main .swiper-button-prev svg {
+    opacity: 0.2 !important;
+}
+
+swiper-container {
+    --swiper-theme-color: rgba(255, 255, 255, 0.85);
+    --swiper-navigation-size: 20px;
+    /* --swiper-theme-color: #ababab;
+    --swiper-navigation-size: 22px;
+    --swiper-navigation-color: #e1e1e1;
+    --swiper-navigation-top-offset: 10px;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-pagination-color: #92a4ae;
+    --swiper-pagination-bullet-border-radius: 6px;
+    --swiper-pagination-bullet-horizontal-gap: 4px;
+    --swiper-pagination-bullet-vertical-gap: 4px;
+    --swiper-pagination-bullet-size: 6px;
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-height: 6px;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-inactive-color: #254a5d;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bottom: 0rem;
+    --swiper-preloader-color: var(--swiper-theme-color); */
+}
