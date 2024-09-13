@@ -82,7 +82,7 @@ export const CoursePageTemplate = ({data}) => {
     <>
       <div className="container">
         <div className="row al-mt-20">
-          <div className="col-md-7">
+          <div className="col-md-6">
             <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}} data-aos="fade-right">
                 <div className="intro-course-block-content al-pos-r">
                   <div className="video-frame-element" style={{width: "25px", height: "10px", right: 0, bottom: 0, backgroundColor: "rgb(85, 150, 255)"}}></div>
@@ -102,15 +102,16 @@ export const CoursePageTemplate = ({data}) => {
                 </div>
             </div>
           </div>
-          <div className="col-md-5">
-            <div className="course-block mobile-top-spacing" data-aos="fade-left" style={{padding: 0, overflow: "hidden"}}>
+          <div className="col-md-6">
+            <div className="course-block mobile-top-spacing" data-aos="fade-left" style={{padding: 0, overflow: "hidden", aspectRatio: "16 / 9"}}>
               {
                 dataPack.coursevideo ?
                   <ReactPlayer
+                      style={{aspectRatio: "16 / 9"}}
                       url={dataPack.coursevideo}
                       playing={false}
                       width={"100%"}
-                      height={"300px"}
+                      height={"auto"}
                       muted={false}
                       controls={true}
                     /> 
