@@ -333,6 +333,22 @@ collections:
                   { label: "Advisor Image", name: "advisorimage", widget: image, required: false },
                 ]
             }
+      - file: "src/pages/partners/index.md"
+        label: "Acknowledgment and Partners"
+        name: "partners"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "partners",
+            }
+          - { label: "Main Header", name: "mainheader", widget: "string" }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Hero Image", name: "heroimage", widget: image }
+          - { label: "Image Credit", name: "imagecredit", widget: "string"}
+          - { label: "Secondary Header", name: "secondaryheader", widget: "string" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }    
       - file: "src/pages/under-construction/index.md"
         label: "Under Construction"
         name: "under-construction"

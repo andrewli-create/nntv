@@ -16,6 +16,8 @@ navItem:
         subPageURL: /our-vision
       - subPageURL: /our-vision#our-team
         subPageName: Team
+      - subPageName: Acknowledgment and Partners
+        subPageURL: /partners
   - pageName: Course
     pageURL: /course/introduction-to-music-technology-101
     navItemToggle: true

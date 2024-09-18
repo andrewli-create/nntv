@@ -914,3 +914,14 @@ swiper-container {
     --swiper-pagination-bottom: 0rem;
     --swiper-preloader-color: var(--swiper-theme-color); */
 }
+
+.center-item-responsive {
+    width: 60%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .center-item-responsive {
+        width: 90%;
+    }
+}

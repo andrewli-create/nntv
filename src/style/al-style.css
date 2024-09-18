@@ -58,6 +58,10 @@
     position: relative;
 }
 
+.al-pos-a {
+    position: absolute;
+}
+
 .al-text-align-c {
     text-align: center !important;
 }
