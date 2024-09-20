@@ -44,20 +44,27 @@ export const IndexPageTemplate = ({data, preview}) => {
     // </div>
     <>
       <section id="our-team" className="al-mt-40">
-        <div className="display-flex d-flex-c" style={{marginTop: "45px", marginBottom: "35px"}}>
+        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "35px"}}>
           <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">{data.markdownRemark.frontmatter.mainheader}<span className="yellow-accent"></span></h1>
         </div>
         <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
           <p className="al-text-align-c center-item-responsive">{data.markdownRemark.frontmatter.paragraph1}</p>
         </div>
-        <div className="display-flex d-flex-c" style={{marginBottom: "100px"}}>
+        <hr style={{backgroundColor: "black", width: "70%", margin: "auto"}}/>
+        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "25px"}}>
+          <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">Partners<span className="yellow-accent"></span></h1>
+        </div>
+        <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
+          <p style={{fontWeight: "bold"}} className="al-text-align-c center-item-responsive">Coming Soon!</p>
+        </div>
+        {/* <div className="display-flex d-flex-c" style={{marginBottom: "100px"}}>
           <div className="center-item-responsive">
             <SafeImg inputObj={data.markdownRemark.frontmatter.heroimage}/>
             <div className="display-flex d-flex-fe">
               <span style={{fontSize: "10px", padding: "8px 5px 8px 10px", borderRadius: "0 0px 10px 20px", backgroundColor: "#FFBD12"}}>{data.markdownRemark.frontmatter.imagecredit}</span>
             </div>
           </div>
-        </div>
+        </div> */}
         
       </section>
     </>
