@@ -31,28 +31,19 @@ function getWindowDimensions() {
   };
 }
 
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
-const context = new AudioContext();
+// window.AudioContext = window.AudioContext || window.webkitAudioContext;
+var context;
 var source;
 // var isPlaying = false;
-var lowPass = context.createBiquadFilter();
-lowPass.type = "lowpass";
-lowPass.frequency.value = 880;
-lowPass.Q.value = 0.7;
+var lowPass;
 
-var band1 = context.createBiquadFilter();
-var band2 = context.createBiquadFilter();
-var band3 = context.createBiquadFilter();
-var band4 = context.createBiquadFilter();
-var band5 = context.createBiquadFilter();
-var band6 = context.createBiquadFilter();
+var band1;
+var band2;
+var band3;
+var band4;
+var band5;
+var band6;
 
-band1.type = "peaking";
-band2.type = "peaking";
-band3.type = "peaking";
-band4.type = "peaking";
-band5.type = "peaking";
-band6.type = "peaking";
 
 const audioPlayFunc = async (url, isPlaying) => {
   if (!isPlaying) {
@@ -195,6 +186,27 @@ const EQ = ({ children }) => {
   }
 
   useEffect(() => {
+
+    context = new AudioContext();
+    lowPass = context.createBiquadFilter();
+    lowPass.type = "lowpass";
+    lowPass.frequency.value = 880;
+    lowPass.Q.value = 0.7;
+
+    band1 = context.createBiquadFilter();
+    band2 = context.createBiquadFilter();
+    band3 = context.createBiquadFilter();
+    band4 = context.createBiquadFilter();
+    band5 = context.createBiquadFilter();
+    band6 = context.createBiquadFilter();
+
+    band1.type = "peaking";
+    band2.type = "peaking";
+    band3.type = "peaking";
+    band4.type = "peaking";
+    band5.type = "peaking";
+    band6.type = "peaking";
+
     // setDivWidth(divRef.current.clientHeight)
     window.addEventListener("resize", handleResize);
     // console.log("divWidth", divWidth);

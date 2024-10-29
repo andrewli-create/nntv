@@ -35,37 +35,18 @@ function getWindowDimensions() {
 
 
 // const context = new AudioContext();
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
-const context = new AudioContext();
+// window.AudioContext = window.AudioContext || window.webkitAudioContext;
+var context;
 // const context = window.AudioContext = window.AudioContext || window.webkitAudioContext;
 // = window.AudioContext = window.AudioContext || window.webkitAudioContext;
 var source;
 // var isPlaying = false;
-var lowPass = context.createBiquadFilter();
-lowPass.type = "lowpass";
-lowPass.frequency.value = 880;
-lowPass.Q.value = 0.7;
 
-var band1 = context.createBiquadFilter();
-var band2 = context.createBiquadFilter();
-var band3 = context.createBiquadFilter();
-var band4 = context.createBiquadFilter();
-var band5 = context.createBiquadFilter();
-var band6 = context.createBiquadFilter();
-var inputGainNode = context.createGain();
+var inputGainNode;
 var verb;
-var wetGain = context.createGain();
-var dryGain = context.createGain();
-var combinedGain = context.createGain();
-var splitter = context.createChannelSplitter(2);
-
-band1.type = "peaking";
-band2.type = "peaking";
-band3.type = "peaking";
-band4.type = "peaking";
-band5.type = "peaking";
-band6.type = "peaking";
-
+var wetGain;
+var dryGain;
+var combinedGain;
 const audioPlayFunc = async (url, isPlaying) => {
   if (!isPlaying) {
     if (!source) {
@@ -117,10 +98,6 @@ const audioPlayFunc = async (url, isPlaying) => {
     }
   }
 };
-
-const eqAdjust = (value) => {
-  lowPass.frequency.value = value;
-}
 
 // const togglePlay = (toggler) => {
 //   console.log("source.buffer", source.buffer);
@@ -221,6 +198,11 @@ const Reverb = ({ children }) => {
   }
 
   useEffect(() => {
+    context = new AudioContext();
+    inputGainNode = context.createGain();
+    wetGain = context.createGain();
+    dryGain = context.createGain();
+    combinedGain = context.createGain();
     verb = new AdvancedReverb(context);
     verb.reverbTime = 0.1;
     console.log("verb Initiated!", verb);
