@@ -8,6 +8,12 @@
     font-size: 25px;
 }
 
+@media only screen and (max-width: 768px) {
+    .plugin-wrapper * {
+        font-size: 20px;
+    }
+}
+
 .plugin-wrapper {
     position: relative;
     display: block;
@@ -67,6 +73,12 @@
 
 .plugin-control-wrapper {
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .plugin-frequency-wrapper {
+        width: 90%;
+    }
 }
 
 .eq-page-wrapper {
@@ -172,7 +184,7 @@
     top: 0;
     z-index: 0;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,189,18,0.36) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,189,18,1) 50%, rgba(255,255,255,0) 100%);
 }
 
 #eq-screen svg {
@@ -204,9 +216,17 @@
     position: absolute;
     right: -70px;
 }
+
 .play-icon {
     fill: yellow;
     height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .play-button {
+        right: 0px;
+        bottom: -25px;
+    }
 }
 
 .plugin-border {

@@ -338,7 +338,7 @@ const Reverb = ({ children }) => {
                       </div>
                       {/* <span>{reverbDecay}</span> */}
                     </div>
-                    <h6>timing</h6>
+                    <h6>length</h6>
                   </div>
                   <div>
                     <div className="display-flex d-flex-c" >

@@ -127,7 +127,7 @@ export const ModulePageTemplate = ({pageContext, data}) => {
             </div>
             { dataPack.interactiveToggle ? 
               <div className="col-md-12 col-sm-12 interactive-block al-mt-20">
-                <div className="course-block display-flex d-flex-fs d-flex-col">
+                <div className="course-block plugin-course-block display-flex d-flex-fs d-flex-col">
                   <LessonBlockHeader logo={playgroundIcon} header={"Playground"}/>
                   {/* <span className="al-mt-20">The interactive element is coming soon.</span> */}
                   {/* <EQ/> */}

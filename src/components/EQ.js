@@ -342,12 +342,12 @@ const EQ = ({ children }) => {
               />
             </svg> */}
             <div className="q-indicator-wrapper" style={{position: "absolute"}}>
-              <div className="q-indicator" style={{width: scale(activeBandStat1.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat1.freq, freqMin, freqMax)}}></div>
-              <div className="q-indicator" style={{width: scale(activeBandStat2.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat2.freq, freqMin, freqMax)}}></div>
-              <div className="q-indicator" style={{width: scale(activeBandStat3.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat3.freq, freqMin, freqMax)}}></div>
-              <div className="q-indicator" style={{width: scale(activeBandStat4.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat4.freq, freqMin, freqMax)}}></div>
-              <div className="q-indicator" style={{width: scale(activeBandStat5.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat5.freq, freqMin, freqMax)}}></div>
-              <div className="q-indicator" style={{width: scale(activeBandStat6.q, 0, 1, 10, 100) + "px", left: cPI(EQGW, activeBandStat6.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat2.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat2.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat2.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat3.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat3.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat3.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat1.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat1.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat1.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat4.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat4.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat4.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat5.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat5.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat5.freq, freqMin, freqMax)}}></div>
+              <div className="q-indicator" style={{opacity: scale(activeBandStat6.q, 1, 0, 0.2, 0.4) + " ", width: scale(activeBandStat6.q, 1, 0, 10, 100) + "px", left: cPI(EQGW, activeBandStat6.freq, freqMin, freqMax)}}></div>
             </div>
             <svg width="100%" height="100%">
               <BundleCurve 

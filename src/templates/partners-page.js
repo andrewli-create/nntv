@@ -21,6 +21,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import speakerOn from "../img/speaker_on.svg"
 import speakerOff from "../img/speaker_off.svg"
+import SLSLogo from "../img/SLS_Logo-Colour-Black.jpg"
+import ACMLogo from "../img/ACM-U-of-T-Logo.png"
 
 register();
 
@@ -54,9 +56,26 @@ export const IndexPageTemplate = ({data, preview}) => {
         <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "25px"}}>
           <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">Partners<span className="yellow-accent"></span></h1>
         </div>
-        <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
-          <p style={{fontWeight: "bold"}} className="al-text-align-c center-item-responsive">Coming Soon!</p>
+        <div className="acknowledgement-block" style={{marginTop: 0, backgroundColor: "white"}}>
+          {/* <div className="acknowledgement-block" style={{background: "linear-gradient(180deg, " + footerColor + " 0%, rgb(235, 235, 235 , 1) 10%)"}}> */}
+          <div className="partner-section">
+            <div className="display-flex d-flex-sa">
+              <a href="https://www.soundlifescarborough.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={SLSLogo}/>
+              </a>
+              <a href="https://www.utsc.utoronto.ca/acm/" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={ACMLogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://www.soundlifescarborough.ca" target="_blank">SoundLife Scarborough &#40;SLS&#41;</a> is the centre for music and community engagement at the
+              University of Toronto Scarborough, and is dedicated to fostering healthy communities through participatory music-making.
+            </p>
+          </div>
         </div>
+        {/* <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
+          <p style={{fontWeight: "bold"}} className="al-text-align-c center-item-responsive">Coming Soon!</p>
+        </div> */}
         {/* <div className="display-flex d-flex-c" style={{marginBottom: "100px"}}>
           <div className="center-item-responsive">
             <SafeImg inputObj={data.markdownRemark.frontmatter.heroimage}/>

@@ -454,6 +454,9 @@ h1 {
     .course-block {
         padding: 15px 35px;
     }
+    .plugin-course-block {
+        padding: 15px 15px;
+    }
     .course-block-tight {
         padding: 10px 0px;
     }
@@ -925,22 +928,17 @@ swiper-container {
 }
 
 
+.partner-section {
+    width: 80%;
+    margin: auto;
+}
+
 @media only screen and (max-width: 768px) {
     .center-item-responsive {
         width: 90%;
     }
+    .partner-section {
+        width: 95%;
+    }
 }
 
-.q-indicator-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.q-indicator {
-    width: 20px;
-    position: absolute;
-    background-color: blue;
-    height: 100%;
-    top: 0;
-}
