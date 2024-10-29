@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style/custom-style-css.css";
 import "../style/al-style.css";
 import CCALogo from "../img/CCA_RGB_colour_e.svg";
+import SLSLogo from "../img/SLS_Logo-Colour-Black.jpg"
+import ACMLogo from "../img/ACM-U-of-T-Logo.png"
 
 function encode(data) {
   return Object.keys(data)
@@ -162,6 +164,21 @@ const FooterMain = ({data}) => {
           </a>
           <div style={{clear: "both"}}></div>
           <p className="al-text-align-c acknowledgement-text">We acknowledge the support of the Canada Council for the Arts. Visit <a href="https://www.canadacouncil.ca" target="_blank">canadacouncil.ca</a> to learn more.</p>
+        </div>
+        <div className="acknowledgement-block" style={{marginTop: 0, backgroundColor: "white"}}>
+          {/* <div className="acknowledgement-block" style={{background: "linear-gradient(180deg, " + footerColor + " 0%, rgb(235, 235, 235 , 1) 10%)"}}> */}
+          <div className="display-flex d-flex-sa">
+            <a href="https://www.soundlifescarborough.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+              <img className="cca-icon" src={SLSLogo}/>
+            </a>
+            <a href="https://www.utsc.utoronto.ca/acm/" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+              <img className="cca-icon" src={ACMLogo}/>
+            </a>
+          </div>
+          <div style={{clear: "both"}}></div>
+          <p className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://www.soundlifescarborough.ca" target="_blank">SoundLife Scarborough &#40;SLS&#41;</a> is the centre for music and community engagement at the
+            University of Toronto Scarborough, and is dedicated to fostering healthy communities through participatory music-making.
+          </p>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ title: EQ Basics Enhance Your Audio with Equalization Techniques
 videothumbnail: /img/aeq_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/FAHMNV4J1fc?si=u_GKhtWisV07ok2q
 biooutcome: outcomes
+tool: eq
 biography: Further develop an understanding of how EQ can be used as a creative
   tool in addition to a functional one, through practical examples given by the
   guest composer, and learn some examples of different ways EQ can fix unwanted
@@ -56,7 +57,7 @@ script: >-
 
 
   Thanks for watching and happy composing!
-interactiveToggle: false
+interactiveToggle: true
 creditandinfo: |-
   Research and script: Christopher Wiens
 

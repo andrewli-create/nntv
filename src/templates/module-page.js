@@ -20,6 +20,8 @@ import playgroundIcon from "../img/playground.svg";
 import bioIcon from "../img/bio.svg";
 import outcomeIcon from "../img/outcome.svg";
 import { useState, useEffect, useCallback } from "react";
+import EQ from "../components/EQ"
+import Reverb from "../components/Reverb"
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
@@ -105,7 +107,7 @@ export const ModulePageTemplate = ({pageContext, data}) => {
         </div>
         <div className="container">
           <div className="row al-mt-20 al-mb-40 ">
-            <div className={dataPack.interactiveToggle ? "col-md-4 col-sm-6 notepad-block" : "col-md-6 col-sm-6 notepad-block"}>
+            <div className={dataPack.interactiveToggle ? "col-md-6 col-sm-6 notepad-block" : "col-md-6 col-sm-6 notepad-block"}>
               <div className="course-block display-flex d-flex-fs d-flex-col al-c-t al-b-n" style={{position: "relative"}}>
                 <LessonBlockHeader logo={penPaper} header={"Notepad"} className={"notepad-title"}/>
                 <div className="notepad-background-wrapper">
@@ -116,23 +118,37 @@ export const ModulePageTemplate = ({pageContext, data}) => {
                 <textarea className="notepad-textarea" name="notepad" rows="5"></textarea>
               </div>
             </div>
-            { dataPack.interactiveToggle ? 
-              <div className="col-md-4 col-sm-6 interactive-block">
-                <div className="course-block display-flex d-flex-fs d-flex-col">
-                  <LessonBlockHeader logo={playgroundIcon} header={"Playground"}/>
-                  <span className="al-mt-20">The interactive element is coming soon.</span>
-                </div>
-              </div>
-              :
-              <></>
-            }
-            <div className={dataPack.interactiveToggle ? "col-md-4 col-sm-12 credit-block" : "col-md-6 col-sm-12 credit-block"}>
+            <div className={dataPack.interactiveToggle ? "col-md-6 col-sm-12 credit-block" : "col-md-6 col-sm-12 credit-block"}>
               <div className="course-block display-flex d-flex-fs d-flex-col">
                 <LessonBlockHeader logo={openBookmark} header={"Credits & Info"}/>
                 <Markdown>{dataPack.creditandinfo}</Markdown>
                 {/* <span className="al-mt-20">{dataPack.creditandinfo}</span> */}
               </div>
             </div>
+            { dataPack.interactiveToggle ? 
+              <div className="col-md-12 col-sm-12 interactive-block al-mt-20">
+                <div className="course-block display-flex d-flex-fs d-flex-col">
+                  <LessonBlockHeader logo={playgroundIcon} header={"Playground"}/>
+                  {/* <span className="al-mt-20">The interactive element is coming soon.</span> */}
+                  {/* <EQ/> */}
+                  {/* <Reverb/> */}
+                  {(() => {
+                    switch (dataPack.tool) {
+                      case 'none':
+                        return <span className="al-mt-20">The interactive tool is coming soon.</span>
+                      case 'eq':
+                        return <EQ/>
+                      case 'reverb':
+                        return <Reverb/> 
+                      default:
+                        return <span className="al-mt-20">There is no interactive tool for this module.</span>
+                    }
+                  })()}
+                </div>
+              </div>
+              :
+              <></>
+            }
             { dataPack.resources ? 
               <div className="col-md-12 col-sm-12 credit-block al-mt-20">
                 <div className="course-block display-flex d-flex-fs d-flex-col resource-block">
@@ -202,6 +218,7 @@ export const pageQuery = graphql`
         creditandinfo
         interactiveToggle
         resources
+        tool
         videothumbnail {
           childImageSharp {
             gatsbyImageData(

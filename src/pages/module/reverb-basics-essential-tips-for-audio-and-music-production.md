@@ -4,6 +4,7 @@ title: Reverb Basics Essential Tips for Audio and Music Production
 videothumbnail: /img/reverb-basics-essential-tips-for-audio-and-music-production.jpg
 videolink: https://www.youtube.com/embed/Dh8CRmcnfvk?si=WA9L4if-9N-qmmqj
 biooutcome: outcomes
+tool: reverb
 script: >-
   Welcome to our quick guide to reverb. Let’s dive in! 
 

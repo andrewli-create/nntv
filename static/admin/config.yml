@@ -208,6 +208,18 @@ collections:
               { label: Learning Outcomes, value: outcomes}
             ]
         },
+        { 
+          name: "tool",
+          label: "Interactive Tool",
+          widget: inline-select,
+          required: false,
+          options:
+            [
+              { label: None, value: none},
+              { label: EQ, value: eq},
+              { label: Reverb, value: reverb}
+            ]
+        },
         { label: "Biography or Learning Outcomes", name: "biography", widget: markdown, required: false },
         { label: "Script", name: "script", widget: markdown, required: false },
         { label: "Enable Interactive", name: "interactiveToggle", widget: "boolean", default: false, required: false },

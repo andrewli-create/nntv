@@ -766,6 +766,11 @@ h1 {
     text-decoration: underline;
 }
 
+.text-dark-blue, .text-dark-blue a{
+    color: rgb(27, 39, 79) !important;
+}
+
+
 .cca-icon {
     text-align: center;
     margin: auto;
@@ -924,4 +929,18 @@ swiper-container {
     .center-item-responsive {
         width: 90%;
     }
+}
+
+.q-indicator-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.q-indicator {
+    width: 20px;
+    position: absolute;
+    background-color: blue;
+    height: 100%;
+    top: 0;
 }
