@@ -34,7 +34,11 @@ function getWindowDimensions() {
 }
 
 
+// const context = new AudioContext();
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const context = new AudioContext();
+// const context = window.AudioContext = window.AudioContext || window.webkitAudioContext;
+// = window.AudioContext = window.AudioContext || window.webkitAudioContext;
 var source;
 // var isPlaying = false;
 var lowPass = context.createBiquadFilter();

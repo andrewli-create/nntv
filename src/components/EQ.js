@@ -31,7 +31,7 @@ function getWindowDimensions() {
   };
 }
 
-
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const context = new AudioContext();
 var source;
 // var isPlaying = false;
