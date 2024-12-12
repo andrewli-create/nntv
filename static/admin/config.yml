@@ -360,7 +360,20 @@ collections:
           - { label: "Hero Image", name: "heroimage", widget: image }
           - { label: "Image Credit", name: "imagecredit", widget: "string"}
           - { label: "Secondary Header", name: "secondaryheader", widget: "string" }
-          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }    
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }  
+      - file: "src/pages/workshops-and-partnerships/index.md"
+        label: "Workshops and Partnerships"
+        name: "workshops"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "workshops",
+            }
+          - { label: "Main Header", name: "mainheader", widget: "string" } 
+          - { label: "Paragraph 1", name: "paragraph1", widget: "markdown" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "markdown" }
       - file: "src/pages/under-construction/index.md"
         label: "Under Construction"
         name: "under-construction"

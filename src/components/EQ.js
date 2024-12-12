@@ -17,7 +17,7 @@ import { Knob } from 'react-rotary-knob'
 import s6 from './knobskins/s6';
 import s6cus from './knobskins/s6cus';
 import { BasisCurve, BundleCurve } from 'react-svg-curve';
-import playIcon from '../img/play_icon_yellow.svg'
+import playIcon from '../img/play_icon_white.svg'
 import pauseIcon from '../img/pause_icon_yellow.svg'
 import bandIcon from '../img/band_icon.svg'
 
@@ -322,9 +322,11 @@ const EQ = ({ children }) => {
     //     setActiveBandStat1(data);
     // }
   };
+  
   return (
     <>
       <div className="plugin-wrapper">
+        <h3 style={{textAlign: "center", fontSize: 30, marginTop: 10}}>Graphical EQ</h3>
         <hr className="plugin-top-bar"/>
         {/* <h2>{EQGW}</h2> */}
         <div className="plugin-content-wrapper">
@@ -375,18 +377,21 @@ const EQ = ({ children }) => {
             </svg> */}
 
           </div>
-          <div className="plugin-frequency-wrapper">
-            <span>200Hz</span>
-            <span>2.1KHz</span>
-            <span>4KHz</span>
-            <span>5.9KHz</span>
-            <span>7.8KHz</span>
-            {/* <span>40Hz</span>
-            <span>125Hz</span>
-            <span>500Hz</span>
-            <span>2KHz</span>
-            <span>8KHz</span> */}
-            <button className="play-button" onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
+          <div className="plugin-frequency-wrapper-outter">
+            <button className={!playingState ? "play-button" : "play-button play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
+            <div className="plugin-frequency-wrapper">
+              <span>200Hz</span>
+              <span>2.1KHz</span>
+              <span>4KHz</span>
+              <span>5.9KHz</span>
+              <span>7.8KHz</span>
+              {/* <span>40Hz</span>
+              <span>125Hz</span>
+              <span>500Hz</span>
+              <span>2KHz</span>
+              <span>8KHz</span> */}
+            </div>
+            <div style={{width: "13.5%"}}></div>
           </div>
           <div className="plugin-control-wrapper">
             <div className="eq-page-wrapper">
@@ -425,6 +430,9 @@ const EQ = ({ children }) => {
               {/* <input type="range" min={100} max={880} onChange={(e) => eqAdjust(e.target.value)} /> */}
             </div>
           </div>
+          <div>
+            <h4 style={{textAlign: "right"}}>Developed by <a href="/our-vision#our-team">Andrew Li</a></h4>
+          </div>
         </div>
       </div>
     </>
@@ -443,7 +451,32 @@ const ControlPanel = ({ bandNumber, bandData, setData }) => {
   var controlFreq = bandData.freq;
   var controlQ = bandData.q;
   var controlID = bandData.id;
-  
+
+  const updateKnob = (parameter, value) => {
+    // console.log("updateKnob", value);
+    // console.log("para", parameter);
+    if (parameter == "gain") {
+      // setData(value);
+      // console.log("current", controlGain);
+      // console.log("adjusted", value);
+      // console.log("diff", (value.gain - controlGain));
+      var difference = Math.abs(value.gain - controlGain);
+      if (difference < 20) {
+        setData(value);
+      }
+    } else if (parameter == "freq") {
+      var difference = Math.abs(value.freq - controlFreq);
+      if (difference < 200) {
+        setData(value);
+      }
+    } else if (parameter == "q") {
+      var difference = Math.abs(value.q - controlQ);
+      if (difference < 0.5) {
+        setData(value);
+      }
+    }
+  }
+
   useEffect(() => {
     // setControlGain(bandData.gain);
     // setControlFreq(bandData.freq);
@@ -480,7 +513,8 @@ const ControlPanel = ({ bandNumber, bandData, setData }) => {
               defaultValue={controlFreq} 
               min={-40} 
               max={20} 
-              onChange={value => { setData({ gain: Math.round(value), freq: bandData.freq,  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              // onChange={value => { setData({ gain: Math.round(value), freq: bandData.freq,  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              onChange={value => { updateKnob("gain", { gain: Math.round(value), freq: bandData.freq,  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
             />
           </div>
         </div>
@@ -500,7 +534,8 @@ const ControlPanel = ({ bandNumber, bandData, setData }) => {
               defaultValue={controlFreq} 
               min={bandData.minF} 
               max={bandData.maxF} 
-              onChange={value => { setData({ gain: bandData.gain, freq: Math.round(value),  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              // onChange={value => { setData({ gain: bandData.gain, freq: Math.round(value),  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              onChange={value => { updateKnob("freq", { gain: bandData.gain, freq: Math.round(value),  q: bandData.q, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
             />
           </div>
         </div>
@@ -520,7 +555,8 @@ const ControlPanel = ({ bandNumber, bandData, setData }) => {
               defaultValue={controlQ} 
               min={0} 
               max={1} 
-              onChange={value => { setData({ gain: bandData.gain, freq: bandData.freq,  q: Math.round(value * 100) / 100, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              // onChange={value => { setData({ gain: bandData.gain, freq: bandData.freq,  q: Math.round(value * 100) / 100, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
+              onChange={value => { updateKnob("q", { gain: bandData.gain, freq: bandData.freq,  q: Math.round(value * 100) / 100, id: bandData.id, minF: bandData.minF, maxF: bandData.maxF}) }}
             />
           </div>
         </div>
@@ -584,3 +620,35 @@ function interpolate(value, s1, s2, t1, t2, slope) {
   function b2(t) { return 2*t*(1 - t)  }
   function b3(t) { return (1 - t)*(1 - t) }
 };
+
+
+class LimitedKnob extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: 0
+    };
+    this.handleOnChange = this.handleOnChange.bind(this);
+  }
+
+  handleOnChange(val) {
+    //ignore change if distance is greater than defined
+    //here we use a distance of 200 because our max value is 1000
+    //change if needed
+    const maxDistance = 200;
+    let distance = Math.abs(val - this.state.value);
+    if (distance > maxDistance) {
+      return;
+    } else {
+      this.setState({ value: val });
+    }
+  }
+  render() {
+    let { value, ...rest } = this.props;
+
+    return (
+      <Knob value={this.state.value} onChange={this.handleOnChange} {...rest} />
+    );
+  }
+}
+

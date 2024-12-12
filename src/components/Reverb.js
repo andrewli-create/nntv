@@ -17,7 +17,7 @@ import { Knob } from 'react-rotary-knob'
 import s6 from './knobskins/s6';
 import s6cus from './knobskins/s6cus';
 import { BasisCurve, BundleCurve } from 'react-svg-curve';
-import playIcon from '../img/play_icon_yellow.svg'
+import playIcon from '../img/play_icon_white.svg'
 import pauseIcon from '../img/pause_icon_yellow.svg'
 import bandIcon from '../img/band_icon.svg'
 import faderIcon from '../img/fader.svg'
@@ -252,11 +252,12 @@ const Reverb = ({ children }) => {
           <div id="reverb-screen" ref={divRef}>
           <div className="reverb-type-block display-flex d-flex-c" style={{position: "relative"}}>
             {/* <span>abc</span> */}
-            <button style={{right: "10%"}} className="play-button" onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
+            {/* <button style={{right: "10%"}} className="play-button" onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button> */}
             <span style={{paddingLeft: 20, paddingRight: 20}}>reverb type</span>
             <div className="reverb-type-select plugin-border">
               <span>room</span>
             </div>
+            <button className={!playingState ? "play-button-reverb" : "play-button-reverb play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
           </div>
           <div className="display-flex d-flex-sb" style={{marginTop: 20}}>
             <div className="reverb-half-block">

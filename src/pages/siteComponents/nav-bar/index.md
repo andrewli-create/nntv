@@ -27,5 +27,7 @@ navItem:
   - pageName: Contact
     pageURL: "#footer"
     navItemToggle: true
-    subNavItem: []
+    subNavItem:
+      - subPageName: Workshops and Partnerships
+        subPageURL: /workshops-and-partnerships
 ---

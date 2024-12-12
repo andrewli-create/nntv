@@ -34,6 +34,7 @@
     background-color: black;
     height: 3px;
     opacity: 1;
+    margin-top: 10px;
 }
 
 .plugin-screen {
@@ -62,17 +63,32 @@
     background-blend-mode: normal;
 }
 
+.plugin-frequency-wrapper-outter {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
 .plugin-frequency-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 72.5%;
+    /* width: 100%; */
     margin: auto;
 }
 
+.plugin-frequency-wrapper span {
+    transform: translateY(-10px);
+}
+
 .plugin-control-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,15 +222,39 @@
 }
 
 .play-button {
-    background: none;
+    background: rgb(245, 192, 69);
 	color: inherit;
 	border: none;
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-    position: absolute;
-    right: -70px;
+    width: 11%;
+    margin-right: 2.5%;
+    border-radius: 10px;
+    border: black 4px solid;
+    /* position: absolute; */
+    /* right: -70px; */
+}
+
+.play-button-reverb {
+    background: rgb(245, 192, 69);
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 11%;
+    margin-left: 2.5%;
+    border-radius: 10px;
+    border: black 4px solid;
+    /* position: absolute; */
+    /* right: -70px; */
+}
+
+.play-button-active {
+    background-color: transparent;
 }
 
 .play-icon {
@@ -222,6 +262,12 @@
     height: 30px;
 }
 
+.saved-text {
+    z-index: 1;
+    color: lightgray;
+    text-align: left;
+    font-size: 15px;
+}
 @media only screen and (max-width: 768px) {
     .play-button {
         right: 0px;

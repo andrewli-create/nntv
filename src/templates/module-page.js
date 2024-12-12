@@ -33,7 +33,23 @@ export const ModulePageTemplate = ({pageContext, data}) => {
   // console.log(data.markdownRemark.frontmatter.title);
   const [loadAnimation, setLoadAnimation] = useState(0);
   const [loadAnimationB, setLoadAnimationB] = useState(0);
+  const [notepadValue, setNotepadValue] = useState();
+  const [isSaving, setIsSaving] = useState(false);
+
+  console.log("front-matter-Module", data.markdownRemark.frontmatter);
+  var dataPack = data.markdownRemark.frontmatter;
+  var modulePack = dataPack.modules;
+  console.log("front-matter-modulePack", modulePack);
+  
   useEffect(() => {
+    const notepadData = window.localStorage.getItem(dataPack.title + "-note");
+    console.log("notepadData", notepadData);
+    if (notepadData == "" || notepadData == null) {
+      setNotepadValue("");
+    } else {
+      setNotepadValue(notepadData);
+    }
+    // if (notepadData !== null && notepadData !== "" ) setNotepadValue(String(notepadData));
     setTimeout(() => {
       setLoadAnimation(1);
       setTimeout(() => {
@@ -41,10 +57,15 @@ export const ModulePageTemplate = ({pageContext, data}) => {
       }, 250);
     }, 50);
   }, [])
-  console.log("front-matter-Module", data.markdownRemark.frontmatter);
-  var dataPack = data.markdownRemark.frontmatter;
-  var modulePack = dataPack.modules;
-  console.log("front-matter-modulePack", modulePack);
+
+  useEffect(() => {
+    window.localStorage.setItem(dataPack.title + "-note", notepadValue);
+    setIsSaving(true);
+    setTimeout(() => {
+      setIsSaving(false);
+    }, 500);
+  }, [notepadValue])
+  
   // console.log(this.props.pageContext);
   return (
     // <div className="text-css">
@@ -115,7 +136,9 @@ export const ModulePageTemplate = ({pageContext, data}) => {
                   <div className="notepad-paper"></div>
                   <div className="notepad-paper notepad-paper-offset"></div>
                 </div>
-                <textarea className="notepad-textarea" name="notepad" rows="5"></textarea>
+                <textarea className="notepad-textarea" name="notepad" rows="5" onChange={e => setNotepadValue(e.target.value)} value={notepadValue}></textarea>
+                {notepadValue != "" ? <span className="saved-text">{isSaving ? "Saving..." : "Note saved!   "}</span> : <></>}
+                
               </div>
             </div>
             <div className={dataPack.interactiveToggle ? "col-md-6 col-sm-12 credit-block" : "col-md-6 col-sm-12 credit-block"}>
