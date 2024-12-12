@@ -246,6 +246,7 @@ const Reverb = ({ children }) => {
           : 
           <></>
         }
+        <h3 style={{textAlign: "center", fontSize: 30, marginTop: 10}}>Reverb</h3>
         <hr className="plugin-top-bar"/>
         {/* <h2>{EQGW}</h2> */}
         <div className="plugin-content-wrapper">
