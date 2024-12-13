@@ -378,7 +378,7 @@ const EQ = ({ children }) => {
 
           </div>
           <div className="plugin-frequency-wrapper-outter">
-            <button className={!playingState ? "play-button" : "play-button play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
+            <div style={{width: "13.5%"}}></div>
             <div className="plugin-frequency-wrapper">
               <span>200Hz</span>
               <span>2.1KHz</span>
@@ -391,7 +391,7 @@ const EQ = ({ children }) => {
               <span>2KHz</span>
               <span>8KHz</span> */}
             </div>
-            <div style={{width: "13.5%"}}></div>
+            <button className={!playingState ? "play-button" : "play-button play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
           </div>
           <div className="plugin-control-wrapper">
             <div className="eq-page-wrapper">
