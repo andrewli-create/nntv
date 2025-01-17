@@ -121,7 +121,7 @@ const Reverb = ({ children }) => {
   const [inputGain, setInputGain] = useState(0);
   const [timing, setTiming] = useState(0);
   const [volume, setVolume] = useState(0);
-  const [beta, setBeta] = useState(true);
+  const [beta, setBeta] = useState(false);
   
 
 
@@ -232,6 +232,33 @@ const Reverb = ({ children }) => {
   //   verb.decay = value;
   //   console.log("updateVerb", verb);
   // }
+
+  const updateDryWet = (value, current) => {
+    console.log("value", value);
+    console.log("current", current);
+    // console.log("updateDryWet", value);
+    // console.log("value", value);
+    // console.log("dryWet", dryWet);
+    var currentDryWet = current;
+    console.log("currentDryWet", currentDryWet);
+    var difference = Math.abs(value - current);
+    console.log("difference", difference);
+    if (difference < 20) {
+        setDryWet(value);
+    }
+    // if (dryWet > 99) {
+    //   if (difference > 2) {
+        
+    //   } else {
+    //     setDryWet(value);
+    //   }
+    // }
+    // if (difference < 5) {
+    //   setDryWet(value);
+    // } else {
+    //   setDryWet(dryWet);
+    // }
+  }
 
   return (
     <>
@@ -362,13 +389,14 @@ const Reverb = ({ children }) => {
                         clampMin={0}
                         clampMax={360}
                         // value={bandData.gain}
+                        value={dryWet}
                         style={{width: knobSize, height: knobSize}} 
                         preciseMode={false} 
                         skin={s6cus} 
                         // defaultValue={controlFreq} 
                         min={0} 
                         max={100} 
-                        onChange={value => { setDryWet(Math.round(value)) }}
+                        onChange={value => { updateDryWet(Math.round(value), dryWet) }}
                       />
                     </div>
                   </div>
@@ -383,6 +411,9 @@ const Reverb = ({ children }) => {
             </div>
           </div>
           
+          </div>
+          <div>
+            <h4 style={{textAlign: "right"}}>Developed by <a href="/our-vision#our-team">Andrew Li</a></h4>
           </div>
         </div>
       </div>
