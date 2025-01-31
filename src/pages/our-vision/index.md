@@ -28,7 +28,7 @@ tertiaryparagraph: Our team aims to cultivate a community where every creative
   voice resonates uniquely, and equally.
 members:
   - membername: Parisa Sabet, Director
-    memberimage: /img/r14a6973-2_7.jpg
+    memberimage: /img/parisa9.jpg
     memberimagealign: center
     memberbio: >-
       Imagination, innovation, and storytelling are at the center of Dr. Sabet’s
