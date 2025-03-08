@@ -32,13 +32,13 @@ export const BetaPageTemplate = ({data}) => {
       {
         correct ? 
           <div className="container" style={{textAlign: "center"}}>
-            <h1>This page is intended for beta purposes</h1>
+            <h1>This page is intended for beta testing</h1>
             <br/><br/>
             <Compression/>
           </div> 
           : 
           <div className="beta-cover-up">
-            <h1>This page is intended for beta purposes</h1>
+            <h1>This page is intended for beta testing</h1>
             <p>Please enter the password to access the testing page</p>
             <br/><br/>
             <input type="text" onChange={handleChange} value={pw} />
