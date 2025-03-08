@@ -4,6 +4,7 @@ title: Intro to Signal Flow
 videothumbnail: /img/asf_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/H5f1Nlni7Mo?si=xGlvIBqUfHcCdssZ
 biooutcome: outcomes
+tool: none
 biography: >-
   * Develop an understanding of how a “real world” sound can be recorded and
   outputted, and the “path” it follows through its journey
@@ -31,6 +32,7 @@ script: >-
 
 
   From a simple real-world sound, through cables and devices, to the sound in our ears, the journey from the acoustic to the digital domain and back is fascinating. And this, dear viewers, is  just the start. Stay tuned for the next segment where we will learn more about DAWs. Thanks for watching and happy composing!
+interactiveToggle: false
 creditandinfo: |-
   Researcher and scriptwriter: Mehrdad Ranjbar
 

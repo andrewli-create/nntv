@@ -22,6 +22,7 @@ import outcomeIcon from "../img/outcome.svg";
 import { useState, useEffect, useCallback } from "react";
 import EQ from "../components/EQ"
 import Reverb from "../components/Reverb"
+import Compression from "../components/Compression"
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
@@ -163,6 +164,8 @@ export const ModulePageTemplate = ({pageContext, data}) => {
                         return <EQ/>
                       case 'reverb':
                         return <Reverb/> 
+                      case 'compression':
+                        return <Compression/> 
                       default:
                         return <span className="al-mt-20">There is no interactive tool for this module.</span>
                     }

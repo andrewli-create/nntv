@@ -176,6 +176,16 @@
     /* padding-bottom: 20px; */
 }
 
+.knob-wrapper {
+    width: 50%;
+}
+
+.knob-label {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
 .knob-wrap {
     transform: rotate(180deg);
 }
@@ -253,6 +263,21 @@
     /* right: -70px; */
 }
 
+.play-button-com {
+    background: rgb(245, 192, 69);
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 100%;
+    margin-left: 2.5%;
+    border-radius: 10px;
+    border: black 4px solid;
+    height: 70px;
+}
+
 .play-button-active {
     background-color: transparent;
 }
@@ -293,10 +318,51 @@
     overflow: hidden;
 }
 
+.compression-half-block {
+    width: 48%;
+    /* background-color: lightblue; */
+    min-height: 250px;
+    overflow: hidden;
+}
+
 .reverb-screen {
     min-height: 200px;
     position: relative;
     overflow: hidden;
+}
+
+.compression-line-screen {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.meter-icon {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: -20px;
+}
+
+.meter-line {
+    transition-duration: 150ms;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform-origin: center bottom;
+    height: 110px;
+    width: 3px;
+    border-left: 3px black solid;
+}
+
+.threshold-line {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transform-origin: center bottom;
+    height: 100%;
+    width: 3px;
+    border-left: 3px rgb(253, 188, 0) solid;
 }
 
 .reverb-screen-text-wrapper {
@@ -317,6 +383,10 @@
     justify-content: space-around;
     margin-bottom: 10px;
 }
+
+.compression-control-panel {
+}
+
 
 input[type=range][orient=vertical] {
     writing-mode: vertical-lr;

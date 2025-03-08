@@ -217,7 +217,8 @@ collections:
             [
               { label: None, value: none},
               { label: EQ, value: eq},
-              { label: Reverb, value: reverb}
+              { label: Reverb, value: reverb},
+              { label: Compression, value: compression}
             ]
         },
         { label: "Biography or Learning Outcomes", name: "biography", widget: markdown, required: false },
@@ -385,4 +386,14 @@ collections:
               default: "under-construction",
             }
           - { label: "Header", name: "header", widget: "string" }
-          - { label: "Subtext", name: "subtext", widget: "string" } 
+          - { label: "Subtext", name: "subtext", widget: "string" }
+      - file: "src/pages/beta/index.md"
+        label: "Beta Page"
+        name: "beta"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "beta-page",
+            }     
