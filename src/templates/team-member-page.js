@@ -128,7 +128,7 @@ export const TeamMemberPageTemplate = ({data}) => {
           { pageData.languages?
             <div className="col-md-4 al-mt-20">
               <div className="member-card course-block display-flex d-flex-fs d-flex-col al-height-100pc">
-                <LessonBlockHeader logo={language} header={"Language"}/>
+                <LessonBlockHeader logo={language} header={"Language(s)"}/>
                 <div className="member-card-body">
                   {
                     pageData.languages?.map((language, index) => (
@@ -145,7 +145,7 @@ export const TeamMemberPageTemplate = ({data}) => {
           <div className="row al-mt-20 al-mb-40">
             <div className="col-md-12">
               <div className="course-block display-flex d-flex-c d-flex-col">
-                <LessonBlockHeader logo={bioIcon} header={"Featured Work"}/>
+                <LessonBlockHeader logo={bioIcon} header={"Featured Works & Portfolio"}/>
                 <div className="col-md-12 row">
                   {
                     pageData.sampleOfWorks?.map((work, index) => (
