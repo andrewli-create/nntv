@@ -307,6 +307,7 @@ collections:
                   { label: "Member Name", name: "membername", widget: string },
                   { label: "Member Bio", name: "memberbio", widget: markdown, required: false },
                   { label: "Member Link", name: "memberlink", widget: string, required: false },
+                  { label: "Member Page Link", name: "memberpagelink", widget: string, required: false },
                   { 
                     name: "memberimagealign",
                     label: "Member Image Alignment",
@@ -396,4 +397,108 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "beta-page",
-            }     
+            }  
+
+  - name: "teeamMembers"
+    label: "Team Members"
+    label_singular: Team Member
+    folder: "src/pages/team-member"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "team-member-page",
+        }
+      - { label: "Member Name", name: "title", widget: "string" }
+      - { label: "Bio", name: "bio", widget: markdown, required: false }
+      - { label: "Bio Picture", name: "bioPicture", widget: image, required: false }
+      - {
+          label: Education (Degrees),
+          name: degrees,
+          widget: list,
+          fields:
+            [
+              { label: "Degree Name", name: "degreeName", widget: "string", required: false },
+            ]
+        }
+      - {
+          label: Contacts,
+          name: contacts,
+          widget: list,
+          fields:
+            [
+              { label: Contact Type, name: contactType, widget: select, options: ["Email", "Phone", "Website"], required: true },
+              { label: content, name: content, widget: "string", required: true },
+            ]
+        }
+      - { label: "Preferred Contact",
+          name: "preferredContact",
+          widget: "object",
+          collapsed: true,
+          hint: "This contact will appear as an action button below your bio, viewer will be more likely to contact you via pressing this button",
+          fields: 
+            [
+              { label: Contact Type, name: contactType, widget: select, options: ["Email", "Phone", "Website"], required: true },
+              { label: content, name: content, widget: "string", required: true },
+            ]
+        }
+      - { label: "Portfolio Link", name: "portfolioLink", widget: string }
+      - {
+          label: Your Services,
+          name: services,
+          widget: list,
+          fields:
+            [
+              { label: "Service Name", name: "serviceName", widget: "string", required: false },
+            ]
+        }
+      - {
+          label: Your Expertises,
+          name: expertises,
+          widget: list,
+          fields:
+            [
+              { label: "Expertise Name", name: "expertiseName", widget: "string", required: false },
+            ]
+        }
+      - {
+          label: Your Languages,
+          name: languages,
+          widget: list,
+          fields:
+            [
+              { label: "Languages Name", name: "languageName", widget: "string", required: false },
+            ]
+        }
+      - { label: "Sample of Works",
+          name: "sampleOfWorks",
+          widget: "list",
+          collapsed: true,
+          hint: "In this section, you may include a link to a website or video, if the link provide is a YouTube link, it will be displayed as an embedded video.",
+          types: 
+            [
+              { label: "Website",
+                name: "website",
+                widget: "object",
+                collapsed: true,
+                fields: 
+                  [
+                    { label: Title, name: title, widget: "string", required: true },
+                    { label: link, name: link, widget: "string", required: true },
+                  ]
+              },
+              { label: "YouTube Video",
+                name: "youtube",
+                widget: "object",
+                collapsed: true,
+                fields: 
+                  [
+                    { label: Title, name: title, widget: "string", required: true },            
+                    { label: link, name: link, widget: "string", required: true },
+                  ]
+              },
+            ]
+        }

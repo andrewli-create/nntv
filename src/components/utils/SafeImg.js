@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
-import $ from 'jquery';
+import React from "react";
 import Img from "gatsby-image"
 
-const SafeImg = ({inputObj, inputAlt, imageHeight, imagePosition}) => {
-  // console.log("SafeImg Received: ", inputObj);
+const SafeImg = ({inputObj, alt, imageHeight, imagePosition, imageFit, classNames}) => {
+  console.log("SafeImg Received: ", inputObj);
   console.log("imagePosition: ", imagePosition);
   if (!imagePosition) {
     imagePosition = "center"
@@ -17,26 +14,47 @@ const SafeImg = ({inputObj, inputAlt, imageHeight, imagePosition}) => {
                 {typeof inputObj === 'object' ? 
                     <>
                       {
-                        imageHeight ?
-                          <Img className="safe-img-obj" fluid={inputObj.childImageSharp.fluid} style={{height: imageHeight}}
-                              imgStyle={{
-                              objectPosition: imagePosition,
-                            }}
-                          />
+                        inputObj.childImageSharp ?
+                        <>
+                          {
+                            imageHeight ?
+                              <Img className={`safe-img-obj ${classNames}`} fluid={inputObj.childImageSharp.fluid ? inputObj.childImageSharp.fluid : ""} style={{height: imageHeight}}
+                                imgStyle={{
+                                  objectPosition: imagePosition,
+                                  objectFit: imageFit,
+                                }}
+                                alt={alt ? alt : ""}
+                              />
+                            :
+                              <Img className={`safe-img-obj ${classNames}`} fluid={inputObj.childImageSharp.fluid ? inputObj.childImageSharp.fluid : ""}
+                                imgStyle={{
+                                  objectPosition: imagePosition,
+                                  objectFit: imageFit,
+                                }}
+                                alt={alt ? alt : ""}
+                              />
+                          }
+                        </>
                         :
-                          <Img className="safe-img-obj" fluid={inputObj.childImageSharp.fluid} imgStyle={{
-                              objectPosition: imagePosition,
-                            }}
-                          />
+                        <>
+                          {
+                            imageHeight ?
+                              <img className={`safe-img-obj ${classNames}`} style={{height: imageHeight, objectPosition: imagePosition, objectFit: imageFit}} src={inputObj.publicURL} alt={alt ? alt : ""}/>
+                            :
+                              <img className={`safe-img-obj ${classNames}`} style={{objectPosition: imagePosition, objectFit: imageFit}} src={inputObj.publicURL} alt={alt ? alt : ""}/>
+                          }
+                        </>
+                        
                       }
+                      
                     </>
                     : 
                     <>
                       {
                         imageHeight ?
-                          <img className="safe-img" src={inputObj} style={{height: imageHeight, objectPosition: imagePosition}}/>
+                          <img className={`safe-img ${classNames}`} src={inputObj} style={{height: imageHeight, objectPosition: imagePosition, objectFit: imageFit}} alt={alt ? alt : ""}/>
                         :
-                          <img className="safe-img" src={inputObj} style={{objectPosition: imagePosition}}/>
+                          <img className={`safe-img ${classNames}`} src={inputObj} style={{objectPosition: imagePosition, objectFit: imageFit}} alt={alt ? alt : ""}/>
                       }
                     </>
                     

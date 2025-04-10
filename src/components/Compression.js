@@ -404,171 +404,175 @@ const Compression = ({ children }) => {
               </div>
               <button className={!playingState ? "play-button-reverb" : "play-button-reverb play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
             </div> */}
-          <div className="display-flex d-flex-sb" style={{marginTop: 20}}>
-            <div className="compression-half-block">
-              <div className="reverb-screen plugin-border" style={{position: "relative"}}>
-                <img className="meter-icon" src={meterIcon} />
-                <div className="meter-line" style={{transform: `translateX(50%) rotate(${meterDeg}deg)`}}></div>
-                {/* <svg width="100%" height="180px" xmlns="http://www.w3.org/2000/svg">
-                  <g id="early_reflections" data-name="early reflections">
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 3, 5, 15) + "%")} y1="50%" x2={(scale(reverbTimeState, 0, 3, 5, 15) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 2, 15, 25) + "%")} y1="60%" x2={(scale(reverbTimeState, 0, 2, 15, 25) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 1.2, 25, 35) + "%")} y1="68%" x2={(scale(reverbTimeState, 0, 1.2, 25, 35) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 1, 35, 45) + "%")} y1="35%" x2={(scale(reverbTimeState, 0, 1, 35, 45) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.7, 45, 55) + "%")} y1="40%" x2={(scale(reverbTimeState, 0, 0.7, 45, 55) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.5, 55, 65) + "%")} y1="60%" x2={(scale(reverbTimeState, 0, 0.5, 55, 65) + "%")} y2="100%"/>
-                    <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.35, 65, 75) + "%")} y1="80%" x2={(scale(reverbTimeState, 0, 0.35, 65, 75) + "%")} y2="100%"/>
-                  </g>
-                </svg> */}
-              </div>
-              <div className="compression-control-panel">
-                <div className="display-flex d-flex-sb" style={{width: "100%", marginTop: 20}}>
-                  <div className="knob-wrapper">
-                    <div className="knob-single">
-                      <span className="knob-label">threshold</span>
-                      <div className="knob-wrap">
-                        <Knob
-                          clampMin={0}
-                          clampMax={360}
-                          // value={bandData.gain}
-                          value={comThreshold}
-                          style={{width: knobSize, height: knobSize}} 
-                          preciseMode={false} 
-                          skin={s6cus} 
-                          // defaultValue={controlFreq} 
-                          min={-50} 
-                          max={0} 
-                          onChange={value => { updateComThreshold(Math.round(value), comThreshold) }}
-                        />
+            <div className="display-flex d-flex-sb" style={{marginTop: 20}}>
+              <div className="compression-half-block">
+                <div className="reverb-screen plugin-border" style={{position: "relative"}}>
+                  <span style={{position: "absolute", bottom: -10, left: "50%", transform: "translateX(-50%)"}}>VU meter &#40;dB&#41;</span>
+                  <img className="meter-icon" src={meterIcon} />
+                  <div className="meter-line" style={{transform: `translateX(50%) rotate(${meterDeg}deg)`}}></div>
+                  {/* <svg width="100%" height="180px" xmlns="http://www.w3.org/2000/svg">
+                    <g id="early_reflections" data-name="early reflections">
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 3, 5, 15) + "%")} y1="50%" x2={(scale(reverbTimeState, 0, 3, 5, 15) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 2, 15, 25) + "%")} y1="60%" x2={(scale(reverbTimeState, 0, 2, 15, 25) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 1.2, 25, 35) + "%")} y1="68%" x2={(scale(reverbTimeState, 0, 1.2, 25, 35) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 1, 35, 45) + "%")} y1="35%" x2={(scale(reverbTimeState, 0, 1, 35, 45) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.7, 45, 55) + "%")} y1="40%" x2={(scale(reverbTimeState, 0, 0.7, 45, 55) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.5, 55, 65) + "%")} y1="60%" x2={(scale(reverbTimeState, 0, 0.5, 55, 65) + "%")} y2="100%"/>
+                      <line className="cls-1" x1={(scale(reverbTimeState, 0, 0.35, 65, 75) + "%")} y1="80%" x2={(scale(reverbTimeState, 0, 0.35, 65, 75) + "%")} y2="100%"/>
+                    </g>
+                  </svg> */}
+                </div>
+                <div className="compression-control-panel">
+                  <div className="display-flex d-flex-sb" style={{width: "100%", marginTop: 20}}>
+                    <div className="knob-wrapper">
+                      <div className="knob-single">
+                        <span className="knob-label">threshold &#40;dB&#41; </span>
+                        <div className="knob-wrap">
+                          <Knob
+                            clampMin={0}
+                            clampMax={360}
+                            // value={bandData.gain}
+                            value={comThreshold}
+                            style={{width: knobSize, height: knobSize}} 
+                            preciseMode={false} 
+                            skin={s6cus} 
+                            // defaultValue={controlFreq} 
+                            min={-50} 
+                            max={0} 
+                            onChange={value => { updateComThreshold(Math.round(value), comThreshold) }}
+                          />
+                        </div>
+                        <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
+                          <span className="">-50</span>
+                          <span className="">0</span>
+                        </div>
                       </div>
-                      <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
-                        <span className="">-50</span>
-                        <span className="">0</span>
+                    </div>
+                    <div className="knob-wrapper">
+                      <div className="knob-single">
+                        <span className="knob-label">ratio &#40;{comRatio}:1&#41;</span>
+                        <div className="knob-wrap">
+                          <Knob
+                            clampMin={0}
+                            clampMax={360}
+                            // value={bandData.gain}
+                            value={comRatio}
+                            style={{width: knobSize, height: knobSize}} 
+                            preciseMode={false} 
+                            skin={s6cus} 
+                            // defaultValue={controlFreq} 
+                            min={1} 
+                            max={10} 
+                            onChange={value => { updateComRatio(Math.round(value), comRatio) }}
+                          />
+                        </div>
+                        <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
+                          <span className="">1:1</span>
+                          <span className="">10:1</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="knob-wrapper">
-                    <div className="knob-single">
-                      <span className="knob-label">ratio</span>
-                      <div className="knob-wrap">
-                        <Knob
-                          clampMin={0}
-                          clampMax={360}
-                          // value={bandData.gain}
-                          value={comRatio}
-                          style={{width: knobSize, height: knobSize}} 
-                          preciseMode={false} 
-                          skin={s6cus} 
-                          // defaultValue={controlFreq} 
-                          min={1} 
-                          max={30} 
-                          onChange={value => { updateComRatio(Math.round(value), comRatio) }}
-                        />
+                  <div className="display-flex d-flex-sb" style={{width: "100%", marginTop: 20}}>
+                    <div className="knob-wrapper">
+                      <div className="knob-single">
+                        <span className="knob-label">attack &#40;ms&#41;</span>
+                        <div className="knob-wrap">
+                          <Knob
+                            clampMin={0}
+                            clampMax={360}
+                            // value={bandData.gain}
+                            value={comAttack}
+                            style={{width: knobSize, height: knobSize}} 
+                            preciseMode={false} 
+                            skin={s6cus} 
+                            // defaultValue={controlFreq} 
+                            min={0} 
+                            max={200} 
+                            onChange={value => { updateComAttack(Math.round(value), comAttack) }}
+                          />
+                        </div>
+                        <div className="display-flex d-flex-sb" style={{height: 25, width: "50%", marginTop: -5}}>
+                          <span className="">0</span>
+                          <span className="">200</span>
+                        </div>
                       </div>
-                      <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
-                        <span className="">1</span>
-                        <span className="">30</span>
+                    </div>
+                    <div className="knob-wrapper">
+                      <div className="knob-single">
+                        <span className="knob-label">release &#40;sec&#41;</span>
+                        <div className="knob-wrap">
+                          <Knob
+                            clampMin={0}
+                            clampMax={360}
+                            // value={bandData.gain}
+                            value={comRelease}
+                            style={{width: knobSize, height: knobSize}} 
+                            preciseMode={false} 
+                            skin={s6cus} 
+                            // defaultValue={controlFreq} 
+                            min={500} 
+                            max={5000} 
+                            onChange={value => { updateComRelease(Math.round(value), comRelease) }}
+                          />
+                        </div>
+                        <div className="display-flex d-flex-sb" style={{height: 25, width: "50%", marginTop: -5}}>
+                          <span className="">0.5</span>
+                          <span className="">5</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="display-flex d-flex-sb" style={{width: "100%", marginTop: 20}}>
-                  <div className="knob-wrapper">
-                    <div className="knob-single">
-                      <span className="knob-label">attack</span>
-                      <div className="knob-wrap">
-                        <Knob
-                          clampMin={0}
-                          clampMax={360}
-                          // value={bandData.gain}
-                          value={comAttack}
-                          style={{width: knobSize, height: knobSize}} 
-                          preciseMode={false} 
-                          skin={s6cus} 
-                          // defaultValue={controlFreq} 
-                          min={0} 
-                          max={200} 
-                          onChange={value => { updateComAttack(Math.round(value), comAttack) }}
-                        />
-                      </div>
-                      <div className="display-flex d-flex-sb" style={{height: 25, width: "50%", marginTop: -5}}>
-                        <span className="">0</span>
-                        <span className="">200</span>
+              </div>
+              <div className="compression-half-block">
+                <div style={{position: "relative"}}>
+                  <div className="plugin-border compression-line-screen" style={{position: "relative"}}>
+                    <div id="svg-container" style={{width: "100%", height: "100%"}}>
+                      <svg width='100%' height='100%' viewBox="0 0 100 100" preserveAspectRatio="none">
+                          {/* <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,100 ${scale(comThreshold, -50, 0, 0, 100)},50 100,${(scale(comRatio, 1, 30, 0, 50) + scale(comThreshold, -50, 0, 0, 50))} 100,100`} /> */}
+                          {/* <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,101 ${scale(comThreshold, -50, 0, 0, 50)},50 101,${(scale(comRatio, 1, 30, 0, 50))} 101,101`} /> */}
+                          <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,101 ${scale(comThreshold, -50, 0, 10, 50)},${scale(comThreshold, -50, 0, 90, 50)} 101,${(scale(comRatio, 1, 10, 0, scale(comThreshold, -50, 0, 90, 50)))} 101,101`} />
+                      </svg>
+                    </div>
+                    <div className="threshold-line" style={{left: `${scale(comThreshold, -50, 0, 10, 50)}%`}}></div>
+                  </div>
+                  <span style={{position: "absolute", bottom: -30, left: "50%", transform: "translateX(-50%)"}}>&#40;dB&#41;</span>
+                </div>
+                <div className="compression-control-panel">
+                  <div className="display-flex d-flex-sa" style={{width: "100%", marginTop: 20}}>
+                    <div className="knob-wrapper">
+                      <div className="knob-single">
+                        <span className="knob-label">make-up gain</span>
+                        <div className="knob-wrap">
+                          <Knob
+                            clampMin={0}
+                            clampMax={360}
+                            // value={bandData.gain}
+                            value={comMakeUpGain}
+                            style={{width: knobSize, height: knobSize}} 
+                            preciseMode={false} 
+                            skin={s6cus} 
+                            // defaultValue={controlFreq} 
+                            step={0.1}
+                            min={0} 
+                            max={60} 
+                            onChange={value => { updateComMakeUpGain(Math.round(value), comMakeUpGain) }}
+                          />
+                        </div>
+                        <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
+                          <span className="">0dB</span>
+                          <span className="">6dB</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="knob-wrapper">
-                    <div className="knob-single">
-                      <span className="knob-label">release</span>
-                      <div className="knob-wrap">
-                        <Knob
-                          clampMin={0}
-                          clampMax={360}
-                          // value={bandData.gain}
-                          value={comRelease}
-                          style={{width: knobSize, height: knobSize}} 
-                          preciseMode={false} 
-                          skin={s6cus} 
-                          // defaultValue={controlFreq} 
-                          min={5} 
-                          max={5000} 
-                          onChange={value => { updateComRelease(Math.round(value), comRelease) }}
-                        />
-                      </div>
-                      <div className="display-flex d-flex-sb" style={{height: 25, width: "50%", marginTop: -5}}>
-                        <span className="">5</span>
-                        <span className="">5k</span>
-                      </div>
+                    <div className="display-flex d-flex-c d-flex-col" style={{position: "relative", width: "30%"}}>
+                      <button className={!playingState ? "play-button-reverb play-button-com" : "play-button-reverb play-button-com play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState, comThreshold, comRatio, comAttack, comRelease, comMakeUpGain); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="compression-half-block">
-              <div className="plugin-border compression-line-screen" style={{position: "relative"}}>
-                <div id="svg-container" style={{width: "100%", height: "100%"}}>
-                  <svg width='100%' height='100%' viewBox="0 0 100 100" preserveAspectRatio="none">
-                      {/* <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,100 ${scale(comThreshold, -50, 0, 0, 100)},50 100,${(scale(comRatio, 1, 30, 0, 50) + scale(comThreshold, -50, 0, 0, 50))} 100,100`} /> */}
-                      {/* <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,101 ${scale(comThreshold, -50, 0, 0, 50)},50 101,${(scale(comRatio, 1, 30, 0, 50))} 101,101`} /> */}
-                      <polygon stroke-width="1px" stroke="black" fill="transparent" points={`0,101 ${scale(comThreshold, -50, 0, 10, 50)},${scale(comThreshold, -50, 0, 90, 50)} 101,${(scale(comRatio, 1, 30, 0, scale(comThreshold, -50, 0, 90, 50)))} 101,101`} />
-                  </svg>
-                </div>
-                <div className="threshold-line" style={{left: `${scale(comThreshold, -50, 0, 10, 50)}%`}}></div>
-              </div>
-              <div className="compression-control-panel">
-                <div className="display-flex d-flex-sa" style={{width: "100%", marginTop: 20}}>
-                  <div className="knob-wrapper">
-                    <div className="knob-single">
-                      <span className="knob-label">make-up gain</span>
-                      <div className="knob-wrap">
-                        <Knob
-                          clampMin={0}
-                          clampMax={360}
-                          // value={bandData.gain}
-                          value={comMakeUpGain}
-                          style={{width: knobSize, height: knobSize}} 
-                          preciseMode={false} 
-                          skin={s6cus} 
-                          // defaultValue={controlFreq} 
-                          step={0.1}
-                          min={0} 
-                          max={50} 
-                          onChange={value => { updateComMakeUpGain(Math.round(value), comMakeUpGain) }}
-                        />
-                      </div>
-                      <div className="display-flex d-flex-sb" style={{height: 20, width: "50%", marginTop: -5}}>
-                        <span className="">0dB</span>
-                        <span className="">5dB</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="display-flex d-flex-c d-flex-col" style={{position: "relative", width: "30%"}}>
-                    <button className={!playingState ? "play-button-reverb play-button-com" : "play-button-reverb play-button-com play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState, comThreshold, comRatio, comAttack, comRelease, comMakeUpGain); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           
           </div>
           <div>

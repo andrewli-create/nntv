@@ -180,28 +180,38 @@ export const OurVisionPageTemplate = ({data}) => {
                     <div className="value-card d-flex d-flex-col d-flex-sb">
                       <div>
                         <h6 className="al-mt-10 member-name">{member.membername}</h6>
-                        <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(member.membername,  member.memberbio, member.memberimage, member.memberlink)}}>
-                          {member.memberbio ? 
-                            // <div className="member-bio">
-                            //   <p>{member.memberbio}</p>
-                            // </div>
-                            <></>
-                            : 
-                            <></>
-                          }
-                          <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
-                          <span className="click-prompt" style={{}}> Click to see bio.</span>
-                          {/* <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0, zIndex: 2}}></div> */}
-                          {/* <div className="video-frame-element" style={{width: "auto", height: "auto", left: 0, bottom: "10%", zIndex: 2, padding: "5px 10px"}}> */}
-                          <SafeImg inputObj={member.memberimage} imagePosition={member.memberimagealign}/>
-                          {/* {preview == 0 ? 
-                              member.memberimage ? <Img fluid={member.memberimage.childImageSharp.fluid}/>  : <></>
-                            :
-                              member.memberimage ? <img src={member.memberimage}/> : <></>
-                          }
-                           */}
-                          {/* <Img fluid={member.memberimage.childImageSharp.fluid}/> */}
-                        </div>
+                        { !member.memberpagelink ?
+                          <div className="member-image-wrapper al-pos-r" onClick={() => {showBio(member.membername,  member.memberbio, member.memberimage, member.memberlink)}}>
+                            {member.memberbio ? 
+                              // <div className="member-bio">
+                              //   <p>{member.memberbio}</p>
+                              // </div>
+                              <></>
+                              : 
+                              <></>
+                            }
+                            <div className="video-frame-element" style={{backgroundColor: "rgba(156, 194, 255, 0)", width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
+                            <span className="click-prompt" style={{}}> Click to see bio.</span>
+                            {/* <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0, zIndex: 2}}></div> */}
+                            {/* <div className="video-frame-element" style={{width: "auto", height: "auto", left: 0, bottom: "10%", zIndex: 2, padding: "5px 10px"}}> */}
+                            <SafeImg inputObj={member.memberimage} imagePosition={member.memberimagealign}/>
+                            {/* {preview == 0 ? 
+                                member.memberimage ? <Img fluid={member.memberimage.childImageSharp.fluid}/>  : <></>
+                              :
+                                member.memberimage ? <img src={member.memberimage}/> : <></>
+                            }
+                            */}
+                            {/* <Img fluid={member.memberimage.childImageSharp.fluid}/> */}
+                          </div>
+                          :
+                          <a href={`/team-member/${member.memberpagelink}`}>
+                            <div className="member-image-wrapper al-pos-r">
+                              <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
+                              <span className="click-prompt" style={{}}> Click to see bio page.</span>
+                              <SafeImg inputObj={member.memberimage} imagePosition={member.memberimagealign}/>
+                            </div>
+                          </a> 
+                        }
                       </div>
                     </div>
                   </div>
@@ -243,7 +253,7 @@ export const OurVisionPageTemplate = ({data}) => {
                             : 
                             <></>
                           }
-                          <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
+                          <div className="video-frame-element" style={{backgroundColor: "transparent", width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
                           <span className="click-prompt" style={{}}> Click to see bio.</span>
                           {/* <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0, zIndex: 2}}></div> */}
                           {/* <div className="video-frame-element" style={{width: "auto", height: "auto", left: 0, bottom: "10%", zIndex: 2, padding: "5px 10px"}}> */}
@@ -350,6 +360,7 @@ export const pageQuery = graphql`
           membername
           memberbio
           memberlink
+          memberpagelink
           memberimagealign
         }
         advisors {

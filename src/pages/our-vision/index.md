@@ -1,4 +1,5 @@
 ---
+templateKey: our-vision-page
 title: Our Vision
 featuredimage: /img/sketching.jpeg
 openingparagraph: "We envision a future where every creator embraces the
@@ -22,7 +23,6 @@ values:
     valueimage: /img/dsc00893.jpg
     valueparagraph: Text Here
 path: /our-vision
-templateKey: our-vision-page
 tertiarytitle: Our Team
 tertiaryparagraph: Our team aims to cultivate a community where every creative
   voice resonates uniquely, and equally.
@@ -56,6 +56,7 @@ members:
       a musician to facilitate the creation of new works.
     memberimage: /img/joshua_weinfeld.jpeg
     memberimagealign: center
+    memberpagelink: joshua-weinfeld
   - membername: CAMILLE SHIU
     memberbio: Camille Shiu is a music educator and visual artist based in Toronto,
       ON, Canada. Originally from Mountain View, California, she holds a double
@@ -89,6 +90,7 @@ members:
       from the University of Bristol, U.K. Presently, she is pursuing her second
       Master's degree in music technology at the University of Toronto.
     memberimagealign: center
+    memberpagelink: choy-hei-man-bernadette
   - membername: EMMA DELLA ROSSA
     memberimage: /img/edr_techheadshot1.jpg
     memberbio: "Emma Della Rossa is a Toronto-based singer-songwriter, flutist, and
@@ -105,6 +107,7 @@ members:
       (2023) and Someone I Adore (2024) mark the start of a new thematic and
       artistic direction.  "
     memberimagealign: left
+    memberpagelink: emma-della-rossa
   - memberbio: "Xerxes SZ Yang is a sound specialist with experience in the Music
       and Film & TV sectors, and  expertise in research, analysis, production,
       live sound and post-production. Having earned a Master’s degree in Music
@@ -129,6 +132,7 @@ members:
     memberimage: /img/ricci-headshot-4.jpg
     memberimagealign: center
     memberlink: "https://ricci.ebron.com/ "
+    memberpagelink: ricci-ebron
   - membername: Andrew Li
     memberimage: /img/andrew_headshot_bright_square.jpg
     memberbio: >-
@@ -140,6 +144,7 @@ members:
       He holds a Bachelor of Arts in Creative Media at City University of Hong Kong, and a Master of Music in Music Technology and Digital Media from the University of Toronto. He was also a member of the Surround Sound Acapella. Specialised in creating visual media for music video and performances and developing and building custom instruments using microcontrollers and electronics. He is also experienced with audio and video recording, studio productions and photography and was involved in multiple music video productions and live concert recordings.
     memberimagealign: center
     memberlink: https://andrewli.me
+    memberpagelink: andrew-li
   - membername: Lifia Teguh
     memberimage: /img/dsc06298.jpg
     memberbio: >-
@@ -157,6 +162,7 @@ members:
       In the summer of 2016, she created INDspire – Inspiration for Indonesia, a campaign for equal rights in performing arts education, especially for impoverished classes. Her dream is to found arts and entertainment companies as well as schools of performing arts that provide full scholarships for underprivileged children and teenagers all over the world. She also teaches at Play It Forward, a non-profit organization that gives free piano lessons to underserved communities.
     memberimagealign: center
     memberlink: http://lifiateguh.com
+    memberpagelink: lifia-teguh
   - membername: MICKI-LEE SMITH
     memberbio: Micki-Lee Smith is a Canadian musician and multimedia creator. Her
       training as a classical violinist and experiences with fiddle and jazz
@@ -193,6 +199,7 @@ members:
       received appreciation from the Guild Union Association, as well as other
       accolades in the audio production field.
     memberimagealign: center
+    memberpagelink: mehrdad-ranjbar
   - membername: ZAKRIYA BASHIR-HILL
     memberimage: /img/bashir-hill_zakriya.jpeg
     memberbio: Zakriya Bashir-Hill is an audio engineer, music producer,
@@ -207,6 +214,20 @@ members:
       the University of Toronto in 2023. He now pursues work in audio
       engineering and multimedia with his production company, Half Mile Music.
     memberimagealign: right
+  - membername: Justin Poon
+    memberpagelink: justin-poon
+    memberimagealign: center
+    memberimage: /img/justin_poon.jpg
+    memberbio: >-
+      Justin Poon is a multimedia artist, sound designer, and studio musician
+      based in Toronto. 
+
+
+      A graduate of Berklee College of Music, he has over the years honed a wide range of skills in audio, having worked professionally as an audio engineer, performing guitarist and DJ. With a strong command of a large range of tools that inform his creative and compositional process, Justin's studio productions and live sets under the alias “JPknowz”, spanning from ambient soundscapes to dance-floor grooves, focus on reflecting innovative use of technology and advanced harmonic concepts.
+
+
+      Upon finishing his Master's Degree at the University of Toronto, he worked at TA2 Sound and Music as an Assistant Engineer where he contributed to the sound design, recording and mixing of projects in advertising, short film, and audiobooks.
+    memberlink: https://affltdjpoon.wordpress.com/
 quaternarytitle: Advisors
 advisors:
   - advisorname: GREGORY LEE NEWSOME

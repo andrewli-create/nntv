@@ -982,3 +982,66 @@ swiper-container {
         padding-top: 250px;
     }
 }
+
+.bg-img-default {
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bg-img-default  > div {
+    backdrop-filter: blur(10px);
+}
+.op-1 {
+    opacity: 1;
+}
+
+.member-card-item {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.team-member-bio-pic {
+    min-height: 450px;
+    max-height: 600px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.team-member-bio-pic .safe-img-obj, .team-member-bio-pic img, .team-member-bio-pic picture {
+    height: 100%;
+}
+
+.degree-wrapper > span {
+    padding: 10px;
+    border: 1px darkgray solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contact-button {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    border: gray 1px solid;
+}
+
+.member-name-title {
+    font-size: 3em !important;
+}
+.contact-wrapper > span {
+    margin-right: 10px;
+    margin-left: 10px;
+}
