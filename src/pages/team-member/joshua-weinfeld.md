@@ -22,7 +22,7 @@ contacts:
   - contactType: Phone
     content: "9177482587"
   - contactType: Website
-    content: https://www.cmotionproductions.com/
+    content: https://www.cmotionproductions.com
 preferredContact:
   contactType: Email
   content: josh@cmotionproductions.com

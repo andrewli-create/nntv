@@ -26,7 +26,7 @@ contacts:
     content: lifiateguh@gmail.com
   - contactType: Phone
     content: "5039130686"
-  - content: https://www.lifiateguh.com/
+  - content: https://www.lifiateguh.com
     contactType: Website
 preferredContact:
   contactType: Email

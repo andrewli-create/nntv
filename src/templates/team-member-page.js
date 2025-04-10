@@ -70,7 +70,7 @@ export const TeamMemberPageTemplate = ({data}) => {
                         'Website': <img src={website} style={{width: 40, marginTop: 0, marginRight: 10}}/>
                       }[contact.contactType || <>No Icon</>]}
                     </div>
-                    {contact.content}
+                    {contact.content.replace("https://", "").replace("http://", "")}
                   </span>
                 ))
               }

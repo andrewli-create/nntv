@@ -22,7 +22,7 @@ contacts:
   - contactType: Phone
     content: "4164343265"
   - contactType: Website
-    content: https://affltdjpoon.wordpress.com/
+    content: https://affltdjpoon.wordpress.com
 preferredContact:
   content: affltd.audio@gmail.com
   contactType: Email

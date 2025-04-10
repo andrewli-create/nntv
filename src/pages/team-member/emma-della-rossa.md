@@ -22,7 +22,7 @@ contacts:
   - contactType: Phone
     content: 647-987-8301
   - contactType: Website
-    content: https://emmadellarossa.com/
+    content: https://emmadellarossa.com
 preferredContact:
   content: emdellarossa@gmail.com
   contactType: Email

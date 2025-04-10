@@ -27,7 +27,7 @@ contacts:
 preferredContact:
   contactType: Email
   content: ricci.ebron@gmail.com
-portfolioLink: https://ricci.ebron.com/
+portfolioLink: https://ricci.ebron.com
 services:
   - serviceName: Toronto based mobile recording setup
   - serviceName: Audio & video editing
