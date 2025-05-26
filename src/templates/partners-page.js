@@ -23,6 +23,7 @@ import speakerOn from "../img/speaker_on.svg"
 import speakerOff from "../img/speaker_off.svg"
 import SLSLogo from "../img/SLS_Logo-Colour-Black.jpg"
 import ACMLogo from "../img/ACM-U-of-T-Logo.png"
+import ACCLogo from "../img/ACC-landscape-logo-pillars.png"
 
 register();
 
@@ -68,8 +69,17 @@ export const IndexPageTemplate = ({data, preview}) => {
               </a>
             </div>
             <div style={{clear: "both"}}></div>
-            <p className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://www.soundlifescarborough.ca" target="_blank">SoundLife Scarborough &#40;SLS&#41;</a> is the centre for music and community engagement at the
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://www.soundlifescarborough.ca" target="_blank">SoundLife Scarborough &#40;SLS&#41;</a> is the centre for music and community engagement at the
               University of Toronto Scarborough, and is dedicated to fostering healthy communities through participatory music-making.
+            </p>
+            <div className="display-flex d-flex-sa">
+              <a href="https://www.soundlifescarborough.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={ACCLogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://auroraculturalcentre.ca" target="_blank">Aurora Cultural Centre &#40;ACC&#41;</a>
+               &nbsp;is a partner of the town of Aurora, plays a leading role in the realization of their cultural objectives.
             </p>
           </div>
         </div>
