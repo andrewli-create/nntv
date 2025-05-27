@@ -39,7 +39,9 @@ modules:
   - lessons: Guest composer Diana Lawryshyn Exploring EQ as a Creative Tool
     displaynew: false
   - lessons: Reverb Basics Essential Tips for Audio and Music Production
-    displaynew: true
-  - displaynew: true
+    displaynew: false
+  - displaynew: false
     lessons: Guest composer Sergei Kofman Exploring Reverb as a Creative Tool
+  - displaynew: true
+    lessons: Why Collaboration Matters in Music Tech-Duo Cichorium Speaks
 ---
