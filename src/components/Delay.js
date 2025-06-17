@@ -423,7 +423,7 @@ const Delay = ({ children }) => {
               <div className="track-display">
                 <div style={{transform: `rotate(${diskSpin % 360}deg)`}} className={`tape-disk`}></div>
                 <div style={{transform: `rotate(${diskSpin % 360}deg)`}} className={`tape-disk disk-2`}></div>
-                <h5 className="position-relative">Track: NIGHT GROOVE | <span style={{fontSize: 35}}>120</span> BPM </h5>
+                <h5 className="position-relative">TRACK - NIGHT GROOVE | <span style={{display: "inline-block", transform: "translateY(2px)", fontSize: 35}}>120</span> BPM </h5>
               </div>
               <button className={!playingState ? "play-button-reverb" : "play-button-reverb play-button-active"} onClick={() => {audioPlayFunc(audioFile, playingState); setPlayingState(!playingState)}}>{playingState ? <img className="play-icon" src={pauseIcon} /> : <img className="play-icon" src={playIcon} />}</button>
             </div>
