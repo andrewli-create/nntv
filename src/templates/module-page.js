@@ -23,6 +23,8 @@ import { useState, useEffect, useCallback } from "react";
 import EQ from "../components/EQ"
 import Reverb from "../components/Reverb"
 import Compression from "../components/Compression"
+import Delay from "../components/Delay"
+
 
 // import { useEffect } from 'react';
 // eslint-disable-next-line
@@ -166,6 +168,8 @@ export const ModulePageTemplate = ({pageContext, data}) => {
                         return <Reverb/> 
                       case 'compression':
                         return <Compression/> 
+                      case 'delay':
+                        return <Delay/> 
                       default:
                         return <span className="al-mt-20">There is no interactive tool for this module.</span>
                     }

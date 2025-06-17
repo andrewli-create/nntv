@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import Compression from "../components/Compression"
+import Delay from "../components/Delay"
 import { useState, useEffect, useCallback } from "react";
 
 // eslint-disable-next-line
@@ -34,7 +35,7 @@ export const BetaPageTemplate = ({data}) => {
           <div className="container" style={{textAlign: "center"}}>
             <h1>This page is intended for beta testing</h1>
             <br/><br/>
-            <Compression/>
+            <Delay/>
           </div> 
           : 
           <div className="beta-cover-up">

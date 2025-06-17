@@ -44,4 +44,6 @@ modules:
     lessons: Guest composer Sergei Kofman Exploring Reverb as a Creative Tool
   - displaynew: true
     lessons: Why Collaboration Matters in Music Tech-Duo Cichorium Speaks
+  - displaynew: true
+    lessons: Intro to Delay
 ---

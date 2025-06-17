@@ -218,7 +218,8 @@ collections:
               { label: None, value: none},
               { label: EQ, value: eq},
               { label: Reverb, value: reverb},
-              { label: Compression, value: compression}
+              { label: Compression, value: compression},
+              { label: Delay, value: delay}
             ]
         },
         { label: "Biography or Learning Outcomes", name: "biography", widget: markdown, required: false },

@@ -487,3 +487,191 @@ input[type=range][orient=vertical] {
 	outline: inherit;
     font-size: 50px;
 }
+
+.delay-left-block {
+    width: 40%;
+}
+.delay-right-block {
+    width: 60%;
+}
+
+.delay-display {
+    border: 4px solid black;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.delay-bar-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 49%;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.delay-bar-display-bottom {
+    outline: 2px dashed rgba(255, 206, 30, 0.8);
+    outline-offset: 2%;
+}
+.delay-bar-each {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.delay-bar-alt {
+    /* background-color: rgba(150, 150, 150, 0.3); */
+    background-color: rgba(255, 206, 30, 0.2);
+}
+
+.delay-bar-needle {
+    width: 3px;
+    background-color: black;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 200px;
+    transition-duration: 50ms;
+}
+
+
+.delay-controls {
+    /* min-height: 500px; */
+}
+
+.delay-ping-pong-tag {
+    height: 20px;
+    transform: translateY(-10px);
+    text-align: center;
+    width: 100%;
+    display: block;
+    /* padding: 20px 0px; */
+}
+
+.delay-metric-type-switch {
+    position: relative;
+    border-radius: 15px;
+    border: 2px black solid;
+    height: 35px;
+    width: 80%;
+    margin: auto;
+}
+
+.delay-on-off-switch {
+    position: relative;
+    border-radius: 10px;
+    border: 2px black solid;
+    height: 80%;
+    width: 30px;
+}
+
+
+
+.delay-on-off-knob {
+    position: absolute;
+    bottom: 0;
+    left: -7%;
+    height: 35%;
+    border-radius: 10px;
+    border: 1px black solid;
+    width: 120%;
+    background-color: rgb(255, 206, 30);
+    transform: scale(1.3);
+    transition-duration: 250ms;
+}
+
+.delay-metric-type-knob {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px black solid;
+    width: 30%;
+    background-color: rgb(255, 206, 30);
+    transform: scale(1.3);
+    transition-duration: 250ms;
+}
+
+.delay-metric-type-knob-on {
+    left: calc(100% - 30%);
+}
+
+.delay-on-off-trigger, .delay-metric-type-trigger {
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.delay-on-off-knob-on {
+    bottom: calc(100% - 35%);
+}
+
+.metric-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.metric-wrapper img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.track-display {
+    /* background-color: rgba(30, 30, 30, 1); */
+    background-color: rgb(161, 116, 11);
+    color: white;
+    border-radius: 10px;
+    padding: 20px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.tape-disk {
+    opacity: 0.32;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    border-radius: 2000%;
+    background: radial-gradient(circle at 50% 50%, rgba(85,85,85,1)  0%,rgba(84,84,84,1)  30%,rgba(0,212,255,0) 30%) 0px 0px,repeating-conic-gradient(from 23deg at 50% 50%, rgba(169,169,169,1) 0%,rgba(169,169,169,1) 20%,rgba(96,96,96,0.976) 20%,rgba(96,96,96,0.976) 35%) 0px 0px;
+     background-size: 100% 100%;
+   background-position:0px 0px,0px 0px;
+     background-blend-mode: normal;
+ }
+
+ .disk-2 {
+    left: unset;
+    right: 0;
+ }
+
+ .disk-spin {
+    animation: disk-spin-animation 20s linear infinite both;
+ }
+
+ @keyframes disk-spin-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
