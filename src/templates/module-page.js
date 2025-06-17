@@ -39,14 +39,14 @@ export const ModulePageTemplate = ({pageContext, data}) => {
   const [notepadValue, setNotepadValue] = useState();
   const [isSaving, setIsSaving] = useState(false);
 
-  console.log("front-matter-Module", data.markdownRemark.frontmatter);
+  // console.log("front-matter-Module", data.markdownRemark.frontmatter);
   var dataPack = data.markdownRemark.frontmatter;
   var modulePack = dataPack.modules;
-  console.log("front-matter-modulePack", modulePack);
+  // console.log("front-matter-modulePack", modulePack);
   
   useEffect(() => {
     const notepadData = window.localStorage.getItem(dataPack.title + "-note");
-    console.log("notepadData", notepadData);
+    // console.log("notepadData", notepadData);
     if (notepadData == "" || notepadData == null) {
       setNotepadValue("");
     } else {
@@ -210,7 +210,7 @@ const ModulePage = ({ data }) => {
   // }, []);
   // const { frontmatter } = data.markdownRemark;
   // console.log(data.markdownRemark.frontmatter.title);
-  console.log("module data", data);
+  // console.log("module data", data);
   return (
     <Layout>
       <ModulePageTemplate data={data}/>

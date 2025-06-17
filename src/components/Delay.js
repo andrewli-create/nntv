@@ -267,7 +267,7 @@ const Delay = ({ children }) => {
     verb = new AdvancedReverb(context);
     multiDelay = new MultitapDelay(context)
     verb.reverbTime = 0.1;
-    console.log("verb Initiated!", verb);
+    // console.log("verb Initiated!", verb);
     
 
     for (var i = 0; i < numOfDelay; i++) {
@@ -278,7 +278,7 @@ const Delay = ({ children }) => {
       const gainNode = context.createGain();
       // gainNode.gain.value = 0.8 - (0.05 * (i + 1));
       // gainNode.gain.value = scale(delayFeedback, 0, 100, 0, 0.95) - (i + 1);
-      console.log("gainValue", scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1))));
+      // console.log("gainValue", scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1))));
       gainNode.gain.value = scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1)));
       gainNodesL.push(gainNode);
     }
@@ -291,7 +291,7 @@ const Delay = ({ children }) => {
       const gainNode = context.createGain();
       // gainNode.gain.value = 0.8 - (0.05 * (i + 1));
       // gainNode.gain.value = scale(delayFeedback, 0, 100, 0, 0.95) - (i + 1);
-      console.log("gainValue", scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1))));
+      // console.log("gainValue", scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1))));
       gainNode.gain.value = scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1)));
       gainNodesR.push(gainNode);
     }
@@ -305,8 +305,11 @@ const Delay = ({ children }) => {
     //   gainNode.gain.value = tap.gain;
     //   gainNodes.push(gainNode);
     // });
-    console.log("delayNodes", delayNodesL);
-    console.log("gainNodes", gainNodesL);
+    // console.log("delayNodes", delayNodesL);
+    // console.log("gainNodes", gainNodesL);
+    console.log(`${delayNodesL.length} delay nodes successfully loaded!`);
+    console.log(`${gainNodesL.length} gain nodes successfully loaded!`);
+    console.log("Multitap Delay initialized!");
   }, [])
   useEffect(() => {
     // verb.decay = reverbDecay;
@@ -325,7 +328,7 @@ const Delay = ({ children }) => {
   }, [dryWet])
 
   useEffect(() => {
-    console.log("delayMetric", delayMetric);
+    // console.log("delayMetric", delayMetric);
     if (delayMetric) {
       console.log("delayMetricInside", delayMetric);
       setDelayTimeByMetric(3);
@@ -334,9 +337,9 @@ const Delay = ({ children }) => {
   }, [delayMetric])
 
   useEffect(() => {
-    console.log("delayTime changed", delayTime);
+    // console.log("delayTime changed", delayTime);
     for (var i = 0; i < delayNodesL.length; i++) {
-      console.log("delayNodes[i] each", delayNodesL[i]);
+      // console.log("delayNodes[i] each", delayNodesL[i]);
       delayNodesL[i].delayTime.setTargetAtTime((delayTime/1000) * (i + 1), context.currentTime, 0.5);
       if (!delayPingPong) {
         gainNodesL[i].gain.setTargetAtTime(scale(delayFeedback, 0, 100, 0, 0.95) * (1 - ((0.1) * (i + 1))), context.currentTime, 0.5);
@@ -1034,10 +1037,10 @@ class MultitapDelay extends Effect {
 	}
 
 	setup (delayTime=1, preDelay = 0.03) {
-    console.log("delayTimeHere", delayTime);
+    // console.log("delayTimeHere", delayTime);
 		this.effect = this.context.createDelay(delayTime);
     this.effect.delayTime.setValueAtTime(delayTime, this.context.currentTime);
-    console.log("this.effect", this.effect);
+    // console.log("this.effect", this.effect);
     
     this.multitap = [];
     this.multitapGain = this.context.createGain();
@@ -1060,7 +1063,7 @@ class MultitapDelay extends Effect {
       this.multitap.push(tempDelay);
       // this.multitap.push(this.context.createDelay(delayTime));
     }
-    console.log("this.multitap", this.multitap);
+    // console.log("this.multitap", this.multitap);
     // for (var i = 0; i < this.multitap.length; i++) {
     //   if (i > 0) {
     //     this.multitap[i].connect(this.multitap[i-1]);
@@ -1069,7 +1072,7 @@ class MultitapDelay extends Effect {
     //     this.multitap[i].connect(this.multitapGain);
     //   }
     // }
-    console.log("multitap[0]", this.multitap[0]);
+    // console.log("multitap[0]", this.multitap[0]);
     this.multitap[0].connect(this.multitapGain);
     this.multitapGain.connect(this.output);
     // this.effect.connect(this.multitapGain);

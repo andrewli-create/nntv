@@ -10,8 +10,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../style/custom-style-css.css";
 import "../style/al-style.css";
 import CCALogo from "../img/CCA_RGB_colour_e.svg";
-import SLSLogo from "../img/SLS_Logo-Colour-Black.jpg"
-import ACMLogo from "../img/ACM-U-of-T-Logo.png"
 
 function encode(data) {
   return Object.keys(data)
@@ -30,7 +28,7 @@ const FooterMain = ({data}) => {
   var rightBlock = dataPack.contactblock;
   var footerColor = dataPack.footercolor;
 
-  console.log("Footer Data", data);
+  // console.log("Footer Data", data);
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()

@@ -9,8 +9,8 @@ import $ from 'jquery';
 
 const NavBarMain = ({data, preview}) => {
   const [isActive, setIsActive] = useState(false);
-  console.log("nav-data-full", data);
-  console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
+  // console.log("nav-data-full", data);
+  // console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
   const navItem = data.allMarkdownRemark.edges[0].node.frontmatter.navItem;
   const brandLogoAlt = data.allMarkdownRemark.edges[0].node.frontmatter.brandImageAlt;
   const navBarColor = data.allMarkdownRemark.edges[0].node.frontmatter.navBarColor;

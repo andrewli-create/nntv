@@ -35,7 +35,7 @@ const TemplateWrapper = ({ children }) => {
     }`
   )
 
-  console.log("branding", data.allMarkdownRemark.edges[0]);
+  // console.log("branding", data.allMarkdownRemark.edges[0]);
   const faviconColor = data.allMarkdownRemark.edges[0].node.frontmatter.faviconColor;
   const siteTitle = data.allMarkdownRemark.edges[0].node.frontmatter.siteTitle;
   const siteDescription = data.allMarkdownRemark.edges[0].node.frontmatter.siteDescription;
