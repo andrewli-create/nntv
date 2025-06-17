@@ -32,13 +32,13 @@ export const CoursePageTemplate = ({data}) => {
     AOS.init({disable: 'mobile'});
   }, [])
   // console.log(data.markdownRemark.frontmatter.title);
-  console.log("all data", data);
-  console.log("front-matter-Course", data.markdownRemark.frontmatter);
-  console.log("front-matter-Course-html", data.markdownRemark.html);
+  // console.log("all data", data);
+  // console.log("front-matter-Course", data.markdownRemark.frontmatter);
+  // console.log("front-matter-Course-html", data.markdownRemark.html);
   var dataPack = data.markdownRemark.frontmatter;
   var lessonsPack;
   if (data.lessons) {
-    console.log("front-matter-Course-lessons", data.lessons.nodes);
+    // console.log("front-matter-Course-lessons", data.lessons.nodes);
     lessonsPack = data.lessons.nodes;
     // lessonsPack = data.markdownRemark.frontmatter.modules;
   } else {
@@ -50,7 +50,7 @@ export const CoursePageTemplate = ({data}) => {
   for (var i = 0; i < dataPack.modules.length; i++) {
     // displayModules.push(<span className='indent' key={i}>{dataPack.modules[i].lessons}</span>);
     for (var x = 0; x < data.lessons.nodes.length; x++) {
-      console.log("check against", dataPack.modules[i].lessons + " | " + data.lessons.nodes[x].frontmatter.title)
+      // console.log("check against", dataPack.modules[i].lessons + " | " + data.lessons.nodes[x].frontmatter.title)
       if (data.lessons.nodes[x].frontmatter.title == dataPack.modules[i].lessons) {
         hasModules = true;
         displayModules.push(

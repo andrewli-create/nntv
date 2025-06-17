@@ -2,8 +2,8 @@ import React from "react";
 import Img from "gatsby-image"
 
 const SafeImg = ({inputObj, alt, imageHeight, imagePosition, imageFit, classNames}) => {
-  console.log("SafeImg Received: ", inputObj);
-  console.log("imagePosition: ", imagePosition);
+  // console.log("SafeImg Received: ", inputObj);
+  // console.log("imagePosition: ", imagePosition);
   if (!imagePosition) {
     imagePosition = "center"
   }

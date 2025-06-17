@@ -36,7 +36,7 @@ export const IndexPageTemplate = ({data, preview}) => {
   }, [])
   console.log("index preview", preview);
   // console.log(data.markdownRemark.frontmatter.title);
-  console.log("front-matter", data.markdownRemark.frontmatter.keywords[0].word);
+  // console.log("front-matter", data.markdownRemark.frontmatter.keywords[0].word);
   console.log("data.markdownRemark.frontmatter.homeslider", data.markdownRemark.frontmatter.homeslider)
   return (
     // <div className="text-css">
@@ -170,7 +170,7 @@ const IndexPage = ({ data }) => {
   // }, []);
   // const { frontmatter } = data.markdownRemark;
   // console.log(data.markdownRemark.frontmatter.title);
-  console.log("index data", data);
+  // console.log("index data", data);
   return (
     <Layout>
       <IndexPageTemplate data={data}/>
