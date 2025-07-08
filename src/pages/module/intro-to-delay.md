@@ -3,8 +3,10 @@ templateKey: module-page
 title: Intro to Delay
 videothumbnail: /img/itd_tn_nntv_v1.jpg
 videolink: https://www.youtube.com/embed/qBUfHr5T3xI?si=rQmtYbKqkS36Uxet
-biooutcome: biography
+biooutcome: outcomes
 tool: delay
+biography: After exploring the basic concepts of delay, try using your DAW’s
+  built in delay plugin to create different time processing effects.
 script: >-
   Welcome to our quick guide to delay. This video will build off concepts we
   learned about in the reverb video, so please check that one out first if you

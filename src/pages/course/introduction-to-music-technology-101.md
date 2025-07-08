@@ -46,4 +46,6 @@ modules:
     lessons: Why Collaboration Matters in Music Tech-Duo Cichorium Speaks
   - displaynew: true
     lessons: Intro to Delay
+  - displaynew: true
+    lessons: Unlock 3D Sound The Magic of Stereo Imaging Explained
 ---
