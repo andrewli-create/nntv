@@ -96,7 +96,7 @@ export const ModulePageTemplate = ({pageContext, data}) => {
           <div className="row al-mt-40">
             { dataPack.biography ? 
               <div className={dataPack.script ? "col-md-4" : "col-md-12"}>
-                <div className="course-block display-flex d-flex-c d-flex-col" style={{height: "100%"}}>
+                <div className="course-block display-flex d-flex-c-n d-flex-col" style={{height: "100%"}}>
                   <div className="intro-course-block-content">
                     {dataPack.biooutcome == "biography" ?
                       <LessonBlockHeader logo={bioIcon} header={"Biography"}/>
