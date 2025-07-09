@@ -1096,7 +1096,7 @@ swiper-container {
 
 .member-expertise-name-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 0.8rem;
     grid-row-gap: 0.2rem;
     /* padding: 2rem; */
