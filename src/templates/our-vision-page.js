@@ -204,7 +204,7 @@ export const OurVisionPageTemplate = ({data}) => {
                             {/* <Img fluid={member.memberimage.childImageSharp.fluid}/> */}
                           </div>
                           :
-                          <a href={`/team-member/${member.memberpagelink}`}>
+                          <a href={`/network-hub/${member.memberpagelink}`}>
                             <div className="member-image-wrapper al-pos-r">
                               <div className="video-frame-element" style={{width: "10px", height: "100px", left: 0, top: 0, zIndex: 2}}></div>
                               <span className="click-prompt" style={{}}> Click to see bio page.</span>

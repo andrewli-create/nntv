@@ -214,20 +214,6 @@ members:
       the University of Toronto in 2023. He now pursues work in audio
       engineering and multimedia with his production company, Half Mile Music.
     memberimagealign: right
-  - membername: Justin Poon
-    memberpagelink: justin-poon
-    memberimagealign: center
-    memberimage: /img/justin_poon.jpg
-    memberbio: >-
-      Justin Poon is a multimedia artist, sound designer, and studio musician
-      based in Toronto. 
-
-
-      A graduate of Berklee College of Music, he has over the years honed a wide range of skills in audio, having worked professionally as an audio engineer, performing guitarist and DJ. With a strong command of a large range of tools that inform his creative and compositional process, Justin's studio productions and live sets under the alias “JPknowz”, spanning from ambient soundscapes to dance-floor grooves, focus on reflecting innovative use of technology and advanced harmonic concepts.
-
-
-      Upon finishing his Master's Degree at the University of Toronto, he worked at TA2 Sound and Music as an Assistant Engineer where he contributed to the sound design, recording and mixing of projects in advertising, short film, and audiobooks.
-    memberlink: https://affltdjpoon.wordpress.com/
 quaternarytitle: Advisors
 advisors:
   - advisorname: GREGORY LEE NEWSOME

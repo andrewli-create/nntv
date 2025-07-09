@@ -284,10 +284,19 @@ h1 {
     border-radius: 0px 0 20px 0;
 }
 
+.member-image-wrapper.no-radius {
+    border-radius: 0;
+}
+
 .member-image-wrapper:hover {
     transform: scale(1.02);
     filter: brightness(1.1);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.member-image-wrapper.no-radius:hover {
+    transform: scale(1);
+    filter: brightness(1);
 }
 
 .member-image-wrapper > img {
@@ -1038,10 +1047,106 @@ swiper-container {
     border: gray 1px solid;
 }
 
+.section-center.network-section {
+    /* max-width: 1500px; */
+}
+
 .member-name-title {
     font-size: 3em !important;
 }
 .contact-wrapper > span {
     margin-right: 10px;
     margin-left: 10px;
+}
+
+.network-member-card {
+    border: #FFBD12 1px solid;
+    border-radius: 0px 0 20px 0;
+    height: 450px;
+    min-height: 300px;
+    /* max-height: 420px; */
+    overflow: hidden;
+    position: relative;
+}
+
+.network-member-card > div {
+    height: 100%;
+    position: relative;
+}
+
+.network-member-card .member-image-wrapper {
+    height: 100%;
+    position: relative;
+    align-items: stretch;
+
+}
+
+.network-member-name {
+    background-color: #FFBD12;
+}
+
+.member-expertise-name-wrapper {
+    /* -webkit-box-shadow: inset 0px 0px 3px 3px rgba(51, 97, 172, 0.2); 
+    box-shadow: inset 0px 0px 3px 3px rgba(51, 97, 172, 0.2); */
+    /* -webkit-box-shadow: inset 0px 0px 3px 2px rgba(255, 189, 18, 0.2); 
+    box-shadow: inset 0px 0px 3px 2px rgba(255, 189, 18, 0.2); */
+}
+
+.member-expertise-name-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+    grid-row-gap: 0.2rem;
+    /* padding: 2rem; */
+    padding-bottom: 10px;
+}
+
+.member-expertise-name-block {
+    /* width: calc(33% - 2px);
+    float: left; */
+    border-left: 3px solid rgb(51, 97, 172);
+    border-bottom: 1px solid rgba(51, 97, 172, 0.2);
+    padding: 2px;
+    padding-left: 5px;
+    /* margin: 1px; */
+    text-align: left;
+}
+
+.member-expertise-name-block-see-all {
+    border-left: 3px solid #FFBD12;
+    padding: 2px;
+    padding-left: 5px;
+    color: rgb(51, 97, 172);
+}
+
+.video-frame-element-blue {
+    background-color: rgb(74, 143, 255);
+}
+
+.network-member-card-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.member-image-wrapper.no-transition {
+    transition-duration: 0ms;
+}
+
+@media only screen and (max-width: 876px) {
+    .network-member-card-inner {
+        flex-direction: column;
+    }
+    .network-member-card {
+        max-height: unset;
+        height: auto;
+    }
+    .network-member-card-inner > div {
+        width: 100% !important;
+    }
+
+    .network-member-card-inner .member-image-wrapper {
+        height: 350px;
+    }
 }

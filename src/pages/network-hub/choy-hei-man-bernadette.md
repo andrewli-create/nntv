@@ -29,7 +29,7 @@ services:
   - serviceName: Music Production
   - serviceName: Music Arrangement
   - serviceName: Orchestration
-  - serviceName: "Music Eductaion: Music Technology, Production and Composition courses"
+  - serviceName: "Music Education: Music Technology, Production and Composition courses"
 expertises:
   - expertiseName: Film Scoring
   - expertiseName: Composition

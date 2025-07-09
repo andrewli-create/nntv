@@ -96,7 +96,7 @@ export const TeamMemberPageTemplate = ({data}) => {
         </div>
         <div className="row">
           { pageData.services?
-            <div className="col-md-4 al-mt-20">
+            <div id="services" className="col-md-4 al-mt-20">
               <div className="member-card course-block display-flex d-flex-fs d-flex-col al-height-100pc">
                 <LessonBlockHeader logo={music_note} header={"Services Offered"}/>
                 <div className="member-card-body">

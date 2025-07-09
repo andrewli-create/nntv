@@ -24,6 +24,9 @@ navItem:
     subNavItem:
       - subPageName: Introduction to Music Technology 101
         subPageURL: /course/introduction-to-music-technology-101
+  - navItemToggle: true
+    pageName: Network Hub
+    pageURL: /network-hub
   - pageName: Contact
     pageURL: "#footer"
     navItemToggle: true

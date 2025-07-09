@@ -348,6 +348,51 @@ collections:
                   { label: "Advisor Image", name: "advisorimage", widget: image, required: false },
                 ]
             }
+      - file: "src/pages/network-hub/index.md"
+        label: "Network Hub"
+        name: "network-hub"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "network-hub-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Opening Paragraph", name: "openingparagraph", widget: "text" }
+          - {
+              label: Members,
+              name: members,
+              widget: list,
+              fields:
+                [
+                  { label: "Member Name", name: "membername", widget: string },
+                  { label: "Member Bio", name: "memberbio", widget: markdown, required: false },
+                  { label: "Member Page Link", name: "memberpagelink", widget: string, required: false },
+                  { 
+                    name: "memberimagealign",
+                    label: "Member Image Alignment",
+                    widget: inline-select,
+                    required: false,
+                    options:
+                      [
+                        { label: Left, value: left},
+                        { label: Center, value: center},
+                        { label: Right, value: right},
+                      ]
+                  },
+                  { label: "Member Image", name: "memberimage", widget: image, required: false },
+                  {
+                    label: Member Service,
+                    name: memberExpertises,
+                    widget: list,
+                    fields:
+                      [
+                        { label: "Service Name", name: "expertiseName", widget: "string", required: false },
+                      ]
+                  }
+                ]
+            }
       - file: "src/pages/partners/index.md"
         label: "Acknowledgment and Partners"
         name: "partners"
@@ -403,7 +448,7 @@ collections:
   - name: "teeamMembers"
     label: "Team Members"
     label_singular: Team Member
-    folder: "src/pages/team-member"
+    folder: "src/pages/network-hub"
     create: true
     slug: "{{slug}}"
     fields:
