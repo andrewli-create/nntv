@@ -1136,6 +1136,10 @@ swiper-container {
     transition-duration: 0ms;
 }
 
+.responsive-network-button {
+    white-space: nowrap;    
+}
+
 @media only screen and (max-width: 876px) {
     .network-member-card-inner {
         flex-direction: column;
@@ -1150,5 +1154,8 @@ swiper-container {
 
     .network-member-card-inner .member-image-wrapper {
         height: 300px;
+    }
+    .responsive-network-button {
+        padding: 7px !important;
     }
 }

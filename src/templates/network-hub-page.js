@@ -139,7 +139,7 @@ export const NetworkHubPageTemplate = ({data}) => {
                                       <></>
                                     }
                                   </div>
-                                  <a className="button-generic button-accent" style={{color: "black"}} href={`/network-hub/${member.memberpagelink}`}>See {member.membername.split(" ")[0]}'s details &amp; contact {member.membername.split(" ")[0]}</a>
+                                  <a className="button-generic button-accent responsive-network-button" style={{color: "black"}} href={`/network-hub/${member.memberpagelink}`}>See {member.membername.split(" ")[0]}'s details &amp; contact {member.membername.split(" ")[0]}</a>
                                 </div> 
                               </div>
                             </div>
