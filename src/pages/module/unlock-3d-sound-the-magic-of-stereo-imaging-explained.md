@@ -49,7 +49,7 @@ creditandinfo: |-
 
   Motion designer: Zakriya Bashir-Hill 
 
-  Composer: Adrain Berry 
+  Composer: Adrian Berry 
 
   Video and audio editor: Joshua Weinfeld 
 
