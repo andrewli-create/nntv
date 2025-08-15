@@ -10,7 +10,7 @@ bio: >-
 
 
   Upon finishing his Master's Degree at the University of Toronto, he worked at TA2 Sound and Music as an Assistant Engineer where he contributed to the sound design, recording and mixing of projects in advertising, short film, and audiobooks.
-bioPicture: /img/justin_poon.jpg
+bioPicture: /img/justin-poon.jpg
 degrees:
   - degreeName: Berklee College of Music - Bachelor Degree in Electronic Production
       and Design / Performance

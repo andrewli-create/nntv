@@ -42,10 +42,12 @@ modules:
     displaynew: false
   - displaynew: false
     lessons: Guest composer Sergei Kofman Exploring Reverb as a Creative Tool
-  - displaynew: true
+  - displaynew: false
     lessons: Why Collaboration Matters in Music Tech-Duo Cichorium Speaks
   - displaynew: true
     lessons: Intro to Delay
   - displaynew: true
     lessons: Unlock 3D Sound The Magic of Stereo Imaging Explained
+  - displaynew: true
+    lessons: Unlock Stereo Imaging Magic Joshua Weinfeld’s Pro Tips
 ---
