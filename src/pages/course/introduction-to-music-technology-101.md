@@ -50,4 +50,6 @@ modules:
     lessons: Unlock 3D Sound The Magic of Stereo Imaging Explained
   - displaynew: true
     lessons: Unlock Stereo Imaging Magic Joshua Weinfeld’s Pro Tips
+  - displaynew: true
+    lessons: From Confusing to Clear How Audio Compression Works
 ---
