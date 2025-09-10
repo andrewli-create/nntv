@@ -1,6 +1,6 @@
 ---
 templateKey: module-page
-title: Creative Ways to Use Compression Tips for Musicians & Producers with
+title: Creative Ways to Use Compression Tips for Musicians and Producers with
   Pouya Hamidi
 videothumbnail: /img/nntv-cwuc-tn.jpg
 videolink: https://www.youtube.com/embed/xTitIJE_AOQ?si=2w8JBxOAgDLkSA1o

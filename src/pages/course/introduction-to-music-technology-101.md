@@ -52,4 +52,7 @@ modules:
     lessons: Unlock Stereo Imaging Magic Joshua Weinfeld’s Pro Tips
   - displaynew: true
     lessons: From Confusing to Clear How Audio Compression Works
+  - displaynew: true
+    lessons: Creative Ways to Use Compression Tips for Musicians and Producers with
+      Pouya Hamidi
 ---
