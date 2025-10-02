@@ -55,4 +55,6 @@ modules:
   - displaynew: true
     lessons: Creative Ways to Use Compression Tips for Musicians and Producers with
       Pouya Hamidi
+  - displaynew: true
+    lessons: Introduction to Creative Sampling
 ---
