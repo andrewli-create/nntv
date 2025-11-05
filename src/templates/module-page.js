@@ -24,6 +24,7 @@ import EQ from "../components/EQ"
 import Reverb from "../components/Reverb"
 import Compression from "../components/Compression"
 import Delay from "../components/Delay"
+import ReactPlayer from "react-player";
 
 
 // import { useEffect } from 'react';
@@ -89,6 +90,12 @@ export const ModulePageTemplate = ({pageContext, data}) => {
             <div className="video-frame-element" style={{width: "10px", height: "100px", right: 0, bottom: 0}}></div>
             <div className="video-frame-element" style={{width: "100px", height: "10px", right: 0, bottom: 0}}></div>
             <iframe className={loadAnimationB == 1 ? "module-iframe show-video" : "module-iframe hide-video"} style={{width: "100%", height: "450px"}} src={dataPack.videolink}></iframe>
+            {/* <ReactPlayer
+              className={loadAnimationB == 1 ? "module-iframe show-video" : "module-iframe hide-video"} style={{width: "100%", height: "450px"}}
+              url={dataPack.videolink}
+              width={"100%"}
+              height={450}
+            /> */}
           </div>
         </div>
         <div className="col-md-1"></div>

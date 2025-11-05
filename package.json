@@ -42,7 +42,7 @@
     "react-helmet": "^6.0.0",
     "react-knob-headless": "0.3.0",
     "react-netlify-identity-widget": "^0.2.7",
-    "react-player": "^2.16.0",
+    "react-player": "^2.16.1",
     "react-rotary-knob": "^3.0.3",
     "react-svg-curve": "^0.2.1",
     "sass": "^1.43.2",
