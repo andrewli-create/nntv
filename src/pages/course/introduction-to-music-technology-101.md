@@ -5,9 +5,9 @@ introduction: Start at the beginning by learning Intro to Gears - an important
   foundation for creating music.
 coursethumbnail: /img/imt_webcover_nntv_v4-01.jpg
 coursevideo: https://youtu.be/pJqKj0SDeYw?si=gs4ZS2aBjP7rX76D
-duration: 120
+duration: 130
 level: beginner
-numberofmodules: 10
+numberofmodules: 11
 resources: 7 Interviews
 Requireaccessto: Links
 about: >-
@@ -60,4 +60,6 @@ modules:
   - displaynew: true
     lessons: Sampling as Storytelling Composer Steven Webb on Sampling Orchestras
       and Sound Design
+  - displaynew: true
+    lessons: Introduction to Distortion
 ---
