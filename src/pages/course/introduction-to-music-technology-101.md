@@ -62,4 +62,6 @@ modules:
       and Sound Design
   - displaynew: true
     lessons: Introduction to Distortion
+  - displaynew: true
+    lessons: Distortion Texture and Tape Loops-Moneõ Piotr Majer-Sound Design Approach
 ---
