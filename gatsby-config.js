@@ -98,6 +98,17 @@ module.exports = {
         printRejected: true,
       },
     }, // must be after other CSS plugins
-    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    // "gatsby-plugin-netlify", // make sure to keep it last in the array
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/*": [
+            "Referrer-Policy: strict-origin-when-cross-origin",
+          ],
+        },
+        mergeSecurityHeaders: true, // Keep this true but override the specific header
+      },
+    },
   ],
 };
