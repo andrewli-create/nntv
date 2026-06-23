@@ -1159,3 +1159,33 @@ swiper-container {
         padding: 7px !important;
     }
 }
+
+
+
+/* ==== */
+
+
+.director-block {
+    text-align: center;
+    background-color: rgba(200, 200, 200, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.director-block h3 {
+    font-size: 20px;
+}
+
+.d-flex-responsive {
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 878px) {
+    .d-flex-responsive {
+        flex-direction: column;
+    }
+    .director-block {
+        flex-grow: unset;
+    }
+}

@@ -33,6 +33,14 @@
     margin-top: 40px !important;
 }
 
+.al-pt-40 {
+    padding-top: 40px;
+}
+
+.al-pb-40 {
+    padding-bottom: 40px;
+}
+
 .al-mb-40 {
     margin-bottom: 40px !important;
 }
@@ -65,6 +73,11 @@
 .al-text-align-c {
     text-align: center !important;
 }
+
+.al-text-align-c-non {
+    text-align: center;
+}
+
 
 .al-white-text, .al-white-text * {
     color: white;

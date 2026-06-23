@@ -24,6 +24,11 @@ import speakerOff from "../img/speaker_off.svg"
 import SLSLogo from "../img/SLS_Logo-Colour-Black.jpg"
 import ACMLogo from "../img/ACM-U-of-T-Logo.png"
 import ACCLogo from "../img/ACC-landscape-logo-pillars.png"
+import ACWCLogo from "../img/ACWC-ACC_Logo_Primary.svg"
+import CLCLogo from "../img/CLC-LOGO.png"
+import CMCLogo from "../img/cmc-logo.png"
+
+
 
 register();
 
@@ -46,15 +51,27 @@ export const IndexPageTemplate = ({data, preview}) => {
     //   {data.markdownRemark.frontmatter.title}
     // </div>
     <>
-      <section id="our-team" className="al-mt-40">
-        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "35px"}}>
-          <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">{data.markdownRemark.frontmatter.mainheader}<span className="yellow-accent"></span></h1>
+      <section id="our-partners" className="al-mt-40">
+        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "5px"}}>
+          <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">Board of Directors<span className="yellow-accent"></span></h1>
         </div>
-        <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
-          <p className="al-text-align-c center-item-responsive">{data.markdownRemark.frontmatter.paragraph1}</p>
+        <p style={{textAlign: "center", marginBottom: "25px"}}>Our board of directors:</p>
+        <div className="display-flex d-flex-sa d-flex-responsive" style={{maxWidth: 800, margin: "auto", gap: 5, paddingBottom: 50}}>
+          <div className="director-block">
+            <h3>Sorahitalab Aitak</h3>
+            <h4>President</h4>
+          </div>
+          <div className="director-block">
+            <h3>Sanaz HekmatShoar</h3>
+            <h4>Treasurer</h4>
+          </div>
+          <div className="director-block">
+            <h3>Soudeh Hosseini</h3>
+            <h4>Secretary</h4>
+          </div>
         </div>
         <hr style={{backgroundColor: "black", width: "70%", margin: "auto"}}/>
-        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "25px"}}>
+        <div className="display-flex d-flex-c" style={{paddingTop: "25px", paddingBottom: "5px", backgroundColor: "white"}}>
           <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">Partners<span className="yellow-accent"></span></h1>
         </div>
         <div className="acknowledgement-block" style={{marginTop: 0, backgroundColor: "white"}}>
@@ -78,8 +95,38 @@ export const IndexPageTemplate = ({data, preview}) => {
               </a>
             </div>
             <div style={{clear: "both"}}></div>
-            <p className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://auroraculturalcentre.ca" target="_blank">Aurora Cultural Centre &#40;ACC&#41;</a>
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://auroraculturalcentre.ca" target="_blank">Aurora Cultural Centre &#40;ACC&#41;</a>
                &nbsp;is a partner of the town of Aurora, plays a leading role in the realization of their cultural objectives.
+            </p>
+
+            <div className="display-flex d-flex-sa">
+              <a href="https://acwc.ca" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={ACWCLogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://acwc.ca" target="_blank">The Association of Canadian Women Composers &#40;ACWC/ACC&#41;</a>
+               &nbsp;is the only professional association of women composers and musicians in Canada.
+            </p>
+
+            <div className="display-flex d-flex-sa">
+              <a href="https://www.composition.org/" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={CLCLogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://www.composition.org/" target="_blank">The Canadian League of Composers &#40;CLC&#41;</a>
+               &nbsp;is a national organisation run by composers for composers. 
+            </p>
+
+            <div className="display-flex d-flex-sa">
+              <a href="https://cmccanada.org" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" src={CMCLogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue"><a href="https://cmccanada.org" target="_blank">The Canadian Music Centre &#40;CMC&#41;</a>
+               &nbsp;is the catalyst that connects you to the ever-evolving world of Canadian musical creation through performance, education, and promotion.
             </p>
           </div>
         </div>
@@ -94,7 +141,13 @@ export const IndexPageTemplate = ({data, preview}) => {
             </div>
           </div>
         </div> */}
-        
+        <hr style={{backgroundColor: "black", width: "70%", margin: "auto"}}/>
+        <div className="display-flex d-flex-c" style={{marginTop: "85px", marginBottom: "35px"}}>
+          <h1 className="al-text-align-c al-pos-r display-inline-block font-report-regular">{data.markdownRemark.frontmatter.mainheader}<span className="yellow-accent"></span></h1>
+        </div>
+        <div className="display-flex d-flex-c" style={{marginBottom: "55px"}}>
+          <p className="al-text-align-c center-item-responsive">{data.markdownRemark.frontmatter.paragraph1}</p>
+        </div>    
       </section>
     </>
   );
