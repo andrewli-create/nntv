@@ -1640,6 +1640,6 @@ swiper-container {
     transition-duration: 250ms;
 }
 
-.nav-account-wrapper:hover .nav-account{
+.nav-account-wrapper:hover .nav-account {
     transform: translateY(-2px);
 }

@@ -297,6 +297,7 @@ export default function SignUp() {
               controls={false}
               loop={true}
               playbackRate={1}
+              playsInline={true}
               config={{
                 file: {
                   attributes: {

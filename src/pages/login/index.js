@@ -152,7 +152,7 @@ export default function Login() {
       {/* <div style={{ maxWidth: "400px", margin: "0 auto", padding: "2rem" }}> */}
       <div className="container-fluid px-0">
         <div className="row gx-0">
-          <div className="col-md-6 al-pos-r">
+          <div className="col-md-6 al-pos-r" style={{overflow: "hidden"}}>
             <div className="login-video-overlay" style={{}}/>
             <ReactPlayer
               ref={playerRef}
@@ -165,6 +165,7 @@ export default function Login() {
               controls={false}
               loop={true}
               playbackRate={1}
+              playsInline={true}
               config={{
                 file: {
                   playsInline: true,
@@ -177,7 +178,22 @@ export default function Login() {
                   },
                 },
               }}
-            /> 
+            />
+            {/* <div style={{height: "150%", transform: "translateY(-16.75%) scale(1.7)", pointerEvents: "none"}}>
+              <ReactPlayer
+                url={"https://youtu.be/2kQgCti3AlA?si=VAoKzJHVx9q4LicA"}
+                playing={true}
+                width={"100%"}
+                height={"100%"}
+                muted={true}
+                controls={false}
+                config={{
+                  youtube: {
+                    playerVars: { modestbranding: 1, disablekb: 0, loop: 1, showinfo: 0 }
+                  }
+                }}
+              /> 
+            </div> */}
           </div>
           <div className="col-md-6 login-form-wrapper order-first order-md-0" style={{minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 30, paddingRight: 30}}>
             <img src={mainLogo} style={{width: 250, marginBottom: 20}}/>            
