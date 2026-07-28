@@ -61,8 +61,11 @@ export default function SignUp() {
   // REAL-TIME USER ID AVAILABILITY CHECK
   // =========================================================
   useEffect(() => {
-    if (!userID || userID.length < 3) {
-      setIdCheckMessage("");
+    if (!userID) {
+      return;
+    } else if (userID.length < 3) {
+      setIdCheckMessage("At least 3 characters");
+      setIdCheckColor("#ff4d4d");
       return;
     }
 
