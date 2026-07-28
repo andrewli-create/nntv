@@ -167,6 +167,7 @@ export default function Login() {
               playbackRate={1}
               config={{
                 file: {
+                  playsInline: true,
                   attributes: {
                     style: {
                       width: '100%',

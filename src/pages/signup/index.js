@@ -300,6 +300,7 @@ export default function SignUp() {
               config={{
                 file: {
                   attributes: {
+                    playsInline: true,
                     style: {
                       width: '100%',
                       height: '100%',
