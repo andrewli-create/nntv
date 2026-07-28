@@ -155,7 +155,7 @@ export default function Login() {
           <div className="col-md-6 al-pos-r" style={{overflow: "hidden"}}>
             <div className="login-video-overlay" style={{}}/>
             <ReactPlayer
-              ref={playerRef}
+              // ref={playerRef}
               // onReady={handlePlayerReady}
               url={loginVideo}
               playing={true}
@@ -168,8 +168,9 @@ export default function Login() {
               playsInline={true}
               config={{
                 file: {
-                  playsInline: true,
                   attributes: {
+                    webkitPlaysInline: true,
+                    playsInline: true,
                     style: {
                       width: '100%',
                       height: '100%',

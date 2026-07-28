@@ -296,11 +296,12 @@ export default function SignUp() {
               muted={true}
               controls={false}
               loop={true}
-              playbackRate={1}
+              // playbackRate={1}
               playsInline={true}
               config={{
                 file: {
                   attributes: {
+                    webkitPlaysInline: true,
                     playsInline: true,
                     style: {
                       width: '100%',
