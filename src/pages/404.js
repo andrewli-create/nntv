@@ -20,7 +20,7 @@ const NotFoundPage = ({ location }) => {
     const pathParts = location.pathname.split("/").filter(Boolean);
     
     // Check if URL is like /network/some-user-id
-    if (pathParts[0] === "network" && pathParts[1]) {
+    if (pathParts[0] === "network-hub" && pathParts[1]) {
       setIsProfileRoute(true);
       const urlId = pathParts[1];
 
@@ -93,6 +93,10 @@ const NotFoundPage = ({ location }) => {
   // --- RENDER 3: The True 404 Page (Not a profile route, or profile didn't exist) ---
   return (
     <Layout>
+      {/* <div>
+        <h1>NOT FOUND</h1>
+        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </div> */}
       <div className="display-flex d-flex-c d-flex-row" style={{ minHeight: "60vh" }}>
         <div className="display-flex d-flex-c d-flex-col">
           <div style={{ width: "100%", padding: "0 35px" }} className="display-flex d-flex-c d-flex-col">
