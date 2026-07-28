@@ -38,7 +38,7 @@ navItem:
     pageName: "[account]"
     pageURL: /member-portal
     subNavItem:
-      - subPageName: Account
+      - subPageName: Profile
         subPageURL: /member-portal
       - subPageName: "[login]"
         subPageURL: ""
