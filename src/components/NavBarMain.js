@@ -6,7 +6,7 @@ import nntvLogo from "../img/nntv-logo.svg";
 import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 import $ from 'jquery';
 import AuthButton from "./AuthButton";
-import accountIcon from "../img/account_icon_2.svg"
+import accountIcon from "../img/account_icon_centered.svg"
 import '../style/custom-style-css.css';
 
 // title: { eq:"NavBar, Branding" }
@@ -65,7 +65,7 @@ const NavBarMain = ({data, preview}) => {
             {/* TODO: inline override of padding is a result of refactoring to a ul for accessibilty purposes, would like to see a css re-write that makes this unneccesary.*/}
             {navItem.map((item, index) => (
               item.navItemToggle ? (
-                  <li key={index} className="navbar-item">
+                  <li key={index} className={`navbar-item ${item.pageName === "[account]" ? "nav-account-wrapper" : ""}`}>
                     {item.pageName === "[account]" ?
                       <img className src={accountIcon} className="nav-account"/>
                       :
@@ -122,7 +122,7 @@ const NavBarMain = ({data, preview}) => {
           {/* TODO: inline override of padding is a result of refactoring to a ul for accessibilty purposes, would like to see a css re-write that makes this unneccesary.*/}
           {navItem.map((item, index) => (
             item.navItemToggle ? (
-                <li key={index} className="navbar-item">
+                <li key={index} className={`navbar-item ${item.pageName === "[account]" ? "nav-account-wrapper" : ""}`}>
                   {item.pageName === "[account]" ?
                     <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
                       <img className src={accountIcon} className="nav-account"/>

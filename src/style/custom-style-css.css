@@ -1634,7 +1634,12 @@ swiper-container {
 }
 
 .nav-account {
-    height: 50px;
-    width: 50px;
-    max-height: 2000px !important;
+    height: 30px;
+    width: 30px;
+    max-height: 200px !important;
+    transition-duration: 250ms;
+}
+
+.nav-account-wrapper:hover .nav-account{
+    transform: translateY(-2px);
 }

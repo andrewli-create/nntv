@@ -289,6 +289,7 @@ export default function MemberPortal() {
       setCustomTypeInput(finalProfileData.memberType);
     }
 
+    console.log("finalProfileData", finalProfileData)
     // 1. Build the object outside of the setter
     const compiledState = {
       ...profileData, // Keeps your initial empty default state intact
@@ -310,7 +311,8 @@ export default function MemberPortal() {
       expertises: finalProfileData.expertises || [],
       languages: finalProfileData.languages || [],
       sampleOfWorks: finalProfileData.sampleOfWorks || [],
-      images: structuredImages
+      images: structuredImages,
+      userID: finalProfileData?.userID,
     };
 
     // 2. Set both states using the exact same compiled object
@@ -1295,6 +1297,8 @@ export default function MemberPortal() {
                 <div className="d-flex flex-wrap align-items-center gap-2 mb-1">
                   <label style={{ fontWeight: "bold", margin: 0 }}>Profile Name <span className="required-text">*</span></label>
                   <span className="badge px-2.5 py-1.5 rounded-pill text-capitalize" style={getMembershipBadgeStyles(profileData.memberType)}>{profileData.memberType || "Regular"} Member</span>
+                  {profileData?.userID && <a target="_blank" className="add-btn-custom" style={{width: "auto", margin: 0, marginLeft: "auto"}} href={`/network-hub/${profileData?.userID}`}>View your page ➤</a>}
+                  
                   {/* <div className="d-inline-flex flex-wrap gap-1 ms-2">
                     {activeDisplayBadgesObjects.map((badge) => (
                       <div key={`top-badge-${badge.id}`} className="badge px-2 py-1.5 d-flex align-items-center gap-1 shadow-sm text-capitalize badge-hover-container" style={{ background: badge.backgroundColor, color: badge.textColor, fontSize: "11px" }}>
