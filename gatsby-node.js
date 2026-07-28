@@ -5,6 +5,66 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { initializeApp, cert, getApps } = require("firebase-admin/app");
 const { getFirestore } = require("firebase-admin/firestore");
 
+// ==========================================
+// EXPLICIT SCHEMA DEFINITION
+// ==========================================
+// This forces Gatsby to recognize optional fields even if some Firestore documents don't have them yet.
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  
+  const typeDefs = `
+    type ProfileImage {
+      url: String
+      title: String
+      description: String
+    }
+
+    type ProfileDegree {
+      degreeName: String
+    }
+
+    type ProfileContact {
+      contactType: String
+      content: String
+    }
+
+    type ProfileService {
+      serviceName: String
+    }
+
+    type ProfileExpertise {
+      expertiseName: String
+    }
+
+    type ProfileLanguage {
+      languageName: String
+    }
+
+    type ProfileSampleOfWork {
+      type: String
+      title: String
+      link: String
+    }
+
+    type FirestoreProfiles implements Node @infer {
+      displayOrder: String
+      private: Boolean
+      memberType: String
+      profileStatus: String
+      images: [ProfileImage]
+      degrees: [ProfileDegree]
+      contacts: [ProfileContact]
+      preferredContact: ProfileContact
+      services: [ProfileService]
+      expertises: [ProfileExpertise]
+      languages: [ProfileLanguage]
+      sampleOfWorks: [ProfileSampleOfWork]
+    }
+  `;
+  
+  createTypes(typeDefs);
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
