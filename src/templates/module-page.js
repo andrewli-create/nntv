@@ -235,13 +235,13 @@ const ModulePage = ({ data }) => {
   );
 };
 
-export const LessonBlockHeader = ({logo, header, className}) => {
+export const LessonBlockHeader = ({logo, header, className, color}) => {
   return (
     <div className={"display-flex d-flex-fs d-flex-row " + className}>
       <img src={logo} style={{marginTop: 0}}/>
       <div className="display-flex d-flex-c d-flex-row" style={{marginTop: 0, marginLeft: "7px"}}>
         <h2 className="course-block-title">
-          <div className="accent-underline"></div>
+          <div className="accent-underline" style={{backgroundColor: color || "#FFBD12"}}></div>
           <span className="al-pos-r" style={{zIndex: 1}}>
             {header}
           </span>

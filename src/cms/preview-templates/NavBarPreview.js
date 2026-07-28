@@ -26,7 +26,7 @@ const NavBarPreview = ({ entry, getAsset, fieldsMetaData }) => {
       } 
     }
   };
-  console.log("STH", dataReform);
+  // console.log("STH", dataReform);
   // console.log("nav-data", data);
   const navItem = data.navItem;
   const brandLogo = data.brandImage;
@@ -34,7 +34,7 @@ const NavBarPreview = ({ entry, getAsset, fieldsMetaData }) => {
   
   return (
     <PreviewPane>
-      <NavBarMain data={dataReform} mode={1}/>
+      <NavBarMain data={dataReform} preview={1}/>
     </PreviewPane>
   );
 }

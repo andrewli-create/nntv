@@ -5,6 +5,10 @@ import logo from "../img/logo.svg";
 import nntvLogo from "../img/nntv-logo.svg";
 import { GatsbyImage, getImage, StaticImage} from "gatsby-plugin-image"
 import $ from 'jquery';
+import AuthButton from "./AuthButton";
+import accountIcon from "../img/account_icon_2.svg"
+import '../style/custom-style-css.css';
+
 // title: { eq:"NavBar, Branding" }
 
 const NavBarMain = ({data, preview}) => {
@@ -62,18 +66,28 @@ const NavBarMain = ({data, preview}) => {
             {navItem.map((item, index) => (
               item.navItemToggle ? (
                   <li key={index} className="navbar-item">
-                    <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
-                      {item.pageName}
-                    </Link>
+                    {item.pageName === "[account]" ?
+                      <img className src={accountIcon} className="nav-account"/>
+                      :
+                      <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
+                        {item.pageName}
+                      </Link>
+                    }
+                    
                     {item.subNavItem ? 
                       (
                         <ul className="sub-navbar sub-navbar-hidden preview-hover">
                           {item.subNavItem
                             ? (item.subNavItem.map((itemInner, index) => (
                               <li className={itemInner.subPageName.length < 15 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
-                                <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
-                                  {itemInner.subPageName}
-                                </Link>
+                                {itemInner.subPageName === "[login]" ?
+                                  <AuthButton />
+                                  :
+                                  <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
+                                    {itemInner.subPageName}
+                                  </Link>
+                                }
+                                
                               </li>
                             )))
                             : null
@@ -109,18 +123,29 @@ const NavBarMain = ({data, preview}) => {
           {navItem.map((item, index) => (
             item.navItemToggle ? (
                 <li key={index} className="navbar-item">
-                  <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
-                    {item.pageName}
-                  </Link>
+                  {item.pageName === "[account]" ?
+                    <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
+                      <img className src={accountIcon} className="nav-account"/>
+                    </Link>
+                    :
+                    <Link className="navbar-item-link d-flex d-flex-c d-flex-col" to={item.pageURL}>
+                      {item.pageName}
+                    </Link>
+                  }
+                  
                   {item.subNavItem ? 
                     (
                       <ul className="sub-navbar sub-navbar-hidden preview-hover">
                         {item.subNavItem
                           ? (item.subNavItem.map((itemInner, index) => (
                             <li className={itemInner.subPageName.length < 15 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
-                              <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
-                                {itemInner.subPageName}
-                              </Link>
+                              {itemInner.subPageName === "[login]" ?
+                                <AuthButton />
+                                :
+                                <Link className="d-flex d-flex-c d-flex-col" to={itemInner.subPageURL}>
+                                  {itemInner.subPageName}
+                                </Link>
+                              }
                             </li>
                           )))
                           : null
@@ -135,11 +160,12 @@ const NavBarMain = ({data, preview}) => {
             : null
           ))}
         </ul>
-        <div className={'nav-sign-up-button-wrapper button-disable-appearance'}>
+        {/* <AuthButton /> */}
+        {/* <div className={'nav-sign-up-button-wrapper button-disable-appearance'}>
           <button className={'nav-sign-up-button'}>
             <span>Sign Up</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

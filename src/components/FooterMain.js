@@ -71,7 +71,7 @@ const FooterMain = ({data}) => {
   }
   
   return (
-    <footer id="footer" className="footer al-white-text" style={{backgroundColor: footerColor, paddingBottom: "0 !important"}}>
+    <footer id="footer" className="footer al-white-text" style={{backgroundColor: footerColor, paddingBottom: "0 !important", position: "relative"}}>
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-sm-12 mobile-side-padding">

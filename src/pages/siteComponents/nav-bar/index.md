@@ -27,10 +27,19 @@ navItem:
   - navItemToggle: true
     pageName: Network Hub
     pageURL: /network-hub
+    subNavItem: []
   - pageName: Contact
     pageURL: "#footer"
     navItemToggle: true
     subNavItem:
       - subPageName: Workshops and Partnerships
         subPageURL: /workshops-and-partnerships
+  - navItemToggle: true
+    pageName: "[account]"
+    pageURL: /member-portal
+    subNavItem:
+      - subPageName: Account
+        subPageURL: /member-portal
+      - subPageName: "[login]"
+        subPageURL: ""
 ---
