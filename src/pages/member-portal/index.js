@@ -216,7 +216,7 @@ export default function MemberPortal() {
       .map(docDoc => ({ id: docDoc.id, ...docDoc.data() }))
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     setSystemThemes(sortedThemes);
-    console.log("systemThemes", sortedThemes);
+    // console.log("systemThemes", sortedThemes);
     
     const ownProfileRef = doc(db, "profiles", currentUser.uid);
     const ownProfileSnap = await getDoc(ownProfileRef);
@@ -334,7 +334,7 @@ export default function MemberPortal() {
       const isChanged = JSON.stringify(profileData) !== JSON.stringify(originalProfileData);
       setIsDirty(isChanged);
     }
-    console.log("profileData: ", profileData);
+    // console.log("profileData: ", profileData);
   }, [profileData, originalProfileData]);
 
   useEffect(() => {
