@@ -832,20 +832,45 @@ export default function MemberPortal() {
 
       await setDoc(docRef, payloadToSave, { merge: true });
       
+      // ✨ NEW: Netlify Build Trigger Logic
+      // Check if Admin just changed the status to "approved" (or your active status string)
+      // We check originalProfileData to make sure we don't trigger a build on EVERY save, only when it newly becomes approved.
+      let shouldTriggerBuild = false;
+      if (isActingAsAdmin) {
+        if ((payloadToSave?.memberType === "verified" || payloadToSave?.memberType === "permanent") && !(originalProfileData.memberType == "verified" || originalProfileData.memberType == "permanent")) {
+          shouldTriggerBuild = true;
+        } else if (payloadToSave.profileStatus === "reviewed" && originalProfileData.profileStatus !== "reviewed") {
+          shouldTriggerBuild = true;
+        }
+
+        if (shouldTriggerBuild) {
+          const buildHookUrl = process.env.GATSBY_NETLIFY_BUILD_HOOK;
+
+          // ONLY fire if we are in production AND the URL exists
+          if (process.env.NODE_ENV === "production" && buildHookUrl) {
+            fetch(buildHookUrl, { method: "POST" })
+              .then(() => console.log("Netlify build triggered successfully!"))
+              .catch(err => console.error("Failed to trigger build webhook", err));
+          } else {
+            // This will log in your local terminal/console during development so you know your logic worked!
+            console.log("🛠️ Build hook condition met, but skipped (Development mode or missing ENV var).");
+          }
+        }
+      }
+      
+
       // Update local state 
       setProfileData(payloadToSave);
-      // setOriginalProfileData(payloadToSave);
       setOriginalProfileData(JSON.parse(JSON.stringify(payloadToSave)));
       
-      // ✨ NEW: Trigger the success animation 
-      setIsDirty(false); // Removes the warning
-      setSaveSuccess(true); // Triggers the green checkmark UI
+      // Trigger the success animation 
+      setIsDirty(false); 
+      setSaveSuccess(true); 
 
-      // ✨ NEW: Wait 2 seconds, slide out the toast, then show the alert
+      // Wait 2 seconds, slide out the toast, then show the alert
       setTimeout(() => {
         setSaveSuccess(false); 
         
-        // Using a slight delay before the alert so the toast has time to animate away visually
         setTimeout(() => {
           if (typeof window !== "undefined") {
             // window.alert("Your changes have been saved! It will now go through a review before it goes live.");
