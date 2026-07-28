@@ -250,7 +250,7 @@ export default function SignUp() {
       // Clean up the local storage state session instantly since they are unverified
       await signOut(auth);
 
-      alert("Account created! Please check your email inbox for the verification link.");
+      alert("Account created! Please check your email inbox (and spam box!) for the verification link.");
       navigate("/login");
 
     } catch (err) {
