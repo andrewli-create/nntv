@@ -69,24 +69,24 @@ const NotFoundPage = ({ location }) => {
   // --- RENDER 1: Loading State for Profile Routes ---
   if (isProfileRoute && loading) {
     return (
-      <Layout>
+      // <Layout>
         <div style={{ minHeight: "60vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <h2>Loading Profile...</h2>
         </div>
-      </Layout>
+      // </Layout>
     );
   }
 
   // --- RENDER 2: The Found Dynamic Profile! ---
   if (isProfileRoute && dynamicProfile) {
     return (
-      <Layout>
+      // <Layout>
         <NetworkMemberPageTemplate 
           data={dynamicProfile} 
           systemBadges={systemBadges} 
           userTheme={userTheme} 
         />
-      </Layout>
+      // </Layout>
     );
   }
 
