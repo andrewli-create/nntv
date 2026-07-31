@@ -164,7 +164,7 @@ export default function Login() {
               muted={true}
               controls={false}
               loop={true}
-              playbackRate={1}
+              // playbackRate={1}
               playsInline={true}
               config={{
                 file: {
@@ -196,10 +196,10 @@ export default function Login() {
               /> 
             </div> */}
           </div>
-          <div className="col-md-6 login-form-wrapper order-first order-md-0" style={{minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 30, paddingRight: 30, paddingTop: 30, paddingBottom: 30}}>
+          <div className="col-md-6 login-form-wrapper order-first order-md-0" style={{minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center"}}>
             <img src={mainLogo} style={{width: 250, marginBottom: 20}}/>            
             {/* <h2 style={{marginTop: 30, fontSize: 25, fontWeight: "bold" }}>Login</h2> */}
-            <h1 class=" al-pos-r display-block font-report-regular" style={{width: 70, fontWeight: "bold", marginBottom: 10}}>
+            <h1 class=" al-pos-r display-block font-report-regular login-title" style={{fontWeight: "bold", marginBottom: 10}}>
               Login
               <span class="yellow-accent" style={{left: 0}}></span>
             </h1>

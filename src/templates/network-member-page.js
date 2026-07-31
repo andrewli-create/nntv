@@ -15,6 +15,7 @@ import website from "../img/website.svg";
 import music_note from "../img/music_note_icon.svg";
 import star from "../img/star_icon.svg";
 import language from "../img/language_icon.svg";
+import defaultAvatar from "../img/default-avatar.svg"
 
 // Import Firebase dependencies for client-side live override updates
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -133,7 +134,12 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
         sampleOfWorks: firestoreData.sampleOfWorks || [],
         displayingBadges: firestoreData.displayingBadges || [],
         images: firestoreData.images || [],
-        theme: userTheme || null
+        theme: userTheme || null,
+
+        enableImageCrop: firestoreData.enableImageCrop ?? false,
+        profileImageSize: firestoreData.profileImageSize ?? 100,
+        profileImagePosX: firestoreData.profileImagePosX ?? 50,
+        profileImagePosY: firestoreData.profileImagePosY ?? 50,
       } 
     : markdownData 
     ? {
@@ -150,7 +156,12 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
         sampleOfWorks: markdownData.sampleOfWorks || [],
         displayingBadges: [],
         images: markdownData.images || [],
-        theme: null
+        theme: null,
+
+        enableImageCrop: false,
+        profileImageSize: 100,
+        profileImagePosX: 50,
+        profileImagePosY: 50,
       }
     : null;
 
@@ -248,6 +259,20 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
       zIndex: -1,
       display: transparency == 0 || transparency == "0" ? "none" : undefined,
     }
+  }
+
+  const isCustomAvatar = pageData.bioPicture && !pageData.bioPicture.includes("profile_placeholder.png");
+  
+  let avatarStyles = {
+    backgroundImage: `url("${pageData.bioPicture}")`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  };
+
+  if (isCustomAvatar && pageData.enableImageCrop) {
+    avatarStyles.backgroundSize = `${pageData.profileImageSize}%`;
+    avatarStyles.backgroundPosition = `${pageData.profileImagePosX}% ${pageData.profileImagePosY}%`;
   }
 
   return (
@@ -350,10 +375,26 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
           {/* <div style={containerStyle}></div>
           <div style={containerOverlayStyle}></div> */}
           <div className="col-md-5">
-            <div 
+            {/* <div 
               className="team-member-bio-pic" 
               style={{ backgroundImage: `url("${pageData.bioPicture}")`, backgroundColor: '#f0f0f0', backgroundSize: 'cover', backgroundPosition: 'center' }}
-            ></div>
+            ></div> */}
+            {
+              isCustomAvatar ? 
+                <div style={{position: "relative"}}>
+                  <div style={{position: "absolute", width: "100%", height: "100%", backgroundImage: `url(${pageData.bioPicture})`, top: 0, left: 0, backgroundSize: "cover"}}></div>
+                  <div style={{position: "absolute", width: "100%", height: "100%", top: 0, left: 0, backdropFilter: "blur(20px)"}}></div>
+                  <div 
+                    className={`team-member-bio-pic mx-auto shadow-sm profile-avatar-preview`}
+                    style={{...avatarStyles, position: "relative"}}
+                  />
+                </div>
+              :
+                <div 
+                  className="team-member-bio-pic" 
+                  style={{ backgroundImage: `url("${defaultAvatar}")`, backgroundColor: 'rgb(208, 208, 208)', backgroundSize: 'cover', backgroundPosition: '50% 20%', backgroundRepeat: 'no-repeat' }}
+                ></div>
+            }
           </div>
           <div className="col-md-7">
             <div style={{paddingLeft: 10, paddingRight: 10, paddingBottom: 15, background: pageData?.theme?.transparency == "0" || pageData?.theme?.transparency == 0 ? "" : "rgba(255, 255, 255, 0.9)", backdropFilter: pageData?.theme?.transparency == "0" || pageData?.theme?.transparency == 0 ? "" : "blur(10px)", borderRadius: 12}}>
@@ -663,6 +704,12 @@ export const pageQuery = graphql`
       profileStatus
       memberType
       selectedTheme
+
+      enableImageCrop
+      profileImageSize
+      profileImagePosX
+      profileImagePosY
+
       images {
         url
         title

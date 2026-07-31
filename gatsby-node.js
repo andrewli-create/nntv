@@ -59,6 +59,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       expertises: [ProfileExpertise]
       languages: [ProfileLanguage]
       sampleOfWorks: [ProfileSampleOfWork]
+
+      enableImageCrop: Boolean
+      profileImageSize: Int
+      profileImagePosX: Int
+      profileImagePosY: Int
     }
   `;
   
@@ -213,8 +218,9 @@ exports.createPages = ({ actions, graphql }) => {
       const isVerifiedOrPermanent = ["permanent", "verified"].includes(profile.memberType);
       return isReviewed || isVerifiedOrPermanent;
     });
-
+    // console.log(`Gathered all firestoreProfiles: ${firestoreProfiles}`)
     firestoreProfiles.forEach((profile) => {
+      console.log(`Attempting to build ${profile?.id}`)
       // CRITICAL: Ensure they have a userID assigned before building a page
       if (!profile.userID) {
         console.warn(`Skipping build for document ${profile.id} because it lacks an assigned userID.`);

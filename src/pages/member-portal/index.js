@@ -14,7 +14,8 @@ import language from "../../img/language_icon.svg";
 import { getContrastYIQ } from "../../templates/network-member-page"
 import formIcon from "../../img/form_icon_2.svg"
 import binIcon from "../../img/bin_icon.svg"
-import uploadIcon from "../../img/upload_icon.svg"
+import uploadIcon from "../../img/upload_icon_centered.svg"
+import cropIcon from "../../img/resize_icon.svg"
 import defaultAvatar from "../../img/default-avatar.svg"
 import WelcomeQuestionnaireModal from "../../components/WelcomeQuestionnaireModal"; // Adjust path as needed
 
@@ -72,7 +73,11 @@ export default function MemberPortal() {
     expertises: [],
     languages: [],
     sampleOfWorks: [],
-    images: []
+    images: [],
+    enableImageCrop: false,
+    profileImageSize: 100,
+    profileImagePosX: 50,
+    profileImagePosY: 50,
   });
   const [hasConfirmedDateEdit, setHasConfirmedDateEdit] = useState(false);
 
@@ -313,6 +318,12 @@ export default function MemberPortal() {
       sampleOfWorks: finalProfileData.sampleOfWorks || [],
       images: structuredImages,
       userID: finalProfileData?.userID,
+
+      // Handle Image Adjustment Properties Hydration
+      enableImageCrop: finalProfileData.enableImageCrop ?? false,
+      profileImageSize: finalProfileData.profileImageSize ?? 100,
+      profileImagePosX: finalProfileData.profileImagePosX ?? 50,
+      profileImagePosY: finalProfileData.profileImagePosY ?? 50,
     };
 
     // 2. Set both states using the exact same compiled object
@@ -800,6 +811,19 @@ export default function MemberPortal() {
       errors.push("- Preferred Contact (both contact type and contact details) is required.");
     }
 
+    // ✨ Added Range Validation Checks for Image Adjustments
+    if (profileData.enableImageCrop) {
+      if (profileData.profileImageSize < 50 || profileData.profileImageSize > 300) {
+        errors.push("- Profile Image size must be between 50% and 300%.");
+      }
+      if (profileData.profileImagePosX < -100 || profileData.profileImagePosX > 200) {
+        errors.push("- Profile Image X position must be between -100% and 200%.");
+      }
+      if (profileData.profileImagePosY < -100 || profileData.profileImagePosY > 200) {
+        errors.push("- Profile Image Y position must be between -100% and 200%.");
+      }
+    }
+
     if (errors.length > 0) {
       if (typeof window !== "undefined") {
         window.alert("Please fix the following issues before saving:\n\n" + errors.join("\n"));
@@ -937,6 +961,10 @@ export default function MemberPortal() {
 
   const typeOptions = ["regular", "verified", "permanent", "other"];
   const currentTypeValue = typeOptions.includes(profileData.memberType) ? profileData.memberType : "other";
+
+  const mapRange = (value, low1, high1, low2, high2) => {
+    return low2 + ((value - low1) * (high2 - low2)) / (high1 - low1);
+  };
 
   return (
     <Layout>
@@ -1241,11 +1269,55 @@ export default function MemberPortal() {
 
         <div className="row" style={{paddingTop: 10, position: "relative"}}>
           <div className="col-md-5 text-center mb-4">
-            <div className="team-member-bio-pic mx-auto shadow-sm" style={{ backgroundImage: `url("${profileData.profileImage || defaultAvatar}")`, backgroundColor: '#d0d0d0', backgroundSize: profileData.profileImage ? 'cover' : "80%", backgroundPosition: profileData.profileImage ? 'center': "50% 20px", height: "350px", width: "100%", borderRadius: "8px", backgroundRepeat: "no-repeat" }} />
+            {/* <div className="team-member-bio-pic mx-auto shadow-sm" style={{ backgroundImage: `url("${profileData.profileImage || defaultAvatar}")`, backgroundColor: '#d0d0d0', backgroundSize: profileData.profileImage ? 'cover' : "80%", backgroundPosition: profileData.profileImage ? 'center': "50% 20px", height: "350px", width: "100%", borderRadius: "8px", backgroundRepeat: "no-repeat" }} /> */}
             {/* <label className="btn btn-dark btn-sm mt-2" style={{ cursor: "pointer" }}>
               📷 Upload Profile Photo {profileProgress > 0 && `(${profileProgress}%)`}
               <input type="file" accept="image/*" hidden onChange={(e) => handleImageUpload(e, "profileImage", setProfileProgress)} />
             </label> */}
+            {/* Profile Image Preview Box Context */}
+            {(() => {
+              // Determine if we are rendering a custom asset string or fallback asset graphics
+              const hasCustomAvatar = profileData.profileImage && profileData.profileImage.trim() !== "";
+              
+              // Conditionally assign custom sizing matrix adjustments dynamically
+              const avatarStyles = {};
+              if (hasCustomAvatar) {
+                avatarStyles.backgroundImage = `url(${profileData.profileImage})`;
+                avatarStyles.backgroundRepeat = `no-repeat`;
+                
+                if (profileData.enableImageCrop) {
+                  avatarStyles.backgroundSize = `${profileData.profileImageSize}%`;
+                  avatarStyles.backgroundPosition = `${profileData.profileImagePosX}% ${profileData.profileImagePosY}%`;
+                } else {
+                  avatarStyles.backgroundSize = "cover";
+                  avatarStyles.backgroundPosition = "center center";
+                }
+              } else {
+                avatarStyles.backgroundImage = `url(${defaultAvatar})`;
+                avatarStyles.backgroundColor = `#d0d0d0`;
+              }
+
+              return (
+                <>
+                  {
+                    hasCustomAvatar ? 
+                      <div style={{position: "relative"}}>
+                        <div style={{position: "absolute", width: "100%", height: "100%", backgroundImage: `url(${profileData.profileImage})`, top: 0, left: 0, backgroundSize: "cover", backgroundPosition: "center, center"}}></div>
+                        <div style={{position: "absolute", width: "100%", height: "100%", top: 0, left: 0, backdropFilter: "blur(20px)"}}></div>
+                        <div 
+                          className={`team-member-bio-pic mx-auto shadow-sm profile-avatar-preview ${!hasCustomAvatar ? 'default-avatar-placeholder' : ''}`}
+                          style={{...avatarStyles, position: "relative"}}
+                        />
+                      </div>
+                    :
+                      <div 
+                        className={`team-member-bio-pic mx-auto shadow-sm profile-avatar-preview ${!hasCustomAvatar ? 'default-avatar-placeholder' : ''}`}
+                        style={avatarStyles}
+                      />
+                  }
+                </>                
+              );
+            })()}
             <div className="input-group input-group-sm mt-3 px-3">
               {/* <input type="text" className="form-control" placeholder="Paste direct profile image link..." value={tempProfileUrl} onChange={(e) => setTempProfileUrl(e.target.value)} /> */}
               <input type="text" className="form-control" placeholder="Input profile image URL..." value={tempProfileUrl} onChange={(e) => setTempProfileUrl(e.target.value)} />
@@ -1254,8 +1326,165 @@ export default function MemberPortal() {
                 <div>{profileProgress <= 0 ? <img src={uploadIcon} style={{width: 30}}/> : <></>}{profileProgress > 0 && `(${profileProgress}%)`}</div>
                 <input type="file" accept="image/*" hidden onChange={(e) => handleImageUpload(e, "profileImage", setProfileProgress)} />
               </label>
+              {profileData.profileImage && (
+                <label className="btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", backgroundColor: profileData.enableImageCrop ? "#FFBD12" : "#fff8e9", borderBottom: "1px solid #FFBD12", borderTop: "1px solid #FFBD12" }}>
+                  <input 
+                    type="checkbox"
+                    checked={profileData.enableImageCrop}
+                    onChange={(e) => setProfileData(prev => ({ ...prev, enableImageCrop: e.target.checked }))}
+                    style={{display: "none"}}
+                  />
+                  <img src={cropIcon} style={{width: 30}}/>
+                </label>
+              )}
               <button className="btn btn-danger" type="button" onClick={() => handleClearImage("profileImage")}>Clear</button>
             </div>
+            {profileData.profileImage && profileData.enableImageCrop && (
+              <div className="card" style={{ marginTop: "1rem", padding: 10}}>
+                <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
+                  {/* <input 
+                    type="checkbox"
+                    checked={profileData.enableImageCrop}
+                    onChange={(e) => setProfileData(prev => ({ ...prev, enableImageCrop: e.target.checked }))}
+                  /> */}
+                  {/* Enable Custom Image Adjustments & Zoom */}
+                  Adjust Image Size & Crop
+                </label>
+
+                {profileData.enableImageCrop && (
+                  <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                    <small style={{textAlign: "left", color: "#7d7d7d", display: "block", fontSize: 13, marginTop: 0, marginBottom: "0.25rem"}}>
+                      Your profile image size and crop might look different depending on the browser window size. By turning adjustment off, the system will automatically calculate the image size to fill out the whole frame.
+                    </small>                  
+                    {/* Size / Scale Adjuster Slider */}
+                    <div>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem", marginBottom: "0.25rem" }}>
+                        <span>Image Zoom Scale:</span>
+                        <div style={{display: "flex", flexDirection: "row", gap: 5}}>
+                          <div className="shadow-sm img-adj-button-wrapper " style={{display: "flex", flexDirection: "row"}}>
+                            <button className={`img-adj-button ${profileData && profileData?.profileImageSize && profileData?.profileImageSize == 50 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImageSize: parseInt(50, 10) }))}>
+                              Small
+                            </button>
+                            <button className={`img-adj-button ${profileData && profileData?.profileImageSize && profileData?.profileImageSize == 100 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImageSize: parseInt(100, 10) }))}>
+                              Fit
+                            </button>
+                            <button className={`img-adj-button ${profileData && profileData?.profileImageSize && profileData?.profileImageSize == 300 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImageSize: parseInt(300, 10) }))}>
+                              Max Zoom
+                            </button>
+                          </div>     
+                          <strong style={{display: "flex", alignItems: "center"}}>{profileData.profileImageSize}%</strong>
+                        </div>     
+                        {/* <strong>{profileData.profileImageSize}%</strong> */}
+                      </div>
+                      <input 
+                        type="range"
+                        min="50"
+                        max="300"
+                        value={profileData.profileImageSize}
+                        style={{ width: "100%" }}
+                        onChange={(e) => setProfileData(prev => ({ ...prev, profileImageSize: parseInt(e.target.value, 10) }))}
+                      />
+                    </div>
+
+                    {/* X Horizontal Positioning Axis Slider */}
+                    <div>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem" }}>                    
+                        <span>Horizontal Position (X):</span>  
+                        <div style={{display: "flex", flexDirection: "row", gap: 5}}>
+                          <div className="shadow-sm img-adj-button-wrapper " style={{display: "flex", flexDirection: "row"}}>
+                            <button className={`img-adj-button ${profileData?.profileImagePosX == 0 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosX: parseInt(0, 10) }))}>
+                              Left
+                            </button>  
+                            <button className={`img-adj-button ${profileData && profileData?.profileImagePosX && profileData?.profileImagePosX == 50 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosX: parseInt(50, 10) }))}>
+                              Center
+                            </button>  
+                            <button className={`img-adj-button ${profileData && profileData?.profileImagePosX && profileData?.profileImagePosX == 100 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosX: parseInt(100, 10) }))}>
+                              Right
+                            </button>  
+                          </div>     
+                          <strong style={{display: "flex", alignItems: "center"}}>{profileData.profileImagePosX}%</strong>
+                        </div>       
+                      </div>
+                      <small style={{textAlign: "left", color: "#7d7d7d", display: "block", fontSize: 13, marginTop: 0, marginBottom: "0.25rem"}}>This won't have any effect if current image size is a perfect fit.</small>
+                      <input 
+                        type="range"
+                        min="-100"
+                        max="200"
+                        value={profileData.profileImagePosX}
+                        style={{ width: "100%" }}
+                        onChange={(e) => setProfileData(prev => ({ ...prev, profileImagePosX: parseInt(e.target.value, 10) }))}
+                      />
+                    </div>
+
+                    {/* Y Vertical Positioning Axis Slider */}
+                    <div>
+                      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem" }}>
+                        <span>Vertical Position (Y):</span>
+                        <div style={{display: "flex", flexDirection: "row", gap: 5}}>
+                          <div className="shadow-sm img-adj-button-wrapper " style={{display: "flex", flexDirection: "row"}}>
+                            <button className={`img-adj-button ${profileData?.profileImagePosY == 0 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosY: parseInt(0, 10) }))}>
+                              Top
+                            </button>  
+                            <button className={`img-adj-button ${profileData && profileData?.profileImagePosY && profileData?.profileImagePosY == 50 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosY: parseInt(50, 10) }))}>
+                              Center
+                            </button>  
+                            <button className={`img-adj-button ${profileData && profileData?.profileImagePosY && profileData?.profileImagePosY == 100 ? "img-adj-button-active" : ""}`} onClick={(e) => setProfileData(prev => ({ ...prev, profileImagePosY: parseInt(100, 10) }))}>
+                              Bottom
+                            </button>  
+                          </div>     
+                          <strong style={{display: "flex", alignItems: "center"}}>{profileData.profileImagePosY}%</strong>
+                        </div>  
+                      </div>
+                      <small style={{textAlign: "left", color: "#7d7d7d", display: "block", fontSize: 13, marginTop: 0, marginBottom: "0.25rem"}}>This won't have any effect if current image size is a perfect fit.</small>
+                      <input 
+                        type="range"
+                        min="-100"
+                        max="200"
+                        value={profileData.profileImagePosY}
+                        style={{ width: "100%" }}
+                        onChange={(e) => setProfileData(prev => ({ ...prev, profileImagePosY: parseInt(e.target.value, 10) }))}
+                      />
+                    </div>
+
+                    {/* Reset Adjustment Configuration Parameters Button */}
+                    <div style={{display: "flex", flexDirection: "row", gap: 5, justifyContent: "flex-end", marginTop: "0.25rem"}}>
+                      <button
+                        type="button"
+                        style={{
+                          padding: "0.5rem 1rem",
+                          fontSize: "0.875rem",
+                          // color: "#FFBD12",
+                          // backgroundColor: "#fee2e2",
+                          backgroundColor: "#FFBD12",
+                          // border: "#FFBD12 solid 1px",
+                          border: "none",
+                          borderRadius: "0.375rem",
+                          cursor: "pointer",
+                          fontWeight: "500",
+                          alignSelf: "flex-start"
+                        }}
+                        onClick={(e) => setProfileData(prev => ({ ...prev, enableImageCrop: false }))}
+                      >
+                        Disable resize and crop
+                      </button>
+                      <button
+                        type="button"
+                        className="danger-btn-custom"
+                        onClick={() => setProfileData(prev => ({
+                          ...prev,
+                          profileImageSize: 100,
+                          profileImagePosX: 50,
+                          profileImagePosY: 50
+                        }))}
+                      >
+                        {/* Reset Alignment Defaults */}
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="col-md-7">
@@ -1297,7 +1526,7 @@ export default function MemberPortal() {
                 <div className="d-flex flex-wrap align-items-center gap-2 mb-1">
                   <label style={{ fontWeight: "bold", margin: 0 }}>Profile Name <span className="required-text">*</span></label>
                   <span className="badge px-2.5 py-1.5 rounded-pill text-capitalize" style={getMembershipBadgeStyles(profileData.memberType)}>{profileData.memberType || "Regular"} Member</span>
-                  {profileData?.userID && <a target="_blank" className="add-btn-custom" style={{width: "auto", margin: 0, marginLeft: "auto"}} href={`/network-hub/${profileData?.userID}`}>View your page ➤</a>}
+                  {profileData?.userID && <a target="_blank" className="add-btn-custom" style={{width: "auto", margin: 0, marginLeft: "auto", padding: 2}} href={`/network-hub/${profileData?.userID}`}>View your page ➤</a>}
                   
                   {/* <div className="d-inline-flex flex-wrap gap-1 ms-2">
                     {activeDisplayBadgesObjects.map((badge) => (

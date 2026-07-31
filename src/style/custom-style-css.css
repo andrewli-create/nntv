@@ -1541,6 +1541,28 @@ swiper-container {
     cursor: pointer;
 }
 
+.standard-btn-padding {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.danger-btn-custom {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: #dc2626;
+    background-color: #fee2e2;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 500;
+    align-self: flex-start;
+    transition-duration: 150ms;
+}
+
+.danger-btn-custom:hover {
+    filter: saturate(2);
+}
+
 .add-btn-custom:hover, .add-btn-custom-gallery:hover {
     transform: translateY(2px);
     filter: brightness(1.02);
@@ -1565,7 +1587,26 @@ swiper-container {
     linear-gradient(135deg, #ff416c, #ff4b2b);
 }
 
+.login-form-wrapper {
+    padding: 40px 30px;
+}
+
+.login-title {
+    width: 70px;
+}
+
+.signup-title {
+    width: 140px;
+}
+
 @media only screen and (max-width: 878px) {
+    .login-title, .signup-title {
+        width: auto;
+    }
+
+    .login-form-wrapper {
+        padding: 40px 10px;
+    }
     .login-form-wrapper img, .login-form-wrapper h1, .login-form-wrapper p, .login-form-wrapper form {
         margin-left: auto;
         margin-right: auto;
@@ -1642,4 +1683,42 @@ swiper-container {
 
 .nav-account-wrapper:hover .nav-account {
     transform: translateY(-2px);
+}
+
+.hide-from-laptop {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .hide-from-mobile {
+        display: none;
+    }
+    .hide-from-laptop {
+        display: block;
+    }
+}
+
+.img-adj-button-wrapper {
+    border-radius: 2px;
+    border: 1px rgb(166, 166, 166) solid;
+}
+
+.img-adj-button {
+    border: none;
+    background-color: transparent;
+    border-left: 1px rgb(166, 166, 166) solid;
+    cursor: pointer;
+    transition-duration: 250ms;
+}
+
+.img-adj-button:hover {
+    background-color: #fff0c6;
+}
+
+.img-adj-button:nth-child(1) {
+    border-left: none;
+}
+
+.img-adj-button-active {
+    background-color: #f7c94a;
 }

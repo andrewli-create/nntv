@@ -313,9 +313,9 @@ export default function SignUp() {
               }}
             /> 
           </div>
-          <div className="col-md-6 login-form-wrapper order-first order-md-0" style={{minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 30, paddingRight: 30, paddingTop: 40, paddingBottom: 40}}>
+          <div className="col-md-6 login-form-wrapper order-first order-md-0" style={{minHeight: "60vh", display: "flex", flexDirection: "column", justifyContent: "center"}}>
             <img src={mainLogo} style={{width: 250, marginBottom: 20}} alt="Main Logo"/>   
-            <h1 className="al-pos-r display-block font-report-regular" style={{width: 140, fontWeight: "bold", marginBottom: 10}}>
+            <h1 className="al-pos-r display-block font-report-regular signup-title" style={{fontWeight: "bold", marginBottom: 10}}>
               Sign Up
               <span className="yellow-accent" style={{left: 0}}></span>
             </h1>
@@ -329,17 +329,24 @@ export default function SignUp() {
                   <input type="text" required onChange={(e) => setProfileName(e.target.value)} placeholder="e.g., John Doe" />
                 </div>
                 <div>
-                  <label>User ID (Can't be changed) <span className="required-text">*</span></label><br />
+                  <label>User ID (Can't be changed later) <span className="required-text">*</span></label><br />
                   <div style={{display: "flex", flexDirection: "row", gap:5}}>
                     <input className="user-id-field" type="text" required value={userID} placeholder="e.g., john-doe" onChange={handleUserIDChange} />                  
                     {/* Real-time ID check output */}
                     {idCheckMessage && (
-                      <small style={{ color: idCheckColor, display: "block", marginTop: "4px" }}>
+                      <small className="hide-from-mobile" style={{ color: idCheckColor, marginTop: "4px" }}>
                         {isCheckingID ? "Checking..." : idCheckMessage}
                       </small>
                     )}
                   </div>
-                  <small style={{ color: "#666" }}>/network-hub/{userID || "john-doe"}</small>
+                  <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                    <small style={{ color: "#666" }}>Your URL: /network-hub/{userID || "john-doe"}</small>
+                    {idCheckMessage && (
+                      <small className="hide-from-laptop" style={{ color: idCheckColor, marginTop: "4px" }}>
+                        {isCheckingID ? "Checking..." : idCheckMessage}
+                      </small>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="signup-form-row mt-3">

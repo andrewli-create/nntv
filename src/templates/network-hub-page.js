@@ -298,6 +298,25 @@ export const NetworkHubPageTemplate = ({ title, openingParagraph, buildTimeProfi
               const bioText = profile.bio || profile.about || "No biography provided yet.";
               const isCardHidden = profile.statusFlag === "hidden";
 
+              // Custom Profile Image & Cropping Logic
+              const isCustomAvatar = profile.profileImage && typeof profile.profileImage === "string" && !profile.profileImage.includes("profile_placeholder.png");
+              
+              let avatarStyles = {
+                backgroundImage: `url("${profile.profileImage}")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0
+              };
+
+              if (isCustomAvatar && profile.enableImageCrop) {
+                avatarStyles.backgroundSize = `${profile.profileImageSize ?? 100}%`;
+                avatarStyles.backgroundPosition = `${profile.profileImagePosX ?? 50}% ${profile.profileImagePosY ?? 50}%`;
+              }
+
               return (
                 <div 
                   key={profile.id || profile.userID} 
@@ -338,17 +357,32 @@ export const NetworkHubPageTemplate = ({ title, openingParagraph, buildTimeProfi
                     <div className={`network-member-card ${isAdmin ? 'ms-4' : ''}`} style={{height: isAdmin ? 600 : 450}}> {/* Added margin if admin to make room for drag handle */}
                       <div className="network-member-card-inner">
                         
-                        <div className="member-image-wrapper no-transition no-radius al-pos-r" style={{ width: "40%", minHeight: "220px", backgroundColor: "#949494" }}>
+                        <div className="member-image-wrapper no-transition no-radius al-pos-r" style={{ width: "40%", minHeight: "220px", backgroundColor: "#949494", overflow: "hidden" }}>
                           <div 
                             className={`video-frame-element ${index % 2 !== 0 ? "video-frame-element-blue" : ""} ${isCardHidden ? "striped-red-gradient" : ""}`} 
                             style={{ width: "10px", height: "100px", left: 0, top: 0, zIndex: 2 }}
                           />
-                          <img 
-                            src={profile.profileImage || defaultAvatar} 
-                            alt={profile.profileName}
-                            style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", left: 0, top: 0 }}
-                            draggable={false} // Prevent default image drag behavior
-                          />
+                          
+                          {/* Image Render Logic Block */}
+                          {isCustomAvatar ? (
+                            <div style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, zIndex: 1 }}>
+                              <div style={{ position: "absolute", width: "100%", height: "100%", backgroundImage: `url(${profile.profileImage})`, top: 0, left: 0, backgroundSize: "cover", backgroundPosition: "center" }}></div>
+                              <div style={{ position: "absolute", width: "100%", height: "100%", top: 0, left: 0, backdropFilter: "blur(20px)" }}></div>
+                              <div style={{ ...avatarStyles, position: "absolute" }} />
+                            </div>
+                          ) : (
+                            <div 
+                              style={{ 
+                                position: "absolute", width: "100%", height: "100%", top: 0, left: 0, zIndex: 1,
+                                backgroundImage: `url("${defaultAvatar}")`, 
+                                backgroundColor: 'rgb(208, 208, 208)', 
+                                backgroundSize: 'cover', 
+                                backgroundPosition: '50% 20%', 
+                                backgroundRepeat: 'no-repeat' 
+                              }}
+                            ></div>
+                          )}
+                          
                         </div>
 
                         <div style={{ width: "60%" }}>
@@ -460,6 +494,10 @@ export const pageQuery = graphql`
         bio
         about
         profileImage
+        enableImageCrop
+        profileImageSize
+        profileImagePosX
+        profileImagePosY
         profileStatus
         memberType
         private
