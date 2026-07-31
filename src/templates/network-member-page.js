@@ -503,7 +503,7 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
           </div>
         )}
         
-        <div className="row al-pos-r">
+        <div className={`row al-pos-r ${pageDat?.sampleOfWorks?.length <= 0 ? "al-mb-20" : ""}`}>
           {/* <div style={containerStyle}></div>
           <div style={containerOverlayStyle}></div> */}
           {pageData.services && pageData.services.length > 0 ? (
