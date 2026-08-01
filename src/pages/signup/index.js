@@ -244,7 +244,8 @@ export default function SignUp() {
           expiryDate: expiryDate.toISOString(),
           bio: "",
           profileImage: "",
-          coverImage: ""
+          coverImage: "",
+          referenceCode: refCode || "",
         };
       }
 
