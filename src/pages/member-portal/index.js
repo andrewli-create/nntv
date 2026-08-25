@@ -1161,7 +1161,7 @@ export default function MemberPortal() {
               
               {/* Profile Status Menu selectors */}
               <div className="col-md-2">
-                <label className="form-label small fw-bold">Profile Visibility Status</label>
+                <label className="form-label small fw-bold">Profile Review Status</label>
                 <select 
                   className="form-select form-select-sm" 
                   value={currentStatusValue}
@@ -1184,7 +1184,7 @@ export default function MemberPortal() {
 
               {/* Membership Tier Type menu selectors */}
               <div className="col-md-2">
-                <label className="form-label small fw-bold">Membership Access Tier</label>
+                <label className="form-label small fw-bold">Membership Tier</label>
                 <select 
                   className="form-select form-select-sm" 
                   value={currentTypeValue}
@@ -1225,7 +1225,7 @@ export default function MemberPortal() {
 
               {/* Join Date select parameters */}
               <div className="col-md-3">
-                <label className="form-label small fw-bold">Account Registration Join Date</label>
+                <label className="form-label small fw-bold">Account Registration Date</label>
                 <input 
                   type="date" 
                   className="form-control form-control-sm"
@@ -1237,7 +1237,7 @@ export default function MemberPortal() {
 
               {/* Expiry Date select parameters */}
               <div className="col-md-3">
-                <label className="form-label small fw-bold">Account Verification Expiry Date</label>
+                <label className="form-label small fw-bold">Account Expiry Date</label>
                 <input 
                   type="date" 
                   className="form-control form-control-sm"
