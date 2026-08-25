@@ -207,6 +207,26 @@ export default function SignUp() {
 
       // 3. Send Verification Email
       await sendEmailVerification(user);
+      // const response = await fetch("/.netlify/functions/send-verification-email", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({
+      //     email: email,
+      //     profileName: profileName,
+      //   }),
+      // });
+
+      // const rawText = await response.text();
+      // let resData;
+      // try {
+      //   resData = JSON.parse(rawText);
+      // } catch (parseError) {
+      //   throw new Error(`Server returned unexpected error: ${rawText}`);
+      // }
+
+      // if (!response.ok) {
+      //   throw new Error(resData.error || "Failed to send verification email.");
+      // }
 
       // 4. Reserve the User ID
       await setDoc(userIdRef, {

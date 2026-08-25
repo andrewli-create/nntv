@@ -1659,7 +1659,8 @@ export default function MemberPortal() {
               </div>
 
               <div className="form-group mb-3">
-                <label style={{ fontWeight: "bold" }}>Portfolio Link Field</label>
+                {/* <label style={{ fontWeight: "bold" }}>Portfolio Link Field</label> */}
+                <label style={{ fontWeight: "bold" }}>Portfolio/Personal Website Link</label>
                 <input type="text" className="form-control" value={profileData.portfolioLink} placeholder="https://...   |   www..." onChange={(e) => handleDirectFieldChange("portfolioLink", e.target.value)} />
               </div>
 

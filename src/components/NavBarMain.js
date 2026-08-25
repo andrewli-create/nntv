@@ -8,11 +8,15 @@ import $ from 'jquery';
 import AuthButton from "./AuthButton";
 import accountIcon from "../img/account_icon_centered.svg"
 import '../style/custom-style-css.css';
+import { auth, db } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { collection, doc, getDoc, getDocs, setDoc, deleteDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 // title: { eq:"NavBar, Branding" }
 
 const NavBarMain = ({data, preview}) => {
   const [isActive, setIsActive] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   // console.log("nav-data-full", data);
   // console.log(data.allMarkdownRemark.edges[0].node.frontmatter.navItem);
   const navItem = data.allMarkdownRemark.edges[0].node.frontmatter.navItem;
@@ -22,6 +26,24 @@ const NavBarMain = ({data, preview}) => {
   // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage;
   // const brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
   // console.log("brandLogo", data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        // Admin verification workflow lookup check
+        const profileRef = doc(db, "profiles", currentUser.uid);
+        const profileSnap = await getDoc(profileRef);
+        if (profileSnap.exists() && profileSnap.data().role === "admin") {
+          setIsAdmin(true);
+        }
+      } else {return}
+    });
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    console.log("ADD", isAdmin);
+  }, [isAdmin]);
+  
   var brandLogo;
   if (preview == 0) {
     brandLogo = data.allMarkdownRemark.edges[0].node.frontmatter.brandImage.childImageSharp.gatsbyImageData.images.fallback.src;
@@ -87,10 +109,19 @@ const NavBarMain = ({data, preview}) => {
                                     {itemInner.subPageName}
                                   </Link>
                                 }
-                                
                               </li>
                             )))
                             : null
+                          }
+                          {
+                            item.pageName == "[account]" && isAdmin ?
+                                <li className={"Badge Manger".length < 15 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
+                                  <Link className="d-flex d-flex-c d-flex-col" to={'/badge-manager'}>
+                                    Badge Manger
+                                  </Link>
+                                </li>
+                              :
+                              <></>
                           }
                         </ul>
                       )
@@ -150,6 +181,16 @@ const NavBarMain = ({data, preview}) => {
                           )))
                           : null
                         }
+                        {
+                          item.pageName == "[account]" && isAdmin ?
+                              <li className={"Badge Manger".length < 15 ? "sub-navbar-item" : "sub-navbar-item-wide"}>
+                                <Link className="d-flex d-flex-c d-flex-col" to={'/badge-manager'}>
+                                  Badge Manger
+                                </Link>
+                              </li>
+                            :
+                            <></>
+                          }
                       </ul>
                     )
                     : 
