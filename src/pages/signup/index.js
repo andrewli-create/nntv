@@ -38,7 +38,8 @@ export default function SignUp() {
         if (docSnap.exists()) {
           const userData = docSnap.data();
           if (userData.role === "admin") {
-            navigate("/admin-portal");
+            // navigate("/admin-portal");
+            navigate("/member-portal");
           } else {
             navigate("/member-portal");
           }
@@ -145,6 +146,33 @@ export default function SignUp() {
     strengthLabel = "Medium";
     strengthColor = "#f39c12";
   }
+
+  // =========================================================
+  // DISCORD WEBHOOK INTEGRATION
+  // =========================================================
+  const sendDiscordNotification = async () => {
+    // Paste your real Discord Webhook URL below
+    // const webhookURL = "YOUR_DISCORD_WEBHOOK_URL_HERE"; 
+    const webhookURL = "https://discord.com/api/webhooks/1549904029147074671/Gb9B3SGS619jMzHQrZHGBY_xibWwjmtUiNbtEBpUHtmaXSkAZIu2LeCiw8-leyefJgqp"; 
+    const currentDate = new Date().toLocaleString();
+
+    const payload = {
+      // content: `🎉 **New User Signup!**\n**Name:** ${profileName || "N/A"}\n**User ID:** ${userID || "N/A"}\n**Email:** ${email || "N/A"}\n**Reference Code:** ${refCode || "N/A"}\nSign up at: ${currentDate}`
+      content: `**New User Signup**\n**Name:** ${profileName || "N/A"}\n**User ID:** ${userID || "N/A"}\n**Email:** ${email || "N/A"}\n**Reference Code:** ${refCode || "N/A"}\nSign up at: ${currentDate}\n=========================================================`
+    };
+
+    try {
+      await fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      console.error("Discord webhook failed to send:", err);
+    }
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -273,6 +301,9 @@ export default function SignUp() {
       
       // Clean up the local storage state session instantly since they are unverified
       await signOut(auth);
+
+      // Trigger Discord Webhook Notification (Non-blocking)
+      await sendDiscordNotification();
 
       alert("Account created! Please check your email inbox (and spam box!) for the verification link.");
       navigate("/login");
@@ -437,9 +468,21 @@ export default function SignUp() {
                 
               </div>
               <br />
-              <button type="submit" disabled={loading || isCheckingID || (idCheckColor === "#ff4d4d")} className="button-generic button-accent responsive-network-button">
-                {loading ? "Registering..." : "Sign Up"}
-              </button>
+              <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
+                <button type="submit" disabled={loading || isCheckingID || (idCheckColor === "#ff4d4d")} className="button-generic button-accent responsive-network-button">
+                  {loading ? "Registering..." : "Sign Up"}
+                </button>
+                
+                {/* TEMPORARY DISCORD TEST BUTTON - Remove before production */}
+                <button 
+                  type="button" 
+                  onClick={sendDiscordNotification} 
+                  className="button-generic" 
+                  style={{ backgroundColor: "#5865F2", color: "white", border: "none" }}
+                >
+                  Test Discord Webhook
+                </button>
+              </div>
             </form>
             
             <p style={{ marginTop: "1rem" }}>

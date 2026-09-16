@@ -203,7 +203,8 @@ export default function Login() {
               Login
               <span class="yellow-accent" style={{left: 0}}></span>
             </h1>
-            <p style={{marginBottom: !error ? 15 : ""}}>Welcome to NNTV's Network Hub! Login to your profile below.</p>
+            <p style={{marginBottom: !error ? "" : ""}}>Welcome to NNTV's Network Hub! Login to your profile below.</p>
+            <strong style={{fontSize: 13, background: "rgb(51, 97, 172)", color: 'white', padding: 5, borderRadius: 5, width: "fit-content", marginBottom: !error ? 15 : ""}}>Logging in for the first time? Check your email (and spam) for our verification email.</strong>
             {error && <p style={{ color: "red", marginBottom: 15 }}>{error}</p>}
             
             <form onSubmit={handleLogin}>
