@@ -474,14 +474,14 @@ export default function SignUp() {
                 </button>
                 
                 {/* TEMPORARY DISCORD TEST BUTTON - Remove before production */}
-                <button 
+                {/* <button 
                   type="button" 
                   onClick={sendDiscordNotification} 
                   className="button-generic" 
                   style={{ backgroundColor: "#5865F2", color: "white", border: "none" }}
                 >
                   Test Discord Webhook
-                </button>
+                </button> */}
               </div>
             </form>
             
