@@ -1722,3 +1722,9 @@ swiper-container {
 .img-adj-button-active {
     background-color: #f7c94a;
 }
+
+@media only screen and (max-width: 878px) {
+    .login-info {
+        margin: auto;
+    }
+}

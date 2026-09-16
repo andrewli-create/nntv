@@ -203,8 +203,7 @@ export default function Login() {
               Login
               <span class="yellow-accent" style={{left: 0}}></span>
             </h1>
-            <p style={{marginBottom: !error ? "" : ""}}>Welcome to NNTV's Network Hub! Login to your profile below.</p>
-            <strong style={{fontSize: 13, background: "rgb(51, 97, 172)", color: 'white', padding: 5, borderRadius: 5, width: "fit-content", marginBottom: !error ? 15 : ""}}>Logging in for the first time? Check your email (and spam) for our verification email.</strong>
+            <p style={{marginBottom: !error ? 15 : ""}}>Welcome to NNTV's Network Hub! Login to your profile below.</p>
             {error && <p style={{ color: "red", marginBottom: 15 }}>{error}</p>}
             
             <form onSubmit={handleLogin}>
@@ -235,6 +234,10 @@ export default function Login() {
             <p style={{ marginTop: "1rem" }}>
               Don't have an account yet? <Link to={import.meta.env ? "/signup" : "/signup"}>Sign up here</Link>
             </p>
+            <div className="login-info" style={{display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', gap: 15, marginTop: 10, fontSize: 13, background: "rgb(51, 97, 172)", padding: 5, paddingLeft: 15, paddingRight: 15, borderRadius: 5, width: "fit-content"}}>
+              <img src="https://cdn-icons-png.flaticon.com/512/18359/18359770.png" style={{width: 20, height: "auto", objectFit: 'contain',filter: "invert(-1)"}}/>
+              <strong style={{width: "fit-content", color: 'white'}}>Logging in for the first time?<br/>Check your email (and spam) for our verification email from:<br/><span style={{textDecoration: "underline"}}>noreply@noneedtovanish.firebaseapp.com.</span></strong>              
+            </div>
           </div>
         </div>
       </div>
