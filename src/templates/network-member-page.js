@@ -366,7 +366,17 @@ export const NetworkMemberPageTemplate = ({ data, systemBadges, userTheme }) => 
           :
           <></>
       }
-      
+      {pageData?.coverImage && (
+        <div className="container" style={{borderLeft: "0px solid rgba(255, 255, 255, 0.8)", borderRight: "0px solid rgba(255, 255, 255, 0.8)"}}>
+          <div className="row">
+            {pageData?.coverImage && (
+              <div className="col-md-12" style={{backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "center", height: 150, backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url('${pageData?.coverImage}'`}}>
+                {/* <img src={pageData?.coverImage} style={{width: "100%", maxHeight: 250, objectFit: 'cover', opacity: 0.5}}/> */}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
       <div className="container" style={{background: "rgba(255, 255, 255, 0.8)", backdropFilter: "blur(20px)", position: "relative", overflow: "hidden"}}>
         {/* <div style={{...containerStyle, backgroundPosition: `center -${ScrollTracker()/ScrollTracker()}px`, transform: "scale(1.1)"}}></div> */}
         <div style={{...containerStyle}}></div>
