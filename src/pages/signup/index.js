@@ -195,7 +195,7 @@ export default function SignUp() {
     setLoading(true);
 
     // TEMPORARY BETA RESTRICTION
-    const allowedBetaCodes = ["NNTV2026", "UOFT", "MTDM", "STUDENT"]; // Add more codes here as needed
+    const allowedBetaCodes = ["NNTV2026", "UOFT", "MTDM", "STUDENT", "CMC", "CLC", "MUSIC"]; // Add more codes here as needed
     if (!allowedBetaCodes.includes(refCode.toUpperCase())) {
       setError("Our platform is currently beta and registration is restricted. Please provide a valid reference code.");
       // setError("Registration is currently restricted to beta testers. Invalid code.");
