@@ -28,6 +28,7 @@ import ACWCLogo from "../img/ACWC-ACC_Logo_Primary.svg"
 import CLCLogo from "../img/CLC-LOGO.svg"
 import CMCLogo from "../img/cmc-logo.png"
 import FS6Logo from "../img/FS6-logo.png"
+import AALogo from "../img/artistic_autonomy_logo.svg"
 
 
 
@@ -139,6 +140,17 @@ export const IndexPageTemplate = ({data, preview}) => {
             <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue">
               Future Sound 6 &#40;FS6&#41; is a community music program making music technology education more accessible to communities across the GTA. FS6 fosters belonging and accessible learning, uplifting the next generation of artists and producers.
             </p>
+
+            <div className="display-flex d-flex-sa">
+              <a href="https://artisticautonomy.ca/nntv" target="_blank" style={{width: "100%", position: "relative", display: "inline-block", marginBottom: "10px"}}>
+                <img className="cca-icon" style={{width: 350}} src={AALogo}/>
+              </a>
+            </div>
+            <div style={{clear: "both"}}></div>
+            <p style={{marginBottom: 50}} className="al-text-align-c acknowledgement-text text-dark-blue">
+              Free financial-organization app. Works for anyone with an income. <a href="https://artisticautonomy.ca/nntv">artisticAutonomy</a> sorts every payment the moment you log it: taxes and essentials first, then some to enjoy, some to grow. Visit <a href="https://artisticautonomy.ca/nntv" target="_blank">artisticautonomy.ca/nntv</a> to learn more.
+            </p>
+
           </div>
           
         </div>
